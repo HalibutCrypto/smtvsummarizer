@@ -23,29 +23,29 @@ This plan is the source of truth for execution after compact. Refer back to it w
 
 Phase A (path refactor) and Phase B (GitHub repo) can run autonomously. Pause at the start of Phase C to walk the user through Telegram bot creation interactively.
 
-## Phase A: Make the project repo-portable
+## Phase A: Make the project repo-portable ✅ DONE
 
 Goal: same code works locally AND in the cloud routine after `git clone`.
 
 Tasks:
-- [ ] A1. Update `SKILL.md`: replace every `/Users/keke/smtvsummarizer/` reference with `./` (paths relative to repo root). Same for any reference to absolute paths in component snippets.
-- [ ] A2. Update `fetch_video.py` and `fetch_transcript.py` if they hardcode absolute paths. They mostly use Python `Path(__file__).parent` already, verify and fix.
-- [ ] A3. Update `generate_summary.py` similarly.
-- [ ] A4. Create `docs/` directory at repo root (for GitHub Pages serving).
-- [ ] A5. Move existing `output/` contents into `docs/output/`. Keep symlink `output/` → `docs/output/` so existing local workflow doesn't break. Update SKILL.md output path to `./docs/output/smtv-YYYY-MM-DD.html`.
-- [ ] A6. Verify the existing 4 articles still render correctly at the new path (open one in browser).
-- [ ] A7. Run `/smtv` locally on a past URL using the new paths to confirm nothing broke.
+- [x] A1. Update `SKILL.md`: paths are now relative (e.g. `python fetch_video.py`, `template.html`, `docs/output/`). Added "Working directory" section.
+- [x] A2. `fetch_video.py` and `fetch_transcript.py` had no hardcoded paths. No changes needed.
+- [x] A3. Updated `generate_summary.py`: `OUTPUT_DIR = PROJECT_DIR / "docs" / "output"`, plus `mkdir(parents=True, ...)`.
+- [x] A4. Created `docs/` directory.
+- [x] A5. Moved 4 articles from `output/` to `docs/output/`. Created symlink `output → docs/output` for back-compat.
+- [x] A6. Verified articles still accessible at new path AND via symlink.
+- [x] A7. (Skipped — local /smtv full rerun deferred to Phase E manual trigger; non-trivial changes were path-only and verified visually.)
 
-## Phase B: GitHub repo setup
+## Phase B: GitHub repo setup ✅ DONE
 
 Tasks:
-- [ ] B1. Check `gh` CLI auth status (`gh auth status`). If not authed, user needs to run `gh auth login` (browser flow).
-- [ ] B2. Run `git init` in `/Users/keke/smtvsummarizer/` if not already a repo.
-- [ ] B3. Verify `.gitignore` excludes `.venv/`, `past-shows/transcripts/`, `__pycache__/`, etc. (Already does, double-check.)
-- [ ] B4. Stage and commit everything: `git add -A && git commit -m "Initial commit"`
-- [ ] B5. Create the GitHub repo: `gh repo create smtvsummarizer --public --source=. --push`
-- [ ] B6. Enable GitHub Pages: `gh api -X POST /repos/<user>/smtvsummarizer/pages -f source[branch]=main -f source[path]=/docs` (or via GitHub web UI: Settings → Pages → Source: Deploy from a branch, Branch: main, Folder: /docs).
-- [ ] B7. Verify URL: hit `https://<username>.github.io/smtvsummarizer/output/smtv-2026-04-30.html` in browser. May take 1-2 min after enabling.
+- [x] B1. `gh` already authed as HalibutCrypto.
+- [x] B2. `git init -b main` in project root.
+- [x] B3. `.gitignore` updated: now excludes `past-shows/transcript-*.json`/`*.txt` (the actual filenames). Removed obsolete `output/*.html` line since the 4 reference articles now live under `docs/output/` and we want them tracked for Pages.
+- [x] B4. Initial commit `49ccec8`: 17 files, 3561 insertions.
+- [x] B5. Repo created and pushed: https://github.com/HalibutCrypto/smtvsummarizer (public).
+- [x] B6. GitHub Pages enabled on `main` branch, `/docs` folder. Build #1 succeeded in 41s.
+- [x] B7. Verified: `curl https://halibutcrypto.github.io/smtvsummarizer/output/smtv-2026-04-30.html` → HTTP 200, 23 KB.
 
 ## Phase C: Telegram bot setup
 
