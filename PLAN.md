@@ -58,25 +58,33 @@ User-side instructions (I'll guide):
 - [ ] C6. Get chat ID: in terminal, run `curl https://api.telegram.org/bot<TOKEN>/getUpdates` and find `"chat":{"id":XXXXXXXX}`. Save the chat ID.
 - [ ] C7. Test: `curl -X POST https://api.telegram.org/bot<TOKEN>/sendMessage -d chat_id=<CHAT_ID> -d text="hello from smtv"`. User should see the message.
 
-## Phase D: Routine setup
+## Phase D: Routine setup ✅ DONE
 
 Tasks:
-- [ ] D1. Write the routine prompt (what the cloud Claude session executes). Roughly: "Run /smtv to summarize today's episode. Save the HTML to docs/output/. Commit and push. Then POST a message to Telegram with the public URL."
-- [ ] D2. Create routine via `/schedule` with:
-  - Repository: `<username>/smtvsummarizer`
-  - Setup script: `pip install -r requirements.txt`
-  - Environment variables: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `GITHUB_PAGES_URL`
-  - Schedule: cron `0 22 * * 1-5` (Mon-Fri 22:00 UTC = Tue-Sat 6 AM PHT)
-  - Allow unrestricted branch pushes: enabled (so the routine can push to main)
-- [ ] D3. Document the routine config in this file.
+- [x] D1. Routine prompt drafted (delivered to user inline; full text below in "Routine config").
+- [x] D2. Routine created via Claude Code Routines UI (web app).
+- [x] D3. Config recorded:
+  - Name: `SMTV Daily Summary`
+  - Repository: `HalibutCrypto/smtvsummarizer`
+  - Cloud environment: `SMTV Routine` (network access: Full)
+    - Setup script: `pip install -r requirements.txt`
+    - Env vars: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`
+  - Trigger: Schedule, cron `0 22 * * 1-5`
+  - Permissions: "Allow unrestricted git push" enabled for the repo
+  - Behavior: Auto-fix PRs disabled (not needed)
+  - Status: ACTIVE (cron live; first fire = next 22:00 UTC = next Tue-Sat 6 AM PHT)
 
 ## Phase E: Test
 
-- [ ] E1. Manually trigger the routine (use the "run now" button in routine UI, or via cmd).
-- [ ] E2. Watch logs: pip install succeeds, fetch_video finds episode, fetch_transcript works, Claude composes article, git push succeeds, Telegram POST succeeds.
-- [ ] E3. Open the GitHub Pages URL, verify article renders correctly.
-- [ ] E4. Verify Telegram message arrives with the URL.
-- [ ] E5. User opens the link from Telegram, verifies article quality matches the 4 reference articles.
+User opted to skip manual trigger and let the cron fire naturally at next 6 AM PHT for the first cold test.
+
+- [ ] E1. ~~Manual trigger~~ → user prefers to wait for 6 AM PHT cron fire
+- [ ] E2. Wait for first cron fire (next Tue-Sat 6 AM PHT)
+- [ ] E3. Outcomes to watch in Telegram:
+  - Article URL → click through, verify Pages renders, verify article quality
+  - "No episode" / "Transcript not ready" → graceful path worked
+  - Silence → routine failed earlier; check Routines UI run log
+- [ ] E4. If article landed but quality is off, iterate SKILL.md and re-test next day
 
 ## Phase F: Activate
 
