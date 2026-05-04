@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stocks Hit Fresh ATHs Through a 3% Yen Eruption - SMTV 2026-04-30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Container */
+  .article {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .tldr li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.97rem;
+  }
+  .tldr li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter {
+    margin: 4rem 0 2rem;
+  }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline ticker (bold mono accent, no chip background) */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  /* Inline price + change */
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat cards */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quote */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .compare li {
+    font-size: 0.95rem;
+    padding: 0.3rem 0;
+    color: var(--text);
+  }
+
+  /* Margin note */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+
+  /* Quotes block */
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / 2026-04-30 (Thu)</div>
+    <h1>Stocks Hit Fresh All-Time Highs Through a 3% Yen Eruption</h1>
+    <p class="subtitle">Big Tech split hard on AI capex tone. Amazon printed what one veteran called the best quarter "since young Buffett." Caterpillar may have run too far.</p>
+    <div class="meta">
+      66-min show · <a href="https://www.youtube.com/watch?v=xOSeC6lanRU" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">3-min read</span>
+    </div>
+    <p class="tldr-headline">A violent overnight FX move did nothing to slow stocks. Indices tagged new highs, the dollar sold off, metals ripped. The macro setup is the most BTC-friendly it's been in weeks.</p>
+    <ul>
+      <li><span class="tk">$BTC</span> <span class="pr">$76,320</span> <span class="ch up">+0.75%</span>, <span class="tk">$ETH</span> <span class="pr">$2,260</span> <span class="ch up">+0.5%</span>, <span class="tk">$SOL</span> <span class="pr">$83</span> <span class="ch flat">flat</span>. Total mcap <span class="pr">$2.52T</span>.</li>
+      <li><span class="tk">$SPX</span> <span class="pr">7,200</span> ATH, <span class="tk">$NDX</span> ATH, dollar <span class="ch down">-0.5%</span>. Yen ripped 3% in hours, read as a carry-trade unwind.</li>
+      <li><span class="tk">$GOOGL</span> + <span class="tk">$AMZN</span> winning the cloud story, <span class="tk">$MSFT</span> + <span class="tk">$META</span> down on capex tone. Google added <span class="pr">$350B</span> in market cap overnight.</li>
+      <li><span class="tk">$HOOD</span> cut in half on earnings. <span class="tk">$CAT</span> looks tired up 250% YTD. Energy bid on the dollar.</li>
+      <li>Tonight 9 ET, Crypto After Dark drops Louis Sykes' largest memecoin backtest ever.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTER 1: CRYPTO -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1</div>
+    <h2>Crypto Sat Quiet, but the Macro Lined Up</h2>
+    <p class="chapter-sub">The slow tape hides a setup worth tracking.</p>
+
+    <p><span class="tk">$BTC</span> at <span class="pr">$76,320</span> <span class="ch up">+0.75%</span>, <span class="tk">$ETH</span> at <span class="pr">$2,260</span> <span class="ch up">+0.5%</span>, <span class="tk">$SOL</span> at <span class="pr">$83</span> <span class="ch flat">flat</span>. Total market cap parked at <span class="pr">$2.52T</span>. A snoozer print on its face. <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=246s" target="_blank">[4:06]</a></p>
+
+    <p>The macro behind it is the most BTC-friendly it's been in weeks. Dollar down half a percent, gold +2%, silver +3%, stocks at all-time highs. That cocktail historically gives risk assets a tailwind, crypto included. <span class="tk">$BTC</span> didn't run with it today, which reads more like the space waiting on its next narrative than weakness.</p>
+
+    <p>One name worth flagging from the show floor: <span class="tk">$DOGE</span> broke out cleanly enough that the resident "junky crypto" analyst got a public victory lap from the desk. If the dollar keeps weakening, it's the alt to watch. <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=420s" target="_blank">[7:00]</a></p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>Tonight, 9 PM ET, Crypto After Dark drops Louis Sykes' largest memecoin backtest ever. If you only catch one of the network's crypto segments this week, that's the one. <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=3953s" target="_blank">[1:05:53]</a></p>
+    </div>
+  </section>
+
+  <!-- CHAPTER 2: MARKETS -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2</div>
+    <h2>The Yen Erupted, Stocks Shrugged</h2>
+
+    <p>The yen ripped 3% overnight in a matter of hours, almost certainly a carry-trade unwind on someone's positioning. Stocks took it as contained and walked higher. The S&amp;P closed at <span class="pr">7,200</span> ATH, the Nasdaq matched, the dollar fell <span class="ch down">-0.5%</span>, metals lit up. <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=348s" target="_blank">[5:48]</a></p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,200</div>
+        <div class="stat-change up">+0.5% · ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Nasdaq 100</div>
+        <div class="stat-value">+0.66%</div>
+        <div class="stat-change up">ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">49,305</div>
+        <div class="stat-change up">+0.6%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,641</div>
+        <div class="stat-change up">+2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Silver</div>
+        <div class="stat-value">$74</div>
+        <div class="stat-change up">+3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Copper</div>
+        <div class="stat-value">~$6</div>
+        <div class="stat-change up">+4%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">~18</div>
+        <div class="stat-change flat">drifting</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">30Y Bonds</div>
+        <div class="stat-value">&lt;113</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+    </div>
+
+    <p>Initial jobless claims printed <strong>189K</strong>, the lowest since 1969. PCE landed at the highest reading in three years. Both got shrugged off. Cross-asset action stayed coherent (dollar down, metals up, stocks up, bonds quiet) and that internal consistency tells you the rally has structural support, not just bid. <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=270s" target="_blank">[4:30]</a></p>
+
+    <div class="note local">
+      <div class="label">Local angle (Philippines)</div>
+      <p>JC explicitly flagged the Philippine peso getting crushed in his FX scan. If you're paid in PHP and converting, it's a tax. If you're already long USD or USD-denominated assets, it's a tailwind. Worth a glance at PHP today. <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=1620s" target="_blank">[27:00]</a></p>
+    </div>
+  </section>
+
+  <!-- CHAPTER 3: BIG TECH -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3</div>
+    <h2>Big Tech Split on Capex Discipline</h2>
+
+    <p>Earnings hit overnight and the cloud story carried <span class="tk">$GOOGL</span> and <span class="tk">$AMZN</span> to fresh highs. The market punished the names refusing to slow AI spend.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Tape winners</div>
+        <ul>
+          <li><span class="tk">$GOOGL</span> · breakaway gap, ATH, <span class="pr">+$350B</span> mcap delta</li>
+          <li><span class="tk">$AMZN</span> · sneaky ATHs, AWS print is the story</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Tape laggards</div>
+        <ul>
+          <li><span class="tk">$MSFT</span> · down off lows, market wants slower AI spend</li>
+          <li><span class="tk">$META</span> · screw-you capex stance, <span class="pr">605</span> low to <span class="pr">614</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p><span class="tk">$GOOGL</span> added more market cap overnight than the entire valuation of all but 30 US public companies. Not a typo. Worth keeping in your head when you hear "Mag 7 fatigue" takes. The <span class="tk">$AMZN</span> punchline was AWS at 28% growth, 38% margins, $150B run rate. For a business that size, those numbers shouldn't work, which is why they do. <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=2191s" target="_blank">[36:31]</a></p>
+
+    <p>Quick sub-plot: <span class="tk">$QCOM</span> ripped to <span class="pr">$208.20</span> intraday on its print and sold all night to <span class="pr">$172</span>. Worth watching today. <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=1426s" target="_blank">[23:46]</a></p>
+  </section>
+
+  <!-- CHAPTER 4: NAMES -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 4</div>
+    <h2>Three Names Worth Acting On</h2>
+
+    <p><span class="tk">$HOOD</span> got cut in half on its print. Bear case from the desk is that Robin Hood wired two business models into one app, the responsible-investing platform and the casino (prediction markets, gambling), and once you're running both, the math of the casino takes over and you stop being a steward. The rebuttal was that every other broker is doing the same thing, <span class="tk">$IBKR</span> included. Either way, the chart is broken for now. <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=828s" target="_blank">[13:48]</a></p>
+
+    <p><span class="tk">$CAT</span> drew a daytrade short flag from the show's intraday trader. Stock is up 250% YTD into a blowout quarter, head-and-shoulders forming, currently testing VWAP from above. Targeted move ~15 points. Tight stop required, day-trade only, no swing. Cleanest setup of the show. <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=3295s" target="_blank">[54:55]</a></p>
+
+    <p>Energy got a fresh bid on dollar weakness. JC added more <span class="tk">$CVX</span> calls and bought another MLP after fading an Economist cover ("Why oil prices are not yet high enough"), which he reads as a contrarian signal. <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=510s" target="_blank">[8:30]</a></p>
+  </section>
+
+  <!-- CHAPTER 5: QUOTES -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 5</div>
+    <h2>Lines Worth Saving</h2>
+    <p class="chapter-sub">Verbatim, with timestamp. Re-shape these in your own voice.</p>
+
+    <div class="pullquote">
+      <blockquote>"There are less than 30 companies in America that are valued at a larger dollar amount than what Google has increased in their value just since yesterday."</blockquote>
+      <div class="attrib"><a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=1382s" target="_blank">[23:02]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"They're the best allocators of capital since young Buffett."</blockquote>
+      <div class="attrib">on Amazon's quarter <a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=1979s" target="_blank">[32:59]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"For somebody who never trades foreign exchange, I look at forex markets all day, every day."</blockquote>
+      <div class="attrib"><a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=1584s" target="_blank">[26:24]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"When a stock doesn't do what you want it to do, you don't just sit there like a deer in the headlights. Dump it and you get another chance at it."</blockquote>
+      <div class="attrib"><a class="ts" href="https://www.youtube.com/watch?v=xOSeC6lanRU&amp;t=3270s" target="_blank">[54:30]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The macro is set up for crypto.</strong> Dollar weak, metals ripping, stocks at ATHs. <span class="tk">$BTC</span> didn't run today but the setup is there. Watch <span class="tk">$DOGE</span> for alt rotation if the dollar keeps fading.</li>
+      <li><strong>Cross-asset is coherent.</strong> When the tape rhymes (dollar down, metals up, stocks up, bonds quiet) the rally has structural support. Don't fight it.</li>
+      <li><strong>Big Tech regime favors discipline.</strong> The Street rewarded <span class="tk">$GOOGL</span> and <span class="tk">$AMZN</span> for the cloud, punished <span class="tk">$META</span> for refusing to slow capex. Tells you what management posture wins right now.</li>
+      <li><strong>One actionable.</strong> The <span class="tk">$CAT</span> short setup is the cleanest trade flagged on the show. Day-trade only, tight stop, ~15 points to the downside if it triggers.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>

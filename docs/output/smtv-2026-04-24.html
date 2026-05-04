@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intel Caps 26 Years of Pain at New All-Time Highs - SMTV 2026-04-24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Timeline (for the IPO history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item {
+    position: relative;
+    padding: 0.5rem 0 1.25rem;
+  }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / Crypto Friday / 2026-04-24</div>
+    <h1>Intel Caps 26 Years of Pain at New All-Time Highs</h1>
+    <p class="subtitle">Louis Sykes calls Solana dead money for the decade. JC reads the SpaceX IPO machine as a late-cycle warning. Kenny is shorting the very Intel rip everyone else is celebrating.</p>
+    <div class="meta">
+      67-min show · <a href="https://www.youtube.com/watch?v=qMNoMyBVtKE" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">4-min read</span>
+    </div>
+    <p class="tldr-headline">Crypto sat at multi-month highs but Louis Sykes told you which alts to skip. Intel ripped 30% to ATH after a 26-year drought. The most interesting take of the show was JC's IPO-supply top warning.</p>
+    <ul>
+      <li><span class="tk">$BTC</span> <span class="pr">$78,200</span> <span class="ch flat">flat</span>, total crypto mcap <span class="pr">$2.58T</span> at multi-month highs since Wednesday. <span class="tk">$ETH</span>/<span class="tk">$BTC</span> breakdown worth watching.</li>
+      <li>Louis: <span class="tk">$ADA</span> is "an absolute ghost town" generating <span class="pr">$300/wk</span> in revenue. <span class="tk">$SOL</span> will underperform crypto for the rest of the decade. Pick of the day: <span class="tk">$CNTN</span>, 3-year hold.</li>
+      <li><span class="tk">$INTC</span> <span class="ch up">+30%</span> premarket, NDX <span class="ch up">+1.2%</span>. Government's <span class="pr">$9B</span> stake from last year now worth <span class="pr">~$38B</span>.</li>
+      <li>JC's framework: SpaceX + the 1.5T+ private IPO pipeline rivals Ford '56, RCA '19, US Steel '01. Each preceded a major top.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTER 1: CRYPTO -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 · The Crypto Friday</div>
+    <h2>Louis Sykes Buried Solana for the Decade</h2>
+    <p class="chapter-sub">Total mcap at multi-month highs, but the alt rotation has rules now.</p>
+
+    <p>Spot prices barely moved. <span class="tk">$BTC</span> sat at <span class="pr">$78,200</span> <span class="ch flat">flat</span>, <span class="tk">$ETH</span> at <span class="pr">$2,325</span> <span class="ch flat">flat</span>, <span class="tk">$SOL</span> at <span class="pr">$86.5</span> <span class="ch flat">flat</span>. Total crypto market cap held <span class="pr">$2.58T</span> at multi-month highs first tagged Wednesday. Quiet tape, but not a quiet show. <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=668s" target="_blank">[11:08]</a></p>
+
+    <p>Louis Sykes came on with the strongest set of crypto calls in weeks. He flagged <span class="tk">$ETH</span>/<span class="tk">$BTC</span> breaking down over the last two weeks, then dropped two structural calls: <span class="tk">$ETH</span> and <span class="tk">$SOL</span> will underperform the broader crypto asset class for the next three to four years, and <span class="tk">$ADA</span> is an "absolute ghost town" generating only ~<span class="pr">$300</span> in weekly revenue against a multi-billion mcap. <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=2735s" target="_blank">[45:35]</a></p>
+
+    <p>His frame for normies trying to play the move was simple. Skip the junky alts. Get quality exposure to <span class="tk">$BTC</span> and the Bitcoin miners (bases there look ready to break). Concentrate altcoin exposure into a few names you can actually defend. His specific pick of the week was <span class="tk">$CNTN</span> (Canton Network) on a 3-year time frame. JC's contrarian counter on <span class="tk">$ADA</span> was risk-reward only ("two cents of risk for a potential 4x"), which is fair as a trade but doesn't really refute the ghost-town thesis. <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=3073s" target="_blank">[51:13]</a></p>
+  </section>
+
+  <!-- CHAPTER 2: INTEL -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 · The Comeback</div>
+    <h2>Intel Took 26 Years to Get Back to All-Time Highs</h2>
+    <p class="chapter-sub">Only Newmont Mining took longer (back to the '87 crash).</p>
+
+    <p><span class="tk">$INTC</span> ripped <span class="ch up">+30%</span> premarket on its print, dragging the NDX up <span class="ch up">+1.2%</span> before the bell. The number worth carrying around: this is the first time since the dot-com top that Intel is back at all-time highs. The "Four Horsemen" of late-90s tech (Dell, Cisco, Intel, Microsoft) have now all tagged ATHs this week. The lagger of that group is now Microsoft, which would have sounded insane in 2000. <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=210s" target="_blank">[3:30]</a></p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">INTC</div>
+        <div class="stat-value">+30%</div>
+        <div class="stat-change up">premarket, ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NDX 100</div>
+        <div class="stat-value">+1.2%</div>
+        <div class="stat-change up">on Intel</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,165</div>
+        <div class="stat-change up">+0.3% · weekly close ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">49,420</div>
+        <div class="stat-change down">-60</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,715</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Silver</div>
+        <div class="stat-value">$76</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude</div>
+        <div class="stat-value">~$96</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">~19</div>
+        <div class="stat-change flat">drifting</div>
+      </div>
+    </div>
+
+    <p>Last year the US government took a roughly 10% stake in <span class="tk">$INTC</span> for ~<span class="pr">$9B</span>. That position is worth ~<span class="pr">$38B</span> today. The mechanic is simple. Once the government is the buyer of a stock, almost no one else wants to bet against it (you'd be fighting a political and structural buyer), and the chart trends one direction. The recent comparable was <span class="tk">$MP</span> (MP Materials, the main US rare-earths producer), which ran the same script a few months ago after government support. JC's frame for the next move is to default to long whenever the government takes a stake in a name. <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=348s" target="_blank">[5:48]</a></p>
+
+    <p>The sympathy bid is already firing across the semi complex. <span class="tk">$AMD</span>, <span class="tk">$ARM</span>, and <span class="tk">$QCOM</span> all <span class="ch up">+12%</span> on the Intel rip. <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=3744s" target="_blank">[1:02:24]</a></p>
+  </section>
+
+  <!-- CHAPTER 3: TOP WARNING -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 · The Cycle Tell</div>
+    <h2>JC's IPO Framework Is Flashing Late-Cycle</h2>
+    <p class="chapter-sub">Three historical comparables. All three preceded major tops.</p>
+
+    <p>SpaceX is coming public alongside roughly <span class="pr">$1.5T</span>-<span class="pr">$1.7T</span> of large private companies queued for the same window. JC's read on what that supply does to a market is grounded in three historical events of comparable scale, and all three resolved the same way.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">1901</div>
+        <h4>US Steel formed</h4>
+        <p>JP Morgan combined Carnegie Steel with smaller mills into a single entity worth ~15% of the entire stock market. Dow peaked weeks later and got slaughtered.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1919</div>
+        <h4>RCA consolidation</h4>
+        <p>Asset rollup, not a traditional IPO, but functionally identical in terms of float impact. Two weeks later the Dow peaked and got cut in half.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1956</div>
+        <h4>Ford IPO</h4>
+        <p>Worth roughly 1% of US GDP at debut. The market peaked in April, IPO was January, and the tape fell apart from there.</p>
+      </div>
+    </div>
+
+    <p>The framework underneath is heightened liquidity. Companies of that size only come public when they're confident the market can absorb the supply, which is itself a late-cycle signal. JC noted he's not cherry-picking, those are the only three historical analogs at this scale, and the SpaceX wave fits the same template. Worth holding onto. <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=1156s" target="_blank">[19:16]</a></p>
+
+    <p>Adjacent signal worth flagging. A brand new ETF focused on memory chips (DRAM, the chips inside every computer, phone, and server) raised <span class="pr">$1B</span> in 10 days. Half its weight is just two Korean memory giants, SK Hynix and Samsung. ETFs that get this hot this fast on a single narrow theme have historically shown up near the top of that theme. <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=801s" target="_blank">[13:21]</a></p>
+  </section>
+
+  <!-- CHAPTER 4: QUOTES -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"I have a sneaking suspicion that going forward for the remainder of the decade Solana is going to underperform. I don't think Solana is all that important to the ecosystem anymore."</blockquote>
+      <div class="attrib">Louis Sykes <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=2820s" target="_blank">[47:00]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Cardano over the last week has generated about $300 of revenue. The market's valuing it at... mate, all I'm saying is that you have a chance to buy a network that's generating about $2 million of revenue a day."</blockquote>
+      <div class="attrib">Louis Sykes <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=2735s" target="_blank">[45:35]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Next time Trump buys a stock, we probably want to consider getting long. I'm just saying."</blockquote>
+      <div class="attrib">JC <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=348s" target="_blank">[5:48]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Heightened liquidity tends to come towards the end."</blockquote>
+      <div class="attrib">JC, on the SpaceX IPO wave <a class="ts" href="https://www.youtube.com/watch?v=qMNoMyBVtKE&amp;t=1156s" target="_blank">[19:16]</a></div>
+    </div>
+
+  </section>
+
+  <!-- BOTTOM LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Crypto setup is loaded.</strong> Multi-month highs in mcap, miners ready to break, dollar weakening. Louis just told you the playbook. <span class="tk">$BTC</span> + miners + selective alts. Skip <span class="tk">$ADA</span> and <span class="tk">$SOL</span>.</li>
+      <li><strong>Follow the government.</strong> The <span class="tk">$INTC</span> trade made a <span class="pr">$9B</span> stake worth <span class="pr">$38B</span> in months. JC's heuristic is that the next stock Trump backs is a buy by default. Watch the rare-earths and semis lists.</li>
+      <li><strong>The IPO machine is the late-cycle tell.</strong> SpaceX + <span class="pr">$1.5T+</span> in private supply rivals Ford '56, RCA '19, US Steel '01. None of those was a top-tick signal but all preceded major peaks within a year. Worth tracking, not panicking.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>

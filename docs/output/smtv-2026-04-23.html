@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitcoin Quietly Returned to Cycle Highs - SMTV 2026-04-23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / 2026-04-23 (Thu)</div>
+    <h1>Bitcoin Quietly Returned to Cycle Highs</h1>
+    <p class="subtitle">Tesla's earnings landed exactly as muted as expected. ServiceNow dragged the entire software space down with it. And Strazza mapped every cannabis-rescheduling fade since 2020.</p>
+    <div class="meta">
+      63-min show · <a href="https://www.youtube.com/watch?v=_HB4NPVnDW0" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">3-min read</span>
+    </div>
+    <p class="tldr-headline">A quiet day on the surface. The interesting move was <span class="tk">$BTC</span> tagging the same level it peaked at in late 2017 and again in early 2021. JC wants <span class="tk">$ETH</span> and <span class="tk">$SOL</span> to confirm before he calls it.</p>
+    <ul>
+      <li><span class="tk">$BTC</span> <span class="pr">~$78,000</span> <span class="ch flat">flat</span>, <span class="tk">$ETH</span> <span class="pr">$2,330</span> <span class="ch down">-2%</span>, <span class="tk">$SOL</span> <span class="pr">$86</span> <span class="ch down">-1.5%</span>. Total mcap <span class="pr">$2.57T</span>. BTC at the prior-cycle peak.</li>
+      <li><span class="tk">$TSLA</span> earnings reaction was muted by design. The stock trades on Optimus and robotaxis, not on cars sold last quarter. Needs <span class="pr">$385-386</span> to break the consolidation.</li>
+      <li>ServiceNow cratered <span class="ch down">-20%</span> on margin guidance despite a beat-and-raise quarter. Took <span class="tk">$CRM</span> and <span class="tk">$INTU</span> down with it.</li>
+      <li>Cannabis ETF <span class="tk">$MSOS</span> popped on a Trump rescheduling headline. Strazza's chart shows it's the 9th rescheduling fade since December 2020.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTER 1: CRYPTO -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1</div>
+    <h2>Bitcoin Touched the Scene of the Crime</h2>
+    <p class="chapter-sub">Same level that capped the 2017 Christmas mania and the 2021 SPAC peak. Now we see if it breaks.</p>
+
+    <p>Spot tape was uneventful, but the chart is loud. <span class="tk">$BTC</span> sits at <span class="pr">~$78,000</span> <span class="ch flat">flat</span>, <span class="tk">$ETH</span> at <span class="pr">$2,330</span> <span class="ch down">-2%</span>, <span class="tk">$SOL</span> at <span class="pr">$86</span> <span class="ch down">-1.5%</span>. Total crypto market cap parked at <span class="pr">$2.57T</span>. <a class="ts" href="https://www.youtube.com/watch?v=_HB4NPVnDW0&amp;t=480s" target="_blank">[8:00]</a></p>
+
+    <p>The chart that mattered today was the long-term <span class="tk">$BTC</span> chart that JC pulled up. Bitcoin has just retouched the same price level it reached at two prior cycle peaks: the late-2017 Christmas-and-uncle-asking-about-crypto top, and the early-2021 SPAC/ARK/Cathie Wood mania. Both times it rejected hard. Now it's back, and the question on the desk was simple. Is this the bottom, or is this just a bottom that gets retested again? <a class="ts" href="https://www.youtube.com/watch?v=_HB4NPVnDW0&amp;t=1565s" target="_blank">[26:05]</a></p>
+
+    <p>The condition for "this is the move" was confirmation from <span class="tk">$ETH</span> and <span class="tk">$SOL</span>. Today both faded. So the chart is right at the level but not yet through it. A clean break above the prior peak with alts joining is what would turn this into a real run. A rejection here is the third one at the same level, which would set up another cycle of consolidation.</p>
+
+    <p>For positioning today, this is the level you want to size into with stops below. Chasing a breakout from here only makes sense once <span class="tk">$ETH</span> and <span class="tk">$SOL</span> confirm.</p>
+  </section>
+
+  <!-- CHAPTER 2: TESLA -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2</div>
+    <h2>Tesla's Snoozer Was the Point</h2>
+    <p class="chapter-sub">The market priced in the future a long time ago. Last quarter's cars don't move the stock anymore.</p>
+
+    <p><span class="tk">$TSLA</span> reported and the reaction was meh, which is how this stock has always traded around earnings. Tesla's price-to-earnings ratio (a measure of how expensive a stock is vs. its current profits) sits around <span class="pr">50-60</span>, while the rest of the Mag 7 cluster around <span class="pr">20-30</span>. The stock is priced almost entirely on what the company becomes when Optimus production ramps and robotaxis go national. Current-quarter car deliveries barely move that math.</p>
+
+    <p>The car business itself is fine. Deliveries grew year-over-year. The actual interesting numbers were elsewhere. Robotaxi paid miles hit <span class="pr">1.7M</span> last quarter, roughly a 3x. Optimus is set for production later this year. AI capex is going from <span class="pr">$11B</span> two years ago, down to <span class="pr">$8B</span> last year, up to <span class="pr">$25B</span> this cycle. The company is doubling down. <a class="ts" href="https://www.youtube.com/watch?v=_HB4NPVnDW0&amp;t=560s" target="_blank">[9:20]</a></p>
+
+    <p>Strazza's framework on the chart is that <span class="tk">$TSLA</span> went from <span class="pr">$80B</span> to <span class="pr">$1.3T</span> in market cap in 18 months, the fastest move of that scale in US market history. A multi-year consolidation after that is well-deserved. The level to clear is <span class="pr">$385-386</span>. While the rest of big-cap tech has rallied for three weeks, Tesla has hung back. <span class="tk">$AMZN</span> is leading the consumer-discretionary group instead, breaking out to ATHs. <a class="ts" href="https://www.youtube.com/watch?v=_HB4NPVnDW0&amp;t=830s" target="_blank">[13:50]</a></p>
+
+    <p>On the SpaceX IPO that's allegedly coming in June, JC and Spencer were both aligned. "Wouldn't touch it with a 10-foot pole." Stephen Weiss is doing the deep dive on it after the show.</p>
+  </section>
+
+  <!-- CHAPTER 3: FADES -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3</div>
+    <h2>When the First Move Is the Fake Move</h2>
+    <p class="chapter-sub">Software hate keeps repeating. Cannabis has faded eight rescheduling headlines and counting.</p>
+
+    <p>ServiceNow reported a beat-and-raise quarter last night and the stock dropped <span class="ch down">-20%</span>. The market keeps freaking out about margin guidance (their forecast for next-quarter profitability) even when the actual results are good. <span class="tk">$CRM</span> (Salesforce) and <span class="tk">$INTU</span> (Intuit) traded down in sympathy. The pattern in software has been beat-and-raise followed by margin-guidance-driven selloff for several quarters running. <a class="ts" href="https://www.youtube.com/watch?v=_HB4NPVnDW0&amp;t=535s" target="_blank">[8:55]</a></p>
+
+    <p>The desk's read was that the post-earnings drift eventually reverses. Software is too important to AI infrastructure to sit out forever. <span class="tk">$MSFT</span> reports next week into this exact pattern. If it gets margin-punished too, that's the bottom of the trade.</p>
+
+    <p>The other fade chapter was cannabis. <span class="tk">$MSOS</span> (the US-cannabis ETF, which holds American cannabis operators that can't list on major exchanges due to federal cannabis status) ripped <span class="ch up">+12%</span> yesterday on a Trump headline that rescheduling is happening "without further delay." Strazza pulled up a long-term chart with circles at every prior rescheduling-headline event going back to 2020.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">DEC 2020</div>
+        <h4>House decriminalize bill</h4>
+        <p>House of Representatives passes act to decriminalize cannabis at the federal level. Rallied. Faded.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">JUL 2021</div>
+        <h4>Schumer legalization bill</h4>
+        <p>Chuck Schumer introduces bill to legalize cannabis. Rallied. Faded.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">OCT 2022 → AUG 2024</div>
+        <h4>Multiple Biden-era reviews</h4>
+        <p>Biden directs AG to review scheduling. AG announces "still working on it" three separate times across two years. Each headline rallied. Each faded.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">DEC 2025 → APR 2026</div>
+        <h4>Trump rescheduling executive orders</h4>
+        <p>Executive order in December, DA review headlines in February, reiteration this April. Each rallied. Each has faded so far.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">YESTERDAY</div>
+        <h4>"Without further delay"</h4>
+        <p>Latest Trump statement triggers the most recent <span class="ch up">+12%</span> pop. The 9th rescheduling rally on the same chart.</p>
+      </div>
+    </div>
+
+    <p>The pattern says fade. Every cannabis rescheduling rally on this chart has died at some point in the following weeks. Until that streak breaks, this is one to short or sit out. Chasing the pop has lost money eight times running.</p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>Same pattern translates one chain over. News-headline pops in crypto (a regulatory clarity tweet, an ETF rumor, an exchange listing) almost always fade unless a real technical breakout follows. The actual moves come from clean breaks of well-watched levels (like <span class="tk">$BTC</span> through prior cycle highs in Chapter 1), not from headline reactions. If you're sizing into the current setup, weight the chart over the news.</p>
+    </div>
+  </section>
+
+  <!-- CHAPTER 4: QUOTES -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"Once you go to Tesla, you ain't going back. It's the iPhone moment. It's the same way we felt when we first played with an iPhone. There's nothing else like this out here."</blockquote>
+      <div class="attrib">JC <a class="ts" href="https://www.youtube.com/watch?v=_HB4NPVnDW0&amp;t=2520s" target="_blank">[42:00]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"I wouldn't touch the SpaceX IPO with a 10-foot pole."</blockquote>
+      <div class="attrib">JC <a class="ts" href="https://www.youtube.com/watch?v=_HB4NPVnDW0&amp;t=1358s" target="_blank">[22:38]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Fool me once, shame on you. Fool me twice, you can't get fooled again."</blockquote>
+      <div class="attrib">JC, on cannabis rescheduling headlines <a class="ts" href="https://www.youtube.com/watch?v=_HB4NPVnDW0&amp;t=2470s" target="_blank">[41:10]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Why buy bleach in the middle of a bull market when you could buy industrials and semiconductors and banks?"</blockquote>
+      <div class="attrib">on shorting consumer staples <a class="ts" href="https://www.youtube.com/watch?v=_HB4NPVnDW0&amp;t=3310s" target="_blank">[55:10]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Crypto is at the level.</strong> <span class="tk">$BTC</span> retouched the same price that capped the 2017 and 2021 cycles. Size into the level with stops below, don't chase a breakout. The signal is alts confirming, not <span class="tk">$BTC</span> alone.</li>
+      <li><strong>Tesla is patient long.</strong> The reaction was muted by design. Stock trades on Optimus and robotaxis. Hold above <span class="pr">$385-386</span> and the consolidation breaks. Until then, sit.</li>
+      <li><strong>Don't fight the regime.</strong> Software hate is loud. Cannabis pop is the 9th rescheduling fade in a row. The bullish setup behind both is intact. Patience over chase, both ways.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>

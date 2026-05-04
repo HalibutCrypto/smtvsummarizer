@@ -1,0 +1,9 @@
+{
+  "_comment": "Prominent tickers get more depth in the summary. Tickers not in this list still get a one-liner mention if discussed with conviction. Refined as we calibrate on past episodes.",
+
+  "high_priority": ["NVDA", "TSLA", "COIN", "MSTR", "MSFT", "AAPL", "AMD", "GOOGL", "META", "AMZN", "HOOD"],
+  "indices": ["SPY", "QQQ", "DIA", "IWM"],
+  "metals": ["GLD", "SLV"],
+  "crypto_proxies": ["COIN", "MSTR", "GBTC", "ETHE", "MARA", "RIOT", "HOOD"],
+  "always_include_if_mentioned": ["BTC", "ETH", "SOL"]
+}

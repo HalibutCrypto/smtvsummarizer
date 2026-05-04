@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Tech's Super Bowl, Powell's Last Dance - SMTV 2026-04-29</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / 2026-04-29 (Wed)</div>
+    <h1>Big Tech's Super Bowl, Powell's Last Dance, and the Stock-Pickers' Market Comes Back</h1>
+    <p class="subtitle">Four Mag 7 reports hit after the bell. Powell's likely-final FOMC at 2 PM. Berkshire on the weekend. Inside the show, JC has a hedge-fund-blow-up vibe and a fresh chart on why correlations just collapsed.</p>
+    <div class="meta">
+      74-min show · <a href="https://www.youtube.com/watch?v=FiNXrKVh12U" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">3-min read</span>
+    </div>
+    <p class="tldr-headline">A jam-packed 24 hours starts now. Four Mag 7 names print after the close, Powell takes his final lap, Berkshire holds court Saturday. Inside the show, JC gets to a clean framework on why this is now a stock pickers market.</p>
+    <ul>
+      <li><span class="tk">$BTC</span> <span class="pr">$78,150</span> <span class="ch up">+1%</span>, <span class="tk">$ETH</span> <span class="pr">$2,300</span> <span class="ch up">+1%</span>, <span class="tk">$SOL</span> <span class="pr">$84</span> <span class="ch flat">flat</span>. Total crypto mcap <span class="pr">$2.55T</span>, "half an Nvidia." <span class="tk">$DOGE</span> breaking out.</li>
+      <li>After the close: <span class="tk">$MSFT</span>, <span class="tk">$META</span>, <span class="tk">$GOOGL</span>, <span class="tk">$AMZN</span>. 2 PM: Powell's likely-final FOMC. JC's vibe: "wild move tomorrow morning, hedge fund blows up somewhere."</li>
+      <li>Crude oil <span class="ch up">+4%</span> to <span class="pr">$104</span>, the standout single-asset move on the tape today.</li>
+      <li>Rolling stock-vs-index correlation at multi-year lows. Q1 was a "buy the index" tape. Now it's an active stock pickers market again.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTER 1: CRYPTO -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1</div>
+    <h2>Crypto Holds Steady, DOGE Quietly Breaks Out</h2>
+    <p class="chapter-sub">Risk appetite is back, but the move is happening on the alt side first.</p>
+
+    <p>Spot tape was uneventful. <span class="tk">$BTC</span> at <span class="pr">$78,150</span> <span class="ch up">+1%</span>, <span class="tk">$ETH</span> at <span class="pr">$2,300</span> <span class="ch up">+1%</span>, <span class="tk">$SOL</span> at <span class="pr">$84</span> <span class="ch flat">flat</span>. Total crypto market cap parked at <span class="pr">$2.55T</span>, which JC framed as "about half an Nvidia." That's the new measuring stick. <a class="ts" href="https://www.youtube.com/watch?v=FiNXrKVh12U&amp;t=420s" target="_blank">[7:00]</a></p>
+
+    <p>The interesting move underneath is <span class="tk">$DOGE</span> breaking out. Strazza flagged it on air, mentioned he "bought some meme coins a couple of days ago" and is calling the rotation as risk appetite returning. The two listed Doge ETFs (Rex Osprey and the Grayscale trust) are not liquid enough to ride, so direct exposure is the play. JC, for transparency, is an investor in Osprey itself. <a class="ts" href="https://www.youtube.com/watch?v=FiNXrKVh12U&amp;t=500s" target="_blank">[8:20]</a></p>
+
+    <p>If you read crypto rotation through DOGE first (memes lead alts, alts lead the broad rotation), today is an early phase signal. Worth a position-size DOGE entry if you don't already have one, plus a watch on the high-beta alt list.</p>
+  </section>
+
+  <!-- CHAPTER 2: SUPER BOWL -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2</div>
+    <h2>Big Tech's Super Bowl Hits After the Close</h2>
+    <p class="chapter-sub">Four Mag 7 names report tonight, Powell speaks at 2, Berkshire on Saturday. JC sees a setup for something to crack.</p>
+
+    <p>The earnings calendar has stacked four heavyweights into the same after-hours window. <span class="tk">$MSFT</span>, <span class="tk">$META</span>, <span class="tk">$GOOGL</span>, and <span class="tk">$AMZN</span> all print today. Each one carries the AI capex narrative on its back. The market wants restraint from the spenders and growth from the cloud incumbents, which is a needle that's hard to thread.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,167</div>
+        <div class="stat-change flat">flat into print</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Nasdaq 100</div>
+        <div class="stat-value">+0.25%</div>
+        <div class="stat-change up">drifting up</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">49,230</div>
+        <div class="stat-change down">-70</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude Oil</div>
+        <div class="stat-value">$104</div>
+        <div class="stat-change up">+4% · standout</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,567</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Silver</div>
+        <div class="stat-value">$73</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">18</div>
+        <div class="stat-change flat">complacent</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">30Y Bonds</div>
+        <div class="stat-value">113.5</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+    </div>
+
+    <p>Crude oil ripping <span class="ch up">+4%</span> to push <span class="pr">$104</span> is the single biggest move on the tape today, and almost no one is talking about it. Energy was already the leadership group going in. This adds fuel.</p>
+
+    <p>At 2 PM Eastern, Powell holds what JC and Spencer both treated as his final FOMC press conference. Fed funds futures price zero chance of any policy change, so the market consensus is "nothing burger." That's exactly the setup where JC says something cracks. His take, almost word for word: tomorrow morning we'll be talking about a wild move somewhere because there's so much being thrown at the market at once that something gets caught off sides. He doesn't know what blows up, but he expects a hedge fund somewhere is too exposed. Watch the tape into the open. <a class="ts" href="https://www.youtube.com/watch?v=FiNXrKVh12U&amp;t=300s" target="_blank">[5:00]</a></p>
+
+    <p>Add Berkshire's annual meeting on Saturday (Buffett in the crowd, not on the stage), and you have three potential catalysts in 96 hours. Position before the close, not after.</p>
+  </section>
+
+  <!-- CHAPTER 3: STOCK PICKERS MARKET -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3</div>
+    <h2>The Stock Pickers' Market Is Back</h2>
+    <p class="chapter-sub">JC's chart of the day is the clearest framework on the show.</p>
+
+    <p>For most of the bull market, the way to win was to own the index. Individual stock selection didn't matter much because everything moved with everything. JC pulled up a rolling correlation chart (a measure of how tightly individual stocks move together with the broader S&amp;P 500) showing that this relationship has collapsed. The 6-month rolling correlation is at multi-year lows. The 1-year version is "falling off a cliff," in his words. <a class="ts" href="https://www.youtube.com/watch?v=FiNXrKVh12U&amp;t=985s" target="_blank">[16:25]</a></p>
+
+    <p>Translation: stocks are doing their own thing again. That's a stock pickers market, and the trader who picks well outperforms the indexer for the first time in a while. Strazza's read on the floor matched the chart before he saw it. "More now than ever," he said. Q1 was a buy-the-index tape. April flipped it.</p>
+
+    <p>The frame JC stretched the point with is that "passive investing" is a marketing label. Someone is always making active decisions about what's in your index. When the Dow kicked <span class="tk">$XOM</span> out in August 2020 (after 90+ years) and added <span class="tk">$CRM</span>, Exxon went on to do <span class="ch up">+360%</span> while Salesforce became a disaster. <span class="tk">$SMCI</span> was added to the S&amp;P in 2024 and is down <span class="ch down">-75%</span> since. Index committees are stock pickers. They are just bad at it. <a class="ts" href="https://www.youtube.com/watch?v=FiNXrKVh12U&amp;t=895s" target="_blank">[14:55]</a></p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>Same logic translates one chain over. When crypto correlations break down (alts diverging from <span class="tk">$BTC</span>, sectors trading on their own narratives) the "buy the index" approach in CEX/onchain ETFs underperforms picking the right sub-narrative. Today's <span class="tk">$DOGE</span> breakout while <span class="tk">$BTC</span> sits flat is the crypto-side version of exactly the chart JC pulled up.</p>
+    </div>
+  </section>
+
+  <!-- CHAPTER 4: QUOTES -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"Tomorrow morning we're going to see some wild moves in something. I think generally speaking it's a nothing burger, but there's a something blows up somewhere. A hedge fund blows up because they're too exposed somewhere. You'll see."</blockquote>
+      <div class="attrib">JC, the day before the yen ripped 3% <a class="ts" href="https://www.youtube.com/watch?v=FiNXrKVh12U&amp;t=300s" target="_blank">[5:00]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Where's crypto right now? Half an Nvidia."</blockquote>
+      <div class="attrib">JC, on $2.55T total crypto market cap <a class="ts" href="https://www.youtube.com/watch?v=FiNXrKVh12U&amp;t=460s" target="_blank">[7:40]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Passive investing is a lie. It's a marketing gimmick. It's not a strategy. You are either making the active decisions for yourself, or you're handing them off to somebody else, an index provider or a committee. There is no such thing as passive investing."</blockquote>
+      <div class="attrib">JC <a class="ts" href="https://www.youtube.com/watch?v=FiNXrKVh12U&amp;t=895s" target="_blank">[14:55]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"It's always a stock pickers market. But now more than ever."</blockquote>
+      <div class="attrib">Strazza, before reading JC's correlation chart <a class="ts" href="https://www.youtube.com/watch?v=FiNXrKVh12U&amp;t=850s" target="_blank">[14:10]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Crypto rotation is in early innings.</strong> <span class="tk">$DOGE</span> breakout while <span class="tk">$BTC</span> sits flat is exactly how an alt rotation begins. Position size now, not after it's already moved.</li>
+      <li><strong>Don't underestimate the calendar.</strong> <span class="tk">$MSFT</span>, <span class="tk">$META</span>, <span class="tk">$GOOGL</span>, <span class="tk">$AMZN</span> all print tonight. Powell at 2. Berkshire on Saturday. Three chances for a violent move in 96 hours. JC thinks the violence comes Thursday morning.</li>
+      <li><strong>Active edges are paying again.</strong> Stock-vs-index correlations at multi-year lows means picking the right names beats owning the index for the first time since Q1. Same logic, alt picking on the crypto side.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
