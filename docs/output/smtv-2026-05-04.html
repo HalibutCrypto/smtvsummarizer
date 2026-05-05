@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameStop's Hostile Bid for eBay Tops a Heavily Shorted Tape - SMTV 2026-05-04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">STOCK MARKET TV · THE MORNING SHOW · MAY 4, 2026</div>
+    <h1>GameStop's Hostile Bid for eBay Tops a Heavily Shorted Tape</h1>
+    <p class="subtitle">Berkshire holds its first annual meeting without Buffett at the helm, Bitcoin tags 80K, and a thin breadth print sits under the new index highs.</p>
+    <div class="meta">
+      70 min · <a href="https://www.youtube.com/watch?v=nLkoy43aVr4" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 MIN READ</span>
+    </div>
+    <p class="tldr-headline">Risk-on came back loud. GameStop fired an unsolicited $125-a-share offer at eBay, BlackBerry and Xerox ripped overnight, Bitcoin tagged $80,000, and the desk's main caution is a thin breadth print under the index highs.</p>
+    <ul>
+      <li><span class="tk">$GME</span> offered <span class="pr">$125</span>/share for <span class="tk">$EBAY</span> in cash plus stock at a 20% premium. A $10B market cap is swinging at a $50B target. Already a 5% holder, willing to go directly to shareholders.</li>
+      <li><span class="tk">$BTC</span> tagged <span class="pr">$80,000</span> with weekend volatility back. <span class="tk">$SOL</span> and <span class="tk">$COIN</span> coiled into one of the cleanest compressions crypto has shown in years. <span class="tk">$DOGE</span> broke a three-month range.</li>
+      <li>Berkshire's first annual meeting with Buffett out of the chair was uneventful. <span class="pr">$400B</span> cash pile, buyback already on, <span class="tk">$AAPL</span> still the top holding. Greg Abel runs the questions now.</li>
+      <li>Since 1989, only 40 trading days have featured the S&amp;P 500 at an intraday all-time high while the financials sector closed below its 200-day. Eight of those were the last two weeks. The other clusters were 2007, 2000, and August 2020.</li>
+      <li>Heavily shorted basket on a tear. <span class="tk">$BB</span> <span class="ch up">+12%</span>, <span class="tk">$XRX</span> <span class="ch up">+35%</span>, the DRAMM ETF up roughly 50% in a month from its <span class="pr">$27</span> open.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTER 1: CRYPTO -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 · Crypto</div>
+    <h2>Bitcoin tags 80K and the space coils tighter</h2>
+    <p class="chapter-sub">The chart that matters is the one nobody's looking at.</p>
+
+    <p><span class="tk">$BTC</span> tagged <span class="pr">$80,000</span> over the weekend with the kind of Sunday-night volatility crypto hadn't seen since February. That alone isn't a story. The framework underneath it is. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=386s" target="_blank">[6:26]</a></p>
+
+    <p><span class="tk">$SOL</span> is the cleanest read on the space right now and acts as a proxy for the broader crypto-broker trade (think <span class="tk">$COIN</span>). Solana's daily chart died the first week of February and ground sideways for three months, the kind of multi-time-frame compression that rarely shows up on a weekly. Compression that tight resolves into expansion, and the in-market evidence (heavily shorted names ripping, speculative growth back, AI and tech leadership intact) leans the resolution upside. <span class="tk">$COIN</span> wants to complete its base in sympathy. <span class="tk">$MSTR</span> already has plenty going on. Coinbase reports Thursday. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=429s" target="_blank">[7:09]</a></p>
+
+    <p><span class="tk">$DOGE</span> finally cracked the 9-to-10-cent range it traded for three straight months. The desk flagged the setup two weeks ago and got the breakout this morning. Hilarious to say out loud, sure, but the chart was right. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=505s" target="_blank">[8:25]</a></p>
+
+    <p>The other crypto angle today is in the miners. The names that pivoted hard to data-center hosting and AI compute are the ones earning a multiple. <span class="tk">$RIOT</span> printed last week and the move came from the data-center revenue line. <span class="tk">$CIFR</span> and <span class="tk">$WULF</span> sit in similar pivots. The miner index is back above a rising 200-day with stops nearby, which the chartist on the desk read as a buy. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=2843s" target="_blank">[47:23]</a></p>
+
+    <p>Pre-market action in crypto-adjacent names backs the read. <span class="tk">$COIN</span> <span class="ch up">+5%</span>, <span class="tk">$CRCL</span> <span class="ch up">+10%</span>.</p>
+  </section>
+
+  <!-- CHAPTER 2: GAMESTOP / EBAY -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 · Markets</div>
+    <h2>GameStop comes for eBay</h2>
+    <p class="chapter-sub">An unsolicited <span class="pr">$125</span>-a-share offer from a <span class="pr">$10B</span> company at a <span class="pr">$50B</span> target.</p>
+
+    <p><span class="tk">$GME</span> made an unsolicited <span class="pr">$125</span>-a-share run at <span class="tk">$EBAY</span> this morning, cash plus stock, a 20% premium. GameStop already holds a 5% stake and has signalled it will go directly to shareholders if the board pushes back. The math is the funny part. A $10B market cap is swinging at a $50B target, more than five times its own size. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=841s" target="_blank">[14:01]</a></p>
+
+    <p>The playbook is Amazon and Whole Foods. 1,600 GameStop locations become fulfillment hubs for an e-commerce platform retilted toward collectibles, trading cards, sneakers, and live auctions. The cash hoard funds the deal. The footprint is the moat. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=983s" target="_blank">[16:23]</a></p>
+
+    <p>Whispers leaked Friday afternoon and the stock ran on the rumor. Short interest sits around 15%, low by GameStop's standards, but days-to-cover is still elevated because volume has collapsed since the original meme-era highs. Either path works for the trade. Deal closes and GameStop gets what it wants. Deal fails and GameStop keeps a stack of cash on the balance sheet. Both resolutions print bid-positive for the stock. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=1068s" target="_blank">[17:48]</a></p>
+
+    <p>The wider tape is backing the bet on heavily shorted, multi-year-base, return-to-growth names. <span class="tk">$BB</span> is up 12% this morning on a return-to-growth narrative sitting on a clean inverse-head-and-shoulders. <span class="tk">$XRX</span> ripped 35% overnight on its earnings print, which lost 43 cents per share but cleared the bar of "still alive." DRAMM, the memory-chip ETF that opened for trading on April 2 at <span class="pr">$27</span>, is at <span class="pr">$41</span> a month later. That is the May 2026 trade. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=1242s" target="_blank">[20:42]</a></p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">$GME bid for eBay</div>
+        <div class="stat-value">$125</div>
+        <div class="stat-change up">cash + stock · 20% premium</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">$BB pre-mkt</div>
+        <div class="stat-value">+12%</div>
+        <div class="stat-change up">inv. H&amp;S forming</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">$XRX overnight</div>
+        <div class="stat-value">+35%</div>
+        <div class="stat-change up">post-earnings rip</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">DRAMM ETF</div>
+        <div class="stat-value">$27 → $41</div>
+        <div class="stat-change up">~50% in 1 month</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 3: BERKSHIRE -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 · Berkshire</div>
+    <h2>Berkshire's first meeting without Buffett at the helm</h2>
+    <p class="chapter-sub">Greg Abel chairs, $400B sits, Apple still leads.</p>
+
+    <p>The first Berkshire annual meeting without Warren Buffett in the chair felt, to the desk, like business as usual with one weird moment. Buffett sat in the audience. Greg Abel ran the questions. The AI deepfake of Warren that played at one point was the only thing that didn't read as a normal Saturday in Omaha. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=570s" target="_blank">[9:30]</a></p>
+
+    <p>The headline number is still the cash pile. Roughly <span class="pr">$400 billion</span> sits unspent, and the central tension of the meeting is what to do with it. Buffett's own answer, paraphrased the next day on TV, was that across a 60-year career maybe five of those years were the fast ones where he was actually buying things. The other 55 were waiting. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=631s" target="_blank">[10:31]</a></p>
+
+    <p>On the holdings book, <span class="tk">$AAPL</span> still leads, with <span class="tk">$AXP</span> not far behind at roughly 20% of the book. <span class="tk">$BAC</span> and <span class="tk">$KO</span> sit around 10% each, with <span class="tk">$MCO</span> (Moody's, the credit-rating agency), <span class="tk">$V</span>, <span class="tk">$CVX</span>, <span class="tk">$OXY</span>, and a hefty position in <span class="tk">$GOOGL</span> rounding out the rest. The buyback is back on after a stretch of inactivity. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=683s" target="_blank">[11:23]</a></p>
+
+    <p>Japan was the meeting's victory lap. The 2020-era stakes in the trading houses (Itochu, Marubeni, Mitsubishi, Mitsui, Sumitomo) printed and the desk got to wave them through. For long-term holders the takeaway was simple. Nothing alarming, financials are back above a key technical level, and Berkshire is the largest holding in the <span class="tk">$XLF</span> (the financials sector ETF, with banks, asset managers, and insurance as its main weights). For new money looking for somewhere to sit, it is not a bad option here. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=816s" target="_blank">[13:36]</a></p>
+  </section>
+
+  <!-- CHAPTER 4: FRAMEWORK -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 4 · Framework</div>
+    <h2>The eight days that look a lot like 2007</h2>
+    <p class="chapter-sub">Financials below the 200-day while the S&amp;P prints intraday all-time highs is rare. Eight of the last forty go-rounds were the last two weeks.</p>
+
+    <p>A guest chartist on the desk dropped a stat that stuck. Since 1989, only 40 trading days have featured the S&amp;P 500 at an intraday all-time high while the financials sector closed below its 200-day moving average. Eight of those 40 days were the last two weeks. The history of the other 32 is the part that earns the framework chapter. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=2424s" target="_blank">[40:24]</a></p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">DEC 1999 · JAN 2000</div>
+        <h4>5 days</h4>
+        <p>Financials sagging into the dot-com top while the S&amp;P held the highs. The peak followed within weeks.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">OCT 2007</div>
+        <h4>4 days</h4>
+        <p>Financials cracking on early subprime stress while the broad index held all-time highs. The GFC drawdown started shortly after.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">AUG · SEP 2020</div>
+        <h4>11 days</h4>
+        <p>SPX printing highs, financials lagging. Double-dip correction followed in September and October before the November vaccine ramp.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">APR · MAY 2026</div>
+        <h4>8 days (last two weeks)</h4>
+        <p>The current cluster. Financials below a flattening 200-day while the S&amp;P prints intraday all-time highs.</p>
+      </div>
+    </div>
+
+    <p>The supporting tape isn't kind either. 52-week lows last Wednesday came in higher than at the March 30 lows. New highs contracted to roughly 15% of stocks. Over the trailing two weeks the only sectors up besides tech are energy, consumer staples, and utilities. The equal-weight S&amp;P 500 has yet to take out a new high. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=3055s" target="_blank">[50:55]</a></p>
+
+    <p>Counter from the regular chartist on the desk, who reads the tape every day. It feels risk-on. Breakouts are sticking. <span class="tk">$NVDA</span> failing its breakout has become a rare event. He isn't dismissing the divergence. He just isn't selling on it. Both reads can be true at once. The framework here is "head on a swivel," and it is worth keeping. <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=3334s" target="_blank">[55:34]</a></p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>The narrow-breadth windows that preceded the 1999-2000, 2007, and 2020 episodes were marked by risk-asset blow-offs into the top. The tell shows up at or after the high. Crypto getting bid into a narrowing tape is consistent with that pattern. The action is to size what you'd want to be holding through the unwind, then stay long.</p>
+    </div>
+  </section>
+
+  <!-- CHAPTER 5: QUOTES -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 5 · Quotes</div>
+    <h2>Three from the desk</h2>
+    <p class="chapter-sub">Verbatim, with timestamps. Re-shape these in your own voice.</p>
+
+    <div class="pullquote">
+      <blockquote>"You haven't seen this kind of volatility compression on a daily time frame in crypto in so long. It's hard for me to think that move comes in the form of downside momentum."</blockquote>
+      <div class="attrib">Strazza, on the Solana setup as the cleanest read on the space <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=429s" target="_blank">[7:09]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Either this goes through and GameStop is super happy because they get what they want, or it doesn't go through and GameStop saves a bunch of cash, in which case the stock probably goes up."</blockquote>
+      <div class="attrib">From the desk on the GameStop trade structure <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=1074s" target="_blank">[17:54]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"For the last couple weeks, breakouts are sticking. Nvidia failing its breakout has become a rare case in this market."</blockquote>
+      <div class="attrib">Strazza, reading the tape internals against the breadth bears <a class="ts" href="https://www.youtube.com/watch?v=nLkoy43aVr4&amp;t=3274s" target="_blank">[54:34]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Speculation has the wheel.</strong> GameStop is swinging at a target five times its size. <span class="tk">$BB</span> <span class="ch up">+12%</span>, <span class="tk">$XRX</span> <span class="ch up">+35%</span>, the DRAMM ETF up roughly 50% in a month. Heavily shorted, multi-year base, return-to-growth is the May playbook.</li>
+      <li><strong>Crypto is the coiled spring.</strong> <span class="tk">$BTC</span> at <span class="pr">$80,000</span>, weekend volatility back, <span class="tk">$SOL</span> grinding sideways since February, <span class="tk">$DOGE</span> cracking a three-month range. Miners that pivoted to data-center compute are the ones being paid. Path of least resistance leans up.</li>
+      <li><strong>Watch the financials read.</strong> Eight of the last fortnight's days fit a setup that has only happened 40 times since 1989. The other clusters were 2007, 2000, and August 2020. Stay in the trade. Stay awake.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
