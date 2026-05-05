@@ -58,6 +58,13 @@ TIME_WINDOW_HOURS = 2.5    # tolerate slip + US DST flip (EDT 8:30 PM PHT ↔ ES
 DEFAULT_SEARCH_DEPTH = 30  # @StockMarketMedia posts many show types; need enough depth to find Morning Show
 
 
+# Try multiple YouTube API client variants. The default "web" client gets
+# bot-detected aggressively on cloud IPs; "android" and "mweb" use different
+# endpoints and User-Agents that often evade detection. yt-dlp tries each
+# in order until one succeeds.
+_PLAYER_CLIENTS = ["android", "mweb", "web"]
+
+
 def _list_recent_stream_ids(limit: int = DEFAULT_SEARCH_DEPTH) -> list[dict]:
     """Quickly list IDs and titles of recent streams (flat mode, no dates)."""
     opts = {
@@ -66,6 +73,7 @@ def _list_recent_stream_ids(limit: int = DEFAULT_SEARCH_DEPTH) -> list[dict]:
         "no_warnings": True,
         "playlistend": limit,
         "nocheckcertificate": True,
+        "extractor_args": {"youtube": {"player_client": _PLAYER_CLIENTS}},
     }
     with yt_dlp.YoutubeDL(opts) as ydl:
         info = ydl.extract_info(CHANNEL_STREAMS_URL, download=False)
@@ -81,7 +89,13 @@ def _list_recent_stream_ids(limit: int = DEFAULT_SEARCH_DEPTH) -> list[dict]:
 
 def _fetch_full_metadata(video_id: str) -> dict:
     """Fetch full metadata for one video. ~2-5 seconds per call."""
-    opts = {"quiet": True, "no_warnings": True, "skip_download": True, "nocheckcertificate": True}
+    opts = {
+        "quiet": True,
+        "no_warnings": True,
+        "skip_download": True,
+        "nocheckcertificate": True,
+        "extractor_args": {"youtube": {"player_client": _PLAYER_CLIENTS}},
+    }
     url = f"https://www.youtube.com/watch?v={video_id}"
     with yt_dlp.YoutubeDL(opts) as ydl:
         info = ydl.extract_info(url, download=False)
@@ -91,7 +105,12 @@ def _fetch_full_metadata(video_id: str) -> dict:
         "url": url,
         "upload_date": info.get("upload_date"),
         "release_timestamp": info.get("release_timestamp"),
+        "duration": info.get("duration"),
+        "was_live": info.get("was_live"),
     }
+
+
+MIN_SHOW_DURATION_SEC = 1800  # 30 min. Real shows run 60-90 min; clips/previews are short.
 
 
 def find_episode_for_date(
@@ -114,8 +133,7 @@ def find_episode_for_date(
     candidates = _list_recent_stream_ids(limit=search_depth)
     print(f"[fetch_video] Scanning {len(candidates)} recent streams.", file=sys.stderr)
 
-    fallback: Optional[dict] = None
-    fallback_delta: Optional[float] = None
+    in_window: list[tuple[dict, Optional[float], bool]] = []
     for c in candidates:
         try:
             full = _fetch_full_metadata(c["id"])
@@ -126,6 +144,7 @@ def find_episode_for_date(
 
         rt = full.get("release_timestamp")
         upload_date = full.get("upload_date")
+        duration = full.get("duration")
         title_match = "morning show" in full["title"].lower()
 
         match_via_timestamp = False
@@ -138,39 +157,62 @@ def find_episode_for_date(
                 match_via_timestamp = True
         elif upload_date == target_upload_date:
             # YouTube sometimes returns release_timestamp=None on cloud IPs.
-            # Fall back to upload_date matching (date precision only).
             match_via_upload_date = True
 
         if not (match_via_timestamp or match_via_upload_date):
             continue
 
+        # Filter out clips/previews/highlight reels. Real shows run 60-90 min.
+        # The channel sometimes uploads a short re-edit titled "The Morning Show"
+        # alongside the original 70-min live stream titled by topic; we want
+        # the long one because its auto-captions are reliably available.
+        if duration is not None and duration < MIN_SHOW_DURATION_SEC:
+            print(
+                f"[fetch_video]   skip clip: {full['title'][:50]} ({duration}s, < {MIN_SHOW_DURATION_SEC}s)",
+                file=sys.stderr,
+            )
+            continue
+
         if match_via_timestamp:
             delta_h = (delta_s or 0) / 3600
             marker = "Morning Show" if title_match else "time-only"
+            dur_str = f"{(duration or 0) // 60:.0f}min" if duration else "?min"
             print(
-                f"[fetch_video]   in window: {full['title'][:55]} "
-                f"(delta {delta_h:+.2f}h, {marker})",
+                f"[fetch_video]   candidate: {full['title'][:50]} "
+                f"(delta {delta_h:+.2f}h, {dur_str}, {marker})",
                 file=sys.stderr,
             )
         else:
             marker = "Morning Show (date-only)" if title_match else "date-only"
+            dur_str = f"{(duration or 0) // 60:.0f}min" if duration else "?min"
             print(
-                f"[fetch_video]   date match: {full['title'][:55]} "
-                f"(upload {upload_date}, {marker})",
+                f"[fetch_video]   candidate: {full['title'][:50]} "
+                f"(upload {upload_date}, {dur_str}, {marker})",
                 file=sys.stderr,
             )
 
-        if title_match:
-            return full
+        in_window.append((full, delta_s, title_match))
 
-        if fallback is None:
-            fallback = full
-            fallback_delta = abs(delta_s) if delta_s is not None else float("inf")
-        elif delta_s is not None and abs(delta_s) < (fallback_delta or float("inf")):
-            fallback = full
-            fallback_delta = abs(delta_s)
+    if not in_window:
+        return None
 
-    return fallback
+    # Pick best: title match first, then longest duration, then closest to 8:30 PM PHT.
+    def sort_key(item):
+        full, delta_s, title_match = item
+        return (
+            not title_match,
+            -(full.get("duration") or 0),
+            abs(delta_s) if delta_s is not None else float("inf"),
+        )
+
+    in_window.sort(key=sort_key)
+    chosen = in_window[0][0]
+    print(
+        f"[fetch_video] chose: {chosen['title'][:60]} "
+        f"({(chosen.get('duration') or 0) // 60:.0f}min)",
+        file=sys.stderr,
+    )
+    return chosen
 
 
 def find_today_episode() -> Optional[dict]:

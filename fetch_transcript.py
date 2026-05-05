@@ -96,11 +96,14 @@ def _fetch_via_ytdlp(video_id: str) -> list[dict]:
     """Fallback: extract caption URL via yt-dlp, fetch JSON3 directly."""
     import yt_dlp
 
+    # Try Android, mobile-web, then web clients. The first two often evade
+    # bot detection on cloud IPs that block the default web client.
     opts = {
         "skip_download": True,
         "quiet": True,
         "no_warnings": True,
         "nocheckcertificate": True,
+        "extractor_args": {"youtube": {"player_client": ["android", "mweb", "web"]}},
     }
     url = f"https://www.youtube.com/watch?v={video_id}"
     with yt_dlp.YoutubeDL(opts) as ydl:
