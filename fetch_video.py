@@ -54,7 +54,7 @@ CHANNEL_STREAMS_URL = "https://www.youtube.com/@StockMarketMedia/streams"
 PHT = timezone(timedelta(hours=8))
 SHOW_HOUR_PHT = 20         # 8 PM
 SHOW_MINUTE_PHT = 30       # 8:30 PM
-TIME_WINDOW_HOURS = 1.5    # tolerate ±90 min slip vs the 8:30 PM PHT slot
+TIME_WINDOW_HOURS = 2.5    # tolerate slip + US DST flip (EDT 8:30 PM PHT ↔ EST 9:30 PM PHT)
 DEFAULT_SEARCH_DEPTH = 30  # @StockMarketMedia posts many show types; need enough depth to find Morning Show
 
 
