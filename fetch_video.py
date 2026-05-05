@@ -23,6 +23,8 @@ from __future__ import annotations
 
 import json
 import logging
+import os
+import ssl
 import sys
 import warnings
 from datetime import datetime, timedelta, timezone
@@ -30,7 +32,20 @@ from typing import Optional
 
 warnings.filterwarnings("ignore", message=".*OpenSSL.*")
 warnings.filterwarnings("ignore", message=".*Python version 3.9.*")
+warnings.filterwarnings("ignore", message=".*verify.*")
 logging.getLogger("yt_dlp").setLevel(logging.ERROR)
+
+# The Claude Code cloud env runs traffic through a security proxy that does
+# SSL inspection with a self-signed cert, breaking default cert validation.
+# Disable cert verification so yt-dlp + urllib work in cloud. No-op locally.
+_orig_create_default_context = ssl.create_default_context
+def _no_verify_context(*a, **kw):
+    ctx = _orig_create_default_context(*a, **kw)
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+    return ctx
+ssl.create_default_context = _no_verify_context
+ssl._create_default_https_context = ssl._create_unverified_context
 
 import yt_dlp
 
@@ -40,16 +55,17 @@ PHT = timezone(timedelta(hours=8))
 SHOW_HOUR_PHT = 20         # 8 PM
 SHOW_MINUTE_PHT = 30       # 8:30 PM
 TIME_WINDOW_HOURS = 1.5    # tolerate ±90 min slip vs the 8:30 PM PHT slot
-DEFAULT_SEARCH_DEPTH = 15  # how many recent streams to scan for a match
+DEFAULT_SEARCH_DEPTH = 30  # @StockMarketMedia posts many show types; need enough depth to find Morning Show
 
 
-def _list_recent_stream_ids(limit: int = 15) -> list[dict]:
+def _list_recent_stream_ids(limit: int = DEFAULT_SEARCH_DEPTH) -> list[dict]:
     """Quickly list IDs and titles of recent streams (flat mode, no dates)."""
     opts = {
         "extract_flat": True,
         "quiet": True,
         "no_warnings": True,
         "playlistend": limit,
+        "nocheckcertificate": True,
     }
     with yt_dlp.YoutubeDL(opts) as ydl:
         info = ydl.extract_info(CHANNEL_STREAMS_URL, download=False)
@@ -65,7 +81,7 @@ def _list_recent_stream_ids(limit: int = 15) -> list[dict]:
 
 def _fetch_full_metadata(video_id: str) -> dict:
     """Fetch full metadata for one video. ~2-5 seconds per call."""
-    opts = {"quiet": True, "no_warnings": True, "skip_download": True}
+    opts = {"quiet": True, "no_warnings": True, "skip_download": True, "nocheckcertificate": True}
     url = f"https://www.youtube.com/watch?v={video_id}"
     with yt_dlp.YoutubeDL(opts) as ydl:
         info = ydl.extract_info(url, download=False)

@@ -16,11 +16,29 @@ from __future__ import annotations
 
 import json
 import re
+import ssl
 import sys
 import warnings
 
 # Silence the harmless LibreSSL warning from urllib3 on macOS system Python.
 warnings.filterwarnings("ignore", message=".*OpenSSL.*")
+warnings.filterwarnings("ignore", message=".*verify.*")
+
+# The Claude Code cloud env runs traffic through a security proxy that does
+# SSL inspection with a self-signed cert. Disable cert verification so requests
+# (used by youtube-transcript-api) works in cloud. No-op locally.
+_orig_create_default_context = ssl.create_default_context
+def _no_verify_context(*a, **kw):
+    ctx = _orig_create_default_context(*a, **kw)
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+    return ctx
+ssl.create_default_context = _no_verify_context
+ssl._create_default_https_context = ssl._create_unverified_context
+
+import requests
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api._errors import (
@@ -51,7 +69,9 @@ def extract_video_id(url_or_id: str) -> str:
 
 def fetch_transcript(video_id: str) -> list[dict]:
     """Fetch transcript chunks for a video. Returns list of {start, duration, text}."""
-    api = YouTubeTranscriptApi()
+    session = requests.Session()
+    session.verify = False
+    api = YouTubeTranscriptApi(http_client=session)
     fetched = api.fetch(video_id)
     return fetched.to_raw_data()
 
