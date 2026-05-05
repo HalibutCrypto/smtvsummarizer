@@ -108,12 +108,14 @@ def find_episode_for_date(
     target_date = datetime.strptime(target_date_str, "%Y-%m-%d").replace(tzinfo=PHT)
     target_dt = target_date.replace(hour=SHOW_HOUR_PHT, minute=SHOW_MINUTE_PHT)
     target_ts = target_dt.timestamp()
+    target_upload_date = target_date_str.replace("-", "")  # "2026-05-04" -> "20260504"
     window_secs = TIME_WINDOW_HOURS * 3600
 
     candidates = _list_recent_stream_ids(limit=search_depth)
     print(f"[fetch_video] Scanning {len(candidates)} recent streams.", file=sys.stderr)
 
     fallback: Optional[dict] = None
+    fallback_delta: Optional[float] = None
     for c in candidates:
         try:
             full = _fetch_full_metadata(c["id"])
@@ -123,25 +125,50 @@ def find_episode_for_date(
             continue
 
         rt = full.get("release_timestamp")
-        if rt is None:
-            continue
-        delta_s = rt - target_ts
-        if abs(delta_s) > window_secs:
+        upload_date = full.get("upload_date")
+        title_match = "morning show" in full["title"].lower()
+
+        match_via_timestamp = False
+        match_via_upload_date = False
+        delta_s: Optional[float] = None
+
+        if rt is not None:
+            delta_s = rt - target_ts
+            if abs(delta_s) <= window_secs:
+                match_via_timestamp = True
+        elif upload_date == target_upload_date:
+            # YouTube sometimes returns release_timestamp=None on cloud IPs.
+            # Fall back to upload_date matching (date precision only).
+            match_via_upload_date = True
+
+        if not (match_via_timestamp or match_via_upload_date):
             continue
 
-        delta_h = delta_s / 3600
-        title_match = "morning show" in full["title"].lower()
-        marker = "Morning Show" if title_match else "time-only"
-        print(
-            f"[fetch_video]   in window: {full['title'][:55]} "
-            f"(delta {delta_h:+.2f}h, {marker})",
-            file=sys.stderr,
-        )
+        if match_via_timestamp:
+            delta_h = (delta_s or 0) / 3600
+            marker = "Morning Show" if title_match else "time-only"
+            print(
+                f"[fetch_video]   in window: {full['title'][:55]} "
+                f"(delta {delta_h:+.2f}h, {marker})",
+                file=sys.stderr,
+            )
+        else:
+            marker = "Morning Show (date-only)" if title_match else "date-only"
+            print(
+                f"[fetch_video]   date match: {full['title'][:55]} "
+                f"(upload {upload_date}, {marker})",
+                file=sys.stderr,
+            )
 
         if title_match:
             return full
-        if fallback is None or abs(delta_s) < abs(fallback["release_timestamp"] - target_ts):
+
+        if fallback is None:
             fallback = full
+            fallback_delta = abs(delta_s) if delta_s is not None else float("inf")
+        elif delta_s is not None and abs(delta_s) < (fallback_delta or float("inf")):
+            fallback = full
+            fallback_delta = abs(delta_s)
 
     return fallback
 

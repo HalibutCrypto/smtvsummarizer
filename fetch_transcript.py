@@ -68,12 +68,81 @@ def extract_video_id(url_or_id: str) -> str:
 
 
 def fetch_transcript(video_id: str) -> list[dict]:
-    """Fetch transcript chunks for a video. Returns list of {start, duration, text}."""
+    """Fetch transcript chunks for a video. Returns list of {start, duration, text}.
+
+    Tries youtube-transcript-api first (fastest). Falls back to yt-dlp's caption
+    URL extraction when the API is IP-blocked (common for cloud IPs).
+    """
     session = requests.Session()
     session.verify = False
-    api = YouTubeTranscriptApi(http_client=session)
-    fetched = api.fetch(video_id)
-    return fetched.to_raw_data()
+    try:
+        api = YouTubeTranscriptApi(http_client=session)
+        fetched = api.fetch(video_id)
+        return fetched.to_raw_data()
+    except (NoTranscriptFound, TranscriptsDisabled, VideoUnavailable):
+        # Real content errors. Don't fall back; let main() report.
+        raise
+    except Exception as e:
+        short_err = str(e).split("\n")[0][:100]
+        print(
+            f"[fetch_transcript] youtube-transcript-api failed ({short_err}); "
+            f"trying yt-dlp fallback",
+            file=sys.stderr,
+        )
+        return _fetch_via_ytdlp(video_id)
+
+
+def _fetch_via_ytdlp(video_id: str) -> list[dict]:
+    """Fallback: extract caption URL via yt-dlp, fetch JSON3 directly."""
+    import yt_dlp
+
+    opts = {
+        "skip_download": True,
+        "quiet": True,
+        "no_warnings": True,
+        "nocheckcertificate": True,
+    }
+    url = f"https://www.youtube.com/watch?v={video_id}"
+    with yt_dlp.YoutubeDL(opts) as ydl:
+        info = ydl.extract_info(url, download=False)
+
+    for source_name, source in [("subtitles", info.get("subtitles", {})),
+                                 ("automatic_captions", info.get("automatic_captions", {}))]:
+        for lang_code in ("en", "en-US", "en-GB", "a.en"):
+            tracks = source.get(lang_code) or []
+            json3 = next((t for t in tracks if t.get("ext") == "json3"), None)
+            if json3 and json3.get("url"):
+                print(f"[fetch_transcript] using {source_name}/{lang_code}", file=sys.stderr)
+                resp = requests.get(json3["url"], verify=False, timeout=30)
+                resp.raise_for_status()
+                return _parse_json3(resp.json())
+
+    print(
+        f"No JSON3 caption track found for {video_id} via yt-dlp fallback. "
+        f"Auto-captions usually appear 1-3 hours after a livestream ends.",
+        file=sys.stderr,
+    )
+    sys.exit(4)
+
+
+def _parse_json3(data: dict) -> list[dict]:
+    """Parse YouTube JSON3 caption format into {start, duration, text} chunks."""
+    chunks: list[dict] = []
+    for event in data.get("events", []):
+        start_ms = event.get("tStartMs")
+        if start_ms is None:
+            continue
+        duration_ms = event.get("dDurationMs", 0) or 0
+        segs = event.get("segs", [])
+        text = "".join(s.get("utf8", "") for s in segs).strip()
+        if not text:
+            continue
+        chunks.append({
+            "text": text,
+            "start": start_ms / 1000.0,
+            "duration": duration_ms / 1000.0,
+        })
+    return chunks
 
 
 def main():
