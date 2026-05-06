@@ -117,20 +117,26 @@ def _fetch_via_ytdlp(video_id: str) -> list[dict]:
     """Fallback: extract caption URL via yt-dlp, fetch JSON3 directly."""
     import yt_dlp
 
-    # Try Android, mobile-web, then web clients. The first two often evade
-    # bot detection on cloud IPs that block the default web client.
     opts = {
         "skip_download": True,
         "quiet": True,
         "no_warnings": True,
         "nocheckcertificate": True,
-        "extractor_args": {"youtube": {"player_client": ["android", "mweb", "web"]}},
     }
     if COOKIES_FILE and os.path.exists(COOKIES_FILE):
+        # Authenticated requests use yt-dlp's default player_clients, which
+        # return populated automatic_captions. The android-first override we
+        # use for unauthenticated bot-detection evasion strips caption tracks.
         opts["cookiefile"] = COOKIES_FILE
+    else:
+        # Unauthenticated cloud IPs get bot-detected on the default web client;
+        # android/mweb evade detection but trade off caption-track availability.
+        opts["extractor_args"] = {"youtube": {"player_client": ["android", "mweb", "web"]}}
     url = f"https://www.youtube.com/watch?v={video_id}"
     with yt_dlp.YoutubeDL(opts) as ydl:
-        info = ydl.extract_info(url, download=False)
+        # process=False avoids format resolution which fails on finished livestreams
+        # under cookie-auth in our cloud env. We only need the captions metadata.
+        info = ydl.extract_info(url, download=False, process=False)
 
     json3_session = _build_session()
     for source_name, source in [("subtitles", info.get("subtitles", {})),

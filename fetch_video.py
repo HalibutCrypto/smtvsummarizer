@@ -104,7 +104,9 @@ def _fetch_full_metadata(video_id: str) -> dict:
     opts = {**_ydl_opts_base(), "skip_download": True}
     url = f"https://www.youtube.com/watch?v={video_id}"
     with yt_dlp.YoutubeDL(opts) as ydl:
-        info = ydl.extract_info(url, download=False)
+        # process=False skips format resolution, which fails for finished
+        # livestreams when authenticated via cookies. We only need metadata.
+        info = ydl.extract_info(url, download=False, process=False)
     return {
         "id": info["id"],
         "title": info.get("title", ""),
