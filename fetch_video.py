@@ -57,6 +57,25 @@ SHOW_MINUTE_PHT = 30       # 8:30 PM
 TIME_WINDOW_HOURS = 2.5    # tolerate slip + US DST flip (EDT 8:30 PM PHT ↔ EST 9:30 PM PHT)
 DEFAULT_SEARCH_DEPTH = 30  # @StockMarketMedia posts many show types; need enough depth to find Morning Show
 
+# Optional path to a Netscape-format cookies.txt for YouTube. When set,
+# yt-dlp authenticates as the logged-in user, which evades bot detection
+# on cloud IPs. The routine prompt decodes YOUTUBE_COOKIES_B64 to a tmp
+# file and exports YT_COOKIES_FILE pointing to it.
+COOKIES_FILE = os.environ.get("YT_COOKIES_FILE")
+
+
+def _ydl_opts_base() -> dict:
+    """Base yt-dlp opts with cookies attached if available."""
+    opts: dict = {
+        "quiet": True,
+        "no_warnings": True,
+        "nocheckcertificate": True,
+        "extractor_args": {"youtube": {"player_client": _PLAYER_CLIENTS}},
+    }
+    if COOKIES_FILE and os.path.exists(COOKIES_FILE):
+        opts["cookiefile"] = COOKIES_FILE
+    return opts
+
 
 # Try multiple YouTube API client variants. The default "web" client gets
 # bot-detected aggressively on cloud IPs; "android" and "mweb" use different
@@ -67,14 +86,7 @@ _PLAYER_CLIENTS = ["android", "mweb", "web"]
 
 def _list_recent_stream_ids(limit: int = DEFAULT_SEARCH_DEPTH) -> list[dict]:
     """Quickly list IDs and titles of recent streams (flat mode, no dates)."""
-    opts = {
-        "extract_flat": True,
-        "quiet": True,
-        "no_warnings": True,
-        "playlistend": limit,
-        "nocheckcertificate": True,
-        "extractor_args": {"youtube": {"player_client": _PLAYER_CLIENTS}},
-    }
+    opts = {**_ydl_opts_base(), "extract_flat": True, "playlistend": limit}
     with yt_dlp.YoutubeDL(opts) as ydl:
         info = ydl.extract_info(CHANNEL_STREAMS_URL, download=False)
     return [
@@ -89,13 +101,7 @@ def _list_recent_stream_ids(limit: int = DEFAULT_SEARCH_DEPTH) -> list[dict]:
 
 def _fetch_full_metadata(video_id: str) -> dict:
     """Fetch full metadata for one video. ~2-5 seconds per call."""
-    opts = {
-        "quiet": True,
-        "no_warnings": True,
-        "skip_download": True,
-        "nocheckcertificate": True,
-        "extractor_args": {"youtube": {"player_client": _PLAYER_CLIENTS}},
-    }
+    opts = {**_ydl_opts_base(), "skip_download": True}
     url = f"https://www.youtube.com/watch?v={video_id}"
     with yt_dlp.YoutubeDL(opts) as ydl:
         info = ydl.extract_info(url, download=False)

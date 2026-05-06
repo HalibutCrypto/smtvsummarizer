@@ -15,10 +15,12 @@ Outputs JSON to stdout. Each chunk has: start (seconds), duration, text.
 from __future__ import annotations
 
 import json
+import os
 import re
 import ssl
 import sys
 import warnings
+from http.cookiejar import MozillaCookieJar
 
 # Silence the harmless LibreSSL warning from urllib3 on macOS system Python.
 warnings.filterwarnings("ignore", message=".*OpenSSL.*")
@@ -48,6 +50,26 @@ from youtube_transcript_api._errors import (
 )
 
 
+# Optional path to a Netscape-format cookies.txt for YouTube. When set,
+# requests / yt-dlp authenticate as the logged-in user, which evades bot
+# detection on cloud IPs.
+COOKIES_FILE = os.environ.get("YT_COOKIES_FILE")
+
+
+def _build_session() -> requests.Session:
+    """Build a requests.Session with cookies attached if available."""
+    session = requests.Session()
+    session.verify = False
+    if COOKIES_FILE and os.path.exists(COOKIES_FILE):
+        jar = MozillaCookieJar(COOKIES_FILE)
+        try:
+            jar.load(ignore_discard=True, ignore_expires=True)
+            session.cookies = jar
+        except Exception as e:
+            print(f"[fetch_transcript] failed to load cookies: {e}", file=sys.stderr)
+    return session
+
+
 def extract_video_id(url_or_id: str) -> str:
     """Pull a YouTube video ID out of a URL, or return the input if it already is one."""
     if "/" not in url_or_id and "?" not in url_or_id and len(url_or_id) == 11:
@@ -73,8 +95,7 @@ def fetch_transcript(video_id: str) -> list[dict]:
     Tries youtube-transcript-api first (fastest). Falls back to yt-dlp's caption
     URL extraction when the API is IP-blocked (common for cloud IPs).
     """
-    session = requests.Session()
-    session.verify = False
+    session = _build_session()
     try:
         api = YouTubeTranscriptApi(http_client=session)
         fetched = api.fetch(video_id)
@@ -105,10 +126,13 @@ def _fetch_via_ytdlp(video_id: str) -> list[dict]:
         "nocheckcertificate": True,
         "extractor_args": {"youtube": {"player_client": ["android", "mweb", "web"]}},
     }
+    if COOKIES_FILE and os.path.exists(COOKIES_FILE):
+        opts["cookiefile"] = COOKIES_FILE
     url = f"https://www.youtube.com/watch?v={video_id}"
     with yt_dlp.YoutubeDL(opts) as ydl:
         info = ydl.extract_info(url, download=False)
 
+    json3_session = _build_session()
     for source_name, source in [("subtitles", info.get("subtitles", {})),
                                  ("automatic_captions", info.get("automatic_captions", {}))]:
         for lang_code in ("en", "en-US", "en-GB", "a.en"):
@@ -116,7 +140,7 @@ def _fetch_via_ytdlp(video_id: str) -> list[dict]:
             json3 = next((t for t in tracks if t.get("ext") == "json3"), None)
             if json3 and json3.get("url"):
                 print(f"[fetch_transcript] using {source_name}/{lang_code}", file=sys.stderr)
-                resp = requests.get(json3["url"], verify=False, timeout=30)
+                resp = json3_session.get(json3["url"], timeout=30)
                 resp.raise_for_status()
                 return _parse_json3(resp.json())
 
