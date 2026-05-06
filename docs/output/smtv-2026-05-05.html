@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palantir Doubles Again, and Crypto's Coil Looks Ready to Snap - SMTV 2026-05-05</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / 2026-05-05 (Tue)</div>
+    <h1>Palantir Doubles Again, and Crypto's Coil Looks Ready to Snap</h1>
+    <p class="subtitle">Bitcoin retakes $81,000, Coinbase cuts 14% of staff, and a leveraged-ETF complex keeps compounding into the index.</p>
+    <div class="meta">
+      62-min show · <a href="https://www.youtube.com/watch?v=1lVyj6RD_Is" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">5-min read</span>
+    </div>
+    <p class="tldr-headline">Risk-on across the board, with Bitcoin clearing $81K, Palantir printing 85% revenue growth on a $350B base, and the most speculative corners of the market coiling for an explosive resolution.</p>
+    <ul>
+      <li><span class="tk">$BTC</span> over <span class="pr">$81,000</span>, <span class="tk">$DOGE</span> already broken out, <span class="tk">$SOL</span> daily volatility at the most compressed reading in its history.</li>
+      <li><span class="tk">$COIN</span> announced a 14% headcount cut. CEO Brian Armstrong's letter explicitly attributes the restructuring to AI rewriting how the company ships code.</li>
+      <li><span class="tk">$PLTR</span> revenue grew <span class="ch up">+85%</span> YoY (vs <span class="ch up">+70%</span> last quarter), US gov segment <span class="ch up">+84%</span>, market cap ~<span class="pr">$350B</span>. Stock down ~1% premarket.</li>
+      <li>Markets: <span class="tk">$SPX</span> <span class="ch up">+0.5%</span>, <span class="tk">$NDX</span> <span class="ch up">+0.75%</span>, Russell leading, oil <span class="ch down">-3%</span>, gold <span class="ch up">+1%</span>, 10Y yields softer.</li>
+      <li>Semis hit 17% of S&amp;P 500, only the fourth time any GICS industry group has ever cleared 15%. NASDAQ now hosts the majority of the index's top-20.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTER 1: CRYPTO -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1</div>
+    <h2>Crypto's Coil Tightens, Risk-On Across the Board</h2>
+    <p class="chapter-sub">Bitcoin reclaims $81K, alts compress to record-tight ranges, and crypto-adjacent equities are already running.</p>
+
+    <p><span class="tk">$BTC</span> is back over <span class="pr">$81,000</span>, <span class="tk">$DOGE</span> already broke out of a multi-month base, and the room thinks today is the day for <span class="tk">$ETH</span> and friends. Daily volatility on Solana is sitting at the most compressed reading in the asset's entire history. The setup repeats across <span class="tk">$XRP</span>, <span class="tk">$BONK</span>, and most majors. A multi-month coil after the early-February flush turned a breakdown look into a triangle. The patterns now need one big green candle in the majors to fire. <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=1080s" target="_blank">[18:00]</a></p>
+
+    <p>The crypto-adjacent equity book is already moving. <span class="tk">$COIN</span>, <span class="tk">$CRCL</span> (Circle, the USDC issuer), <span class="tk">$HUT</span>, <span class="tk">$RIOT</span>, and <span class="tk">$WULF</span> (Wolf, a former Bitcoin miner now pivoting to data-center compute) are all bid. Circle put up a parabolic move on its last print, corrected sideways for weeks, and is running again into the next earnings report. The miners are running too, including the ones loudly insisting they are no longer just miners. <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=1509s" target="_blank">[25:09]</a></p>
+
+    <p><span class="tk">$COIN</span> announced a 14% headcount cut this morning. Stocks usually rip on layoff news because the cuts lower operating expenses, and Coinbase is barely down on the print. The more interesting piece is the framing in Brian Armstrong's letter. He explicitly attributes the restructuring to AI rewriting how the company ships code, smaller teams, fewer managers, more player-coaches who can both manage and stay in the weeds. Expect that template to repeat across the industry. <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=605s" target="_blank">[10:05]</a></p>
+
+    <p>The summary from the desk is that every chart touching crypto is currently a buy. That includes the heavily shorted names, the prior leaders, the miners that pivoted, and the equity-side proxies. The risk is that some resolve sideways or lower, and a few do not have the structure to support the trade. The base case is one big green candle in BTC or ETH lights the rest of the space.</p>
+  </section>
+
+  <!-- CHAPTER 2: PALANTIR + MARKETS -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2</div>
+    <h2>Palantir Just Printed an 85% Revenue Quarter</h2>
+    <p class="chapter-sub">A bigger growth number than three months ago, on a much bigger base.</p>
+
+    <p><span class="tk">$PLTR</span> (Palantir, the data-analytics name selling AI tooling to the US government and large enterprises) reported overnight. Revenue grew 85% year-over-year. Three months ago that number was 70%. Market cap is already around <span class="pr">$350B</span>. The growth dropped to the bottom line on high margins. <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=735s" target="_blank">[12:15]</a></p>
+
+    <p>The premarket reaction is a 1% drop, which functionally rounds to nothing. The desk read it as the report being so clean there was nowhere left for the print to surprise. US government revenue grew 84% on its own, and government is now down to roughly 54% of the mix from 60-70% a few quarters back. Commercial is taking over the growth profile.</p>
+
+    <p>Trying to value <span class="tk">$PLTR</span> on price-to-earnings is the wrong frame here. Revenue growth at this scale, on this size of comp base, does not fit the standard models. Joe Lonsdale, one of the co-founders, was on television this morning saying anyone with the budget to do business with them ought to be a customer. The number under that pitch is the 85%. <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=839s" target="_blank">[13:59]</a></p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">+0.5%</div>
+        <div class="stat-change up">overnight</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Nasdaq 100</div>
+        <div class="stat-value">+0.75%</div>
+        <div class="stat-change up">mega-cap leading</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Russell</div>
+        <div class="stat-value">leader</div>
+        <div class="stat-change up">small caps bid</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$81K+</div>
+        <div class="stat-change up">3-month high</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">+1%</div>
+        <div class="stat-change up">silver +0.6%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Oil</div>
+        <div class="stat-value">-3%</div>
+        <div class="stat-change down">cooling</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">10Y Yield</div>
+        <div class="stat-value">-0.5%</div>
+        <div class="stat-change up">softer</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">lagging</div>
+        <div class="stat-change flat">again</div>
+      </div>
+    </div>
+
+    <p>The pieces all line up in the same direction. Dollar quiet, oil cooling (good for most consumer-tied businesses), yields softer (positive for risk and crypto), small caps leading. Risk appetite is broad enough that the nuclear and quantum-compute names are running again, and the heavily shorted book is leading along with them. <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=485s" target="_blank">[8:05]</a></p>
+  </section>
+
+  <!-- CHAPTER 3: FRAMEWORK -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3</div>
+    <h2>The Index Is Becoming One Bet</h2>
+    <p class="chapter-sub">Semis at 17% of the S&amp;P, NASDAQ-listed names hold the top of the cap stack, and the leveraged-ETF complex keeps stretching.</p>
+
+    <p>Semiconductors are now 17% of the S&amp;P 500. That is the fourth time in modern market history that any GICS industry group has cleared 15%. The company list at the top of the index is also dominated by NASDAQ tickers in a way it was not three years ago. Most of today's mega-caps did not even rank top-20 at the time ChatGPT was released.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">2000</div>
+        <h4>Tech hardware</h4>
+        <p>Cisco-Intel era. Industry group cleared 15% during the dot-com top.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2007</div>
+        <h4>Energy</h4>
+        <p>Exxon-led. Reached roughly 15-16% before the cycle rolled over.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2018</div>
+        <h4>Software</h4>
+        <p>Briefly above the line until GICS reorganized the sector and split the group up.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2026</div>
+        <h4>Semiconductors</h4>
+        <p>17% and rising. Bloomberg's memory index is up roughly 500% year-over-year.</p>
+      </div>
+    </div>
+
+    <p>The other tell is the leveraged single-stock ETF complex. There are roughly 270 levered-long single-stock funds and just over 30 inverse ones, with about <span class="pr">$150B</span> in long versus <span class="pr">$15B</span> in inverse. That is a 10-to-1 ratio, with the high-water mark earlier this year touching 14-to-1. The skew is a coincident sentiment indicator, and issuers keep launching new products on smaller and smaller underlying market caps. SanDisk, Micron, AXTI, even alt-season trackers got their own 2x products. The 2x alt-season ETF already closed. A 2x Pepe is on the way. SpaceX, OpenAI, and Anthropic are queued for both spot and double exposure. <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=1820s" target="_blank">[30:20]</a></p>
+
+    <p>The structural piece is the listing venue. The NASDAQ now holds the majority of the index's top-20. The S&amp;P 500 itself is changing rules to fast-track companies like SpaceX and OpenAI. Anyone modeling "passive flows lift everything" needs to reconsider what is actually getting lifted. The answer is increasingly NASDAQ-listed AI infrastructure on top of an already top-heavy concentration. <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=2520s" target="_blank">[42:00]</a></p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>The same retail flow that bid up the 2x SanDisks now has 2x DOGE, 2x XRP, and 2x SOL ETFs in the wrapper. The "marriage of TradFi and DeFi" being on display is essentially DEX-level degeneracy with brokerage rails. AUM on these products is worth tracking as a new sentiment gauge for crypto-equity flows.</p>
+    </div>
+
+    <p>One last subplot worth flagging from the show. <span class="tk">$BUD</span> (Anheuser-Busch InBev, the international Corona rights holder) put up its first organic sales growth in a long stretch. The chart is a six-year base breakout above <span class="pr">$80</span>, with prior all-time highs around <span class="pr">$130-140</span> as the upside reference. <span class="tk">$STZ</span> (Constellation, US Corona rights) is the opposite setup. <span class="tk">$TAP</span> (Molson Coors) and <span class="tk">$SAM</span> (Sam Adams) both look more like tops than bottoms. Small note for anyone holding the Staples-side beverages book.</p>
+  </section>
+
+  <!-- CHAPTER 4: QUOTES -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4</div>
+    <h2>Lines Worth Saving</h2>
+    <p class="chapter-sub">Verbatim, with timestamp.</p>
+
+    <div class="pullquote">
+      <blockquote>"The report was perfect and it wasn't good enough."</blockquote>
+      <div class="attrib">on the Palantir reaction <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=767s" target="_blank">[12:47]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Forget your price-to-earnings. Don't even try to value the company. There's nothing like it."</blockquote>
+      <div class="attrib">on Palantir's growth print <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=839s" target="_blank">[13:59]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"I'm long every chart that has or ever had anything to do with crypto."</blockquote>
+      <div class="attrib">Strazza on the bid in crypto-adjacent equities <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=1509s" target="_blank">[25:09]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Bull markets bail you out for irresponsible behavior."</blockquote>
+      <div class="attrib">Strazza on speculative positioning <a class="ts" href="https://www.youtube.com/watch?v=1lVyj6RD_Is&amp;t=1451s" target="_blank">[24:11]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The crypto setup is the cleanest in the room.</strong> Volatility compression at decade lows on <span class="tk">$SOL</span>, <span class="tk">$DOGE</span> already out of base, equities like <span class="tk">$COIN</span> and <span class="tk">$CRCL</span> already running, macro tailwinds in place. One green candle in BTC or ETH and the space takes off.</li>
+      <li><strong><span class="tk">$PLTR</span> is unvaluable on standard models.</strong> Revenue <span class="ch up">+85%</span> YoY on a <span class="pr">$350B</span> market cap is a coherent acceleration. The 1% premarket dip on a clean print is meaningless. The growth rate added 15 points in three months.</li>
+      <li><strong>Index concentration is the structural story to track.</strong> Semis at 17% of the S&amp;P, NASDAQ holding most of the top-20, leveraged single-stock ETFs at a 10-to-1 long-vs-inverse ratio, and SpaceX-OpenAI-Anthropic queueing up to list into all of it.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
