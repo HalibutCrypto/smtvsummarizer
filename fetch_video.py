@@ -81,7 +81,10 @@ def _ydl_opts_base() -> dict:
 # bot-detected aggressively on cloud IPs; "android" and "mweb" use different
 # endpoints and User-Agents that often evade detection. yt-dlp tries each
 # in order until one succeeds.
-_PLAYER_CLIENTS = ["android", "mweb", "web"]
+# Note: "android" currently triggers bot-detection auth errors on cloud IPs
+# even with cookies attached, which causes the multi-client request to abort
+# before "mweb"/"web" get a chance. Keep android out of the default list.
+_PLAYER_CLIENTS = ["mweb", "web"]
 
 
 def _list_recent_stream_ids(limit: int = DEFAULT_SEARCH_DEPTH) -> list[dict]:

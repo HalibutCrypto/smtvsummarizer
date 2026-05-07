@@ -124,10 +124,13 @@ def _fetch_via_ytdlp(video_id: str) -> list[dict]:
         "nocheckcertificate": True,
     }
     if COOKIES_FILE and os.path.exists(COOKIES_FILE):
-        # Authenticated requests use yt-dlp's default player_clients, which
-        # return populated automatic_captions. The android-first override we
-        # use for unauthenticated bot-detection evasion strips caption tracks.
+        # Authenticated requests still need to avoid the "android" client,
+        # which currently returns bot-detection auth errors on cloud IPs even
+        # with cookies attached and aborts the multi-client request. The "tv"
+        # client is the one that actually returns populated automatic_captions
+        # in this env; mweb/web come back with empty automatic_captions.
         opts["cookiefile"] = COOKIES_FILE
+        opts["extractor_args"] = {"youtube": {"player_client": ["tv", "mweb", "web"]}}
     else:
         # Unauthenticated cloud IPs get bot-detected on the default web client;
         # android/mweb evade detection but trade off caption-track availability.
