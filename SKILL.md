@@ -76,6 +76,12 @@ Two templates depending on day of week.
 4. **Quotes.** 3-4.
 5. **Bottom Line.** 3 numbered.
 
+### Crypto chapter convention (both templates)
+
+The Crypto chapter MUST open with a 4-card stats grid before any prose. Cards: Bitcoin, Ethereum, Solana, and a fourth card for context (total crypto market cap is the default; BTC.D, ETH.D, or a relevant alt like SOL/ETH ratio also work depending on the day's story). Prices are the first thing a reader sees in this chapter. Use the same `.stats` / `.stat` component as the Markets chapter, just with crypto values.
+
+If the Markets chapter (chapter 2) also uses a stats grid, do NOT duplicate BTC/ETH/SOL there. Markets stats grid is for indices, futures, commodities, vol — not crypto.
+
 ## Writing rules (strict, zero tolerance)
 
 These are article-genie's rules. They are absolute.
@@ -88,6 +94,18 @@ These are article-genie's rules. They are absolute.
 - **No cliche scene-setters.** "You wake up Tuesday and..." kind of openers. State the news directly.
 - **No naming non-Louis guests.** Mackey/Sean/Larry/Andrew/Mary/Phil are not in the article. Their content, if used, is folded in without attribution.
 - **Speaker attribution in prose is light.** Drop it where possible. Keep it on verbatim quotes for verifiability.
+
+### TL;DR headline voice
+
+The TL;DR headline (the one paragraph above the bullet points, NOT the bullets themselves) is the article's hook. Write it for a reader who is curious but NOT deep in markets — Halibut's wider audience, not just the desk.
+
+Rules:
+- Open with a tension, paradox, or punchy claim that makes a casual reader curious to keep reading. "Everything is pumping and somehow everyone's mad about it." "The bull keeps printing highs, but the people who waited for a dip got steamrolled." "Bitcoin reclaimed a level the desk has been watching for months."
+- Short, declarative sentences. No clauses stacked with commas. Punchy.
+- Plain English. If you find yourself writing "binary resolution," "desk consensus," "structural backdrop," reach for plainer words.
+- End with the desk's main read or framework, not just a list of facts. The bullets below handle the facts; the headline gives the *why care*.
+- 4-7 short sentences total. No em dashes (writing rule above is absolute, applies here too).
+- Bullet points stay technical and dense (tickers, prices, percent moves). The headline is the one place to be punchy and accessible. Don't dumb down the bullets.
 
 ## Final-pass scan (mandatory before declaring done)
 
