@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All-Time Highs, All-Time-Low Sentiment, and a Trip-Wire on the IPO Calendar - SMTV 2026-05-07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / 2026-05-07 (Thu)</div>
+    <h1>All-Time Highs, All-Time-Low Sentiment, and a Trip-Wire on the IPO Calendar</h1>
+    <p class="subtitle">Indices, midcaps, and small caps all printed fresh records while consumer sentiment hit a record low. The desk's bear case lives in the SpaceX, Anthropic, and OpenAI pipe.</p>
+    <div class="meta">
+      73-min show · <a href="https://www.youtube.com/watch?v=aCICRVU6P2A" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">4-min read</span>
+    </div>
+    <p class="tldr-headline">Stocks are at all-time highs and the rest of the country is convinced this ends badly. Consumer sentiment hit a record low this month. More than half of US adults told Gallup that investing in stocks right now is a bad idea. Asset managers got max short into the March lows and watched a year of returns evaporate when the rally ripped. The desk reads this as a disbelief tape with euphoria still nowhere in sight. The one real risk on the calendar is supply, with SpaceX, Anthropic, and OpenAI all queued for the public market this year.</p>
+    <ul>
+      <li><span class="tk">$BTC</span> <span class="pr">$81,000</span> <span class="ch down">-0.5%</span>, <span class="tk">$ETH</span> <span class="pr">$2,330</span> <span class="ch down">-0.7%</span>, <span class="tk">$SOL</span> <span class="pr">$90</span> <span class="ch up">+1%</span>. Total mcap <span class="pr">$2.66T</span>.</li>
+      <li>Dow futures cleared <span class="pr">50,000</span>. <span class="tk">$SPX</span> <span class="pr">7,400</span> ATH, <span class="tk">$NDX</span> <span class="pr">28,750</span> ATH. Russell 1000, 2000, 3000 and S&amp;P MidCap 400 also at all-time highs.</li>
+      <li>Crude <span class="ch down">-5%</span> at <span class="pr">$90</span>. Gold <span class="ch up">+1.4%</span> at <span class="pr">$4,760</span>, silver <span class="ch up">+6%</span> at <span class="pr">$82</span>. Dollar getting kicked.</li>
+      <li>Sentiment at the lowest reading on record. 53% of US adults say investing is a bad idea. Individual investors more bearish than bullish for 10 of the prior 11 weeks.</li>
+      <li>S&amp;P earnings beat rate near <span class="pr">85%</span>, third-highest on record. Hyperscaler operating cash flow ran ~$600B last year and is funding the AI buildout.</li>
+      <li>IPO trip-wire: SpaceX, Anthropic, OpenAI all due this year. Historical comps (US Steel 1901, RCA 1919, Ford 1956, Blackstone 2007) all preceded major tops.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTER 1: CRYPTO -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1</div>
+    <h2>Crypto Held Quiet While the Macro Set Up Cleanly</h2>
+    <p class="chapter-sub">Slow tape on the prices, friendly mix underneath.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$81,000</div>
+        <div class="stat-change down">-0.5% · -$420</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$2,330</div>
+        <div class="stat-change down">-0.7%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$90</div>
+        <div class="stat-change up">+1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Mcap</div>
+        <div class="stat-value">$2.66T</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+    </div>
+
+    <p><span class="tk">$BTC</span> drifted ~<span class="pr">$420</span> off its overnight, <span class="tk">$ETH</span> gave back under a percent, <span class="tk">$SOL</span> nudged toward <span class="pr">$90</span>. <span class="tk">$ADA</span> tagged <span class="pr">$0.27</span>, up just over a percent on the day. Headline action only. <a class="ts" href="https://www.youtube.com/watch?v=aCICRVU6P2A&amp;t=485s" target="_blank">[8:05]</a></p>
+
+    <p>The macro behind the tape is the friendliest crypto setup in weeks. Dollar getting kicked, gold up <span class="ch up">+1.4%</span>, silver ripping <span class="ch up">+6%</span>, copper bid, stocks at all-time highs. That mix usually carries risk assets with it. <span class="tk">$BTC</span> didn't run today, which reads as digestion above <span class="pr">$80K</span> while the space waits on its next narrative.</p>
+
+    <p>The thread to track is the dollar. If DXY keeps fading through the rest of the week, BTC and the larger alts should catch a bid mechanically. If oil also keeps coming off the boil (crude is down <span class="ch down">-5%</span> today on top of last week's softening), the disinflation read sweetens the trade.</p>
+  </section>
+
+  <!-- CHAPTER 2: MARKETS -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2</div>
+    <h2>Records Across the Board, Disbelief Across the Country</h2>
+
+    <p>Cash basis, indices look like a nuke. <span class="tk">$SPX</span> <span class="pr">7,400</span>, all-time high. <span class="tk">$NDX</span> <span class="pr">28,750</span>, all-time high. Dow futures pushed through <span class="pr">50,000</span> for the first time. Russell 1000, Russell 2000, Russell 3000 and the S&amp;P MidCap 400 all hit fresh records yesterday. Breadth is good across cap tiers, even if the breadth-thrust purists want to see the 10-day advance/decline ratio cross 1.9 before they call it official. <a class="ts" href="https://www.youtube.com/watch?v=aCICRVU6P2A&amp;t=428s" target="_blank">[7:08]</a></p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,400</div>
+        <div class="stat-change up">ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Nasdaq 100</div>
+        <div class="stat-value">28,750</div>
+        <div class="stat-change up">ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow Futures</div>
+        <div class="stat-value">&gt;50,000</div>
+        <div class="stat-change up">first time</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude</div>
+        <div class="stat-value">$90</div>
+        <div class="stat-change down">-5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,760</div>
+        <div class="stat-change up">+1.4%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Silver</div>
+        <div class="stat-value">$82</div>
+        <div class="stat-change up">+6%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Copper</div>
+        <div class="stat-value">$6.25</div>
+        <div class="stat-change up">+0.75%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">&gt;17</div>
+        <div class="stat-change flat">elevated</div>
+      </div>
+    </div>
+
+    <p>Sentiment is doing the opposite of the tape. Consumer sentiment printed the lowest reading ever this month. 53% of US adults told Gallup that investing in the stock market right now is a bad idea. Four out of five adults rate the economy as fair or poor. Individual investors were more bearish than bullish for 10 of the prior 11 weeks heading into last week's rally, and the asset managers (CTAs, the big trend-following futures crowd) hit max short right at the March 30 lows. They handed back a year of returns over the next four weeks. <a class="ts" href="https://www.youtube.com/watch?v=aCICRVU6P2A&amp;t=900s" target="_blank">[15:00]</a></p>
+
+    <p>JC's frame is that this is what the disbelief stage of a bull market looks like. Not the magazine-cover euphoria people remember from late 1999. Today's covers are an angry George Washington in a stained New Yorker, dirty martini in hand, and Bloomberg leading with "young, educated, and jobless." Bull-market tops historically came after years of euphoria. The sentiment surveys are saying we are nowhere near that. <a class="ts" href="https://www.youtube.com/watch?v=aCICRVU6P2A&amp;t=1130s" target="_blank">[18:50]</a></p>
+
+    <p>Earnings are doing the work underneath. The S&amp;P beat rate is sitting near 85%, the third-highest reading on record. The only two prints higher were both pandemic re-openings. Revisions skew higher, concentrated in energy and AI but real. The hyperscalers (<span class="tk">$META</span>, <span class="tk">$MSFT</span>, <span class="tk">$AMZN</span>, <span class="tk">$GOOGL</span>) generated roughly $600B in operating cash flow last year and are using it to fund the AI build, which is a different posture from prior bubbles where the spend was financed with paper. <a class="ts" href="https://www.youtube.com/watch?v=aCICRVU6P2A&amp;t=2160s" target="_blank">[36:00]</a></p>
+
+    <p>Sector posture into the back half of the year leans tech. Earnings revisions point there, valuations did a real wash-out in February, and the seasonal trade favors growth into Q3 in Trump-cycle years. The drags are visible too. Large-cap financials look heavy. Energy is expected to underperform the index from here. The food retail crater is its own story, with <span class="tk">$MCD</span> gapping down on earnings, <span class="tk">$QSR</span> cracked yesterday, <span class="tk">$SHAK</span> down ~23% post-print, and <span class="tk">$DASH</span> trading lower overnight. <a class="ts" href="https://www.youtube.com/watch?v=aCICRVU6P2A&amp;t=1560s" target="_blank">[26:00]</a></p>
+
+    <div class="note local">
+      <div class="label">Local angle (Philippines)</div>
+      <p>The dollar took a beating across the tape today. If you're paid in PHP and converting, that's a small tailwind on the conversion. If you sit in USD-denominated stock or crypto, the FX move adds to your peso book on top of whatever the asset did. Worth a glance at PHP/USD on the way home.</p>
+    </div>
+  </section>
+
+  <!-- CHAPTER 3: FRAMEWORK -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3</div>
+    <h2>The IPO Trip-Wire Worth Watching</h2>
+    <p class="chapter-sub">Every prior bull-market top of meaningful size had a giant new-issue moment in the months before it broke.</p>
+
+    <p>The bear case the desk takes seriously runs through stock supply. Stocks are a market with supply and demand like any other. When the supply pipe opens up and dumps trillions of new paper onto a market trading at all-time highs, history says that paper struggles to be absorbed and the broader index gets cut hard within months.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">1901</div>
+        <h4>US Steel formed</h4>
+        <p>JP Morgan rolls Carnegie and the smaller mills into one company. The new issue alone represented roughly 15% of the total US stock market and ~5% of GDP. The market was cut in half in the months that followed.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1919</div>
+        <h4>RCA listed</h4>
+        <p>The era's marquee technology IPO. Ran hard, then the broader market crashed and RCA gave up most of the move.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1956</div>
+        <h4>Ford goes public</h4>
+        <p>Biggest IPO of its time, ~1% of US GDP at issue. The Ford family owned 85-90% of the stock and used the IPO to diversify, dumping equity onto retail. Stocks crashed shortly after.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2007</div>
+        <h4>Blackstone IPOs</h4>
+        <p>Marquee private-equity insider sale at the top of the cycle. Followed by the GFC into 2008-09.</p>
+      </div>
+    </div>
+
+    <p>That is the trip-wire to watch this year. SpaceX is reportedly heading public at a $1.5T to $2T valuation. Anthropic and OpenAI are both queued for what would be the largest tech IPOs in history. The S&amp;P is at all-time highs, retail is engaged, and a window like this is when private holders cash out. Note also the index rules getting bent so that SpaceX can be added on day one, which has the same smell as past late-cycle accommodations. <a class="ts" href="https://www.youtube.com/watch?v=aCICRVU6P2A&amp;t=2730s" target="_blank">[45:30]</a></p>
+
+    <p>Two of the other classic top ingredients are not yet in place. Funky accounting and circular financing (vendor loans, customer-payment loops, price-to-eyeball ratios from 1999) is showing up at the edges via Nvidia paying its own customers, and that is worth tracking, but it is not yet pervasive. The Fed has also not yet pulled liquidity. If Powell starts shrinking the balance sheet into a market top while the IPO supply hits, that is the third leg. Until that combination arrives, the working read is that the rally has more room.</p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>The same supply story is the crypto angle. If a $2T SpaceX, plus AI IPOs, sucks liquidity out of equities for a quarter, the spillover effect on BTC is mechanical. Watch for BTC to lead the equity index lower if and when the IPOs print, and to bottom first.</p>
+    </div>
+  </section>
+
+  <!-- CHAPTER 4: QUOTES -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4</div>
+    <h2>Lines Worth Saving</h2>
+    <p class="chapter-sub">Verbatim, with timestamp.</p>
+
+    <div class="pullquote">
+      <blockquote>"We're not even at the euphoria stage. We're in the disbelief stage."</blockquote>
+      <div class="attrib">JC, on where the cycle sits <a class="ts" href="https://www.youtube.com/watch?v=aCICRVU6P2A&amp;t=1140s" target="_blank">[19:00]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"A bubble is anything that is going up in price that you don't own."</blockquote>
+      <div class="attrib">JC <a class="ts" href="https://www.youtube.com/watch?v=aCICRVU6P2A&amp;t=1370s" target="_blank">[22:50]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Ford wasn't going public to raise money to grow. They were going public because the family wanted to diversify. Hello."</blockquote>
+      <div class="attrib">JC, on the supply read <a class="ts" href="https://www.youtube.com/watch?v=aCICRVU6P2A&amp;t=2830s" target="_blank">[47:10]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"This is what happens when you raise a historic amount of cash in the middle of a raging bull market. You underperform like a mother."</blockquote>
+      <div class="attrib">JC, on Berkshire's stretch of weak relative performance <a class="ts" href="https://www.youtube.com/watch?v=aCICRVU6P2A&amp;t=4220s" target="_blank">[70:20]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Disbelief, not euphoria.</strong> Indices print records while sentiment sits at all-time lows and CTAs got their faces ripped off short. Historically that combination resolves higher. Stay long the index.</li>
+      <li><strong>The IPO calendar is the trip-wire.</strong> SpaceX, Anthropic, and OpenAI all hitting public markets within the same window is the kind of supply event that has preceded every major top going back to 1901. Track when they actually price.</li>
+      <li><strong>Tech leads, food and large-cap financials lag.</strong> Earnings revisions and seasonal flow favor growth into Q3. Avoid <span class="tk">$MCD</span>, <span class="tk">$SHAK</span>, <span class="tk">$DASH</span> and the heavy bank book until the tape proves them otherwise.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
