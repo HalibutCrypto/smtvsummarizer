@@ -48,6 +48,8 @@ Crypto concepts do NOT need to be dumbed down.
 
 3. **Read the transcript.** Read the flat-text file in chunks (~700 lines per Read call). Identify show segments and the day's main story.
 
+3b. **Cross-check recent articles for content overlap (MANDATORY).** Before composing, list the Chapter 3 titles + central frameworks of the last 5 articles in `docs/output/`. Note any timeline events used. This list governs the Chapter 3 anti-recycling rule below; without this step, Chapter 3 drifts into duplicates within days.
+
 4. **Compose the article content** following the structure and rules below.
 
 5. **Render.** Read `template.html`. Substitute `{{title}}`, `{{subtitle}}`, `{{source_line}}`, `{{video_url}}`, `{{date}}`, `{{duration}}`, `{{read_time}}`, `{{tldr_headline}}`, the `<!-- TLDR_BULLETS -->` block, the `<!-- CHAPTERS -->` block, and the `<!-- BOTTOM_LINE_POINTS -->` block. Write final HTML to `docs/output/smtv-YYYY-MM-DD.html`.
@@ -64,7 +66,7 @@ Two templates depending on day of week.
 
 1. **Crypto** chapter, substantial. Lead with Louis content: spot prices, his structural calls (e.g. "$SOL underperform the decade"), his pick-of-the-week if any, alt rotation read. Real meat in this chapter.
 2. **Markets / lead story.** The day's main news beat (Intel ATH, Fed day, big-tech earnings, etc.).
-3. **Special framework or theme** (when applicable). JC's chart of the day, big macro framework, sequential history (use the `.timeline` component), short-squeeze regime, etc.
+3. **Special framework or theme** (CONDITIONAL — see Chapter 3 anti-recycling rule below). JC's chart of the day, big macro framework, sequential history (use the `.timeline` component), short-squeeze regime, etc.
 4. **Quotes.** 3-4 verbatim quotables.
 5. **Bottom Line.** 3 numbered takeaways. Never 4.
 
@@ -72,9 +74,22 @@ Two templates depending on day of week.
 
 1. **Crypto** chapter, shorter. Find the macro→crypto angle even on slow crypto days. If the macro is BTC-friendly (dollar weakening, metals up, stocks up), say so. If a meme/alt is breaking out, flag it. Don't pretend nothing's happening.
 2. **Markets / lead story.** The day's main beat.
-3. **Big Tech, earnings, or framework.** Whatever the second story is.
+3. **Big Tech, earnings, or framework.** Whatever the second story is. CONDITIONAL — see Chapter 3 anti-recycling rule below.
 4. **Quotes.** 3-4.
 5. **Bottom Line.** 3 numbered.
+
+### Chapter 3 anti-recycling rule (CRITICAL)
+
+Chapter 3 is the most likely place to drift into repetition because the show comes back to the same frameworks across days (IPO supply comp set, industry-group concentration, late-cycle indicators, etc.). The reader sees the daily article every day. Two consecutive days of "IPO trip-wire" or "concentration framework" is a UX failure regardless of what the show covered.
+
+Before composing Chapter 3, do this check:
+
+1. List the Chapter 3 titles + central frameworks of the **last 5 articles** in `docs/output/` (smtv-YYYY-MM-DD.html, sorted by date, latest 5).
+2. If today's intended Chapter 3 framework substantially overlaps any of those (same comp set, same timeline events, same central thesis like "IPO supply trip-wire" or "industry-group concentration"): pick a different angle from today's transcript, OR fold the update into Chapter 2 as a paragraph, OR drop Chapter 3 entirely and let the article be 4 chapters instead of 5.
+3. "The desk mentioned the framework again today" is NOT a reason to repeat the chapter. The article is a daily product, not a transcript echo.
+4. The `.timeline` component is especially repeat-prone (1901/1919/1956 IPO comparables get reused). If the same timeline events appeared in any of the last 5 articles, pick fresh events or skip the timeline.
+
+If you're unsure whether something repeats, default to skipping. A 4-chapter article today is better than a recycled 5-chapter one.
 
 ### Crypto chapter convention (both templates)
 
@@ -263,10 +278,12 @@ Examples we've shipped:
 - Locally: auto-open in default browser after writing
 - Routine: commit + push to GitHub, then notify via Telegram. Public URL: `https://halibutcrypto.github.io/smtvsummarizer/output/smtv-YYYY-MM-DD.html`
 
-## Reference articles for style
+## Reference articles for STYLE only
 
 - `docs/output/smtv-2026-04-30.html` (Thu, slow day, no Louis)
 - `docs/output/smtv-2026-04-24.html` (Fri, Louis on, timeline component used for IPO history)
 - `docs/output/smtv-2026-04-29.html` (Wed, pre-earnings setup, framework chapter)
 
-If you're unsure how to render something, look at these for a known-good example.
+These are STYLE references: chapter structure, visual component usage, prose tone, headline cadence, density. They are NOT content templates. Do not copy frameworks, timelines, comparables, or central theses from these articles into today's article. The IPO-comp timeline in `smtv-2026-04-24.html` is one example of a timeline component, not a recurring chapter format. If today's show happens to revisit IPO supply, write it differently or fold into Chapter 2.
+
+The `docs/output/` directory contains the entire history. Use the **last 5 articles** to check for content overlap (Chapter 3 anti-recycling rule); use the three references above for visual/tonal patterns.
