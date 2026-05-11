@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Veteran Brings a Short-Nasdaq Case to the All-Time Highs - SMTV 2026-05-11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / 2026-05-11</div>
+    <h1>A Veteran Brings a Short-Nasdaq Case to the All-Time Highs</h1>
+    <p class="subtitle">Bartaloney walks the desk through measured-move math and intermarket divergences while breadth, copper, and meme coins keep printing up.</p>
+    <div class="meta">
+      73-min show · <a href="https://www.youtube.com/watch?v=I5EsBNk2piE" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">5-min read</span>
+    </div>
+    <p class="tldr-headline">Every major US index is sitting on a record. The Nasdaq, the S&amp;P, the Dow within 325 points of 50,000, midcaps, microcaps, and two-thirds of the small-cap universe. Into that tape, a chartist who has been reading patterns for 25 years sat down on the show and said the words nobody wanted to hear. Short the Nasdaq. He is not calling a crash. He is saying the index has banged into a level his math points to as resistance, and the rest of the market quietly confirms it. The trade is wait-for-the-candle, take a small cool-off, then buy lower.</p>
+    <ul>
+      <li><span class="tk">$BTC</span> <span class="pr">$81,260</span> <span class="ch down">-1%</span>, <span class="tk">$ETH</span> <span class="pr">$2,336</span> <span class="ch down">-1.5%</span>, <span class="tk">$SOL</span> <span class="pr">~$95</span> <span class="ch down">-1.7%</span>. Total crypto cap <span class="pr">$2.68T</span>, highest close in four months.</li>
+      <li>Dow <span class="pr">49,675</span> (325 from 50K), S&amp;P 500 fut <span class="pr">7,413</span> ATH, NDX 100 fut <span class="pr">29,300</span> ATH. VIX still <span class="pr">18</span> with stocks at records, a combo that historically rhymes with the early 90s.</li>
+      <li>Two-thirds of the Russell 3000 at all-time highs. Microcaps, midcaps, S&amp;P midcaps all at ATH. The narrow-leadership story does not match the tape.</li>
+      <li>Bartaloney's short-Nasdaq case stacks measured moves on the S&amp;P and semis with no-new-high divergences on the NYSE Composite, the Dow Transports, and the KBW banks. Wait for a daily signal reversal candle.</li>
+      <li>Meme tokens called the strongest sub-trade in crypto right now. Coils across the alt complex at the apex of months-long ranges.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTER 1: CRYPTO -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 · Crypto</div>
+    <h2>Memes Lead the Tape and the Multi-Month Coils Are at the Apex</h2>
+    <p class="chapter-sub">Spot was quiet on the open, but the alt complex is winding tight and the dumbest pocket of the market is the one printing.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$81,260</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$2,336</div>
+        <div class="stat-change down">-1.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$95</div>
+        <div class="stat-change down">-1.7%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto MCap</div>
+        <div class="stat-value">$2.68T</div>
+        <div class="stat-change up">highest in 4 months</div>
+      </div>
+    </div>
+
+    <p>Spot opened red across the majors. <span class="tk">$BTC</span> at <span class="pr">$81,260</span> <span class="ch down">-1%</span>, <span class="tk">$ETH</span> at <span class="pr">$2,336</span> <span class="ch down">-1.5%</span>, <span class="tk">$SOL</span> under <span class="pr">$95</span> <span class="ch down">-1.7%</span>. Total crypto market cap printed <span class="pr">$2.68T</span>, the highest weekly close since January. The desk read the morning fade as noise inside a coiling tape. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=265s" target="_blank">[4:25]</a></p>
+
+    <p>Strazza walked through the alt setup the way he has been for a few weeks. The multi-month coils across the asset class are at the apex of their ranges. Short-time-frame volatility is now spiking in both directions, which is the textbook signature of a coil about to resolve. The list of tokens that have already completed bases keeps growing. <span class="tk">$LTC</span> is one of the cleaner ones on the chart. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=505s" target="_blank">[8:25]</a></p>
+
+    <p>The honest call on the day was that the strongest sub-trade in crypto right now is meme tokens. Both Strazza and JC said out loud they are buying them. <span class="tk">$PEPE</span>, <span class="tk">$WIF</span>, the legacy memes. <span class="tk">$ADA</span> is up <span class="ch up">20%</span> in a month, which got JC dunked on over the weekend because <span class="tk">$SUI</span> ran <span class="ch up">20%</span> in a day. The point underneath the trolling is that animal spirits are back in the parts of crypto that only run when the broader risk appetite is on. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=578s" target="_blank">[9:38]</a></p>
+
+    <p>Color from the Strategy camp landed in the form of a parody rap video the company released over the weekend, complete with a line about ripping shorts' wings off and using the equity ATM to buy more Bitcoin. The desk's reaction was a shrug. Crypto crossed every line of corporate-finance decorum years ago, and a singing CEO is now well inside the Overton window for the asset class. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=3990s" target="_blank">[1:06:30]</a></p>
+  </section>
+
+  <!-- CHAPTER 2: MARKETS -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 · Markets</div>
+    <h2>Records Across the Tape with the VIX Awkwardly Bid at 18</h2>
+    <p class="chapter-sub">Indices, microcaps, midcaps, and two-thirds of the small-cap universe at all-time highs. The volatility index keeps refusing to print a new low.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">49,675</div>
+        <div class="stat-change flat">325 from 50K</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 fut</div>
+        <div class="stat-value">7,413</div>
+        <div class="stat-change up">ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NDX 100 fut</div>
+        <div class="stat-value">29,300</div>
+        <div class="stat-change up">ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">~18</div>
+        <div class="stat-change flat">elevated</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude</div>
+        <div class="stat-value">$97.25</div>
+        <div class="stat-change up">+2% off highs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Copper</div>
+        <div class="stat-value">$6.40</div>
+        <div class="stat-change up">+1.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,700</div>
+        <div class="stat-change down">-0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Silver</div>
+        <div class="stat-value">~$84</div>
+        <div class="stat-change up">+4%</div>
+      </div>
+    </div>
+
+    <p>Dow futures sat at <span class="pr">49,675</span>, about 325 points shy of <span class="pr">50,000</span>. S&amp;P 500 futures <span class="pr">7,413</span> at fresh records, NDX 100 <span class="pr">29,300</span> the same. Bonds quiet at <span class="pr">113.5</span> on the 30-year. Copper kept ripping at <span class="pr">$6.40</span> <span class="ch up">+1.5%</span>, silver pushed <span class="pr">$84</span> <span class="ch up">+4%</span>, gold cooled to <span class="pr">$4,700</span> <span class="ch down">-0.5%</span>. Crude <span class="pr">$97.25</span>, <span class="ch up">+2%</span> off the highs. The VIX is the line that keeps getting flagged. With the S&amp;P printing weekly all-time highs, the volatility index sitting at 18 is the kind of mismatch the desk says historically rhymes with the early-90s tape, post-S&amp;L. Rare combination, usually bullish over the medium term. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=305s" target="_blank">[5:05]</a></p>
+
+    <p>The breadth picture is the one that matters most for anyone still defending a narrow-leadership thesis. Two-thirds of the Russell 3000 (a roughly 2,000-stock benchmark that covers small caps) are at all-time highs. Microcaps, even smaller than small caps, also at ATH. Midcaps, the S&amp;P 400, at ATH. JC's read was direct. Looking at a chart of 2,000 small caps making fresh highs is not what a "five AI stocks driving everything" market looks like. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=1495s" target="_blank">[24:55]</a></p>
+
+    <p>Inside megacap tech, <span class="tk">$AAPL</span> quietly tagged a new all-time high. The desk's note was that an Apple at ATH is doing the work most of the AI buildout will eventually monetize. The phone is the surface where consumer AI actually lives. <span class="tk">$NVDA</span> remains in trend. Underneath, the next wave of mega-cap IPO supply (one upsized AI hardware deal is reportedly 20x oversubscribed at a <span class="pr">~$50B</span> valuation, raising close to <span class="pr">$5B</span>) keeps the late-cycle conversation alive without anyone pretending it changes the trend today. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=1750s" target="_blank">[29:10]</a></p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>Copper, silver, and total crypto cap all making multi-month or all-time highs together is the same liquidity signature. JC repeated his line that the rails for tradfi are being built on crypto, with tokenization and 24/7 markets coming whether anyone votes for it or not. The same risk-on conditions that lift small caps and metals are bid for the alt complex.</p>
+    </div>
+  </section>
+
+  <!-- CHAPTER 3: BART'S BEAR CASE -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 · A Bear Case</div>
+    <h2>The Pattern Guy's Math Says the Nasdaq Has Hit Resistance</h2>
+    <p class="chapter-sub">Bartaloney's measured moves stack across S&amp;P, semis, and the Nasdaq itself, and the rest of the tape quietly refuses to confirm the new highs.</p>
+
+    <p>The reason this episode is worth a chapter is the guest. James Bartaloney has been reading charts professionally for 25 years and is the technician JC has called one of his first mentors in technical analysis. The week opened with Bart emailing the show that he wanted to short the Nasdaq. JC put him on. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=1860s" target="_blank">[31:00]</a></p>
+
+    <p>The framework is harmonic measured moves. Take the rally that ran into a correction, measure its length, project that same distance forward from the next low, and the index tends to bang into resistance at the projection. Bart's S&amp;P chart goes back to the 2007 low. Each leg has hit the measured move and stalled. The current leg is now banging into the next one. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=2160s" target="_blank">[36:00]</a></p>
+
+    <p>The semis chart is the cleanest piece of the case. The semiconductor index ran straight into 1.27 times the original measured move, which is the square root of 1.618 (the golden ratio). It is the same kind of harmonic extension that has marked accelerations on this index for years. The Nasdaq itself is an ABCD pattern projected forward from the 1974 all-time low at 554. The composite is now sitting on the D leg. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=2240s" target="_blank">[37:20]</a></p>
+
+    <p>The confirmation is in the indices that did not make new highs on this rally. The NYSE Composite (the broadest US listed-equity index) failed to confirm. The Dow Jones Transports failed. The KBW Bank Index failed, and banks usually lead the tape both up and down. Bart's pet ratio, Staples versus the NYSE Composite (defensive stocks divided by broad equities, a quiet gauge of risk-off appetite), held its support level cleanly on the morning Wednesday gap up, which is a tell that defensive demand is still bid even on a euphoric session. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=2120s" target="_blank">[35:20]</a></p>
+
+    <p>Execution is the part the show hammered. Bart will not chase short into a parabolic move. He wants a daily signal reversal candle, an engulfing, an outside day, or a doji at the high, before stepping in. Without that print, the trade is wait. And critically, the call is a cool-off, with the Dow eventually exploding higher once the correction is in. Treat this as a tactical view at a stretched tape, the kind that respected pattern analysts publish at every major top whether one comes or not. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=2535s" target="_blank">[42:15]</a></p>
+
+    <p>The same framework flips bullish on long bonds. Bart has been long <span class="tk">$TBT</span> (the inverse 20-year Treasury ETF, a short-bond proxy) for years and is getting ready to close it and flip into long bonds in the coming weeks. The reasoning sits on the same harmonic math that points to one more leg lower in bond prices before a major reversal. <span class="tk">$TBT</span> off, <span class="tk">$TLT</span> on, possibly within a month. <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=2680s" target="_blank">[44:40]</a></p>
+  </section>
+
+  <!-- CHAPTER 4: QUOTES -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"I look at this chart of 2,000 small caps and I'm supposed to think it must be only a few AI stocks driving this thing. That's not what this says to me."</blockquote>
+      <div class="attrib">JC, on the narrow-leadership story <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=1500s" target="_blank">[25:00]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Strongest subgroup within crypto right now? Meme tokens."</blockquote>
+      <div class="attrib">Strazza, on what's leading the alt tape <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=578s" target="_blank">[9:38]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"That's resolution-style action. You're at the apex here. A direction is going to be picked very soon."</blockquote>
+      <div class="attrib">Strazza, on crypto coils <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=515s" target="_blank">[8:35]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"I'm not a bull. I'm not a bear. I'm a pattern guy. We're banging into stiff resistance and it needs to cool off. I don't see a crash coming."</blockquote>
+      <div class="attrib">James Bartaloney, on the short-Nasdaq case <a class="ts" href="https://www.youtube.com/watch?v=I5EsBNk2piE&amp;t=2410s" target="_blank">[40:10]</a></div>
+    </div>
+
+  </section>
+
+  <!-- BOTTOM LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Records on top, divergences underneath.</strong> S&amp;P, NDX, Apple, microcaps, midcaps, and two-thirds of the Russell 3000 at ATH, yet the NYSE Composite, the Dow Transports, and the KBW banks did not confirm. The next daily signal reversal candle is the one to watch.</li>
+      <li><strong>Crypto coils, memes leading.</strong> <span class="tk">$BTC</span> <span class="pr">$81,260</span>, <span class="tk">$ETH</span> <span class="pr">$2,336</span>, <span class="tk">$SOL</span> under <span class="pr">$95</span>. Total cap <span class="pr">$2.68T</span>, highest in four months. Multi-month bases across the alt complex at the apex. <span class="tk">$PEPE</span>, <span class="tk">$WIF</span>, and the legacy memes are the strongest sub-trade on the tape.</li>
+      <li><strong>A respected technician wants to short into resistance.</strong> Bartaloney stacks measured moves on the S&amp;P and semis with a Nasdaq ABCD off the 1974 low, and waits for a daily reversal candle before clicking. Same framework has him flipping <span class="tk">$TBT</span> to long bonds within weeks. The trade is cool-off, then buy lower.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
