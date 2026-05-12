@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Sector Is Eating the Entire Tape - SMTV 2026-05-12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / 2026-05-12</div>
+    <h1>One Sector Is Eating the Entire Tape</h1>
+    <p class="subtitle">Capital is leaving every other corner of the market and piling into chips at a pace the desk says it has never seen, and the rest of the index is being graded against a runaway favorite.</p>
+    <div class="meta">
+      56 min · <a href="https://www.youtube.com/watch?v=pxXLTepIQfM" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">7 MIN READ</span>
+    </div>
+    <p class="tldr-headline">Stocks are at records and almost nothing else looks healthy. Capital is leaving every other sector and piling into one industry, the chipmakers, at a pace the desk says it has never seen. Every other position gets graded against that. Even financials, the part of the market that historically has to participate for any real bull cycle, just hit all-time lows relative to the S&amp;P. The desk is split on whether that's a warning or just the cost of being in a once-in-a-cycle revolution. Either way, money managers who skipped semis are stuck waiting for a flush or chasing in.</p>
+    <ul>
+      <li>Semiconductors are eating the tape. <span class="tk">$SMH</span> just hit a 2.618 Fibonacci extension and momentum keeps grinding higher. <span class="tk">$NVDA</span> earnings in eight or nine days.</li>
+      <li>JC called the S&amp;P 500 financials index closing at all-time lows relative to the S&amp;P "the most bearish chart in the world." Strazza pushed back, arguing it's a denominator problem since financials have zero tech weight.</li>
+      <li>In absolute terms, the S&amp;P bank index closed April at the highest level ever. Both stories can be true at once.</li>
+      <li>S&amp;P 500 at a record high with 5% of its members at fresh 52-week lows. Only three historical parallels (July 1929, January 1973, December 1999), and the desk noted 1929 doesn't really count because the S&amp;P 500 didn't exist yet.</li>
+      <li>International leadership tracks where the semi weight is. South Korea (Samsung, ~50% memory and chips) and Taiwan (TSMC, ~40%) are leading. Anywhere without chip exposure looks like garbage relative.</li>
+      <li>A widely shared chart calling Cathy Wood a missed-AI bag-holder anchors at <span class="tk">$ARKK</span>'s Nov-2021 peak. From the actual launch of ChatGPT in late 2022, <span class="tk">$ARKK</span> is up <span class="ch up">+162%</span> and the S&amp;P is up <span class="ch up">+106%</span>. Pick your start date carefully.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <!-- Chapter 1: Crypto -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 · Crypto</div>
+    <h2>A Quiet BTC Tape While the Rest of the Risk Bucket Funnels Into One Place</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$81,400</div>
+        <div class="stat-change flat">session quiet</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">~$2,340</div>
+        <div class="stat-change flat">session quiet</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$96</div>
+        <div class="stat-change flat">session quiet</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto MCap</div>
+        <div class="stat-value">~$2.68T</div>
+        <div class="stat-change flat">range-bound</div>
+      </div>
+    </div>
+
+    <p>The crypto tape barely got a mention today. The show was wall-to-wall semiconductors, and the absence of a single Bitcoin reference is itself a signal. When a desk that runs a full Crypto Friday with Louis Sykes can skip the topic entirely on a Tuesday, the read is that risk appetite has narrowed into one specific corner of equities, and BTC is one of the many things being out-flowed.</p>
+
+    <p>The macro setup is still constructive on its own terms. Stocks are at records. The dollar is not running. Liquidity proxies like triple-C credit spreads (yields on the lowest-rated junk bonds, which widen when credit gets tight) have pulled back from earlier highs, though the desk flagged a recent uptick to watch. None of that is bearish for crypto on its face. The marginal dollar simply has somewhere louder to go right now.</p>
+  </section>
+
+  <!-- Chapter 2: Markets -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 · Markets</div>
+    <h2>The Whole Tape Is Now Graded Against Chips</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">ATH</div>
+        <div class="stat-change up">record close zone</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Nasdaq 100</div>
+        <div class="stat-value">ATH</div>
+        <div class="stat-change up">record close zone</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">SMH (semi ETF)</div>
+        <div class="stat-value">2.618 Fib</div>
+        <div class="stat-change up">extension target hit</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P Financials vs S&amp;P</div>
+        <div class="stat-value">ATL</div>
+        <div class="stat-change down">lowest on record</div>
+      </div>
+    </div>
+
+    <p>Spencer opened the show with a confession he kept returning to during the hour. He has never seen flows like this before. The sheer amount of capital pulling out of every other sector and pouring into chips, day after day, has the desk reaching for past manias as comparables and finding them undersized. Postcoid ARK, the 2017 Bitcoin run, even the dot-com era. None of them, by capital weight, look like this <a class="ts" href="https://www.youtube.com/watch?v=pxXLTepIQfM&amp;t=2400s" target="_blank">[40:00]</a>.</p>
+
+    <p>The instrument of the story is <span class="tk">$SMH</span>, the main semiconductor ETF (it holds the largest US-listed chipmakers, with <span class="tk">$NVDA</span>, <span class="tk">$TSM</span>, <span class="tk">$AVGO</span> and a handful of memory names doing most of the work). It just hit a 2.618 Fibonacci extension off its prior multi-year range, with 3.618 as the next plotted target. The momentum factor is alive and well, the desk noted, and nothing in any of the breadth-correction setups it normally watches has done much to slow the bid.</p>
+
+    <p>The mirror image is everywhere else. JC's chart of the day was the S&amp;P 500 large-cap financials index, which closed yesterday at the lowest level on record relative to the S&amp;P 500. He called it the most bearish chart in the world. Strazza pushed back hard. The financials index has zero tech in it by definition, and the S&amp;P has more tech than ever, so the ratio is partly a denominator story. In absolute terms the S&amp;P bank index closed April at the highest level it has ever recorded. JC's question framed the day. Is the relative weakness a heads-up that the bull breaks if the denominator finally slows, or is it the cost of being in an index where one industry is doing all the lifting?</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">What's leading</div>
+        <ul>
+          <li><span class="tk">$SMH</span> · 2.618 Fib extension, momentum intact</li>
+          <li>S&amp;P bank index · highest April close ever (absolute)</li>
+          <li>South Korea ETF · roughly 50% memory and chips via <span class="tk">$SSNLF</span></li>
+          <li>Taiwan ETF · ~40% <span class="tk">$TSM</span></li>
+          <li>Small caps printing new highs</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">What's lagging</div>
+        <ul>
+          <li>S&amp;P financials index vs S&amp;P · all-time relative low</li>
+          <li>Consumer discretionary · "looks terrible"</li>
+          <li><span class="tk">$ARKK</span> · flat YTD vs <span class="tk">$QQQ</span> up ~14.5%</li>
+          <li>Bullish percent index · new column of O's (breadth weakening)</li>
+          <li>5% of S&amp;P 500 members at fresh 52-week lows</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>The breadth divergence is the other half of the picture. The S&amp;P 500 put in a record high with five percent of its members at fresh 52-week lows. That setup has only three historical parallels (July 1929, January 1973, December 1999), and each preceded a serious unwind. The desk's caveat is that the 1929 example is a bit of a fugazi, because the S&amp;P 500 didn't exist until 1957 and the data is back-filled. The 1973 and 1999 echoes still stand on their own.</p>
+
+    <p>International leadership tracks the semi weight directly. South Korea's main equity ETF leads internationally and is roughly half memory and chips by weight via Samsung. Taiwan is forty percent <span class="tk">$TSM</span>. Wherever the chip exposure is, the leadership goes. Wherever it isn't, the chart looks like hot garbage relative.</p>
+
+    <p><span class="tk">$NVDA</span> itself is in an interesting pocket. It's near its own all-time high but not the name doing most of the leading inside semis right now. Memory, photonics, and the international tape have been carrying. Earnings are in eight or nine days. The bull case framed today was that a quiet consolidation in <span class="tk">$NVDA</span> followed by an earnings-driven rotation back into it could pull the S&amp;P higher by itself, since <span class="tk">$NVDA</span> is now heavy enough to do that on its own.</p>
+
+    <p>For positioning, the framework was straightforward. When you're overweight a sector that's run this hard, trim back to your original allocation and let momentum keep running the rest of the book. The reason is psychological as much as mechanical. Underweight money is stuck right now, and the desk's word for it was "lockout." A real blowoff top tends to be buyer capitulation, the moment the last skeptic gives up and plugs their nose to chase, after which there is nobody left to lift the bid.</p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>BTC and the alts were on the wrong side of the flows today. The marginal dollar went into chips. That doesn't kill any crypto thesis on its own, but it explains why the asset has felt heavier than the macro setup would otherwise suggest. When the equity tape pulls the marginal dollar into one industry this aggressively, every other risk asset becomes a relative laggard regardless of its own fundamentals.</p>
+    </div>
+  </section>
+
+  <!-- Chapter 3: Chart-crime / how to read AI-era performance -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 · Chart Reading</div>
+    <h2>A Cathy Wood Chart Crime and How to Read AI-Era Performance</h2>
+
+    <p>A chart making the rounds this week shows <span class="tk">$ARKK</span>, Cathy Wood's flagship growth ETF (it holds Tesla, Coinbase, Roku, Robinhood and other high-beta innovation names), dramatically underperforming the S&amp;P 500, with a caption claiming she missed the AI bubble. The desk called it a chart crime and walked through why <a class="ts" href="https://www.youtube.com/watch?v=pxXLTepIQfM&amp;t=860s" target="_blank">[14:20]</a>.</p>
+
+    <p>The trick is the start date. The chart anchors at <span class="tk">$ARKK</span>'s November 2021 peak, which lined up with the start of the fastest rate-hiking cycle in US history. <span class="tk">$ARKK</span> holds long-duration growth, which is one of the most rate-sensitive baskets in the market. Of course it got hammered when rates were ripping. That isn't a thesis failure. That's the basket doing exactly what the basket is built to do.</p>
+
+    <p>The honest start date for the AI trade is the 2022 bear-market lows, the same window in which ChatGPT launched. Measured from there, <span class="tk">$ARKK</span> is up <span class="ch up">+162%</span> and the S&amp;P is up <span class="ch up">+106%</span>. That's roughly 56 percentage points of alpha in favor of the supposed bag-holder.</p>
+
+    <p>The longer windows give a more nuanced picture. Since its Halloween 2014 launch, <span class="tk">$ARKK</span> is up <span class="ch up">+340%</span>, the S&amp;P is up <span class="ch up">+345%</span>, and the Nasdaq 100 is up <span class="ch up">+669%</span>. So over its full life the fund roughly matches the broad index and badly lags big-cap tech. The five-year window is the brutal one. The Nasdaq 100 is up <span class="ch up">+120%</span> over that span and <span class="tk">$ARKK</span> is down <span class="ch down">-25%</span>. The trailing twelve months flip it again. <span class="tk">$ARKK</span> is up <span class="ch up">+56%</span>, the Nasdaq is up <span class="ch up">+46%</span>, the S&amp;P is up <span class="ch up">+32%</span>. The YTD gap is the only window where the "missed the AI trade" story has any structural support, with <span class="tk">$QQQ</span> up about 14.5% and <span class="tk">$ARKK</span> flat.</p>
+
+    <p>The point is procedural. A growth asset that doesn't sit at all-time highs in a regime everyone agrees is an AI revolution feels jarring, and that jarring feeling is what makes a misleading caption easy to believe. Always check where the chart starts. The rule generalizes well past <span class="tk">$ARKK</span>, including the gold-people charts that begin in 2000 and the perma-bear charts that begin at any prior cycle peak.</p>
+  </section>
+
+  <!-- Chapter 4: Quotes -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 · Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"I don't know if I've ever seen this before. And by this, I mean just the sheer amount of money that is flowing into this one area of the market, the size of these companies, the amount of inflows into these ETFs day after day after day."</blockquote>
+      <div class="attrib">Spencer, opening monologue <a class="ts" href="https://www.youtube.com/watch?v=pxXLTepIQfM&amp;t=30s" target="_blank">[0:30]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"We don't have bull markets without financials. And globally, it's even more important."</blockquote>
+      <div class="attrib">JC, defending the framework <a class="ts" href="https://www.youtube.com/watch?v=pxXLTepIQfM&amp;t=370s" target="_blank">[6:10]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"I no longer prescribe to the notion that bull markets cannot be had without financials. I decided this about three years ago. You could keep living in the past, but things are different today."</blockquote>
+      <div class="attrib">Strazza, taking the other side <a class="ts" href="https://www.youtube.com/watch?v=pxXLTepIQfM&amp;t=328s" target="_blank">[5:28]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"What I want, I want the market to crash and go down 90%. That would be fantastic. We get to load up at the bottom and live happily ever after. But that's probably not what's going to happen. I got to deal with what is happening versus what I want to happen."</blockquote>
+      <div class="attrib">JC, on staying analytical <a class="ts" href="https://www.youtube.com/watch?v=pxXLTepIQfM&amp;t=1555s" target="_blank">[25:55]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The flows story is the story.</strong> Semis are absorbing capital out of every other corner of the market at a pace the desk hasn't seen, and everything else is being graded against that. Most of it is grading badly, in relative terms, even with the index itself at record highs.</li>
+      <li><strong>The breadth divergence is real but ambiguous.</strong> S&amp;P 500 financials at all-time lows relative to the index. 5% of S&amp;P members at 52-week lows with the headline at ATH. Three historical parallels for that combo, two of which (1973, 1999) are clean. The bank index in absolute terms is at a record high. Two stories at once.</li>
+      <li><strong>Lockout is the dominant trade psychology.</strong> Underweight money is waiting for a flush or chasing in. <span class="tk">$NVDA</span> earnings in eight or nine days are the next obvious catalyst either way. A real blowoff top, when it comes, will look like buyer capitulation rather than a wave of sellers showing up.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
