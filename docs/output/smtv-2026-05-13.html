@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Rotation Case Lines Up Just as the Bond Market Starts to Stir - SMTV 2026-05-13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / 2026-05-13</div>
+    <h1>The Rotation Case Lines Up Just as the Bond Market Starts to Stir</h1>
+    <p class="subtitle">Financials, industrials, and communications are forming clean continuation patterns underneath the semiconductor parabola, while PPI runs hot and yields keep grinding higher.</p>
+    <div class="meta">
+      71 min · <a href="https://www.youtube.com/watch?v=67RqTwEXCow" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 MIN READ</span>
+    </div>
+    <p class="tldr-headline">The bull market has had one engine for a year, and almost nothing else has done its part. Today the rest of the tape started showing setups that suggest it might finally get to. Financials, industrials, and communications are building quiet continuation patterns while chips keep ripping. The bond market is the second story. PPI ran hot, yields drifted higher, and the desk keeps insisting most American portfolios are accidentally short something they don't realize they own.</p>
+    <ul>
+      <li><span class="tk">$BTC</span> <span class="pr">$80,000</span> <span class="ch down">-0.6%</span>, <span class="tk">$ETH</span> <span class="pr">$2,780</span> flat, <span class="tk">$SOL</span> <span class="pr">$92.50</span> <span class="ch down">-2%</span>. Total crypto market cap <span class="pr">$2.64T</span>. Third quiet session in a row.</li>
+      <li>S&amp;P 500 flat at <span class="pr">7,420</span>, Nasdaq 100 <span class="pr">29,240</span> <span class="ch up">+0.25%</span>, Dow futures down 250, VIX at <span class="pr">18</span>.</li>
+      <li>Copper printed a fresh all-time high near <span class="pr">$6.62</span>, silver <span class="pr">$87</span> <span class="ch up">+1.6%</span>, gold flat at <span class="pr">$4,700</span>. Live cattle is also at all-time highs.</li>
+      <li>10-year yield at <span class="pr">4.47%</span> after a hotter-than-expected PPI print. Inflation-protected treasuries (TIPs) have been outpacing nominal yielding bonds for months.</li>
+      <li>XLI (industrials), XLF (financials), and XLC (communication services) are all forming continuation patterns above flat 50-day moving averages. The desk reads them as a textbook rotation setup with the trend still intact.</li>
+      <li>The S&amp;P 500 financials index just closed at all-time lows relative to the S&amp;P itself. JC's read is a denominator fallacy, since absolute prices in XLF and small and mid-cap financials look healthy.</li>
+      <li>JC bought <span class="tk">$BRK.B</span> outright (the largest XLF component) and is selling puts on top.</li>
+      <li>Goldman's basket of non-profitable tech, the cleanest proxy for speculative growth, has ripped over the past five or six weeks. Risk appetite is improving.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <!-- Chapter 1: Crypto -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 · Crypto</div>
+    <h2>A Quiet Crypto Tape Under a Hotter Inflation Backdrop</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$80,000</div>
+        <div class="stat-change down">-0.6% · coiling near 80K</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$2,780</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$92.50</div>
+        <div class="stat-change down">-2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Mcap</div>
+        <div class="stat-value">$2.64T</div>
+        <div class="stat-change flat">turning sideways</div>
+      </div>
+    </div>
+
+    <p>Crypto stayed quiet for a third straight session. <span class="tk">$BTC</span> sits at <span class="pr">$80,000</span> down five hundred dollars on the day, <span class="tk">$ETH</span> is flat near <span class="pr">$2,780</span>, and <span class="tk">$SOL</span> slipped about two percent to <span class="pr">$92.50</span>. Total crypto market cap rounds to <span class="pr">$2.64T</span>. The desk has been adding to crypto positions in the SMTV portfolio over the past several days and Spencer noted that the recent trade tape across the team has gotten more aggressive on the long side.</p>
+
+    <p>The structural note today was the derivative sprawl forming on the ETH stack. The Bitmine treasury vehicle (the ETH-balance-sheet company that Tom Lee fronts) now has a leveraged ETF wrapped around it, plus listed options on top. Traders who want ETH exposure can pick from spot, spot ETFs, the Bitmine treasury company, the leveraged version of that company, or short-dated calls on the leveraged version. JC kept it short. <em>"I am just a big fan of the underlying. Call me old-fashioned."</em> <a class="ts" href="https://www.youtube.com/watch?v=67RqTwEXCow&amp;t=761s" target="_blank">[12:41]</a> The pattern that built around crypto in this cycle mirrors the one that built around tech, layer on layer of derivative wrappers all riding the same handful of underlyings.</p>
+
+    <p>The macro backdrop is the more interesting line to pull on. PPI ran hot this morning. Copper printed an all-time high. Yields are creeping. The dollar is quiet. That mix is exactly the regime BTC has historically liked, even if the price has not yet decided to do anything about it.</p>
+  </section>
+
+  <!-- Chapter 2: Markets -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 · Markets</div>
+    <h2>The Setup for Rotation Quietly Lines Up Under the Semis</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,420</div>
+        <div class="stat-change flat">flat · near ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Nasdaq 100</div>
+        <div class="stat-value">29,240</div>
+        <div class="stat-change up">+0.25%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">18</div>
+        <div class="stat-change flat">bid into a flat tape</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Copper</div>
+        <div class="stat-value">$6.62</div>
+        <div class="stat-change up">+1.5% · ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,700</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">10Y Yield</div>
+        <div class="stat-value">4.47%</div>
+        <div class="stat-change up">PPI hotter than expected</div>
+      </div>
+    </div>
+
+    <p>The desk framed sector rotation as the lifeblood of any bull market and then laid out where the case for it actually sits today. The S&amp;P 500 hangs flat at <span class="pr">7,420</span>, the Nasdaq 100 ticks higher to <span class="pr">29,240</span>, Dow futures slip on a couple of large components, and the VIX is awkwardly bid at <span class="pr">18</span> into an otherwise sleepy tape. The interesting story is underneath the surface. The industrials sector ETF <span class="tk">$XLI</span>, the financials sector ETF <span class="tk">$XLF</span>, and the communication services ETF <span class="tk">$XLC</span> are all building continuation patterns above flat 50-day moving averages. The chart read on XLI and XLF specifically is a textbook cup-and-handle. XLC has traced out an inverse head-and-shoulders. None of these are confirmed breakouts yet. They are setups, and they sit exactly where breadth would need to fire if the semiconductor parabola pauses for any extended stretch.</p>
+
+    <p>The financials thread carried the day's biggest argument. The S&amp;P 500 financials index just closed at all-time lows relative to the S&amp;P 500 itself, the worst reading in two decades of ratio history. The desk has been split on whether that signals weakness or simply reflects the index's tech weight. Today JC took the second view firmly. His frame is a denominator fallacy. On absolute price, XLF is not making lows. Small-cap and mid-cap financials are strong. The S&amp;P is so heavy on technology weight that nearly every sector ratio against it looks broken, while the underlying prices in those sectors are doing just fine. To put money behind the argument, JC bought <span class="tk">$BRK.B</span>, the largest single component of the XLF, and layered short puts on top. Berkshire is the rotation horse he wants to ride into a broadening tape.</p>
+
+    <p>The other tell came from the speculative end of the spectrum. Goldman's basket of non-profitable tech, which acts as a clean proxy for risk appetite, has ripped over the past five or six weeks. The same crowd of growth names that were getting buried in February are now leading. Strazza framed it as real evidence the appetite has shifted under the surface, and the move has continuity to it rather than reading as a one-off bounce in losers. The desk also flagged that even in the slow-tape March-into-April stretch, semiconductors and hardware stayed strong while software was the soft spot. Software has since caught up, which is the cleanest version of breadth widening from the top of the tape.</p>
+  </section>
+
+  <!-- Chapter 3: Bond Tape -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 · The Bond Tape</div>
+    <h2>The Bond Market Is Acting Funny and Most Portfolios Aren't Set Up for It</h2>
+
+    <p>The other thread that ran through the show is what JC has been calling the bond tsunami. PPI came in hotter than expected this morning. The 10-year sits at <span class="pr">4.47%</span>, the 30-year is bid, and inflation-protected treasuries (TIPs, which adjust principal to CPI) have been outpacing nominal yielding treasuries for months. TIPs outperformance is the bond market's way of telegraphing that inflation is going to surprise to the upside before the official prints catch up, and that is the script that has just played out.</p>
+
+    <p>JC's framing of why this matters runs through what most investors own without realizing it. Americans, and most non-Americans for that matter, are sitting in equity-heavy portfolios with little energy exposure and no commodity exposure. That posture is mathematically equivalent to being long bonds. If rates rip and commodities continue to rip with them, every equity asset that depends on a low discount rate gets repriced lower, and portfolios with no inflation hedges take the hit on both sides. The position is unintended. The exposure is real.</p>
+
+    <p>The volatility compression in treasuries adds to the case. Nothing has happened in three years. The 10-year yield is net flat since October 2022, even as the Federal Reserve started cutting, and the long end has actually marched higher since the first cut. Vol compression that lasts that long always resolves one direction or the other. The desk's quiet view is that the resolution is more likely up than down, and the early 2000s rhyme is the historical reference they keep coming back to. When yields fell into the early 2000s, energy stocks went on one of their best runs ever. The relationship between rates, equities, and commodities is regime-dependent, and the regime may be flipping right under the tape.</p>
+
+    <div class="note">
+      <div class="label">The Signals Stacking Up</div>
+      <p>Copper at <span class="pr">$6.62</span>, fresh all-time high. Live cattle at all-time highs. Wheat, corn, and soybeans breaking out of multi-year bases. Crude steady near <span class="pr">$102.50</span>. None of these are headline trades. All of them point the same direction, and a new Fed governor is coming in soon, which adds translation risk to whatever Powell's framework was.</p>
+    </div>
+
+    <p>The Pearlman read in the closing segment pointed at how this regime gets blown. The instinctive mistake that traders make in down regimes is averaging down on losers. The mistake in this regime is the opposite. Investors are selling winners too soon, taking the dopamine hit of locking in gains, and then watching the same names grind higher without them. The cure offered today was unusually plain. Play smaller, because the inability to follow a plan is almost always a sizing problem. Get healthier, because stress tolerance is the actual underlying skill. Then sit on the winners.</p>
+  </section>
+
+  <!-- Chapter 4: Quotes -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 · Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"There's a tsunami building out there. And these Americans and earthlings all over the place, they're just not in the commodities. They're not in the energy. And that mathematically gives them bond exposure that if bonds get smoked, rates rip, they're toast."</blockquote>
+      <div class="attrib">JC, on the unintended long-bond thesis <a class="ts" href="https://www.youtube.com/watch?v=67RqTwEXCow&amp;t=1190s" target="_blank">[19:50]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"I trust dogs and I trust the bond market. After that, I got to question everything."</blockquote>
+      <div class="attrib">JC, on what to actually weight in this tape <a class="ts" href="https://www.youtube.com/watch?v=67RqTwEXCow&amp;t=1364s" target="_blank">[22:44]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"This is really solid evidence of the improving risk appetite that we've seen over the course of the past five, six weeks."</blockquote>
+      <div class="attrib">Strazza, on Goldman's non-profitable tech basket ripping <a class="ts" href="https://www.youtube.com/watch?v=67RqTwEXCow&amp;t=845s" target="_blank">[14:05]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"The mistake people are making in this regime is that they're selling off their winners too quickly. And a ton of money is made during these periods if you can ride them."</blockquote>
+      <div class="attrib">The show's closing wisdom segment, on what blows this regime <a class="ts" href="https://www.youtube.com/watch?v=67RqTwEXCow&amp;t=3690s" target="_blank">[61:30]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Continuation patterns under the surface.</strong> Cup-and-handle setups in <span class="tk">$XLI</span> and <span class="tk">$XLF</span> above flat 50-day moving averages, plus an inverse head-and-shoulders in <span class="tk">$XLC</span>, are the cleanest argument that breadth picks up while <span class="tk">$SMH</span> grinds. Berkshire (<span class="tk">$BRK.B</span>) is the desk's vehicle for that view.</li>
+      <li><strong>Bonds are the unhedged trade.</strong> 10-year at <span class="pr">4.47%</span>, PPI hot, copper at all-time highs near <span class="pr">$6.62</span>, cattle at all-time highs, ag bases breaking. Portfolios with no commodity or energy exposure are accidentally long bonds whether they know it or not, and TIPs have been telegraphing the inflation surprise for months.</li>
+      <li><strong>The mistake of this regime is exiting winners too early.</strong> Holding losers is the cliche trader sin and it does not describe this tape. The actual sin right now is taking gains too fast, missing the ride, and chasing back in higher. The fix is sizing down and not trying to outsmart a trend that does not care.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
