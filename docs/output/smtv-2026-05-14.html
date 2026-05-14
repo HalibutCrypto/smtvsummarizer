@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Biggest IPO Since Rivian Hits a Tape Quietly Splitting Underneath - SMTV May 14, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / 2026-05-14</div>
+    <h1>The Biggest IPO Since Rivian Hits a Tape Quietly Splitting Underneath</h1>
+    <p class="subtitle">Cerebras prices at $185 for a $50 billion valuation, Dow futures hit fresh records, and five percent of the S&amp;P closed at 52-week lows on the same session.</p>
+    <div class="meta">
+      68 min · <a href="https://www.youtube.com/watch?v=3mjB7Misvk4" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 MIN READ</span>
+    </div>
+    <p class="tldr-headline">All four major US indices are at or near all-time highs. The biggest US IPO since Rivian is pricing tonight at a $50 billion valuation. On the same day the index made fresh records, five percent of S&amp;P 500 names closed at new 52-week lows. That kind of dispersion is rare, and it shows up most often near tops. The desk isn't calling a top. The short scanner is just lit up again for the first time since March.</p>
+    <ul>
+      <li>Dow futures printed an all-time high near <span class="pr">50,200</span> <span class="ch up">+400</span>, S&amp;P 500 futures pushing <span class="pr">7,500</span> <span class="ch up">+0.3%</span>, NASDAQ 100 up only <span class="ch up">+0.18%</span> and last of the four major US index futures overnight.</li>
+      <li><span class="tk">$BTC</span> <span class="pr">$79,550</span> <span class="ch up">+0.3%</span>, <span class="tk">$ETH</span> <span class="pr">$2,260</span> flat, <span class="tk">$SOL</span> <span class="pr">$91</span> flat. Total crypto market cap <span class="pr">$2.63T</span>.</li>
+      <li>Cerebras prices its IPO at <span class="pr">$185</span> for a roughly <span class="pr">$50B</span> valuation, raising about <span class="pr">$5.5B</span>. Largest US listing since Rivian in 2021.</li>
+      <li>Five percent of the S&amp;P 500 closed at fresh 52-week lows on the same session the index made new ATHs. Tractor Supply (<span class="tk">$TSCO</span>), Cognizant (<span class="tk">$CTSH</span>), CoStar (<span class="tk">$CSGP</span>) on the list.</li>
+      <li>Consumer discretionary versus staples (<span class="tk">$XLY</span>/<span class="tk">$XLP</span>) putting in lower highs; equal-weighted version near 52-week lows while the S&amp;P rips.</li>
+      <li>Cisco (<span class="tk">$CSCO</span>) up <span class="ch up">+16%</span> on its best quarter ever, announced alongside 4,000 layoffs on the same call.</li>
+      <li>Goldman's nonprofitable tech basket leading the broad tape (<span class="tk">$RIVN</span>, <span class="tk">$QS</span>, <span class="tk">$LMND</span>, <span class="tk">$RCAT</span>, <span class="tk">$SOUN</span>, <span class="tk">$RBLX</span>, <span class="tk">$OPEN</span>, <span class="tk">$WOLF</span>, <span class="tk">$PLUG</span>).</li>
+      <li>Asset managers back to historic net long positioning in NASDAQ futures, the same setup that preceded last summer's six-month sideways grind for tech.</li>
+      <li>Macro overlay: 30-year bond futures bid, crude near <span class="pr">$100</span> <span class="ch down">-0.75%</span>, copper <span class="pr">$6.62</span> <span class="ch down">-0.75%</span>, gold flat at <span class="pr">$4,710</span>, silver <span class="pr">$87</span> <span class="ch down">-2.5%</span>, VIX <span class="pr">18</span>.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <!-- Chapter 1: Crypto -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 · Crypto</div>
+    <h2>A Quiet Tape While Equity Supply Hogs the Attention</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$79,550</div>
+        <div class="stat-change up">+0.3% · coiling</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$2,260</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$91</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Mcap</div>
+        <div class="stat-value">$2.63T</div>
+        <div class="stat-change flat">sideways</div>
+      </div>
+    </div>
+
+    <p>Crypto held quiet on a session where US stock index futures pushed fresh highs. <span class="tk">$BTC</span> sits at <span class="pr">$79,550</span>, up about a third of a percent. <span class="tk">$ETH</span> is flat near <span class="pr">$2,260</span>. <span class="tk">$SOL</span> hovers around <span class="pr">$91</span>. Total crypto market cap reads <span class="pr">$2.63T</span>. The macro backdrop is constructive on paper. Bonds are bid (30-year futures up half a percent), the dollar is quiet, gold holds <span class="pr">$4,710</span>, and stocks keep printing records.</p>
+
+    <p>The story crowding out crypto today is on the equity side. Cerebras is pricing the biggest US IPO since Rivian, and that <span class="pr">$50 billion</span> supply event is going to land on a tape already absorbing record daily volume. Retail attention rotates to wherever the loudest chart is, which today is the new listing. If Cerebras opens fifty percent over its issue price and rips, crypto stays where it is. If it breaks the IPO price intraday, capital looks for somewhere else to be, and crypto becomes one of the candidates.</p>
+
+    <p>One softer note buried in the macro screen. Silver dropped two and a half percent to <span class="pr">$87</span> on a day everything else risk-on was bid. That's the kind of mixed reading the desk has been calling regime confusion. BTC keeps coiling, and the cross-asset confirmation that would prompt sizing up isn't on the screen today.</p>
+  </section>
+
+  <!-- Chapter 2: Markets -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 · Markets</div>
+    <h2>Records on the Tape, Cerebras on the Wire, Cisco Up 16 on a Layoff Call</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow Futures</div>
+        <div class="stat-value">50,200</div>
+        <div class="stat-change up">+400 · ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 Futures</div>
+        <div class="stat-value">7,500</div>
+        <div class="stat-change up">+0.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">+0.18%</div>
+        <div class="stat-change flat">last of four</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">18</div>
+        <div class="stat-change flat">bid into records</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude</div>
+        <div class="stat-value">$100</div>
+        <div class="stat-change down">-0.75%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Copper</div>
+        <div class="stat-value">$6.62</div>
+        <div class="stat-change down">-0.75%</div>
+      </div>
+    </div>
+
+    <p>The Dow is the headline today. Dow futures printed an all-time high near <span class="pr">50,200</span>, up 400 on the session. The S&amp;P 500 nudged through <span class="pr">7,500</span>, up about a third of a percent. The Nasdaq 100 was the laggard at <span class="ch up">+0.18%</span>, last of the four major US index futures overnight. The desk flagged that as an unusual handoff. When the Dow leads the Nasdaq this hard, breadth is either widening or money is rotating. Today's screen reads more like rotation (the next chapter walks through why).</p>
+
+    <p>The day's biggest news beat is Cerebras pricing its IPO at <span class="pr">$185</span> a share, putting the company at roughly a <span class="pr">$50 billion</span> valuation and raising about <span class="pr">$5.5 billion</span>. Cerebras builds wafer-scale AI training chips and competes adjacent to Nvidia in the high-end training workload market. ARM holds a stake, which is why the ARM tape moves with the IPO even before the new listing trades. This is the largest US listing since Rivian came public in 2021 at a <span class="pr">$66 billion</span> valuation, raised <span class="pr">$12 billion</span>, and then fell roughly ninety percent. For context, Uber's 2019 IPO priced the company at <span class="pr">$75 billion</span>, raised <span class="pr">$8 billion</span>, and drew down about seventy-five percent. Alibaba's <span class="pr">$170 billion</span> sits at the top of the US-listing ladder for size. JC's read is consistent with his standing IPO frame. Big listings function as distribution events. VCs sell into oversubscribed books and retail picks up the supply. The book on this one is reportedly ten times covered. The mechanics don't change. The print just gets larger.</p>
+
+    <p>Cisco (<span class="tk">$CSCO</span>) printed the cleanest microcosm of the regime today. The company posted its best quarter ever, announced a 4,000-employee layoff on the same call, and the stock ripped <span class="ch up">+16%</span>. That combination is the wage-to-margin handoff that's been quietly powering the bull off the lows. Companies are squeezing bodies, expanding margins, and getting paid by the tape for it. Whether you find that healthy or unhealthy, it's the regime.</p>
+
+    <p>One more piece worth flagging from the macro overlay. Macro Charts posted a screen of asset manager positioning in Nasdaq futures, the red line back in historic net long territory. That positioning matches the summer 2025 setup that preceded a six-month grind sideways for tech, where the Nasdaq went nowhere while breadth quietly rotated into small caps and software took real damage. The blue line in the same chart, the QQQ-to-SPY ratio, has started turning down. The desk doesn't read this as a setup to be short tech outright. It reads as a setup where rotation into financials, industrials, and the rest of the index has more room to run than chasing the same megacap basket higher. JP Morgan, Goldman Sachs, and Morgan Stanley all printed fresh all-time highs today even as the XLF-versus-SPX ratio sits at all-time lows. Most relative charts against an index this tech-heavy are going to look broken whether the underlying group is healthy or not.</p>
+  </section>
+
+  <!-- Chapter 3: Under the Surface -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 · Under the Surface</div>
+    <h2>Five Percent of the Index Hit 52-Week Lows on the Same Day It Hit a Record</h2>
+
+    <p>Today's session printed a statistic the desk hadn't seen in months. The S&amp;P 500 made fresh all-time highs while five percent of its constituents closed at new 52-week lows on the same day. That dispersion has happened only a handful of times historically, and the most cited instance lined up just before the dot-com top. None of that says today's the top. It does mean the breadth picture under the index isn't matching the headline number.</p>
+
+    <p>The names doing the damage are tradeable. Tractor Supply (<span class="tk">$TSCO</span>, the rural farm-and-pet retail chain), Cognizant Technology Solutions (<span class="tk">$CTSH</span>, IT services), and CoStar Group (<span class="tk">$CSGP</span>, the commercial real estate data company) are all sitting on multi-month lows. The desk's three-month-low scanner, which had been mostly empty since the March drawdown, is suddenly populated. That's a soft tell that doesn't make a magazine cover but tends to show up in the right places. Some of the desk's best-performing positions yesterday were shorts on a day the index ripped to new highs.</p>
+
+    <p>The relative chart that captures the dynamic best is consumer discretionary versus staples. <span class="tk">$XLY</span> (the consumer discretionary ETF, dominated by Amazon, Tesla, and Home Depot) versus <span class="tk">$XLP</span> (the staples ETF, dominated by Costco, Walmart, and Procter &amp; Gamble) is the cleanest single read on whether households are feeling rich or cautious. On a market-cap-weighted basis, that ratio is putting in lower highs as the S&amp;P rips. On an equal-weighted basis, which strips out the megacaps and gives a truer read of the underlying tape, the ratio is sitting near 52-week lows.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Leading the broad tape</div>
+        <ul>
+          <li><span class="tk">$RIVN</span> · profitless EV maker, Goldman basket anchor</li>
+          <li><span class="tk">$QS</span> · solid-state battery, still no real revenue</li>
+          <li><span class="tk">$LMND</span> · AI-insurance, persistent losses</li>
+          <li><span class="tk">$RCAT</span> · defense drone microcap</li>
+          <li><span class="tk">$SOUN</span> · voice AI, narrative-driven</li>
+          <li><span class="tk">$RBLX</span>, <span class="tk">$OPEN</span>, <span class="tk">$WOLF</span>, <span class="tk">$PLUG</span></li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Quietly carving 52-week lows</div>
+        <ul>
+          <li><span class="tk">$TSCO</span> · rural retail, freight and farm-cycle exposure</li>
+          <li><span class="tk">$CTSH</span> · IT services, AI-disruption overhang</li>
+          <li><span class="tk">$CSGP</span> · commercial real estate data</li>
+          <li><span class="tk">$NKE</span>, <span class="tk">$LULU</span> · branded athletic, no demand bid</li>
+          <li><span class="tk">$XLY</span>/<span class="tk">$XLP</span> equal-weight ratio at 52-week lows</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Stack that next to the cohort cleanup. Goldman's basket of nonprofitable tech (the ten or so names in the compare grid above, plus a long tail) has been leading the broad tape for weeks. Profitless names outperforming profitable names is a late-cycle marker most of the time. Plenty of bull regimes have lived with that condition for a long stretch without resolving. Resolution doesn't have to be tomorrow. The regime is visibly bifurcating now, and the cleanest underperformers are taking real damage while the index itself keeps clearing records.</p>
+  </section>
+
+  <!-- Chapter 4: Quotes -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 · Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"Nobody else knows anything either. They don't know anything. The best, most successful, richest people, they don't know either."</blockquote>
+      <div class="attrib">JC, on the show's title and his standing posture toward forecasts <a class="ts" href="https://www.youtube.com/watch?v=3mjB7Misvk4&amp;t=168s" target="_blank">[02:48]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"If you've been buying companies with good fundamentals, you've been losing. If you've been buying companies that don't make any money, you've been doing great."</blockquote>
+      <div class="attrib">JC, on Goldman's nonprofitable tech basket outperforming the index <a class="ts" href="https://www.youtube.com/watch?v=3mjB7Misvk4&amp;t=537s" target="_blank">[08:57]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"There will be no selling in May. It's buy in May and pray. There will be no June swoon. It's June to the moon. July shorts crying in August."</blockquote>
+      <div class="attrib">JC, on his seasonal posture after this week's bounce off the lows <a class="ts" href="https://www.youtube.com/watch?v=3mjB7Misvk4&amp;t=2021s" target="_blank">[33:41]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Best quarter ever. We're laying off 4,000 employees. Stock goes to the moon. That's the market we're in."</blockquote>
+      <div class="attrib">JC, on Cisco's <span class="ch up">+16%</span> day <a class="ts" href="https://www.youtube.com/watch?v=3mjB7Misvk4&amp;t=3235s" target="_blank">[53:55]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Records up top, fresh lows underneath.</strong> The S&amp;P made new ATHs while five percent of its constituents closed at fresh 52-week lows on the same session. That dispersion has historical company near major tops, including the dot-com peak. Doesn't have to mean now. It does mean breadth is the chart that matters more than the headline number.</li>
+      <li><strong>IPO supply is back.</strong> Cerebras prices at <span class="pr">$50 billion</span>, the biggest US listing since Rivian's <span class="pr">$66 billion</span> print in 2021 (which then fell ninety percent). SpaceX is queued behind it. Treat large new listings as distribution events. Capital that absorbs them gets pulled out of risk somewhere else on the tape.</li>
+      <li><strong>"Nobody knows anything" is the actual playbook.</strong> The seasonal calls and price targets make for good clips. The thing worth carrying out of today is the posture. Do the work, accept that nobody knows what's next, and let positioning do the talking. The tape is splitting and the easy bull narrative gets harder from here.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
