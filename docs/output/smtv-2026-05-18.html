@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bonds Are Breaking Everywhere and the 60/40 Hedge Stops Working Again - SMTV May 18, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / 2026-05-18</div>
+    <h1>Bonds Are Breaking Everywhere and the 60/40 Hedge Stops Working Again</h1>
+    <p class="subtitle">JGBs print a record yield overnight, US Treasuries follow, and the desk&rsquo;s new risk gauge is the Kospi.</p>
+    <div class="meta">
+      77 min &middot; <a href="https://www.youtube.com/watch?v=FO1Jlw12qhA" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 MIN READ</span>
+    </div>
+    <p class="tldr-headline">Stocks just printed their highest weekly close in history and the bond market is breaking on the other side of the tape. The 40-year Japanese government bond hit its highest yield ever overnight. US Treasuries are sliding. The hedge that used to bail out portfolios when stocks fell stopped working in 2022, and the desk is calling it dead again. The breadth-thrust tailwind that ran for a year ended last week, quietly. The new risk gauge to watch is the Kospi.</p>
+    <ul>
+      <li>S&amp;P 500 futures flat at <span class="pr">7,430</span>, the highest weekly close of all time. NASDAQ 100 futures also closed at a fresh weekly record and traded up overnight. Dow futures <span class="pr">49,515</span> <span class="ch down">-100</span> after dropping 500 on Friday.</li>
+      <li><span class="tk">$BTC</span> <span class="pr">$77,500</span> flat, <span class="tk">$ETH</span> <span class="pr">$2,150</span> <span class="ch up">+1%</span>, <span class="tk">$SOL</span> <span class="pr">$85.25</span> flat. Total crypto market cap <span class="pr">$2.55T</span>. The desk is waiting for <span class="pr">$85,000</span> to be reclaimed on BTC before it gets interesting.</li>
+      <li>40-year JGB yields at an all-time high. US 10-year and 30-year futures resolving multi-month symmetrical triangles to the downside. German Bunds heading the same way.</li>
+      <li>Stock/bond correlation has been positive since 2022. TLT was down 31% the year SPX was down 18%. Friday was a fresh data point with both red.</li>
+      <li>Consumer discretionary versus consumer staples on an equal-weighted basis at the lowest level since June. Market-cap-weighted version even uglier. Classic late-cycle internal divergence.</li>
+      <li>The breadth-thrust window from spring 2025 (positive in 100 of 100 historical samples, averaging 18%) expired last week.</li>
+      <li>SpaceX IPO buzz at a rumored <span class="pr">$2T</span> valuation, about <span class="pr">7%</span> of US GDP. For reference, Ford at its peak was 1%.</li>
+      <li>Kospi up roughly 200% year-over-year, the #1 single-country ETF return over 12 months (<span class="tk">$EWY</span>). SK Hynix and Samsung make up about 45% of the index and are the global DRAM memory leaders.</li>
+      <li>Powell&rsquo;s final FOMC was Friday. The Fed is now effectively on hold through early next year per CME pricing, with the next move more likely a hike than a cut.</li>
+      <li>Macro tape: gold flat at <span class="pr">$4,560</span>, silver flat at <span class="pr">$77.40</span>, copper flat at <span class="pr">$6.28</span>, crude above <span class="pr">$100</span> <span class="ch down">-1%</span>, VIX <span class="pr">18.5</span>.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <!-- Chapter 1: Crypto -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>BTC Stuck Below 85K While the Speculative Dollar Goes to AI Memory</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$77,500</div>
+        <div class="stat-change flat">flat &middot; below 85K</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$2,150</div>
+        <div class="stat-change up">+1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$85.25</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Mcap</div>
+        <div class="stat-value">$2.55T</div>
+        <div class="stat-change flat">sideways</div>
+      </div>
+    </div>
+
+    <p>Crypto barely got a mention on a show that opened with bonds and spent most of an hour there. <span class="tk">$BTC</span> sits at <span class="pr">$77,500</span>, flat, well below the <span class="pr">$85,000</span> level the desk has been waiting on as the breakout that would change the conversation. <span class="tk">$ETH</span> is up a percent at <span class="pr">$2,150</span>. <span class="tk">$SOL</span> is flat at <span class="pr">$85.25</span>. Total crypto market cap reads <span class="pr">$2.55T</span> and has been compressing for weeks.</p>
+
+    <p>The blunt take from the morning was that AI either fixed Bitcoin or got rid of it. The speculative-growth allocation that used to flow into BTC has rotated into AI memory and semis. <span class="tk">$MSTR</span> is leading the equity tape lower today, which is consistent with the same drain. The hedgers in the Ethereum DAT and SPAC complex keep dumping into whatever bid shows up, and that supply is part of why <span class="tk">$ETH</span> cannot get a clean breakout going.</p>
+
+    <p>Until <span class="tk">$BTC</span> reclaims <span class="pr">$85,000</span>, crypto is not competing for the marginal speculative dollar in this regime. That dollar is going to SK Hynix and Samsung in Korea, to Broadcom and the smaller semi names that have not yet ripped, and into whatever the next data-center buildout supplier is. Macro is constructive on paper. Dollar is quiet, metals are holding, oil is bid above <span class="pr">$100</span>. The setup for BTC to participate exists. The participation has not arrived.</p>
+  </section>
+
+  <!-- Chapter 2: Markets -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Stocks at Record Weekly Closes With Bonds Bleeding on the Other Side of the Tape</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 Futures</div>
+        <div class="stat-value">7,430</div>
+        <div class="stat-change flat">flat &middot; weekly ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">weekly ATH</div>
+        <div class="stat-change up">up overnight</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow Futures</div>
+        <div class="stat-value">49,515</div>
+        <div class="stat-change down">-100 &middot; gave 500 Fri</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">30-Year Bond Fut</div>
+        <div class="stat-value">110.30</div>
+        <div class="stat-change down">triangle break down</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude</div>
+        <div class="stat-value">$100+</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">18.5</div>
+        <div class="stat-change flat">still elevated</div>
+      </div>
+    </div>
+
+    <p>Both the S&amp;P 500 and the NASDAQ 100 just printed the highest weekly close in history. Dow futures gave 500 points back on Friday and sit around <span class="pr">49,515</span> off the lows. VIX is at <span class="pr">18.5</span>, still elevated for a tape pinning records. And the bond market broke. The 40-year Japanese government bond hit its highest yield ever overnight. US 10-year and 30-year futures are resolving the multi-month symmetrical triangles they had been bunched up in, both to the downside. JGBs, German Bunds, and US Treasuries are heading the same way at the same time.</p>
+
+    <p>The bigger story is the relationship. Throughout most of JC&rsquo;s and Strazza&rsquo;s careers, stocks and bonds traded inversely. Stocks down meant Treasuries up. That broke in 2022. TLT was down 31% the year the S&amp;P was down 18%, and a 60/40 portfolio turned into what Strazza calls a 100 portfolio. Looking at Jim Bianco&rsquo;s correlation chart, the stock/bond relationship flipped positive that year and has stayed positive across both the one-year and five-year readings. Friday was a fresh data point with both red on the same session. Anyone running risk parity or classic balanced exposure is taking the same lesson from both sides of the book.</p>
+
+    <p>There was supposed to be a level where a policy bid showed up. Bank of America&rsquo;s March note framed it as a Trump put that would arrive if the S&amp;P broke <span class="pr">6,600</span> with 30-year yields above 5%. Instead, the S&amp;P ran to <span class="pr">7,430</span> and bonds bled the whole way. The put didn&rsquo;t arrive because the regime that was supposed to trigger it never showed up. Inflation is sticky. Worst CPI print in three years last week. Crude held above <span class="pr">$100</span> through a two-week ceasefire that the bond tape clearly does not believe will repair Hormuz supply chains anytime soon. CME-implied pricing now has the Fed on hold through early next year, with the next move slightly more likely a hike than a cut. Powell&rsquo;s last FOMC was Friday. The desk is treating the Fed as off the board for months.</p>
+
+    <p>The 1-year breadth-thrust tailwind also ran out. The thrust signal from spring 2025 returned a positive S&amp;P 100 times out of 100 over the next year in the historical sample, averaging 18%. That window expired last week. The desk wasn&rsquo;t calling for a crash on the back of that. They were just flagging that the tailwind everyone has been long is now behind them. Strazza is working through it by taking profits as targets get hit. He isn&rsquo;t adding shorts.</p>
+
+    <p>Underneath the index headlines, consumer discretionary versus consumer staples on an equal-weighted basis hit the lowest level since June. The market-cap-weighted version looks worse. This is the kind of internal divergence that tends to show up before major equity tops. The signal isn&rsquo;t subtle. JC also brought up the SpaceX IPO buzz at a rumored <span class="pr">$2 trillion</span> valuation, which would be roughly 7% of US GDP for one new listing. Ford at its scale-of-the-economy peak was 1%. Big IPO supply functions as a distribution event, and the issuer side is recognizing demand that the desk is starting to suspect is exuberance.</p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>If the stock/bond correlation stays positive in a sticky-inflation regime, the diversifier story has to come from somewhere outside the 60/40 envelope. Gold and silver are doing some of that work. The desk has been openly skeptical of <span class="tk">$BTC</span> as the diversifier here because of how it has correlated with risk-on equity tape since 2022. The case for a small BTC allocation in a real-money portfolio is exactly this regime, where Treasuries fail at hedging stocks. The case against is that BTC has been failing at it too lately. The setup is open but unconfirmed.</p>
+    </div>
+  </section>
+
+  <!-- Chapter 3: Framework -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Framework</div>
+    <h2>The Kospi Has Become the First Chart the Desk Checks in the Morning</h2>
+
+    <p>Multiple voices on the show today described the Kospi as the first chart they pull up when they wake. JC was the most explicit about it. He flagged that the Kospi has not been the top of his morning routine in his entire career, and right now it is. The desk used to open with the S&amp;P. That changed at the end of last year. The South Korea tape is the new sentiment thermometer for global risk.</p>
+
+    <p>The reason is concentration. The headline South Korea index is roughly 45% SK Hynix and Samsung. The iShares MSCI South Korea ETF (<span class="tk">$EWY</span>) carries similar weightings. Those two companies are the global DRAM memory leaders, and DRAM is the binding constraint on AI data-center buildouts in 2026. When the AI tape is healthy, the Kospi rips. When the AI tape cracks, the Kospi cracks first. A few months ago it sold off 20% in two days, came back, and made fresh all-time highs the next month. The candles are enormous. That volatility is exactly what makes it useful as a leading indicator.</p>
+
+    <p>The single-country return numbers back this up. <span class="tk">$EWY</span> was the top-returning single-country ETF over the trailing 12 months, up roughly 200%. The <span class="tk">$SMH</span> semi ETF (which holds Nvidia, TSMC, Broadcom, ASML, and the global semi leaders by market cap) was number two, up 140%. The third-best trade was silver. Those three are mechanically the same trade in different jackets. All three are leveraged to AI compute demand and to the inflation hedge that comes along with the buildout. The Kospi is just the cleanest single-instrument expression of it.</p>
+
+    <p>For a reader sitting in Asia time, the overnight Kospi print is now the early read on whether the AI-memory trade is intact. If the Kospi cracks before the S&amp;P does, that is the warning shot for everyone long the AI complex. If it keeps printing fresh highs, the buildout cycle still has runway. The desk is using Kospi as the canary in the same way US traders used to use small caps and high-yield credit. The center of gravity for global risk has moved.</p>
+  </section>
+
+  <!-- Chapter 4: Quotes -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;George Washington died before humans knew that there were dinosaurs. Nobody knows anything.&rdquo;</blockquote>
+      <div class="attrib">JC, on Wall Street prediction confidence <a class="ts" href="https://www.youtube.com/watch?v=FO1Jlw12qhA&amp;t=861s" target="_blank">[14:21]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;A 60/40 portfolio turned into the 100 portfolio.&rdquo;</blockquote>
+      <div class="attrib">Strazza, on 2022 and the broken stock/bond hedge <a class="ts" href="https://www.youtube.com/watch?v=FO1Jlw12qhA&amp;t=455s" target="_blank">[07:35]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;Historically, when the biggest IPOs of all time go public, the stock market gets cut in half. Bear market every time.&rdquo;</blockquote>
+      <div class="attrib">JC, on the SpaceX IPO at a rumored $2T valuation <a class="ts" href="https://www.youtube.com/watch?v=FO1Jlw12qhA&amp;t=926s" target="_blank">[15:26]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;In this environment, you want to be taking profits after the run we&rsquo;ve had. It&rsquo;s crazy not to take profits.&rdquo;</blockquote>
+      <div class="attrib">Strazza, on positioning after the breadth-thrust tailwind expired <a class="ts" href="https://www.youtube.com/watch?v=FO1Jlw12qhA&amp;t=1238s" target="_blank">[20:38]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The 60/40 hedge is gone again.</strong> JGB 40-year at record yields, US Treasuries breaking out of multi-month consolidations to the downside, and stock/bond correlation positive across one-year and five-year readings. Plan for stocks and bonds to move together in this regime. The Fed is on hold through early next year per CME pricing, with the next move more likely a hike than a cut.</li>
+      <li><strong>The internals are splitting before the index does.</strong> Consumer discretionary versus staples at the lowest equal-weighted reading since June, market-cap-weighted version uglier, and the 1-year breadth-thrust tailwind from spring 2025 expired last week. The desk is taking profits as targets get hit and watching for confirmation lower. Index headlines are still printing records on the back of a narrow leadership group.</li>
+      <li><strong>The Kospi is the new tell.</strong> <span class="tk">$EWY</span> up roughly 200% year-over-year. SK Hynix and Samsung make up about 45% of the index and are the binding constraint on AI memory supply. If the South Korea tape cracks before the S&amp;P, that is the early read on the AI-memory trade unwinding.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
