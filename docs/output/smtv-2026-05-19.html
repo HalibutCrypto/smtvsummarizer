@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Paint Company Outweighs Apple in the Dow That Forgot to Make a New High - SMTV May 19, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">Stock Market TV / The Morning Show / 2026-05-19</div>
+    <h1>A Paint Company Outweighs Apple in the Dow That Forgot to Make a New High</h1>
+    <p class="subtitle">Sherwin Williams carries more weight than Apple, Amazon, or Nvidia in a 30-stock relic the rest of the tape has left behind since mid-February.</p>
+    <div class="meta">
+      59 min &middot; <a href="https://www.youtube.com/watch?v=vJKsf2pCfIo" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 MIN READ</span>
+    </div>
+    <p class="tldr-headline">The Dow has not printed a new high since February 10. Every other major US index has. The reason is mostly mechanical, and it involves a paint company. Sherwin Williams carries more weight in the Dow than Apple, Amazon, or Nvidia does, because the index is still price-weighted in 2026. The desk argued about that for an hour. The more interesting thread came later. Nvidia&rsquo;s own treasury portfolio has been quietly stacking the names that ended up doubling and tripling, and it files those bets publicly four times a year.</p>
+    <ul>
+      <li>Dow <span class="ch down">-93</span> at the cash open, no new high since February 10. S&amp;P 500 futures <span class="pr">7,400</span> <span class="ch down">-24</span>. NASDAQ 100 <span class="pr">28,930</span> <span class="ch down">-0.5%</span>. KOSPI <span class="ch down">-3.2%</span> in Korean trade.</li>
+      <li><span class="tk">$BTC</span> <span class="pr">$76,850</span> flat, <span class="tk">$ETH</span> <span class="pr">$2,115</span> <span class="ch down">-0.5%</span>, <span class="tk">$SOL</span> <span class="pr">$84.50</span> <span class="ch down">-1%</span>. Total crypto market cap <span class="pr">$2.53T</span>.</li>
+      <li><span class="tk">$HYPE</span> (Hyperliquid) breakaway gap <span class="ch up">+10%</span> premarket to fresh all-time highs. The desk has been pounding the table on this one since Louis flagged it weeks ago.</li>
+      <li>ETH and SOL are sitting on the anchored VWAP from the February 6 intraday low. That is the line in the sand for the short and intermediate-term crypto trend. Below it, the bid is gone.</li>
+      <li>Commercial hedgers are dumping ETH while speculators load up. Strazza&rsquo;s read on that combination is that the speculators are on the wrong side.</li>
+      <li>Sherwin Williams (<span class="tk">$SHW</span>) outweighs Apple, Amazon, and Nvidia in the Dow because the index is price-weighted. Microsoft is the largest tech holding at 5%. UnitedHealth, Goldman, and Caterpillar carry more weight than any megacap.</li>
+      <li>Nike is the assumed next deletion. Spencer wants Exxon back in. The desk is on Google. Tesla, Meta, and Eli Lilly would all need stock splits to qualify.</li>
+      <li>Nvidia&rsquo;s 13F shows large equity stakes in Intel (doubled after they bought it), Nokia (tripled), CoreWeave, Synopsys, Coherent (ATH), and Soundhound. They are regulated insiders on several names.</li>
+      <li>Macro: gold flat at <span class="pr">$4,550</span>, silver <span class="pr">$76.50</span> <span class="ch down">-1%</span>, copper <span class="pr">$6.25</span> <span class="ch down">-1.2%</span>, crude above <span class="pr">$103</span> <span class="ch down">-1%</span>, VIX <span class="pr">18</span>, 30-year bond futures flat at <span class="pr">110.12</span>.</li>
+      <li>US dollar is quietly breaking down off the highs. International equity exposure has stopped acting like a drag on US-resident portfolios for the first time in roughly a decade.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <!-- Chapter 1: Crypto -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>The February 6 Anchored VWAP Is the Line in the Sand for ETH and SOL</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$76,850</div>
+        <div class="stat-change flat">flat &middot; retesting March highs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$2,115</div>
+        <div class="stat-change down">-0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$84.50</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Mcap</div>
+        <div class="stat-value">$2.53T</div>
+        <div class="stat-change flat">sideways</div>
+      </div>
+    </div>
+
+    <p>The cleanest crypto framework on the show came from Strazza. Drop an anchored VWAP from the February 6 intraday low and run it across the big names. <span class="tk">$ETH</span> has been consolidating right on that line since roughly 6pm Sunday. <span class="tk">$SOL</span> has been doing the same since Sunday night. That is the level where the short-and-intermediate-term trend lives. A clean hold and the bid is intact. A clean break and there is nothing to lean on until much lower.</p>
+
+    <p><span class="tk">$BTC</span> is the cleanest of the three. It is nowhere near the February 6 VWAP. It is retesting the mid-March high that was its base breakout level on the way up in April. The April retest already held once. This is a second look at the same shelf, and it qualifies as the best-looking chart of the major crypto trio.</p>
+
+    <p>Underneath that, <span class="tk">$HYPE</span> is breakaway gapping <span class="ch up">+10%</span> premarket to fresh all-time highs. The desk gave Louis the credit for it. He has been pounding the table on Hyperliquid for a while and JC has had the trade on the back of his pick. The use-case angle matters here. JC noted that he actually uses the product, particularly to watch S&amp;P futures on weekends, and is rarely in a position to make money on something he genuinely uses.</p>
+
+    <p>The cleanest bearish tell in the data is in ETH positioning. Commercial hedgers, the ones who tend to be right, are dumping. Speculators are loaded. That kind of split has historically been the wrong combination for spot. Until the speculators flush, ETH will keep struggling to clear the same ceiling it has spent the last several weeks under.</p>
+  </section>
+
+  <!-- Chapter 2: Markets -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>The Dow Has Stopped Making New Highs and the Reason Is a Paint Company</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">no ATH since Feb 10</div>
+        <div class="stat-change down">-93</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 Fut</div>
+        <div class="stat-value">7,400</div>
+        <div class="stat-change down">-24</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">28,930</div>
+        <div class="stat-change down">-0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">KOSPI</div>
+        <div class="stat-value">-3.2%</div>
+        <div class="stat-change down">overnight</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude</div>
+        <div class="stat-value">$103+</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">18</div>
+        <div class="stat-change flat">still bid</div>
+      </div>
+    </div>
+
+    <p>Three months and counting since the Dow Jones Industrial Average put in a new high. Every other major US index has cleared its February print, in some cases by a lot. Strazza put up best-April-ever and record-month numbers across the desk&rsquo;s books over the same window. The Dow, by itself, has gone nowhere.</p>
+
+    <p>The mechanical reason is the weighting. The Dow is price-weighted, which means a $400 stock matters more than a $200 stock regardless of company size. In a 2026 tape where the biggest companies in the world trade at huge market caps but split-adjusted lower share prices, that quirk has consequences. UnitedHealth carries the most weight in the index. Goldman and Caterpillar are next. Microsoft is the largest tech holding at 5%. Sherwin Williams (<span class="tk">$SHW</span>), a paint company, carries more index weight than Apple, Amazon, or Nvidia. The three megacaps that drive the rest of the tape barely move the needle here.</p>
+
+    <p>Spencer&rsquo;s read is that the Dow still matters as a rule. When the index that has run for a century stops printing highs, history says you respect it, even if the math behind the index is dated. Strazza pushed back. He thinks the price-weighted construction has lost most of its information content for a tape now driven by the megacaps that barely register here. The YouTube chat split 53-47 in favor of caring. As tight a poll as the show has run.</p>
+
+    <p>The other live thread on the desk was Nike (<span class="tk">$NKE</span>). It is the next assumed deletion, and the desk treated the replacement as an open game. Spencer wants Exxon (<span class="tk">$XOM</span>) brought back, the move they made with GE years ago. JC and Strazza leaned Google. Tesla, Meta, and Eli Lilly would all need to split first to fit the price-weighted format. The committee tends to chase recognizable household names, which is why Booking, ASML-equivalents, and pure infrastructure plays never make the cut.</p>
+
+    <p>Underneath the Dow story, the broader tape was soft. KOSPI down 3.2% overnight kept the global-risk narrative front and center. Crude held above <span class="pr">$103</span> with copper and silver giving back a percent each. Gold sat flat at <span class="pr">$4,550</span>. The 30-year bond future was unchanged near <span class="pr">110.12</span>, a pause after weeks of drama in fixed income. And the US dollar continued to grind lower off the 2018-era ceiling that capped it. The piece that comes with that is international equity exposure has stopped acting like dead weight on US-resident portfolios for the first time in roughly a decade. The desk is using broad EFA and EM exposure as the top-down starting point and then drilling into countries only after the trend confirms itself. ASML is the cleanest single-stock proxy if you want one name.</p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>A breaking dollar and bid commodities are the macro setup BTC normally responds to. Gold is acting fine. The fact that <span class="tk">$BTC</span> is sitting at <span class="pr">$76,850</span> flat into the same backdrop is the gap to watch. The macro is constructive. The participation has not arrived yet. Same story as yesterday and the day before, with the small difference that the dollar move is now visible on a chart that has been quiet for years.</p>
+    </div>
+  </section>
+
+  <!-- Chapter 3: Framework -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Framework</div>
+    <h2>Nvidia&rsquo;s Own Equity Portfolio Has Been a Quiet Stock-Picking Edge</h2>
+
+    <p>Spencer spent part of the show on Nvidia&rsquo;s 13F. The filing is public and free to read. What sits inside it is a list of equity stakes Nvidia&rsquo;s own treasury team has accumulated in companies that are mostly its customers, suppliers, or strategic partners. The aggregate position runs roughly <span class="pr">$30 billion</span>. That is bigger than most hedge funds. As a stock-picking signal, it has been working.</p>
+
+    <p>Intel (<span class="tk">$INTC</span>) is the largest holding. Nvidia bought it last year and it has roughly doubled since. They own about 4% of the company. CoreWeave (<span class="tk">$CRWV</span>), the AI cloud-compute name, was a pre-IPO position they added to on the IPO and have been adding to since. It is currently sitting at the anchored VWAP from its all-time highs, which the desk treats as a real test. Nokia (<span class="tk">$NOK</span>) is in the book and roughly tripled after they bought it. Coherent (<span class="tk">$COHR</span>), the optical-components name, is at fresh all-time highs. Synopsys (<span class="tk">$SNPS</span>), the chip-design software company, is also in there. So is Soundhound (<span class="tk">$SOUN</span>).</p>
+
+    <p>The legal question came up on the show. Nvidia is a regulated insider on several of these. The line is that equity investments are fine. They hold strategic stakes for the long term. Day-trading ahead of guidance would be a different category and would be a problem. Buying CoreWeave equity and sitting on it for years is none of that. Strazza framed Nvidia as the most transparent window the public has into who is actually consuming AI compute right now, because the company is in the room with all of them before the rest of the market gets the data.</p>
+
+    <p>The same conversation produced a useful rule for IPOs in general. Two anchored levels matter post-listing. The anchored VWAP from the IPO day, and the offering price itself. Above both, it is hard to be bearish. Below both, it is hard to be bullish. The reference data is bleak. Roughly 90% of IPOs trade below their offering price at some point. After Blackstone went public in 2007 and immediately cratered 90%, the post-financial-crisis era has been dominated by IPOs that drew down 50% before they ever doubled. Alibaba, Meta, Uber, Coinbase. The desk reads CoreWeave through that lens. The retest at the anchored VWAP from the high is exactly where most post-2007 IPOs have either confirmed or failed.</p>
+  </section>
+
+  <!-- Chapter 4: Quotes -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;I was taught not to fight Papa Dow.&rdquo;</blockquote>
+      <div class="attrib">Spencer, on why he still respects the index that everyone else calls dated <a class="ts" href="https://www.youtube.com/watch?v=vJKsf2pCfIo&amp;t=210s" target="_blank">[03:30]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;Google and Meta aren&rsquo;t in and the Dow&rsquo;s selling paint. It&rsquo;s crazy.&rdquo;</blockquote>
+      <div class="attrib">Strazza, on Sherwin Williams outweighing Apple, Amazon, and Nvidia <a class="ts" href="https://www.youtube.com/watch?v=vJKsf2pCfIo&amp;t=1605s" target="_blank">[26:45]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;They bought Intel and it&rsquo;s almost like they knew something.&rdquo;</blockquote>
+      <div class="attrib">JC, on Nvidia&rsquo;s 13F reading like a strategic buyer&rsquo;s book <a class="ts" href="https://www.youtube.com/watch?v=vJKsf2pCfIo&amp;t=898s" target="_blank">[14:58]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;Above the IPO price and above the anchored VWAP from the offering, it&rsquo;s hard to be bearish. Below those levels, it&rsquo;s hard to be bullish.&rdquo;</blockquote>
+      <div class="attrib">Strazza, on the two-level framework for any IPO chart <a class="ts" href="https://www.youtube.com/watch?v=vJKsf2pCfIo&amp;t=1170s" target="_blank">[19:30]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The Dow&rsquo;s silence is mostly mechanical.</strong> Three months without a new high, but the index gives more weight to a paint company than to <span class="tk">$AAPL</span>, <span class="tk">$AMZN</span>, or <span class="tk">$NVDA</span>. <span class="tk">$MSFT</span> is the largest tech holding at 5%. The S&amp;P and NASDAQ have been making fresh highs the whole way. Track those for tape direction. Watch the Dow for what it reveals about old-economy leadership rotating in or out.</li>
+      <li><strong>The Feb 6 anchored VWAP is the level on ETH and SOL.</strong> Both are sitting right on it. <span class="tk">$BTC</span> <span class="pr">$76,850</span> is in better shape, retesting the March base-breakout it ran from in April. Commercial hedgers are dumping <span class="tk">$ETH</span> while speculators load up, which historically resolves against the speculators.</li>
+      <li><strong>Read Nvidia&rsquo;s 13F before any new AI-adjacent trade.</strong> Intel doubled, Nokia tripled, Coherent at ATH, CoreWeave at the line that decides whether it joins them or breaks. <span class="tk">$NVDA</span>&rsquo;s treasury team is closer to AI compute demand than any analyst. The filings are free, quarterly, and have been a quiet edge.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
