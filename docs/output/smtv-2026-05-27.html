@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two Chipmakers Cross a Trillion Dollars in One Morning - SMTV 2026-05-27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; May 27, 2026</div>
+    <h1>Two Chipmakers Cross a Trillion Dollars in One Morning</h1>
+    <p class="subtitle">Micron went from half a trillion to a trillion in 45 days, stock markets from Helsinki to Seoul are printing records, and the desk's only message for everyone still bracing for a top is to stop fighting the tape.</p>
+    <div class="meta">
+      73 min &middot; <a href="https://www.youtube.com/watch?v=_C0ybc29I00" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Two companies became worth a trillion dollars on the same morning. One of them, a memory-chip maker, got there from half a trillion in 45 days. Stock markets are at record highs almost everywhere on Earth, including places that had not seen a new high since the 2000s. And yet consumer sentiment just hit a record low, and most Americans think buying stocks is a bad idea. The desk's read on that gap is blunt. Stop fighting the tape. Crypto, for its part, did not get the memo and sat the whole melt-up out.</p>
+    <ul>
+      <li>Two new trillion-dollar companies in one day, both memory makers: <span class="tk">$MU</span> (Micron, $500B to $1T in roughly 45 days, still near 10x earnings) and SK Hynix; about a dozen names now sit in the trillion club. One sell-side target was hiked from <span class="pr">$500</span> to <span class="pr">$1,500</span> on a call that the old memory boom-bust cycle is over.</li>
+      <li>The melt-up spans the globe well beyond US tech: Vanguard all-world ex-US, Germany, the Euro Stoxx 600 (out of a 25-year base), London (with zero tech weight), Italy, Spain, the Nordics, Japan, China at 10-year highs, and Korea outright parabolic.</li>
+      <li><span class="tk">$DJIA</span> <span class="pr">50,635</span> new ATH; S&amp;P 500 futures <span class="pr">7,560</span> <span class="ch up">+0.3%</span> ATH; <span class="tk">$NDX</span> futures above <span class="pr">30,000</span> for the first time ever, near <span class="pr">30,330</span> <span class="ch up">+1%</span>.</li>
+      <li>Commodities and rates: crude <span class="pr">$89</span> <span class="ch down">-5%</span>; gold <span class="pr">$4,480</span> <span class="ch down">-1.2%</span>; silver <span class="pr">$75</span> <span class="ch down">-2%</span>; copper <span class="pr">$637</span> flat; 30Y bond futures up near 112; VIX near <span class="pr">17</span>.</li>
+      <li><span class="tk">$BTC</span> <span class="pr">$76,000</span>, <span class="tk">$ETH</span> <span class="pr">$2,100</span>, <span class="tk">$SOL</span> <span class="pr">$84.25</span> <span class="ch up">+1%</span>; total crypto cap <span class="pr">$2.52T</span>, unchanged from two months ago; the desk has been cutting crypto exposure.</li>
+      <li>The sentiment paradox: consumer sentiment at a record low, the weekly AAII retail survey still bear-heavy, while transports <span class="tk">$IYT</span>, railroads, airlines, truckers and Caterpillar all break out, a Dow-Theory style confirmation.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>The Speculative Dollar Found Memory Chips, Not Crypto</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$76,000</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$2,100</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$84.25</div>
+        <div class="stat-change up">+1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.52T</div>
+        <div class="stat-change flat">~2 months flat</div>
+      </div>
+    </div>
+    <p>Crypto went nowhere again. <span class="tk">$BTC</span> held just under <span class="pr">$76,000</span> flat, <span class="tk">$ETH</span> sat near <span class="pr">$2,100</span>, and <span class="tk">$SOL</span> ticked up about a percent to <span class="pr">$84.25</span>. The total market cap is parked at <span class="pr">$2.52 trillion</span>, the exact same figure as two months ago. The desk has been trimming crypto exposure since last week and closed a miner position the day before.</p>
+    <p>The real story is the broken link. For years crypto traded as the high-octane version of tech, and the risk-on dollar tended to find it first. That relationship has snapped. Stocks and the Nasdaq are ripping to fresh records while Bitcoin sits at roughly half the level the desk would have guessed if you told them six months ago that US indices would go vertical. JC put the size in perspective by noting that the entire <span class="pr">$2.5 trillion</span> crypto complex is worth about two Microns or half an Nvidia, and that a single IPO coming this summer could be larger than every cryptocurrency that has ever existed combined. The speculative money that used to chase alt rotations is flowing into AI hardware instead.</p>
+    <p>Strazza gave the one constructive read. Bitcoin alone still looks like it came out of a multi-month base and is retesting that base from above, holding a series of higher highs and higher lows. The rest of the space never managed to reclaim anything and still charts poorly. Bitcoin last printed an all-time high in the first week of October, so this is now a months-long grind rather than a fresh leg lower.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Two Memory Names Hit a Trillion as the Whole World Makes New Highs</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow Jones</div>
+        <div class="stat-value">50,635</div>
+        <div class="stat-change up">new ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Nasdaq 100 fut</div>
+        <div class="stat-value">30,330</div>
+        <div class="stat-change up">+1% &middot; first time &gt; 30K</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 fut</div>
+        <div class="stat-value">7,560</div>
+        <div class="stat-change up">+0.3% &middot; ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude Oil</div>
+        <div class="stat-value">$89</div>
+        <div class="stat-change down">-5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,480</div>
+        <div class="stat-change down">-1.2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">17</div>
+        <div class="stat-change flat">elevated</div>
+      </div>
+    </div>
+    <p>Two companies crossed a trillion dollars in market value on the same morning, and both make memory. <span class="tk">$MU</span> (Micron) and SK Hynix are the names. Memory chips are the DRAM and high-bandwidth memory that get stacked next to AI accelerators, the part of the hardware stack that has gone from commodity to bottleneck as data centers scale. Micron went from <span class="pr">$500 billion</span> to <span class="pr">$1 trillion</span> in about 45 days. For scale, Nvidia took four months to make that same jump, Apple and Berkshire each took six and a half years. Micron still trades around 10 times earnings even after the run, because it is historically a brutal boom-bust stock that swings between fat profits and years of losses. One sell-side analyst just hiked the target from <span class="pr">$500</span> to <span class="pr">$1,500</span> and declared that cyclical pattern over, pricing the stock off a 2029 earnings estimate. Whether or not that holds, it tells you where conviction on AI hardware sits right now.</p>
+    <p>SK Hynix, the Korean memory maker that sits alongside Samsung, crossed a trillion overnight. <span class="tk">$EWY</span> (the iShares South Korea fund) now charts almost like a copy of Micron, which is why Korea keeps coming up as the first market the desk checks in the morning. The framework underneath all of it is an old desk saying, the bigger the base, the higher in space, a line that goes back to the 1940s and just means long consolidations tend to release violent moves. Micron spent late last year building one of the biggest bases in the market before this ran.</p>
+    <p>The more important point was breadth. This is not just a US tech story. JC ripped through global indices and almost every one is at a record. Germany, the Euro Stoxx 600 emerging from a 25-year base, London with zero technology weight, Italy, Spain, the Nordics, Greece at 15-year highs, Japan, Singapore, China at 10-year highs, and Korea going outright parabolic. The all-world-ex-US fund is at its highest level ever. His read is that if the UK can go vertical with no tech exposure at all, the move cannot be only an AI trade, and technology, energy and financials are all rising around the world at once. Even European banks, which he calls the worst real businesses on the planet, are at records, which he treats as evidence there are no hidden cracks under the financial system. The biggest individual winners, though, still come from the United States roughly nine times out of ten.</p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>The same AI buildout that just minted two trillion-dollar memory makers is soaking up the marginal speculative dollar. Capital that in a different cycle would have rotated into alts is being pulled into the chips that feed the data centers. Until that AI capex impulse cools, the structural headwind for crypto demand stays in place no matter how good a Bitcoin chart looks.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Framework</div>
+    <h2>Everything Is at a Record and the Public Thinks It Is a Trap</h2>
+    <p>Set against all of those highs, mood is on the floor. Consumer sentiment just printed its lowest reading on record, and more than half of American adults now say investing in the stock market is a bad idea. The weekly AAII survey, a long-running poll of retail investors that tracks how many are bullish versus bearish, still shows more bears than bulls. That distance between price and public mood was the day's real tension, and it is the kind of divergence that makes people stand in front of a freight train.</p>
+    <p>Phil's whole message was about that. He is watching people fight the tape across Twitter and StockTwits every morning, buying puts and shorting strength, and his read is that in roughly nine out of ten cases the reason has more to do with the person than the market. He flipped the famous Keynes line into something sharper for this tape, that the market can stay solvent longer than you can remain irrational. The practical advice was to look in the mirror and ask what you are actually fighting before you keep betting against a market this strong.</p>
+    <p>JC gave the technical backstop for not fighting it. The transports are breaking out. <span class="tk">$IYT</span> (the transportation ETF, which holds railroads, airlines and truckers) is at new all-time highs, and Caterpillar is at a record too. This is the heart of Dow Theory, the century-old idea that a market advance is only confirmed when the companies that move goods and the companies that make them are rising together. When railroads, airlines, truckers and logistics names all break out at once, it says goods are genuinely being shipped and things are genuinely being built, which is the kind of confirmation that comes from real economic activity rather than pure multiple expansion. Whatever you think of valuations, the internals are not flashing the warning a record-low sentiment reading would imply.</p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"Crypto's irrelevant. Always has been. People get mad when I say that. It's $2.5 trillion. Micron just went from half a billion to a trillion in 45 days."</blockquote>
+      <div class="attrib">JC, sizing the crypto market against one chip stock <a class="ts" href="https://www.youtube.com/watch?v=_C0ybc29I00&amp;t=691s" target="_blank" rel="noopener">[11:31]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"I've been in this business 23 years. I've never seen this before. Never in my entire life. This is something new."</blockquote>
+      <div class="attrib">JC, on global indices all hitting records at once <a class="ts" href="https://www.youtube.com/watch?v=_C0ybc29I00&amp;t=1061s" target="_blank" rel="noopener">[17:41]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"The market can actually stay solvent longer than you can remain irrational."</blockquote>
+      <div class="attrib">Phil Pearlman, flipping the old line for this tape <a class="ts" href="https://www.youtube.com/watch?v=_C0ybc29I00&amp;t=4068s" target="_blank" rel="noopener">[67:48]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Railroads are breaking out. Airlines are breaking out. Truckers are breaking out. Sounds to me like people are moving stuff around. People are building things."</blockquote>
+      <div class="attrib">JC, on the transports confirming the advance <a class="ts" href="https://www.youtube.com/watch?v=_C0ybc29I00&amp;t=4350s" target="_blank" rel="noopener">[72:30]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Two memory makers crossed a trillion dollars in one morning.</strong> <span class="tk">$MU</span> went from <span class="pr">$500B</span> to <span class="pr">$1T</span> in about 45 days and SK Hynix joined overnight, with Micron still near 10x earnings. The AI-hardware bid has spread from the GPUs to the chips that feed them.</li>
+      <li><strong>The melt-up is global and broad.</strong> From Frankfurt to London to Seoul, records are everywhere, including a zero-tech UK and a Europe leaving a 25-year base. Breadth this wide is rarely the backdrop for a top forming quietly.</li>
+      <li><strong>Mood is the mirror image of price.</strong> Consumer sentiment is at a record low and retail is still bearish, but transports, railroads and Caterpillar are confirming the advance. Crypto is the one risk asset sitting it out, with <span class="tk">$BTC</span> <span class="pr">$76,000</span> and total cap <span class="pr">$2.52T</span> flat.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
