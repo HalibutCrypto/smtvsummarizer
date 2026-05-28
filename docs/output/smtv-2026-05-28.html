@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Buy Plus Ten, Kohl's Plus Seventeen, the Mall Refuses to Die - SMTV May 28, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; May 28, 2026</div>
+    <h1>Best Buy Plus Ten, Kohl's Plus Seventeen, the Mall Refuses to Die</h1>
+    <p class="subtitle">Snowflake printed a thirty-percent gap on earnings, the government bought a fifth sector before lunch, and crypto was the one risk asset still bleeding into all of it.</p>
+    <div class="meta">
+      67 min &middot; <a href="https://www.youtube.com/watch?v=Rf2tfLn3sPY" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The mall was supposed to be dead. Best Buy gapped ten percent on earnings. Kohl's seventeen. Dollar Tree eighteen. Target spent the morning on the new 52-week high list. The retail sentiment poll still has more bears than bulls for the second straight week while stocks make records and mall parking lots stay full. Crypto sat the whole thing out and got smoked while the speculative dollar chased drones and chip earnings.</p>
+    <ul>
+      <li>Mall stocks ripped on earnings: <span class="tk">$BBY</span> <span class="ch up">+10%</span> (best quarter in a year and a half), <span class="tk">$KSS</span> <span class="ch up">+17%</span>, <span class="tk">$DLTR</span> <span class="ch up">+18%</span>, <span class="tk">$TGT</span> on the new 52-week high list. Costco and Gap report tonight; Macy's next week.</li>
+      <li><span class="tk">$SNOW</span> gapped about <span class="ch up">+30%</span> on a blowout beat, revenue up 33% year over year, guiding 31% annual growth above its own prior targets. The desk's bigger tell was <span class="tk">$CRM</span> only <span class="ch down">-1%</span>, mute compared to how every other SaaS name (ServiceNow, Intuit, Roper, Microsoft) has been crushed on earnings.</li>
+      <li>Government took direct equity in a fifth sector. Drone names doubled in pre-market: <span class="tk">$UMAC</span> <span class="ch up">+33%</span>, plus <span class="tk">$AVAV</span>, <span class="tk">$KTOS</span> (Kratos, defense drones), <span class="tk">$RCAT</span>, <span class="tk">$NDS</span>. Same playbook as Intel, MP Materials (rare earths), and quantum names.</li>
+      <li><span class="tk">$DJIA</span> <span class="pr">50,620</span> at fresh highs; <span class="tk">$SPX</span> <span class="pr">7,530</span> <span class="ch flat">flat</span>; <span class="tk">$NDX</span> just under <span class="pr">30,000</span> <span class="ch flat">flat</span>. Crude <span class="pr">$91</span> <span class="ch up">+2.5%</span>; gold <span class="pr">$4,420</span> <span class="ch down">-1.3%</span>; silver <span class="pr">$73.50</span> <span class="ch down">-2%</span>; VIX <span class="pr">16.60</span>.</li>
+      <li>Crypto bleeding for a fifth straight session. <span class="tk">$BTC</span> <span class="pr">$73,270</span>, <span class="tk">$ETH</span> back under <span class="pr">$2,000</span> at <span class="pr">$1,985</span> <span class="ch down">-2%</span>, <span class="tk">$SOL</span> <span class="pr">$80</span> <span class="ch down">-2%</span>; total cap <span class="pr">$2.43T</span>, off the $2.52T plateau that had held for two months.</li>
+      <li>AAII weekly retail sentiment still shows 42% bearish over six months. Bears beat bulls for the second straight week into fresh all-time highs.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Was the One Risk Asset Selling Off Into the Mall Ripper</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$73,270</div>
+        <div class="stat-change down">week-long bleed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,985</div>
+        <div class="stat-change down">-2% &middot; back under 2K</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$80</div>
+        <div class="stat-change down">-2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.43T</div>
+        <div class="stat-change down">off $2.52T plateau</div>
+      </div>
+    </div>
+    <p>Crypto opened down across the board. <span class="tk">$BTC</span> sat at <span class="pr">$73,270</span>, with the host's phrasing for the week being that the price is "getting the crap kicked out of it." <span class="tk">$ETH</span> slid back under <span class="pr">$2,000</span> to roughly <span class="pr">$1,985</span> <span class="ch down">-2%</span>. <span class="tk">$SOL</span> sat at <span class="pr">$80</span>, also <span class="ch down">-2%</span>. Total market cap fell to <span class="pr">$2.43 trillion</span>, off the <span class="pr">$2.52T</span> plateau that had held for two months.</p>
+    <p>What makes the print look active rather than quiet is the rest of the tape. Snowflake gapped thirty percent overnight. Drone names doubled in pre-market. Retail earnings printed double-digit gaps in pre-market on a half dozen names. Bitcoin was the one liquid risk asset selling off into all of it. The desk barely touched the prices on air. JC has been trimming crypto exposure for over a week. Strazza's only constructive note is that Bitcoin alone still charts as a base retest from above, and that read is conditional on the next leg not breaking lower.</p>
+    <p>The mood toward alts was harsher. The host's only crypto comment in the open was that Bitcoin, ETH and SOL are all puking and "Papa Dow" is at fresh highs. No alt narrative was given air time. The flow story for the second straight week is that the speculative dollar that used to find Bitcoin first is finding hardware and short-squeeze names instead.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>The Mall Stocks Gapped and the Sentiment Poll Stayed Mad</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow Jones</div>
+        <div class="stat-value">50,620</div>
+        <div class="stat-change up">fresh highs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 fut</div>
+        <div class="stat-value">7,530</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Nasdaq 100 fut</div>
+        <div class="stat-value">~30,000</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude Oil</div>
+        <div class="stat-value">$91</div>
+        <div class="stat-change up">+2.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,420</div>
+        <div class="stat-change down">-1.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">16.60</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+    </div>
+    <p>The first read of the morning was retail earnings. <span class="tk">$BBY</span> gapped about ten percent on what the desk called its best quarter in a year and a half. Customers are reportedly buying the new $7,000 RG television sets faster than the company expected, which is not how a broke consumer behaves. <span class="tk">$KSS</span> ripped seventeen percent on a beat that was barely better than fine. <span class="tk">$DLTR</span> printed eighteen. <span class="tk">$TGT</span> spent the morning on the new 52-week high list. None of these companies are running. <span class="tk">$KSS</span> is still down roughly forty percent year to date. So is <span class="tk">$ANF</span>. So is <span class="tk">$LULU</span>. When the market correlates wildly different retail businesses tightly enough to mark them all down forty percent in tandem, it tends to create exactly the kind of asymmetric setup that showed up this morning.</p>
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Working</div>
+        <ul>
+          <li><span class="tk">$BBY</span> &middot; best quarter in a year and a half, $7K RG TVs selling</li>
+          <li><span class="tk">$KSS</span> &middot; pulse-check beat, +17%</li>
+          <li><span class="tk">$DLTR</span> &middot; +18% on a mediocre-economy fit</li>
+          <li><span class="tk">$TGT</span> &middot; new 52-week high list, "the hot moms are back"</li>
+          <li><span class="tk">$TJX</span> &middot; treasure-hunt model still works on every consumer tier</li>
+          <li><span class="tk">$ONON</span> &middot; post-peak but margins still juicy, hot-mom favorite</li>
+          <li><span class="tk">$SBUX</span> &middot; chart cleaning up under Brian Niccol's keep-it-simple turnaround</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Not Working</div>
+        <ul>
+          <li><span class="tk">$NKE</span> &middot; lost shelf space, Air Jordan no longer moves product</li>
+          <li><span class="tk">$LULU</span> &middot; down 40% YTD, founder fight just resolved this week</li>
+          <li><span class="tk">$UAA</span> &middot; consumer is choiceful and the brand lost</li>
+          <li><span class="tk">$HD</span> &middot; chart screams death, housing-linked drag</li>
+          <li><span class="tk">$LOW</span> &middot; same housing complex, same chart</li>
+          <li><span class="tk">$CROX</span> &middot; at risk if Hokas keep taking the nurse trade</li>
+        </ul>
+      </div>
+    </div>
+    <p>The second print of the day was software. Snowflake reported revenue up 33% year over year, guided to 31% annual growth above its own prior targets, and gapped about thirty percent in pre-market on a sixty-billion-dollar base. A move that size at that size is rare and pulls the company toward a hundred billion. The more interesting read was Salesforce. <span class="tk">$CRM</span> was down only one percent on its own number into a tape that has been crushing every other piece of enterprise software for quarters, including ServiceNow, Intuit, Roper, and even Microsoft slightly. The mute reaction reads bullish to Strazza, who has been buying into the cohort and called <span class="tk">$TEAM</span> (Atlassian) his favorite of the still-broken charts. Atlassian gapped on earnings already and has been coiling above a base breakout for a couple of weeks, which is the cleanest pattern of the bunch.</p>
+    <p>Set against all of the gaps, the latest weekly AAII retail sentiment poll, which tracks how many individual investors expect stocks higher or lower over the next six months, still shows 42% bearish. Bears beat bulls for the second straight week. The S&amp;P closes at records on the way up. The desk's running joke is that AAII is mostly "boomer white Republicans from the Midwest" and the methodology is open enough that anyone who joins the organization can vote. The serious point underneath the joke is that this is the same survey that turned bearish at the 2022 bottom and bullish at the 2021 peak. It has been wrong in the direction of the tape for over a year, and it is wrong again.</p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>Same desk that scaled back crypto last week tracked two prints this morning, retail names ripping on earnings and drone stocks doubling on a government headline. Both pulled the marginal speculative dollar exactly where crypto used to draw it. The risk-on bid is alive and well; it just is not arriving onchain.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Orange Swan</div>
+    <h2>The Government Bought a Fifth Sector and the Drones Doubled</h2>
+    <p>Drone names gapped up double digits this morning on a Wall Street Journal report that the federal government plans to take direct equity stakes in the sector. <span class="tk">$UMAC</span> (Unusual Machines, a small-cap drone-component maker that closed yesterday under three dollars) ripped roughly thirty-three percent. <span class="tk">$AVAV</span>, <span class="tk">$KTOS</span> (Kratos, a defense-drone manufacturer), <span class="tk">$RCAT</span>, and <span class="tk">$NDS</span> all ran with it. The Jedi and DRNZ thematic drone ETFs, which the desk has been long going into the print, popped with the basket.</p>
+    <p>What makes the day matter is that this is now a pattern with five clear data points. The federal government took an explicit equity stake in Intel earlier this year. Then in <span class="tk">$MP</span> (MP Materials, the rare-earth miner). Then in a basket of quantum-computing names. Then in semiconductors broadly through chip-fab subsidies. Drones are the fifth pull on the same lever in roughly twelve months. JC calls each of these announcements an "orange swan," a deliberate riff on the black-swan label, and treats the trade pattern as cockroach theory. When you find one of these in the kitchen, it is never the only one in the building.</p>
+    <p>The trade structure underneath is concrete. Identify sectors the administration is likely to pick next, get long ahead of the announcement, and avoid going short anything that fits the profile because the gap risk is one-sided and ugly. Sectors already flagged by the desk for the next round of attention include rare earths in their non-MP form, advanced robotics, autonomous defense systems, and any small-cap with a politically visible board. The chat noted before the gap that <span class="tk">$UMAC</span>'s board reportedly includes a member with direct family ties to the administration, with the dry observation that this is no longer the kind of edge anyone has to dig for.</p>
+    <p>The bigger point is the cadence. The desk's view is that you can hate the policy or love it without it changing the trade. The next sector chosen will gap. Shorts who try to fade it get washed. Longs positioned ahead will print. The play stops working only when the announcements stop, and the announcements show no sign of slowing.</p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"Forty-two percent of these guys are bearish over the next six months again. More bears than bulls two weeks in a row. The stock market makes new all-time highs every week. What are they so scared about?"</blockquote>
+      <div class="attrib">Strazza, on the AAII weekly retail sentiment poll into fresh highs <a class="ts" href="https://www.youtube.com/watch?v=Rf2tfLn3sPY&amp;t=1607s" target="_blank" rel="noopener">[26:47]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Cockroach theory. This ain't the last one. There's going to be more. And then when they've done these things, have investors who followed made money? Yes."</blockquote>
+      <div class="attrib">JC, on the government as a serial equity investor <a class="ts" href="https://www.youtube.com/watch?v=Rf2tfLn3sPY&amp;t=1195s" target="_blank" rel="noopener">[19:55]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Whether you like it or not, whether you think it makes sense or not, I'm pretty sure me and Straz are not so sure it's the best idea. But hey, we don't make the rules. Let's make money."</blockquote>
+      <div class="attrib">JC, on trading the orange-swan announcements <a class="ts" href="https://www.youtube.com/watch?v=Rf2tfLn3sPY&amp;t=1235s" target="_blank" rel="noopener">[20:35]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Team gapped higher on earnings and then just kind of chilled out and started coiling above a little base breakout level. I think team looks ready for another run higher."</blockquote>
+      <div class="attrib">Strazza, on Atlassian as the best of the still-broken software charts <a class="ts" href="https://www.youtube.com/watch?v=Rf2tfLn3sPY&amp;t=1056s" target="_blank" rel="noopener">[17:36]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The mall stocks ripped while the sentiment poll stayed mad.</strong> <span class="tk">$BBY</span> <span class="ch up">+10%</span>, <span class="tk">$KSS</span> <span class="ch up">+17%</span>, <span class="tk">$DLTR</span> <span class="ch up">+18%</span>, <span class="tk">$TGT</span> on the 52-week high list, while the AAII weekly survey held 42% bearish for the second straight week. <span class="tk">$COST</span> and Gap report tonight, Macy's next week. The asymmetric setup runs through that string of prints.</li>
+      <li><strong>Government direct equity is a tradeable cadence now.</strong> Drones today after Intel, <span class="tk">$MP</span>, quantum, and chip-fab subsidies. JC's read is cockroach theory. Position ahead, take the gap, and never short anything that fits the profile.</li>
+      <li><strong>Crypto is still the one risk asset out of the bid.</strong> <span class="tk">$BTC</span> <span class="pr">$73,270</span> on a week-long bleed, <span class="tk">$ETH</span> <span class="pr">$1,985</span> back under 2K, <span class="tk">$SOL</span> <span class="pr">$80</span>, total cap <span class="pr">$2.43T</span> off the two-month plateau. <span class="tk">$SNOW</span> gapped <span class="ch up">+30%</span> overnight and the drone basket doubled while BTC sold off into both.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
