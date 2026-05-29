@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tokenization Stops Being a Crypto Pitch and Becomes Wall Street's New Plumbing - SMTV May 29, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; May 29, 2026</div>
+    <h1>Tokenization Stops Being a Crypto Pitch and Becomes Wall Street's New Plumbing</h1>
+    <p class="subtitle">The DTCC starts moving $100 trillion of US securities onto blockchain rails in July, Dell rips 35 percent pre-market, and JC runs a 1970s gold script the desk does not believe in yet.</p>
+    <div class="meta">
+      61 min &middot; <a href="https://www.youtube.com/watch?v=48IEIUMtFbI" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 MIN READ</span>
+    </div>
+    <p class="tldr-headline">For the entire bull run, crypto and stocks have been parallel tracks. That ends in July. The DTCC, which clears almost every American security, starts tokenizing $100 trillion of assets on its books. Louis Sykes calls it the most important story you are not being told right now. Meanwhile Dell rips 35 percent on the open and almost steals the day. And nobody on the desk cares about gold, which is usually when gold starts to matter again.</p>
+    <ul>
+      <li>DTCC launches a tokenized entitlements service in July, pulling its $100T of cleared US securities onto blockchain rails. CME began 24/7 trading of all crypto products today. Paxos became the first blockchain-native clearing house with SEC approval.</li>
+      <li><span class="tk">$DELL</span> opens up roughly <span class="ch up">+35%</span> on AI hardware revenue guided around 60% YoY. JC closes the position at about +140% from his April entry.</li>
+      <li>Software broadens out. Only 12% of <span class="tk">$IGV</span> components carry an RSI above 70. Early leaders sit in cyber security (<span class="tk">$PANW</span>, <span class="tk">$CRWD</span>, <span class="tk">$FICO</span>, <span class="tk">$GEN</span>) and rebranded Bitcoin miners (<span class="tk">$HUT</span>).</li>
+      <li>Dow futures push <span class="pr">50,850</span>, S&amp;P near <span class="pr">7,600</span>, NDX 100 flat at <span class="pr">30,300</span>. VIX prints below <span class="pr">16</span> for the first time since January.</li>
+      <li><span class="tk">$BTC</span> <span class="pr">$73,000</span> flat, <span class="tk">$ETH</span> just under <span class="pr">$2,000</span>, <span class="tk">$SOL</span> <span class="pr">$81.50</span>, total crypto market cap <span class="pr">$2.43T</span>. Louis still views Ethereum as a "big sucker's bet" for institutional rails. Hyperliquid keeps grinding higher every day.</li>
+      <li>JC games out the 1970s gold analog. 1971 to 1974 gold ran $30 to $200, gave back 47% into the 1976 bottom, then rallied 750% into 1980. The desk does not own gold here. That is the entire setup.</li>
+      <li>Casino M&amp;A: Tilman Fertitta's Golden Nugget acquiring Caesars <span class="tk">$CZR</span>. <span class="tk">$ASTS</span> <span class="ch down">-50%</span> on sympathy to the Blue Origin rocket explosion.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTER 1: CRYPTO -->
+  <section class="chapter">
+    <div class="chapter-label">Crypto</div>
+    <h2>Wall Street's Tokenization Push Lands in July and Public Chains Are Not Invited</h2>
+    <p class="chapter-sub">Louis Sykes walks the desk through the DTCC pilot, the CME 24/7 switch, and why JP Morgan will never run its book on Ethereum.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$73,000</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,990</div>
+        <div class="stat-change flat">flat &middot; sub-$2K</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$81.50</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Mcap</div>
+        <div class="stat-value">$2.43T</div>
+        <div class="stat-change flat">slow Friday tape</div>
+      </div>
+    </div>
+
+    <p>The morning price read almost got shelved on the show this week as too quiet to bother with. On a crypto Friday the spot tape stays. Bitcoin holds <span class="pr">$73,000</span>, Ethereum is just under <span class="pr">$2,000</span>, Solana at <span class="pr">$81.50</span>, total crypto market cap <span class="pr">$2.43 trillion</span>. Most of the action is upstream of those numbers.</p>
+
+    <p>Louis Sykes spent his segment walking through what the Depository Trust &amp; Clearing Corporation is launching in July. The DTCC clears more than $100 trillion of US equities, fixed income, and options. Every major broker is a participant. In July it begins a service that lets those participants take existing security entitlements and turn them into tokenized entitlements every day, against everything on the books. That is not a pilot with one bond fund. That is the plumbing of the entire US securities market moving onto blockchain rails on a phased timeline.</p>
+
+    <p>Louis framed the why through a hotel deposit analogy. When you check in, your card gets held for an amount you cannot actually spend. The financial system runs on that same idea at the scale of trillions, capital parked against the chance a counterparty fails during the one-day window it takes a trade to settle. Tokenization compresses that window toward zero and frees the float. He called it a tax on humanity that gets paid in fees, and tokenization is the upgrade that finally removes it.</p>
+
+    <p>The headlines stacked up on the same morning. CME began 24/7 trading of all crypto products today. Paxos was granted SEC authorization as the first blockchain-native clearing house in the world. Every big bank now has open job listings for directors of tokenization services, digital assets, and crypto strategy. The career pages are leaking the budget before the press releases do.</p>
+
+    <p>The portfolio question is which rails. Louis is not bullish on Ethereum or Solana as the network the institutions will use. The argument is twofold. Public chains are public by design, so JP Morgan running its bond book on Ethereum would publish every collateral movement and payroll feed to the world. Second, regulated institutions need privacy modes, compliance modes, and jurisdictional configurations that the existing public chains do not offer. A New Zealand bank does not need what a US money-center bank needs. The networks that win this trade are the ones built to flex around that.</p>
+
+    <p>JC's response was the trader's version of the same trade. Skip the white papers, list every company touched by tokenization, sort by relative strength, buy the leaders. Hyperliquid is the name the desk keeps coming back to under that filter, and it has been going up almost every day. The crypto theme is broadening into something larger than crypto. Traditional financial companies adopting these rails now sit in the same universe as the L1s.</p>
+  </section>
+
+  <!-- CHAPTER 2: MARKETS / DELL -->
+  <section class="chapter">
+    <div class="chapter-label">Markets</div>
+    <h2>Dell Rips 35 Percent on AI Hardware and JC Closes the Trade at +140 Percent</h2>
+    <p class="chapter-sub">The hardware leg has done its work. The desk is rotating into a software universe that is mostly not overbought yet.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow Futures</div>
+        <div class="stat-value">50,850</div>
+        <div class="stat-change up">+150 &middot; near 51K</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P Futures</div>
+        <div class="stat-value">~7,600</div>
+        <div class="stat-change flat">flat &middot; near ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NDX 100</div>
+        <div class="stat-value">30,300</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">&lt; 16</div>
+        <div class="stat-change down">1st sub-16 since January</div>
+      </div>
+    </div>
+
+    <p>Dow futures push <span class="pr">50,850</span> with Dow 51K in sight for the first time. The S&amp;P sits near <span class="pr">7,600</span>. The NASDAQ 100 is flat at <span class="pr">30,300</span>. The VIX prints below <span class="pr">16</span> for the first time since January. The fear gauge quietly disappeared while everyone was arguing about Korean memory stocks.</p>
+
+    <p>Then there is <span class="tk">$DELL</span>. The stock opens up about <span class="ch up">+35%</span> pre-market. A $200 billion hardware company moving 35 percent in a single session would have been the story of the year a decade ago. This year it shares a slot with <span class="tk">$SNOW</span>, which did roughly the same move on a $60 billion cap yesterday, and the desk had already worked through that drill.</p>
+
+    <p>Dell guided full-year revenue growth around 60 percent. The company grew revenue between 2 and 7 percent annually pre-COVID and 14 percent last year. AI hardware demand has eaten the income statement. JC bought the stock in early April near <span class="pr">$175</span> and is closing the trade today around <span class="pr">$425</span>, up roughly 140 percent in under two months. The 14-day RSI is at 90, the highest reading in the stock's history. The exit is on RSI extreme and on a desire to redeploy into something fresher.</p>
+
+    <p>The hardware index that captures this trade was delisted by State Street in June 2020 at the COVID low. The S&amp;P 500 Hardware index is up roughly 30x from that day. The ETF the public did not have access to has been the cleanest expression of the entire move, and JC keeps flagging that the issuers will probably re-list a hardware ETF only after the run is mostly over.</p>
+
+    <p>The pivot from here is software. Only 12 percent of <span class="tk">$IGV</span> components carry a 14-day RSI above 70, which leaves most of the index well below overbought. The early leaders sit in cyber security (<span class="tk">$PANW</span>, <span class="tk">$CRWD</span>, <span class="tk">$FICO</span>, <span class="tk">$GEN</span>) and in a few repurposed Bitcoin miners (<span class="tk">$HUT</span>) that now report as compute. <span class="tk">$MSFT</span> and <span class="tk">$NOW</span> are breaking out clean. <span class="tk">$PLTR</span> is off the mat. The SaaS-apocalypse thesis is being treated on the desk as already wrong.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Winners</div>
+        <ul>
+          <li><span class="tk">$DELL</span> &middot; <span class="ch up">+35%</span> on 60% revenue guide</li>
+          <li><span class="tk">$HPE</span> &middot; hardware leaderboard, fresh highs</li>
+          <li>Animal-stock book ripping: <span class="tk">$BBAI</span>, <span class="tk">$SOUN</span>, <span class="tk">$PONY</span>, <span class="tk">$DDOG</span></li>
+          <li>Software base broadening: <span class="tk">$MSFT</span>, <span class="tk">$NOW</span>, <span class="tk">$PLTR</span></li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Losers</div>
+        <ul>
+          <li><span class="tk">$ASTS</span> &middot; <span class="ch down">-50%</span> on Blue Origin rocket explosion</li>
+          <li><span class="tk">$AEO</span> &middot; <span class="ch down">-16%</span></li>
+          <li><span class="tk">$S</span> (SentinelOne) &middot; <span class="ch down">-15%</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Caesars <span class="tk">$CZR</span> is getting taken private by Tilman Fertitta's Golden Nugget, the biggest casino M&amp;A in years. The desk does not trade casinos anymore, but the deal getting cleared at all is the read. Spirit Airlines was killed last cycle and the regulators learned the optics.</p>
+  </section>
+
+  <!-- CHAPTER 3: FRAMEWORK -->
+  <section class="chapter">
+    <div class="chapter-label">Framework</div>
+    <h2>JC Pulls Out the 1970s Gold Script Nobody Is Watching</h2>
+    <p class="chapter-sub">A correction the gold bulls have forgotten, then a 750 percent rally that priced in everything everyone is worried about now.</p>
+
+    <p>Gold sits flat at roughly <span class="pr">$4,550</span> and silver at <span class="pr">$75.70</span>. Neither the desk nor anyone they follow is talking about it. Strazza, asked for his read, says he does not think much about gold at all these days. Macro Charts is publishing the same observation about everyone else. That collective shrug is the setup for what JC ran the desk through next.</p>
+
+    <p>The frame is direct. The claim is the current environment rhymes with the 1970s. Crude rising, inflation worry, public trust in the government bleeding. Nixon closes the gold window in 1971 and gold runs from $30 to $200 in three years. Most retail at the time concluded gold had already done its move. They were wrong by an order of magnitude.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">1971</div>
+        <h4>Nixon shuts the gold window</h4>
+        <p>The US drops the gold standard. Gold runs $30 to $200 over the next three years, a 6.5x move while inflation worry compounds.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1974 to 1976</div>
+        <h4>Twenty-month drawdown nobody remembers</h4>
+        <p>Gold falls 47 percent into August 1976, the day America turns 200. Everyone who chased the first move is out, vowing never again.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1976 to 1980</div>
+        <h4>The 750 percent rally off the forgotten low</h4>
+        <p>Off that bottom, gold runs 750 percent into the 1980 peak. The investors who bought when nobody wanted it owned the trade of the decade.</p>
+      </div>
+    </div>
+
+    <p>Run the overlay on the current move. If today rhymes with that 20-month drawdown, gold lows arrive next summer. If the rally that followed in the 1970s repeats from there, gold prints around <span class="pr">$2,700</span> next September and trades above <span class="pr">$23,000</span> by the end of this decade. JC was careful to flag that this will not actually play out that way, and that is the point. The exercise is the shape.</p>
+
+    <p>Bob Farrell's rule five sits on top of the whole thing. The public buys the most at the top and the least at the bottom. Right now Strazza says he will be a buyer next summer. Right now nobody is buying. That is the part of the cycle that always feels obvious in hindsight and never in real time.</p>
+  </section>
+
+  <!-- CHAPTER 4: QUOTES -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Lines Worth Saving</div>
+    <h2>Quotes</h2>
+
+    <div class="pullquote">
+      <blockquote>"I think it's the most important story that you're not being told right now."</blockquote>
+      <div class="attrib">Louis Sykes, on the tokenization mega-trend <a class="ts" href="https://www.youtube.com/watch?v=48IEIUMtFbI&amp;t=2443s" target="_blank">[40:43]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Software stocks have been treated in such a terribly unfair way. They will be the biggest winners of AI."</blockquote>
+      <div class="attrib">JC, on the SaaS-apocalypse trade being closed <a class="ts" href="https://www.youtube.com/watch?v=48IEIUMtFbI&amp;t=1437s" target="_blank">[23:57]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"I like aligning my incentives with those with power, a lot more power than me."</blockquote>
+      <div class="attrib">JC, on why he follows the institutions instead of reading the whitepapers <a class="ts" href="https://www.youtube.com/watch?v=48IEIUMtFbI&amp;t=2238s" target="_blank">[37:18]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"There's so many fresh breakouts. I don't want to own something that looks like this."</blockquote>
+      <div class="attrib">JC, on selling Dell with the RSI at 90 <a class="ts" href="https://www.youtube.com/watch?v=48IEIUMtFbI&amp;t=1262s" target="_blank">[21:02]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Tokenization is the actual crypto trade to follow now.</strong> The DTCC July go-live, CME's 24/7 switch, and Paxos getting SEC clearance are the story. <span class="tk">$BTC</span> and <span class="tk">$ETH</span> spot tape is a sideshow until those rails light up.</li>
+      <li><strong>Hardware is largely played, software is starting.</strong> <span class="tk">$DELL</span> at +35% closes the hardware chapter. With only 12% of <span class="tk">$IGV</span> overbought, cyber security and rebranded miners look like the front of the next wave.</li>
+      <li><strong>Nobody on the desk cares about gold, which is when gold scripts get interesting.</strong> JC's 1970s overlay puts the low next summer. Strazza is waiting. So is Macro Charts. So is everyone else.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
