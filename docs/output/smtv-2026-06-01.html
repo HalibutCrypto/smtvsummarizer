@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software Just Booked the Second-Best Month in Its History - SMTV June 1, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 1, 2026</div>
+    <h1>Software Just Booked the Second-Best Month in Its History</h1>
+    <p class="subtitle">Tech ran back-to-back months it has only ever done once before. Every breadth measure rolled over in the same window, and the desk is leaning in anyway.</p>
+    <div class="meta">
+      66 min &middot; <a href="https://www.youtube.com/watch?v=yrMpCd9jRc0" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">May closed with software up roughly twenty percent in a single month. The desk says it is the second-biggest monthly print software has ever made, and they had to skip the dot-com bottom to find a bigger one. Tech back-to-back like this has only happened once before in twenty-five years. None of the usual breadth confirmation showed up. More stocks fell than rose every trading day last week. The desk is leaning into tech anyway because the trend pays and the trend is still tech.</p>
+    <ul>
+      <li>May monthly tape was a tech rout in one direction. <span class="tk">$IGV</span> (the software ETF, holdings led by Microsoft, Oracle, Salesforce, ServiceNow) up roughly <span class="ch up">+20%</span>, the second-best month in the ETF's history, only October 2002 off the dot-com bottom was larger. <span class="tk">$XLK</span> (large-cap tech, Apple-Microsoft-Nvidia-Broadcom heavy) printed back-to-back top-two months ever using the same skip rule.</li>
+      <li><span class="tk">$XLK</span>/<span class="tk">$SPY</span> relative chart broke out of a base that goes back twenty-five years. Strazza calls it the most important chart in the market over the last two months and reads it the way semis traded coming out of mid-2023 (the chart that called the AI leg).</li>
+      <li><span class="tk">$IWM</span> (Russell 2000 small caps) made fresh all-time highs out of a multi-year base. New 52-week-high list still thin: <span class="tk">$AVGO</span>, <span class="tk">$MU</span>, <span class="tk">$MS</span>, <span class="tk">$GS</span>, <span class="tk">$DELL</span>, <span class="tk">$CRWD</span>, <span class="tk">$CDNS</span>, <span class="tk">$HPE</span>, plus <span class="tk">$MGM</span> on a Barry Diller takeover rumor (<span class="ch up">+11%</span>). About sixty NYSE names at all-time highs out of 2,200 listed.</li>
+      <li>Breadth is the one red light. Advance-decline lines rolling over. Percent of stocks above the 200-day moving average peaked January 15. Every trading day last week had more decliners than advancers. Breadth-thrust regime (20-day new highs above 55%) ended mid-May.</li>
+      <li>Commercial hedgers (the firms with actual exposure to bond prices) are at their largest-ever net long position in Treasuries. Speculators are at their largest-ever net short. JC's read: the doers tend to be right. The trade tilt is long speculative growth, with <span class="tk">$ARKK</span> at fresh highs.</li>
+      <li>Berkshire announced its first significant cash deployment in a while. <span class="tk">$TMHC</span> (Taylor Morrison, home builder) bought out at <span class="pr">$72.50</span> per share, roughly <span class="pr">$8.5B</span> total. Homebuilders trading at single-digit P/Es after a brutal stretch. Drop in the Berkshire bucket, but it is the first move.</li>
+      <li>Crypto sat the close out. <span class="tk">$BTC</span> ~<span class="pr">$74K</span>, <span class="tk">$ETH</span> ~<span class="pr">$2,000</span>, <span class="tk">$SOL</span> ~<span class="pr">$80</span>, total cap ~<span class="pr">$2.45T</span>. MicroStrategy disclosed selling about <span class="pr">$2.5M</span> of Bitcoin, the first sale in years, an immaterial size that nobody on the desk could explain.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>The Speculative Dollar Came Back and Bitcoin Sat Out the Whole Month</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$74,000</div>
+        <div class="stat-change flat">flat on the month</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">~$2,000</div>
+        <div class="stat-change flat">range-bound</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$80</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">~$2.45T</div>
+        <div class="stat-change flat">~3 months flat</div>
+      </div>
+    </div>
+    <p>The May close ran the same script crypto has been running for ten weeks. Spot was flat. The speculative dollar was somewhere else and it printed in size somewhere else. <span class="tk">$ARKK</span> (the Cathie Wood speculative growth ETF that buys unprofitable disruptors and is the cleanest pure read on risk appetite outside crypto) made fresh highs into the close. <span class="tk">$IGV</span> ripped twenty percent. Heavily shorted single names ran. None of that bid found <span class="tk">$BTC</span>.</p>
+    <p>The only crypto-specific headline of the morning was MicroStrategy disclosing it sold roughly <span class="pr">$2.5 million</span> of Bitcoin, the first sale Saylor's company has made in years and a completely immaterial size on a balance sheet that owns billions. The desk could not work out a clean read for it. Not a hedge, not enough to raise meaningful cash, not enough to signal anything about thesis. The most charitable interpretation that surfaced on air was operational housekeeping. The least charitable was that the company that turned not selling Bitcoin into an identity sold a token amount of Bitcoin.</p>
+    <p>The structural read on the month is that crypto rails are growing in TradFi even as native crypto prices stall. Teucrium, the commodity-ETF shop that built itself on grains, now runs a 2x XRP ETF (the first US one), a 2x Solana, 2x HYPE, 2x BNB, 2x Dogecoin, and white-labels the <span class="tk">$TCAN</span> Canton Network product. The story the desk found genuinely interesting was that the demand for those wrappers in equity accounts is what is showing up, while spot BTC and ETH simply do not move.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>May Was a Tech Rout and the Rest of the Tape Has a Denominator Problem</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 fut</div>
+        <div class="stat-value">~7,580</div>
+        <div class="stat-change up">ATH close</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Nasdaq 100 fut</div>
+        <div class="stat-value">~30,600</div>
+        <div class="stat-change up">over 30K</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Russell 2000</div>
+        <div class="stat-value">IWM ATH</div>
+        <div class="stat-change up">multi-year base</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Software (IGV)</div>
+        <div class="stat-value">+~20% May</div>
+        <div class="stat-change up">2nd-best month ever</div>
+      </div>
+    </div>
+    <p>The headline for the May close is that software just had its second-best month in the life of the index. The only month that beat it was October 2002, off the bottom of the dot-com bust. If you skip that one print, May 2026 is the largest one-month move in software the chart has on record. The group is also the same one that the desk spent most of last year writing obituaries for under the heading "the SaaS apocalypse," meaning every story about AI eating enterprise software at the operating-margin level. The reversal is sharp enough that Strazza flagged it as the cleanest single signal of the month.</p>
+    <p>The same pattern shows up one layer up. Large-cap tech as a sector printed back-to-back months that, by the desk's read of the chart, are the top two ever once you remove October 2002. The relative chart that ties it together is <span class="tk">$XLK</span> over <span class="tk">$SPY</span>, tech sector versus the broad index, breaking out of a base that runs back twenty-five years. Strazza compared the setup to the way semiconductors traded coming out of mid-2023, which is the chart that called the AI leg in NVDA and the whole hardware basket. The implication, in his read, is that tech leadership is at the beginning of a regime rather than the end.</p>
+    <div class="compare">
+      <div class="winners">
+        <div class="head">May Winners</div>
+        <ul>
+          <li><span class="tk">$IGV</span> &middot; software +~20%, second-best month ever</li>
+          <li><span class="tk">$XLK</span> &middot; back-to-back top-two months ex-2002</li>
+          <li><span class="tk">$IWM</span> &middot; small caps fresh ATH from multi-year base</li>
+          <li><span class="tk">$AVGO</span>, <span class="tk">$MU</span> &middot; semis at new highs, JC calls group "ahead of skis"</li>
+          <li><span class="tk">$GS</span>, <span class="tk">$MS</span> &middot; Goldman and Morgan lead the big six banks</li>
+          <li><span class="tk">$CRWD</span>, <span class="tk">$CDNS</span>, <span class="tk">$DELL</span>, <span class="tk">$HPE</span> &middot; tech-adjacent ATHs</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">May Laggards</div>
+        <ul>
+          <li><span class="tk">$WFC</span> &middot; Wells Fargo "just looks awful"</li>
+          <li><span class="tk">$XLE</span> &middot; energy gave up the YTD-leader spot to tech</li>
+          <li><span class="tk">$XLV</span> &middot; healthcare absolute at twenty-five-year support</li>
+          <li><span class="tk">$BRK.B</span> &middot; record cash pile underperforming a raging bull</li>
+          <li>Medical instruments &middot; still "garbage" in the desk's words</li>
+        </ul>
+      </div>
+    </div>
+    <p>Everything outside that tech complex inherits a denominator problem. With tech this dominant in <span class="tk">$SPY</span>, almost every other sector chart against the index looks like it is rolling over even when its own absolute chart is fine. Healthcare is the cleanest example. <span class="tk">$XLV</span> on an absolute basis is resting on support that goes back twenty-five years. Outflows have been off the charts. The "everybody hates it, the level is real" setup is exactly the kind the desk usually leans into, but Strazza flagged that anything he has personally tried in large-cap healthcare for the better part of a year has hurt him. The group needs participation to broaden inside it (health plans, instruments, biotech) before he is willing to put it back on size.</p>
+    <p>The breadth print is the one number that does not fit the rest. The percent of stocks above their 200-day moving average peaked on January 15. The breadth-thrust regime (20-day new highs running over 55%, which historically pulls a year of tailwind behind it) finished in mid-May. Every single trading day last week had more decliners than advancers, even on green days for the index. JC's frame was that he is used to the advance-decline line confirming new highs in the index the way fried chicken pairs with champagne. The way the tape is set up right now, the index is at new highs and the breadth line is not, which is the Kool-Aid pairing. Strazza is constructive on the rotation under the surface. Consumer discretionary versus consumer staples (the cleanest risk-on-versus-risk-off internal in equities) is improving and back into the April highs. The point of agreement between them is that the trend is up, the only trade that has actually paid is tech, and breadth is the watch item for June.</p>
+    <p>The one fresh capital-allocation print of the morning was Berkshire buying out <span class="tk">$TMHC</span> (Taylor Morrison, a US home builder) for <span class="pr">$72.50</span> per share, about <span class="pr">$8.5 billion</span> all-in. Homebuilders as a group trade at single-digit P/Es after the post-2022 rate cycle decimated them, and Greg Abel's first significant deal of any size in the bull market lands in the most beaten-up corner of the equity market. The desk's read on it had two sides. Strazza called it textbook Buffett-style value picking. JC's frame was that Berkshire is sitting on the largest cash pile any company has ever held, underperformed the bull, and an eight-and-a-half billion deal does not actually move the needle on a three-hundred-billion-plus cash position. Both reads can be right at the same time and neither changes that Abel just made his first move.</p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>The single best read on whether risk appetite is in the system right now is whether <span class="tk">$ARKK</span> and the heavily-shorted-stocks basket are at new highs. They are. That dollar used to find <span class="tk">$BTC</span> first. The May print is the third month in a row where it found speculative TradFi growth before it found crypto. Watch the same dollar's behavior in June; the crypto unlock is downstream of it deciding to widen out.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Doers and Talkers</div>
+    <h2>The Hedgers Are Long Bonds and the Analysts Are Short</h2>
+    <p>The single most underweighted print of the morning was the Commitments of Traders positioning in US Treasuries. Commercial hedgers, the institutions with actual physical exposure to bond prices (insurers, primary dealers, pension funds), are net long Treasuries at the largest size ever recorded. On the other side, large speculators, the asset-manager and hedge-fund cohort, are net short Treasuries at the largest size ever recorded. The two groups have never been this far apart on rates, and they sit on opposite ends.</p>
+    <p>JC's framing for this is the one worth keeping. The hedgers are the doers. They have to hold the underlying. They mark the position daily against a real book. Their incentive is to be right about the price of the thing they are paid to manage. The speculators are the talkers. They write the notes, they appear on TV, they tell their LPs a story, and they are paid on the story as much as on the P&amp;L. Across the available history, the doers tend to be right and the talkers tend to be wrong. That is the structural read. The cyclical read on top of it is that the doers' largest-ever long bet is a bet that rates go lower from here.</p>
+    <p>The equity tilt that follows from that read shows up in a clean place. If the next move in rates is down, the equities that benefit most are the long-duration speculative growth names whose valuations are most sensitive to the discount rate. <span class="tk">$ARKK</span> is at fresh highs. Biotech (a group the desk has had its best individual trades in over the last year) has been ripping in the back half of May. Software at <span class="ch up">+20%</span> on the month also fits the same template, because the higher the growth duration on a name, the more the discount rate matters. None of these need a Fed cut to print. They need the bond market to keep telling the story it has started telling, and the doers' position says it will.</p>
+    <p>The second-order read is the one Strazza added on air. Stocks and bonds are now positively correlated, both trending higher together. The desk's note was that most investors alive today have never traded an environment where the two move together for an extended stretch. The textbook 60/40 playbook assumes they offset. When they stop offsetting and start reinforcing, the portfolios that win look different from the ones that won the last cycle. The names that win look different too. The desk is not betting on the cut. The desk is betting on the regime.</p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"Let's not forget where they came from. These are the worst stocks in the market. You can't own them. They're being eaten by the AI, the SaaS apocalypse. Now they're the best stocks in the market again."</blockquote>
+      <div class="attrib">Strazza, on software's second-best month in history <a class="ts" href="https://www.youtube.com/watch?v=yrMpCd9jRc0&amp;t=208s" target="_blank" rel="noopener">[03:28]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"The speculators, these are hedge fund managers, asset managers. These are historically, we have the data, the worst investors of all time. They are all betting on rising interest rates. And the doers, the commercial hedgers, are betting on lower."</blockquote>
+      <div class="attrib">JC, on the largest-ever split in Treasury positioning <a class="ts" href="https://www.youtube.com/watch?v=yrMpCd9jRc0&amp;t=1004s" target="_blank" rel="noopener">[16:44]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"They got more cash than they've ever had in any company in the history of human civilization. And y'all coming at me telling me, oh, it's a technicality."</blockquote>
+      <div class="attrib">JC, on Berkshire's cash pile during a raging bull <a class="ts" href="https://www.youtube.com/watch?v=yrMpCd9jRc0&amp;t=2532s" target="_blank" rel="noopener">[42:12]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"I'm used to having an advance-decline line accompanying the new highs in the index. It's like a pairing. You know, like champagne and fried chicken. You ain't getting the champagne, you're getting Kool-Aid."</blockquote>
+      <div class="attrib">JC, on breadth refusing to confirm the May highs <a class="ts" href="https://www.youtube.com/watch?v=yrMpCd9jRc0&amp;t=2872s" target="_blank" rel="noopener">[47:52]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Software's May print is the cleanest single read of the month.</strong> <span class="tk">$IGV</span> booked its second-best month in the history of the index, and the only month that beat it was off the dot-com bottom. <span class="tk">$XLK</span> back-to-back top-two months ex-2002. The <span class="tk">$XLK</span>/<span class="tk">$SPY</span> relative chart broke out of a twenty-five-year base. If the trend is the only thing paying, the trend is tech.</li>
+      <li><strong>Breadth is the one red light on the bull-market checklist.</strong> AD line rolling, percent of stocks above the 200-day non-existent outside tech, breadth-thrust regime ended mid-May, every trading day last week had more decliners than advancers. Trend still up. Risk-on composite at its highest since July 2023. The mix is a lean into tech, with breadth as the watch item.</li>
+      <li><strong>The bond market is setting up the trade for June.</strong> Commercial hedgers (the doers) at record net long Treasuries. Speculators (the talkers) at record net short. The doers tend to be right, and they are betting rates go lower. The equity tilt is long speculative growth (<span class="tk">$ARKK</span> at ATHs), biotech, software. The desk is not betting on a cut. It is betting on the regime.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
