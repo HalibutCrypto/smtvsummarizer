@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indexes Bend Their Rules and Alphabet Books the Biggest Secondary on Record - SMTV June 2, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 2, 2026</div>
+    <h1>Indexes Bend Their Rules and Alphabet Books the Biggest Secondary on Record</h1>
+    <p class="subtitle">Berkshire walked off with a $10 billion private placement nobody else can write a check that big for. Jensen called Marvell the next trillion-dollar company and the stock jumped twenty percent. Dr. Copper made all-time highs and crypto hit multi-month lows.</p>
+    <div class="meta">
+      73 min &middot; <a href="https://www.youtube.com/watch?v=G9vhVSueCDs" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The indexes that used to gatekeep the biggest stocks in the world have started looking like they don't. The S&amp;P is reportedly debating whether to wave its profitability test so SpaceX can show up two weeks after listing. Marvell jumped twenty percent because Jensen Huang said it would hit a trillion. Alphabet sold eighty billion in fresh stock and set aside ten billion of it privately for Berkshire. Dr. Copper printed all-time highs while Bitcoin slid back to sixty-nine thousand. The desk keeps comparing the mood to nineteen ninety-nine, only this time the boring metals are also at records.</p>
+    <ul>
+      <li><span class="tk">$GOOGL</span> announced an <span class="pr">$80B</span> secondary live during the show: <span class="pr">$30B</span> convertible preferred, <span class="pr">$40B</span> at-the-money common, plus a <span class="pr">$10B</span> private placement for Berkshire. The desk's read is the largest secondary on record. New class C share class created to fit the deal. The <span class="pr">$10B</span> private slice becomes Berkshire's largest single equity position, larger than what's left of the Apple stake.</li>
+      <li>SpaceX IPO is roughly two weeks out. NASDAQ already rewrote its rules so a top-tier market cap (~<span class="pr">$18B</span>, easily cleared) admits five trading days after listing. Russell 1000 the same. The S&amp;P is the holdout and is reportedly debating waiving its profitability requirement. Strazza called it a "huge mistake." JC's read: there are no rules left in 2026 indexing.</li>
+      <li><span class="tk">$MRVL</span> (Marvell, the custom-chip supplier behind a lot of hyperscaler AI ASICs) jumped roughly <span class="ch up">+20%</span> after Jensen Huang appeared on stage at a Marvell event in Taiwan and called it the next trillion-dollar name. Roughly <span class="pr">$200B</span> in market cap added in a session on a CEO quote.</li>
+      <li>Dr. Copper printed fresh all-time highs at <span class="pr">$6.64</span> (<span class="ch up">+1.5%</span>). The desk frames industrial-metal stock charts (<span class="tk">$FCX</span>, <span class="tk">$CSTM</span>, <span class="tk">$CNX</span>, <span class="tk">$MP</span>, <span class="tk">$USAR</span>, <span class="tk">$TMQ</span>) as the cleanest decade-long bases in the market. Strazza's analog is the semiconductor sector before the dot-com bubble.</li>
+      <li>Equal-weight S&amp;P (<span class="tk">$RSP</span>) is at fresh highs but the print is being driven by tech rotating up inside the rebalance window. Off the late-March lows, owning anything except tech has been heavy opportunity cost. Russell 1000 high-beta versus low-beta is at extreme bull-market territory.</li>
+      <li>Crypto hit multi-month lows. <span class="tk">$BTC</span> ~<span class="pr">$69,000</span> (down ~<span class="pr">$3,100</span> on the day), <span class="tk">$ETH</span> under <span class="pr">$2,000</span> (<span class="ch down">-1.6%</span>), <span class="tk">$SOL</span> under <span class="pr">$79</span> (<span class="ch down">-3%</span>), total crypto cap roughly <span class="pr">$2.35T</span>. Metals are ripping, software is ripping, banks are rotating up. None of that bid found crypto.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Boring Metals Caught the Bid That Should Have Belonged to Crypto</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$69,000</div>
+        <div class="stat-change down">-$3,100 on day</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">~$1,970</div>
+        <div class="stat-change down">-1.6%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$79</div>
+        <div class="stat-change down">-3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">~$2.35T</div>
+        <div class="stat-change down">multi-month low</div>
+      </div>
+    </div>
+    <p>Today's price tape took the crypto complex back to levels last seen multiple months ago. <span class="tk">$BTC</span> traded near <span class="pr">$69,000</span> after a roughly <span class="pr">$3,100</span> drop on the day. <span class="tk">$ETH</span> sat under <span class="pr">$2,000</span> with another <span class="ch down">-1.6%</span> alongside it. <span class="tk">$SOL</span> slipped under <span class="pr">$79</span>. Total crypto cap at roughly <span class="pr">$2.35T</span> is the lowest the desk has seen in months.</p>
+    <p>The rest of the macro tape today is the kind of setup that usually drags Bitcoin with it. Gold up one percent, silver up two, copper printing fresh all-time highs, software in the middle of its second-best month on record, equal-weight S&amp;P at new highs, banks rotating up. Every speculative dollar that walked into the building today found something. None of it found crypto.</p>
+    <p>Spencer's frame for owning Bitcoin in this stretch came up early and stuck around. Buy it for the regret-minimization reason, treat it like Apple or any other Mag 7 component, then forget about it for a couple of years. The argument is not that the next month is friendly. The argument is that the asset's tail outcomes are still wide enough to justify a small permanent allocation that the holder agrees in advance not to look at.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Alphabet Cuts an Eighty-Billion Tap and Berkshire Walks Off with the Private Slice</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 fut</div>
+        <div class="stat-value">~7,600</div>
+        <div class="stat-change flat">down 20 pips</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Nasdaq 100 fut</div>
+        <div class="stat-value">~30,540</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow Jones fut</div>
+        <div class="stat-value">~50,835</div>
+        <div class="stat-change down">-0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">~16</div>
+        <div class="stat-change flat">low and quiet</div>
+      </div>
+    </div>
+    <p>The breaking print of the morning was Alphabet announcing an eighty-billion-dollar secondary offering. Thirty billion in convertible preferred, forty billion in at-the-money common stock, and a ten-billion-dollar private placement set aside for Berkshire Hathaway. The desk's read of the size is that this is the largest secondary on record and that the ten-billion private placement alone is the largest single private placement Strazza could think of off the cuff. Alphabet also created a new class C share class on the way through, because there were not enough existing class C shares to accommodate the deal.</p>
+    <p>The ten-billion check is now Berkshire's largest single equity position by a wide margin, ahead of what is left of the Apple stake. The Apple comparison is the one worth holding onto. Berkshire's reputation is built on cash-flow-and-factory value investing, and the single best move they ever made in dollar terms was holding a megacap tech stock for a long time. Trying to run that playbook back with the safest megacap on the modern list is exactly what a ten-billion private placement into Google looks like.</p>
+    <p>The desk's secondary read is that ten billion does not actually move the needle for Berkshire. The cash pile is the largest any company has ever held. To make a position that registers, Berkshire has to write a check that is large enough to require a custom share class and a private placement, and even then the slice is only a small fraction of the cash on the balance sheet. JC's framing was that the size constraint is its own structural disadvantage, and the individual investor's ability to make an oversized concentrated bet on something nobody else has to know about is the structural edge that goes with being small.</p>
+    <p>The other live story across the morning was the S&amp;P index committee reportedly debating whether to waive its profitability requirement so it can let SpaceX into the index inside the next few weeks. The SpaceX listing is two weeks out. NASDAQ has already updated its rules so a name that clears the top-tier market cap threshold (roughly eighteen billion, easily cleared) enters five trading days after listing. The Russell 1000 admits the same way. The S&amp;P is the holdout. Strazza's read on it is that the S&amp;P has historically been the index with rules and that bending them here is the wrong call, since the rule was not bent for Palantir or Nvidia. JC's read is that there are no rules left in 2026 indexing, and the competitive pressure from a NASDAQ that gets to claim it owns every new megacap is what is pushing the committee toward a change.</p>
+    <p>A separate single-name story sat alongside the index debate. Jensen Huang appeared on stage at a Marvell event in Taiwan and called the company the next trillion-dollar name. <span class="tk">$MRVL</span> added roughly <span class="ch up">+20%</span> on the day, somewhere near <span class="pr">$200B</span> in market cap from a single quote. The desk's note on it was that single-session moves of five to ten percent should not be normal for stocks of this size and have become normal anyway. <span class="tk">$ORCL</span> ran <span class="pr">$180</span> to <span class="pr">$250</span> in three trading days. Marvell ran twenty percent in a session. The pattern keeps showing up.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Industrial Metals</div>
+    <h2>Dr. Copper Hit All-Time Highs and the Industrial-Metal Charts Look Like Semis Before the Dot-Com Run</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Copper</div>
+        <div class="stat-value">$6.64</div>
+        <div class="stat-change up">+1.5% &middot; ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,560</div>
+        <div class="stat-change up">+1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Silver</div>
+        <div class="stat-value">$77</div>
+        <div class="stat-change up">+2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">WTI Crude</div>
+        <div class="stat-value">$91.25</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+    </div>
+    <p>JC read the morning tape and glossed past copper at fresh all-time highs without a second beat. Spencer pulled him back to it. Industrial-metal stock charts as a group are sitting on the longest, cleanest, multi-decade bases anywhere in the market right now. <span class="tk">$FCX</span> (Freeport-McMoRan, the largest US copper miner), <span class="tk">$CSTM</span> (Constellium, aluminum), <span class="tk">$CNX</span> (CNX Resources, just came out of a base of its own), and a row of smaller names underneath are coming out of patterns the desk says go back a decade or longer. Several of them just broke out together.</p>
+    <p>Strazza's analog for what the patterns look like is the semiconductor sector before the dot-com bubble. Same multi-decade coiled bases, same dispersion across the group, same setup of a sector the desk and its callers stopped paying attention to during the years it stayed quiet. The semi group ran for the better part of two decades after those bases broke. JC's frame is the same. These are leap patterns. Get on board, hold on, and let the regime run. The base trade pairs with the inside-the-group divergence Strazza ran live on air, where the industrial-metals composite versus the precious-metals composite (<span class="tk">$XME</span> divided by <span class="tk">$GDX</span>) sits at fresh fifty-two-week highs. Industrial is leading precious right now even with gold and silver also up on the day.</p>
+    <p>The supply side reinforces the chart read. Copper has a structural shortage that will not resolve without a new technology for moving electricity, which keeps every dip bid. Demand from the grid electrification cycle, the data-center build, the EV transition, and the rare-earth scramble all compound on the same small handful of names. The orange-swan capital that has been buying rare-earth and metals stocks at the government level (<span class="tk">$MP</span> Materials, <span class="tk">$USAR</span>, <span class="tk">$TMQ</span> Resources, Lithium Americas, and a few others rumored to be inside the basket) adds new flow on top of names whose market caps are small enough that any incremental dollar moves the chart. Standing short any of these into a government bid is the kind of trade the desk is openly warning against.</p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>The crypto angle today is the asset that did not catch the bid. Risk appetite is in the system. The speculative dollar found software, found metals, found a chip-design name on a CEO quote, found a private placement worth bragging about, and walked past Bitcoin on the way. The historical relationship the desk leans on is that the speculative dollar eventually widens out and finds crypto last. The metals breakout is one of the cleanest signals that tide is in.</p>
+    </div>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"Think about how lucky you are that you can make an oversized bet overweight in your portfolio, load up on exposure to something nobody has to know about, because you're too small to matter. That is a special thing to have on your side."</blockquote>
+      <div class="attrib">JC, on what Berkshire's size constraint means for the rest of us <a class="ts" href="https://www.youtube.com/watch?v=G9vhVSueCDs&amp;t=886s" target="_blank" rel="noopener">[14:46]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"I remember a time when semiconductors looked just like this. Me and JC used to say, 'Holy cow, look at all these dot-com bubble bases.' What a long, long time ago that was. Copper reminds me of that right now. Industrial metals remind me of that. These are leap patterns. Just get on board and hold on."</blockquote>
+      <div class="attrib">Strazza, on the cleanest multi-decade bases in the market <a class="ts" href="https://www.youtube.com/watch?v=G9vhVSueCDs&amp;t=1011s" target="_blank" rel="noopener">[16:51]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"The S&amp;P 500's always been the one with rules around here. They didn't do this for Palantir. They didn't do this for Nvidia. They didn't do this for anybody else."</blockquote>
+      <div class="attrib">Strazza, on the S&amp;P reportedly waiving its profitability rule for SpaceX <a class="ts" href="https://www.youtube.com/watch?v=G9vhVSueCDs&amp;t=2193s" target="_blank" rel="noopener">[36:33]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"If you were to compare the performance of the stocks of the industrial metals, the base metals if you will, relative to those in the precious metal space, you know what you'll find? You'll find a new fifty-two-week high."</blockquote>
+      <div class="attrib">JC, on industrial metals leading the precious group <a class="ts" href="https://www.youtube.com/watch?v=G9vhVSueCDs&amp;t=1055s" target="_blank" rel="noopener">[17:35]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Alphabet's eighty-billion secondary is the headline and Berkshire's ten-billion slice is the structural one.</strong> <span class="tk">$GOOGL</span> announced the largest secondary on record live during the show. <span class="pr">$30B</span> convertible preferred, <span class="pr">$40B</span> common, <span class="pr">$10B</span> private placement for Berkshire. The private slice instantly becomes Berkshire's largest single equity position. Buffett's best dollar trade ever was holding a megacap tech stock for a decade-plus. This is the second draw of that hand, this time with the safest name in the Mag 7.</li>
+      <li><strong>Industrial metals just walked out of the cleanest multi-decade bases in the market.</strong> Dr. Copper printed all-time highs at <span class="pr">$6.64</span>. The group running with it includes <span class="tk">$FCX</span>, <span class="tk">$CSTM</span>, <span class="tk">$CNX</span>, <span class="tk">$MP</span>, <span class="tk">$USAR</span>, <span class="tk">$TMQ</span>. The desk's analog is the way semiconductors looked coming out of multi-decade bases pre-dot-com bubble. That group ran for the better part of twenty years. The supply story is structural, the chart story is structural, and the government is buying.</li>
+      <li><strong>The indexes that used to gatekeep no longer obviously do.</strong> S&amp;P committee reportedly debating waiving its profitability rule for SpaceX. NASDAQ has already done it. Marvell added <span class="pr">$200B</span> in market cap on a Jensen quote. The 1999 references on the desk keep getting louder. <span class="tk">$BTC</span> slid back to <span class="pr">$69,000</span> while every other risk asset caught a bid. The crypto watch item is whether the speculative dollar widens out and finds it next.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
