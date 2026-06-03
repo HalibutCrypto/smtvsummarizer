@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dow Took Out January's High and Bitcoin Is Forty-Seven Percent Off Its Own - SMTV June 3, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 3, 2026</div>
+    <h1>The Dow Took Out January's High and Bitcoin Is Forty-Seven Percent Off Its Own</h1>
+    <p class="subtitle">Stocks are running, software is running, Singapore just broke out of a seventeen-year base. The Bitcoin treasury trade is sitting on eleven billion in unrealized losses, and the desk's call is the speculative dollar still finds crypto last.</p>
+    <div class="meta">
+      64 min &middot; <a href="https://www.youtube.com/watch?v=veRmHCghIwc" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Stocks made fresh records again. Software just had its second-best month ever. Singapore broke out of a seventeen-year base. The one risk asset not at new highs is Bitcoin, and it sits forty-seven percent off its own. The treasury vehicles that were supposed to be a leveraged proxy on Bitcoin have erased about eleven billion in unrealized losses in the last few weeks. The desk's read is the speculative dollar eventually widens out and finds crypto last. Today was not that day.</p>
+    <ul>
+      <li>The Dow closed yesterday at an all-time high of <span class="pr">$51,170</span>, then traded down 230 on the day. Strazza flagged it as the first fresh ATH on the Dow since January. <span class="tk">$SPX</span> sits near <span class="pr">$7,600</span>, <span class="tk">$NDX</span> near <span class="pr">$30,730</span>, VIX above 16. The desk's read on the bar was no signs of exhaustion.</li>
+      <li><span class="tk">$BTC</span> ~<span class="pr">$67,000</span> (flat), <span class="tk">$ETH</span> ~<span class="pr">$1,870</span> (<span class="ch up">+1%</span>), <span class="tk">$SOL</span> ~<span class="pr">$75</span> (<span class="ch up">+2%</span>), total crypto cap ~<span class="pr">$2.3T</span>. Bitcoin sits in a <span class="ch down">-47%</span> drawdown from its own all-time high. Over the last month, software (<span class="tk">$IGV</span>) is up ~20% and Bitcoin is down ~16%. The divergence is the live story.</li>
+      <li><span class="tk">$MSTR</span> and <span class="tk">$BMR</span> (BitMine Immersion, the second-largest Bitcoin treasury vehicle) are sitting on roughly <span class="pr">$11B</span> in unrealized losses on their Bitcoin holdings. JC called the cap destruction historic. Strazza pushed back on the word "losses" since the names have not realized anything, and reminded the desk that <span class="tk">$MSTR</span> was the best stock in the S&amp;P 500 a year ago.</li>
+      <li>SpaceX IPO is now reportedly pricing near <span class="pr">$1.75T</span> (Reuters). Total global stock market cap just crossed <span class="pr">$150T</span>. The deal would represent over one percent of every listed equity in the world. The desk's pattern read on recent IPOs is a day-one spike, then a long base while VC supply unloads.</li>
+      <li>Singapore broke out of a seventeen-year base to new all-time highs. Banks are about half the index weight and did all the work. The same chart pattern is showing up across Asian bank sectors.</li>
+      <li>The dot-com PE analog the bears keep reaching for does not hold up on the math. <span class="tk">$MU</span> (Micron, the largest US memory-chip maker) trades at a forward PE of ~10.5x. <span class="tk">$NVDA</span> is at ~25.4x. JDS Uniphase was over 200x at the equivalent moment in 2000. The new market words of 2026 are "photonics" and "neocloud." ETF launches against the theme are clustering.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Every Risk Corner Caught a Bid and Bitcoin Sat It Out</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$67,000</div>
+        <div class="stat-change flat">flat &middot; -47% from ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">~$1,870</div>
+        <div class="stat-change up">+1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$75</div>
+        <div class="stat-change up">+2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">~$2.3T</div>
+        <div class="stat-change flat">stuck at the lows</div>
+      </div>
+    </div>
+    <p>The price tape on crypto today held the lows from earlier in the week. <span class="tk">$BTC</span> sat near <span class="pr">$67,000</span> flat, <span class="tk">$ETH</span> ticked up just under a percent at <span class="pr">$1,870</span>, <span class="tk">$SOL</span> added two at <span class="pr">$75</span>. Total cap is roughly <span class="pr">$2.3T</span>. Bitcoin is sitting in a 47% drawdown from its own all-time high while the rest of the risk tape is at or near records.</p>
+    <p>The pull on the desk this morning was the divergence between the speculative dollar and the asset that should be downstream of it. Over the last month, the software ETF (<span class="tk">$IGV</span>) is up roughly 20%. Bitcoin is down 16%. Strazza flagged it as a four-week sample with a small caveat, then said the print is still weird. JC's read was sharper. The crypto treasury complex has erased a historic amount of paper market cap in a short window, with <span class="tk">$MSTR</span> and <span class="tk">$BMR</span> (BitMine Immersion, the second-largest corporate Bitcoin holder) sitting on roughly <span class="pr">$11B</span> in unrealized losses on their holdings. JC called it some of the worst capital destruction in American corporate history. Strazza pushed back on the word "losses" because the names have not realized anything, and reminded the desk that <span class="tk">$MSTR</span> was the best stock in the S&amp;P 500 a year ago. Same company, same playbook, opposite print on Bitcoin.</p>
+    <p>The thesis Strazza kept coming back to is the inner-market one. Every risk-on corner is leading right now. Space stocks, drone stocks, data-center stocks, anything heavily shorted, anything with an animal in the name. He said it would shock him for the bull tape to play out fully while Bitcoin sits at lows the whole way. The frame the desk is running is to buy the regret trade in a small permanent slice, treat it like another Mag-7 component, and let the speculative dollar find it on its own clock.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>The Dow Cleared January's High and the Bull Tape Got Louder</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow Jones</div>
+        <div class="stat-value">~$51,170</div>
+        <div class="stat-change up">ATH yesterday &middot; -230 today</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">~$7,600</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Nasdaq 100</div>
+        <div class="stat-value">~$30,730</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">WTI Crude</div>
+        <div class="stat-value">$96.25</div>
+        <div class="stat-change up">+2.6%</div>
+      </div>
+    </div>
+    <p>The Dow closed yesterday at the highest print in its history at <span class="pr">$51,170</span>, then traded down about 230 points on the day. Strazza's read on the bar was that it is the first fresh ATH on the Dow since January, and that the breakout is meaningful after five months of chop. The S&amp;P sits around <span class="pr">$7,600</span> with the desk noting the index added a quick thousand points to get here. NDX traded near <span class="pr">$30,730</span>. VIX held just above 16. JC's framing question on the bar was whether the chart looked like the end of an exhausted trend or the beginning of a new one. Strazza's answer was no signs of exhaustion, going higher, baby.</p>
+    <p>The same chart pattern is showing up outside the US. Singapore broke out of a seventeen-year base to new all-time highs. The driver inside the index is the banking sector, which is roughly half the weight. The desk had to wave off the question of whether AI was doing the work, since the index has almost no tech in it. The same multi-decade base pattern is showing up across Asian bank sectors more broadly.</p>
+    <p>SpaceX got another data point overnight. Reuters reported the IPO is being priced near <span class="pr">$1.75T</span>. Total global stock market cap just crossed <span class="pr">$150T</span>. The deal would represent over one percent of every listed equity in the world arriving in a single offering. JC ran the math live and let the implication sit. The desk's pattern read on the recent IPO wave is that day-one almost always spikes, then the open float has to absorb venture-capital supply for months before the chart bases out.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Framework</div>
+    <h2>The 1999 Analog Doesn't Carry on the PE Tape</h2>
+    <p>The chart that ate the second segment was a 1999-era table of PE multiples on the marquee tech names of that cycle. JDS Uniphase north of 200x trailing. Cisco, Yahoo, Sun in the same neighborhood. The point of the table was that the math which defined nineteen ninety-nine does not show up in 2026 numbers.</p>
+    <div class="compare">
+      <div class="winners">
+        <div class="head">2026 Forward PE</div>
+        <ul>
+          <li><span class="tk">$MU</span> Micron · ~10.5x</li>
+          <li><span class="tk">$NVDA</span> Nvidia · ~25.4x</li>
+          <li>Hot-name cohort · single to low-double digits</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">2000 Trailing PE</div>
+        <ul>
+          <li>JDS Uniphase · &gt;200x</li>
+          <li>Cisco, Yahoo, Sun · 100-200x range</li>
+          <li>Speculative cohort · earnings basically zero</li>
+        </ul>
+      </div>
+    </div>
+    <p>Pulled forward to today, <span class="tk">$MU</span> (Micron, the largest US memory-chip maker) is trading at a forward PE of roughly 10.5x. <span class="tk">$NVDA</span> is at 25.4x. The high-flyer cohort of the current cycle is trading at single-digit and low-double-digit multiples on forward earnings. JDSU and Cisco at the same point in their own cycle were five to twenty times higher than that. The bears keep reaching for the dot-com analog because the speculation feels familiar. The PE tape will not let them land it.</p>
+    <p>The IPO drawdown story is the other half of the picture, and it is real. The desk ran a Truist table from Keith Lerner showing one-year max drawdowns on the biggest IPOs of the last fifteen years. Almost every one of them is deep in the red at some point inside year one. JC's read was that this is venture capital dumping bags on retail and retail lining up to take them. The caveat in the chat was that many of those IPOs did V-recover. JC's response was that the bag-holding window is the point. Wait six to twelve months and the entry is better.</p>
+    <p>The vocabulary of 2026 is showing up around the same pattern. The desk noted the new market words this year are "photonics" and "neocloud," the way "subprime mortgage" was the new word of 2006. <span class="tk">$GLW</span> (Corning, the legacy photonics-grade fiber name) ran from <span class="pr">$100</span> in February to <span class="pr">$200</span> now. Tuttle Capital just launched a photonics ETF. Cluster ETF launches against a hot vertical have historically been a late-cycle tell.</p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"Well, there's definitely no signs of exhaustion. We're going higher, baby. What a breakout."</blockquote>
+      <div class="attrib">Strazza, on the Dow's first new all-time high since January <a class="ts" href="https://www.youtube.com/watch?v=veRmHCghIwc&amp;t=205s" target="_blank" rel="noopener">[3:25]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"These are venture capitalists dumping all of their bags onto retail investing public. And these retail investors just love being bag holders. Man, they can't get enough of it."</blockquote>
+      <div class="attrib">JC, on the Truist table of one-year max drawdowns on the biggest IPOs of the last fifteen years <a class="ts" href="https://www.youtube.com/watch?v=veRmHCghIwc&amp;t=576s" target="_blank" rel="noopener">[9:36]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"I will be shocked if this thing's all said and done and Bitcoin's been falling the whole time while the other most risk-on groups are going higher and higher every day."</blockquote>
+      <div class="attrib">Strazza, on his inner-market case for crypto eventually joining the bull tape <a class="ts" href="https://www.youtube.com/watch?v=veRmHCghIwc&amp;t=1375s" target="_blank" rel="noopener">[22:55]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"The market teaches you a new vocabulary. Next thing I know, I'm playing beer pong and I'm overhearing guys talking about Neoclouds. The words I learned this year are photonics and neocloud."</blockquote>
+      <div class="attrib">JC, on the new market words of 2026 the way "subprime mortgage" was the new word of 2006 <a class="ts" href="https://www.youtube.com/watch?v=veRmHCghIwc&amp;t=1441s" target="_blank" rel="noopener">[24:01]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The Dow's first new ATH since January confirms the bull tape is widening across asset classes.</strong> <span class="tk">$DJIA</span> closed at <span class="pr">$51,170</span>. Singapore broke out of a seventeen-year base. Software just had its second-best month on record. The list of risk corners participating now runs through space, drones, data centers, heavily-shorted small caps, and Asian banks. The list of risk corners not participating is Bitcoin.</li>
+      <li><strong>The crypto treasury trade is sitting on eleven billion in unrealized paper losses.</strong> <span class="tk">$MSTR</span> and <span class="tk">$BMR</span> are deep in the red on their Bitcoin holdings. JC called it historic capital destruction. Strazza's pushback was that the same trade was the best stock in the S&amp;P a year ago. The live signal underneath the argument is the divergence between software (<span class="tk">$IGV</span> <span class="ch up">+20%</span>) and Bitcoin (<span class="ch down">-16%</span>) over the last month.</li>
+      <li><strong>The 1999 analog doesn't survive the PE math, but the IPO drawdown half of it still rhymes.</strong> Micron at <span class="pr">10.5x</span> forward and Nvidia at <span class="pr">25.4x</span> are nothing like JDS Uniphase north of 200x. The hot-name cohort today is cheap by that yardstick. Where the comparison still works is the IPO wave itself. Truist's data shows year-one drawdowns are brutal, and SpaceX at a rumored <span class="pr">$1.75T</span> into a <span class="pr">$150T</span> global cap is the next live test.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
