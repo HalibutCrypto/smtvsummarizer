@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Halved Zcash and the Banks Booked Tokenized Cash for 2027 - SMTV June 5, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 5, 2026</div>
+    <h1>Claude Halved Zcash and the Banks Booked Tokenized Cash for 2027</h1>
+    <p class="subtitle">The morning's biggest crypto wipe-out and the morning's biggest tokenization headline landed in the same Wall Street Journal, on opposite sides of the same trade.</p>
+    <div class="meta">
+      67 min &middot; <a href="https://www.youtube.com/watch?v=rH6ma6Q_PfY" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">5 min read</span>
+    </div>
+    <p class="tldr-headline">A new Claude model ran a security audit on Zcash overnight and found something the human auditors had missed for years. The token lost about half its market cap. The Ethereum maxi podcast host who sold all his ETH for Zcash a few weeks ago was holding the bag. Three hours later the Wall Street Journal confirmed JP Morgan and Citi are bringing tokenized cash deposits onto The Clearing House in 2027. The same morning showed both halves of the crypto trade. An AI eating the broken protocols on one side, the biggest banks building the new rails on the other.</p>
+    <ul>
+      <li>Zcash collapse. A new Claude release ran a vulnerability scan on the protocol and surfaced an exploit. Token down roughly <span class="ch down">-40% to -50%</span> overnight. JC tied the move back to his standing cybersecurity thesis.</li>
+      <li>Crypto sold off across the board. <span class="tk">$BTC</span> <span class="pr">~$62,100</span> (down another <span class="pr">$1,900</span>, still above the February lows), <span class="tk">$ETH</span> <span class="pr">~$1,650</span> (<span class="ch down">-6.5%</span>, below February lows), <span class="tk">$SOL</span> <span class="pr">~$65.50</span> (<span class="ch down">-5%</span>, below February lows), total crypto cap <span class="pr">~$2.11T</span>.</li>
+      <li>Jobs print came in <span class="pr">172K</span> against an <span class="pr">84K</span> consensus with positive back-month revisions. Fed pricing moved from roughly 16bp of hikes for the rest of the year to closer to 20bp. New Chair War's first meeting is next week. Powell is out.</li>
+      <li>Index dispersion stayed wide for a second day. Dow flat after a <span class="ch up">+1.7%</span> all-time-high print yesterday (<span class="pr">+874</span> points), <span class="tk">$SPX</span> futures <span class="ch down">-0.7%</span>, NASDAQ <span class="ch down">-1.4%</span>, KOSPI <span class="ch down">-5.5%</span>.</li>
+      <li>S&amp;P Dow Jones indices said no fast-track for SpaceX. The name will not enter the S&amp;P 500 for at least a year. JC's call is that somebody launches an "S&amp;P 500 plus SpaceX" basket ETF inside the window to give index allocators the exposure the index withholds.</li>
+      <li>MicroStrategy sold 32 BTC and the stock cracked anyway because the largest shareholders are leaving. Louis called <span class="tk">$MSTR</span> a glorified memecoin and the common stock the bottom of an increasingly senior capital stack. BitMine reportedly carries an unrealized loss even larger than MSTR's.</li>
+      <li>WSJ scoop Friday morning. JPM, Citi, and a set of other commercial banks are bringing tokenized cash deposits onto The Clearing House (the private utility that settles US interbank dollar payments) for a 2027 rollout. DTCC handles the securities side of the same build-out. Total addressable pool is roughly <span class="pr">$100T</span>, equities about three quarters of it.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Claude Found a Hole in Zcash That the Human Auditors Missed</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$62,100</div>
+        <div class="stat-change down">-$1,900 &middot; above Feb lows</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">~$1,650</div>
+        <div class="stat-change down">-6.5% &middot; below Feb lows</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$65.50</div>
+        <div class="stat-change down">-5% &middot; below Feb lows</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">~$2.11T</div>
+        <div class="stat-change down">near Feb lows</div>
+      </div>
+    </div>
+    <p>The day's crypto story was a single asset and a single tool. <span class="tk">$ZEC</span> (Zcash, a privacy token from the prior cycle that had been quietly bid all year) lost roughly half its market cap overnight after a new Claude release ran an exploit audit on the protocol and surfaced a vulnerability nobody had publicly flagged. The desk's read is that the prompt itself was ordinary, a request to scan the codebase for security holes, and the model came back with a finding that human auditors had missed for years. JC tied the move back to a standing thesis that cybersecurity is the trade you want exposure to as AI gets pointed at the rest of the stack. The Bankless podcast host, an Ethereum maxi who had rotated his entire ETH position into Zcash a few weeks ago, was on the wrong side of it. The Winklevoss twins, also long the token, spent the morning trying to spin the audit as a positive for the protocol.<a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=141s" target="_blank" rel="noopener">[2:21]</a></p>
+    <p><span class="tk">$BTC</span> traded through the wider crypto bid without absorbing the worst of it. Bitcoin held above the February lows at roughly <span class="pr">$62,100</span>, down another <span class="pr">$1,900</span> on the morning. <span class="tk">$ETH</span> at <span class="pr">$1,650</span> and <span class="tk">$SOL</span> at <span class="pr">$65.50</span> both broke below their February lows, the obvious reference on the daily and weekly charts. The level the desk keeps circling on ETH is <span class="pr">$1,750</span>. A recovery above that triggers a squeeze setup; anything below it does nothing on the long side. Total crypto market cap printed roughly <span class="pr">$2.11T</span>, also hugging the February lows.</p>
+    <p>Louis's read on the move down was about flows. ETF outflows from <span class="tk">$IBIT</span> (BlackRock's spot-Bitcoin ETF, the main institutional vehicle since launch) have tracked Bitcoin lower with near-perfect correlation for weeks. The working theory the desk landed on is that money is rotating to where it gets treated best, and right now that is AI and large-cap software. Michael Saylor posting AI-generated promotional videos about "magic internet money" is not winning back the marginal institutional dollar.<a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=3549s" target="_blank" rel="noopener">[59:09]</a></p>
+    <p>Louis on MicroStrategy was the bluntest segment of the morning. The company sold 32 Bitcoin, a tiny number against its position, and <span class="tk">$MSTR</span> cracked anyway because the largest shareholders are walking. Louis's frame is that MSTR is a failing capital structure rather than a blow-up risk. Every preferred series the company has issued sits above the common in the claim order, so anyone holding the common is at the bottom of an increasingly long line of senior creditors. He called it a glorified memecoin. BitMine, a comparable BTC-treasury name, reportedly carries an unrealized loss even larger than MicroStrategy's, which would put it at the largest unrealized loss in the history of the American stock market.<a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=3674s" target="_blank" rel="noopener">[61:14]</a></p>
+    <p>Louis's broader pitch was orientation rather than picks. The asset class is now wide enough that the selective trader is the one who makes money. He flagged that some tokens are printing all-time highs on a day Bitcoin is bleeding, without naming them on air. The next chapter is for the names riding the tokenization rails the banks just put on a calendar.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>A Hot Jobs Print, a Dow at Records, a NASDAQ Pulling the Other Way</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow fut</div>
+        <div class="stat-value">~51,635</div>
+        <div class="stat-change flat">flat &middot; ATH yesterday</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 fut</div>
+        <div class="stat-value">~7,275</div>
+        <div class="stat-change down">-0.7%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ fut</div>
+        <div class="stat-value">~31,500</div>
+        <div class="stat-change down">-1.4%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">KOSPI</div>
+        <div class="stat-value">-5.5%</div>
+        <div class="stat-change down">off lows</div>
+      </div>
+    </div>
+    <p>The non-farm payrolls release at 8:30 came in <span class="pr">172,000</span> against an <span class="pr">84,000</span> consensus, roughly double the expected number, with positive revisions to the prior two months on top. Fed pricing moved with the print. Before the release the market was carrying about 16 basis points of hikes for the rest of the year. Within ten minutes it was trading closer to 20, which puts a full quarter-point hike back on the table. New Fed Chair War's first meeting is next week. Powell is out.<a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=728s" target="_blank" rel="noopener">[12:08]</a></p>
+    <p>The rest of the tape took the data sideways. Gold dropped about 80 basis points to <span class="pr">$4,470</span>, silver down <span class="ch down">-1.7%</span> at <span class="pr">$72</span>, the dollar caught a bid against the euro and the yen. Equities did the usual round trip on a strong number, spiked into the print, sold off, settled. The desk's view was that the print is not really the equity story today and that the collateral asset classes around it (fixed income, FX, metals) are doing the heavier lifting.</p>
+    <p>The equity story today is the dispersion. Yesterday the Dow gained <span class="pr">874</span> points to a fresh all-time high, up <span class="ch up">+1.7%</span>. This morning the Dow is flat, the NASDAQ is down <span class="ch down">-1.4%</span> (about <span class="pr">440</span> points), and the S&amp;P is splitting the difference at <span class="ch down">-0.7%</span>. The split between the headline indexes was the widest the desk had seen in months yesterday and persisted into Friday. The KOSPI (the South Korean index where the Samsung and SK Hynix memory complex anchors the weighting) opened down <span class="ch down">-5.5%</span> and bounced off the lows, with the daily candle setting up as a possible island reversal.</p>
+    <p>The bond market sitting underneath this is the part the desk kept circling. The ten-year yield has chopped between roughly 450 and 600 basis points for three years, a flat tape inside a range the prior decade would have called wide. The reframing that landed this morning is that the compression itself is now read as a positive signal rather than background noise. A ten-year staying contained at a higher absolute level while equities make new highs is itself a testament to how strong the AI narrative is at pulling global capital into US assets. The S&amp;P 500 absorbing this much money stops being a story about cheap rates, and starts being a story about a single asset class outcompeting everything else on the global menu. A volatility expansion in fixed income when the equity desk has stopped paying attention is the setup the show has flagged for months as the most likely trigger for the next scare.<a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=1020s" target="_blank" rel="noopener">[17:00]</a></p>
+    <p>The corporate-action piece from the overnight was the S&amp;P Dow Jones indices saying they will not be fast-tracking SpaceX into the S&amp;P 500. Index inclusion is at least a year away. The market had been speculating that the rules would bend the same way they bent for some private-to-public listings before, and they did not. JC's call is that the window itself creates a product. Somebody launches an "S&amp;P 500 plus SpaceX" basket ETF inside the year to give index allocators the exposure the index withholds. The harder part of the trade is guessing which sector the index assigns the name to when it does land. Industrials and communications were the desk's top two on Kalshi prediction-market odds, with tech a distant third.<a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=540s" target="_blank" rel="noopener">[9:00]</a></p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Tokenization</div>
+    <h2>The Tokenization Story Just Got a 2027 Calendar</h2>
+    <p>The headline that landed on the wire during the show was a Wall Street Journal exclusive. JP Morgan, Citigroup, and a group of other major commercial banks are bringing tokenized cash deposits onto The Clearing House for a 2027 rollout. The Clearing House is the private utility US banks use to settle interbank dollar payments and is the closest analog the existing system has to a settlement rail. The DTCC, the central depository the show has tracked for over a year, handles the securities side of the same build-out. Both legs of tokenization, cash and securities, now have institutional commitments and a calendar attached.<a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=3793s" target="_blank" rel="noopener">[63:13]</a></p>
+    <p>The pool the banks are pointing at is roughly <span class="pr">$100T</span>, of which equities are about three quarters. Louis has been making the same argument for over a year. The tokenization rails get built out by the incumbents rather than around them, and the announcement is consistent with that read. Crypto-native infrastructure (the public chains, the layer-twos, the bridges) ends up as the plumbing, but the consumer interface is a bank account that already exists and a brokerage that already exists. The end state looks closer to "the equity market with a new clearing layer" than to "crypto eats finance."</p>
+    <p>The cleanest investable read Louis gave on air was orientation. Stop thinking of the crypto trade as Bitcoin, Ethereum, and Solana. The asset class is now wide enough that the selective trader is the one who makes money, and the tokens that ride the tokenization buildout are the names that print all-time highs on days when Bitcoin is bleeding. He did not name them on air. The argument is the orientation, and the names follow if you do the work to find them.<a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=3608s" target="_blank" rel="noopener">[60:08]</a></p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>The flip side of an AI ripping through Zcash on the same morning is that the rails that replace these stand-alone tokens are being put on a published calendar by the same banks that already custody equities. Both halves of the crypto trade ran inside one Friday show, an hour apart. The reader who only buys <span class="tk">$BTC</span> sees a bad week. The reader who reads the WSJ scoop sees the buildout finally getting committed timelines from the institutions that have to make it real.</p>
+    </div>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"This thing is just a glorified memecoin at this point."</blockquote>
+      <div class="attrib">Louis Sykes, on <span class="tk">$MSTR</span> after the company sold 32 BTC and the stock cracked on insider exits <a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=3727s" target="_blank" rel="noopener">[62:07]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Crypto is an asset class moving forward. You're going to make the most amount of money if you are the most selective."</blockquote>
+      <div class="attrib">Louis Sykes, reframing the trade away from the BTC/ETH/SOL frame and toward the tokenization names <a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=3608s" target="_blank" rel="noopener">[60:08]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Bonds are flat, rates are flat, buy stocks and shut up."</blockquote>
+      <div class="attrib">JC, on the three-year stretch where the bond market stopped mattering for equity traders, and why he thinks that regime is ending <a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=1047s" target="_blank" rel="noopener">[17:27]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"It's already here, right?"</blockquote>
+      <div class="attrib">Spencer, on tokenization stopping being a future story once the WSJ posts a 2027 rollout date with JPM and Citi attached <a class="ts" href="https://www.youtube.com/watch?v=rH6ma6Q_PfY&amp;t=3911s" target="_blank" rel="noopener">[65:11]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Claude found a vulnerability in Zcash overnight and the asset class is now visibly on both sides of the AI trade.</strong> <span class="tk">$ZEC</span> down roughly half its market cap on an AI-led audit while JP Morgan and Citi confirmed tokenized cash deposits onto The Clearing House for 2027. Two opposite tells, same morning. <span class="tk">$BTC</span> at <span class="pr">$62.1K</span>, <span class="tk">$ETH</span> and <span class="tk">$SOL</span> through February lows, <span class="tk">$MSTR</span> cracking on insider selling and a capital stack now stacked against the common.</li>
+      <li><strong>The jobs print added a quarter-point of Fed pricing back to the curve and the equity desk mostly absorbed it through dispersion.</strong> <span class="pr">172K</span> against an <span class="pr">84K</span> consensus with positive revisions, Fed pricing roughly 20bp of hikes for the rest of the year going into Chair War's first meeting next week. Dow flat after a <span class="ch up">+1.7%</span> record-high print yesterday, NASDAQ <span class="ch down">-1.4%</span>, KOSPI <span class="ch down">-5.5%</span>. The reframing on the bond market is that the three-year compression itself is the AI tell.</li>
+      <li><strong>S&amp;P Dow Jones indices held the rules on SpaceX, which the desk read as a product gap.</strong> Formal inclusion is at least a year away. JC's call is an "S&amp;P 500 plus SpaceX" basket ETF inside that window to absorb the exposure the index withholds. Industrials or communications are the two sectors the desk expects the eventual classification to land in, with tech a distant third.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
