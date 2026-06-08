@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Took the Hit and the Rest of the Tape Took the Bid - SMTV June 8, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 8, 2026</div>
+    <h1>Tech Took the Hit and the Rest of the Tape Took the Bid</h1>
+    <p class="subtitle">Financials engulfed a month, breadth rose into the down week, and SpaceX prices Friday.</p>
+    <div class="meta">
+      65 min &middot; <a href="https://www.youtube.com/watch?v=CtYCMSVqLjY" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">5 min read</span>
+    </div>
+    <p class="tldr-headline">Friday looked terrible if you only watched the NASDAQ. The rest of the tape was rotating. Financials erased a month of damage in one week and closed at the highs. Real estate quietly notched fifty-two-week highs. Only twenty-four stocks made new two-week lows. The desk reads this as the shape of a healthy correction in a long bull, with SpaceX pricing into it on Friday.</p>
+    <ul>
+      <li>Friday rinse. NASDAQ <span class="ch down">-4%</span>, <span class="tk">$AVGO</span> down <span class="ch down">-20%</span> in two days, semis got the worst of it. SPX fell <span class="ch down">-2.5%</span> on the week, ending nine straight up weeks. Only <span class="pr">24</span> stocks made new two-week lows.</li>
+      <li>Rotation under the surface. Financials engulfed a full month of prior trading in one week and closed at the highs. Real estate quietly notched fresh <span class="pr">52</span>-week highs. The advance-decline line rose through the down week.</li>
+      <li>Crypto. <span class="tk">$BTC</span> <span class="pr">~$63,340</span>, <span class="tk">$ETH</span> <span class="pr">~$1,700</span>, <span class="tk">$SOL</span> <span class="pr">~$66.50</span>, total crypto cap <span class="pr">~$2.16T</span> off the lows. Flat into Monday's bounce. The dollar setup explains the sit-out.</li>
+      <li>Monday open bid back. Dow futures <span class="ch up">+163</span> at <span class="pr">51,100</span>, SPX futures <span class="ch up">+0.4%</span> at <span class="pr">7,463</span>, NDX futures <span class="ch up">+1.5%</span> at <span class="pr">29,500</span>. VIX back under <span class="pr">19</span>. Crude <span class="ch up">+1.5%</span> at <span class="pr">$92</span>, copper <span class="ch up">+1.6%</span> at <span class="pr">$640</span>, gold flat at <span class="pr">$4,360</span>.</li>
+      <li>Yuan ripped <span class="ch up">+2.2%</span> overnight, erasing Thursday and Friday's losses. Korean won correlation to semis was the wiring of last week's tech selloff. The chart read on the desk is that the dollar made a major low and euro is a clean short setup.</li>
+      <li>SpaceX prices Friday. Barron's ran its weekend cover calling the IPO too expensive. The desk took the cover as a soft contrarian tell. JC's frame is that excluding the name from a portfolio is what the worst investors of the last cycle are working hard to do.</li>
+      <li>Ari Wald's "sector culprit" framework. Every bear market in the dataset is led by at least one sector down <span class="pr">20%</span>. Zero sectors are down over the last twelve months. Without a culprit, the math does not get to a bear market.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Sat Out the Friday Selloff and Is Sitting Out the Monday Bounce</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$63,340</div>
+        <div class="stat-change flat">flat &middot; off the lows</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">~$1,700</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$66.50</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">~$2.16T</div>
+        <div class="stat-change flat">off the lows</div>
+      </div>
+    </div>
+    <p>The week closed off the lows on the total crypto cap and the majors are sitting in the same place they sat Friday. Bitcoin near sixty-three and a half thousand, Ethereum just below seventeen hundred, Solana around sixty-six and a half. The dollar bid that swept through equities on Friday did not turn into a bid for crypto. The Monday risk-on bounce in the equity futures and the metals is not turning into one either. Crypto is the asset class sitting both flows out.<a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=246s" target="_blank" rel="noopener">[4:06]</a></p>
+    <p>The macro read that matters for crypto from this morning's tape was the dollar call out of the desk's monthly charts segment. The thesis is that the dollar's recent pullback completed a wave-two correction and the dollar is rallying off a major low, with the euro a clean short setup. A dollar that is bottoming is the headwind BTC has had to fight all year. Today's flat print is what happens when both the risk-on and the risk-off flows are bidding somewhere else and the dollar tape is hardening.<a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=2520s" target="_blank" rel="noopener">[42:00]</a></p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>A Four-Percent NASDAQ Friday That Couldn't Take Anything Else Down With It</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow Futures</div>
+        <div class="stat-value">51,100</div>
+        <div class="stat-change up">+163</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 Futures</div>
+        <div class="stat-value">7,463</div>
+        <div class="stat-change up">+0.4%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NDX Futures</div>
+        <div class="stat-value">29,500</div>
+        <div class="stat-change up">+1.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">&lt;19</div>
+        <div class="stat-change down">crushed</div>
+      </div>
+    </div>
+    <p>Friday's NASDAQ was down four percent. <span class="tk">$AVGO</span> dropped twenty percent in two days. The memory and semis cohort that did all the heavy lifting through the spring got taken out back. Headlines treated it as the start of something. The desk treated it as concentrated leadership unwinding inside a tape that is broadly fine.<a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=174s" target="_blank" rel="noopener">[2:54]</a></p>
+    <p>The S&amp;P 500 fell two and a half percent on the week, ending nine consecutive up weeks. The advance-decline line rose anyway. Financials engulfed a full month of prior trading in one week and closed at the highs, which is the most important sector in the country printing strength into the panic. Real estate quietly notched fresh fifty-two-week highs after two years of going nowhere. Only twenty-four stocks made new two-week lows on Friday. That is the breadth of a rotation. The breadth of a market coming apart looks different.<a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=620s" target="_blank" rel="noopener">[10:20]</a></p>
+    <p>JC pulled out a framework from Ari Wald, the chief technician at Oppenheimer, who tracks what he calls sector culprits. Every meaningful bear market in the dataset has been led by at least one sector down twenty percent. Zero sectors are down over the last twelve months. Without a culprit, the math does not arrive at a bear market. The variant the desk runs alongside is thematic rather than sector-based (a group of stocks across sectors that share a story), and on that read the culprit candidate is the concentrated semis and memory cohort that got hammered last week. Even there, the move is roughly back to two-week-old prices, which is why the new-lows list is short.<a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=475s" target="_blank" rel="noopener">[7:55]</a></p>
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Last Week's Holds</div>
+        <ul>
+          <li>Financials engulfed a month, closed at highs</li>
+          <li>Real estate <span class="pr">52</span>-week-high close</li>
+          <li>Regional banks ripping into Monday</li>
+          <li>Advance-decline line up on a down SPX week</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Last Week's Hits</div>
+        <ul>
+          <li>NASDAQ <span class="ch down">-4%</span> Friday</li>
+          <li><span class="tk">$AVGO</span> <span class="ch down">-20%</span> in two days</li>
+          <li>Memory and DRAM ETFs taken out back</li>
+          <li>KOSPI selling on Korean won weakness</li>
+        </ul>
+      </div>
+    </div>
+    <p>Monday opened with the futures bid back across the board. Dow up <span class="ch up">+163</span> at <span class="pr">51,100</span>, S&amp;P futures up <span class="ch up">+0.4%</span> at <span class="pr">7,463</span>, NDX futures up <span class="ch up">+1.5%</span> at <span class="pr">29,500</span>. VIX got crushed back under <span class="pr">19</span>. Crude oil up <span class="ch up">+1.5%</span> at <span class="pr">$92</span>, copper up <span class="ch up">+1.6%</span> at <span class="pr">$640</span>, gold flat at <span class="pr">$4,360</span>. The bond futures are flat just under <span class="pr">112</span>, so the bid is not coming from rates.<a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=235s" target="_blank" rel="noopener">[3:55]</a></p>
+    <p>SpaceX prices Friday. Barron's ran its weekend cover calling the IPO too expensive. The desk's read on the cover was that some of the worst investors of the last cycle are working hard to keep this name out of their books, which is a softer contrarian tell than a full fade but in the same neighborhood. The index inclusion piece was covered on Friday's show (no S&amp;P 500 fast-track, at least a year out). The piece in front of the listing now is the lockup-expiration window and the price-discovery dynamics on Day One.<a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=1023s" target="_blank" rel="noopener">[17:03]</a></p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Currencies</div>
+    <h2>The Currency Tape Moved More Than Tech Did and Wired Both Sides of the Move</h2>
+    <p>The Korean won weakened into Thursday and Friday. The Korean-tilted memory ETFs that the US tech tape had been leaning on caught the worst of the equity selloff at the same time. The Chinese yuan dropped with it. The Asian-currency screen and the semis tape were running on the same wire all week, and once you put them side by side the Friday route reads less like a fundamental rerate and more like an FX-driven unwind of a crowded long.</p>
+    <p>On Monday the yuan reversed. Up <span class="ch up">+2.2%</span> on the day, which erased everything it gave back Thursday and Friday combined. Two percent moves in a major currency are uncommon. They are the kind of move that pulls the equity tapes that lean on them back with them. The semis are catching that bid this morning. The won has not yet made the same move, which is the watch item for whether this morning's tech bounce holds through the close.<a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=2614s" target="_blank" rel="noopener">[43:34]</a></p>
+    <p>The dollar piece sits underneath all of it. The read on the desk's monthly charts segment is that the dollar's recent decline completed a five-wave move down from the top, and the pullback that followed the bounce held the support level the chart had drawn. On that read, the wave-two retracement is done and the dollar is rallying off a major low. The cleanest currency expression of the view is short euro. The yen, which would normally rip on dollar strength, has refused to make new highs against the dollar, which the desk flagged as the odd part of the picture. As a setup, a dollar major low plus a euro short setup is the FX regime that historically pulls global money back into the US tape. It is also the regime that has been hard for Bitcoin all year. The currency tape is the part of last week's story that will keep mattering this week.<a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=2470s" target="_blank" rel="noopener">[41:10]</a></p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>The dollar setup is the macro read-through. If the dollar bottomed where the chart says it bottomed and the next leg is up, the BTC headwind that ran through the spring stays in place. The flat tape across BTC, ETH, and SOL through both Friday's risk-off and Monday's risk-on is consistent with that view. The bounce that crypto needs is one where global currencies hold and equity futures hold without the dollar making fresh highs.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="quotes-block">
+      <div class="pullquote">
+        <blockquote>"Mathematically, to have a bear market, stock prices have to go down. You see? Zero sectors are down over the last year."</blockquote>
+        <div class="attrib">JC, on the Ari Wald sector-culprit framework <a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=512s" target="_blank" rel="noopener">[8:32]</a></div>
+      </div>
+      <div class="pullquote">
+        <blockquote>"People asking the wrong questions is very healthy for the market."</blockquote>
+        <div class="attrib">JC, on the boycott of the bull market <a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=686s" target="_blank" rel="noopener">[11:26]</a></div>
+      </div>
+      <div class="pullquote">
+        <blockquote>"Some of the dumbest people I know, some of the worst investors I've ever seen are trying to exclude this from their portfolio. They're trying to not participate."</blockquote>
+        <div class="attrib">JC, on the SpaceX fade and the Barron's cover <a class="ts" href="https://www.youtube.com/watch?v=CtYCMSVqLjY&amp;t=1043s" target="_blank" rel="noopener">[17:23]</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Friday did not make a bear market.</strong> SPX <span class="ch down">-2.5%</span> on the week, ending nine straight up weeks. Advance-decline rose anyway. Financials engulfed a month and closed at highs. Real estate at fresh <span class="pr">52</span>-week highs. Only <span class="pr">24</span> stocks made new two-week lows. That is the breadth of a rotation. A tape unwinding looks different on the new-lows list.</li>
+      <li><strong>No sector is the culprit yet.</strong> Ari Wald's framework requires a sector down <span class="pr">20%</span> over twelve months to set up a bear market. Zero sectors are down. Concentrated semis and memory got smacked, but the tape rotated into financials, real estate, regionals, and healthcare instead of breaking with them. SpaceX prices Friday into that backdrop.</li>
+      <li><strong>The currency tape is the read-through.</strong> Yuan up <span class="ch up">+2.2%</span> overnight is why semis are bouncing this morning. The chart read is that the dollar made a major low and euro is a short setup. The Monday bounce in equities and metals without a crypto bid is consistent with that. The macro headwind on <span class="tk">$BTC</span> stays the same.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
