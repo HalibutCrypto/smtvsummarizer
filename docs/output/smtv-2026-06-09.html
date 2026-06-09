@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apple Took a Five-Percent Hit on Siri Day and the Desk Said Buy More - SMTV June 9, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 9, 2026</div>
+    <h1>Apple Took a Five-Percent Hit on Siri Day and the Desk Said Buy More</h1>
+    <p class="subtitle">After ten weeks higher and a capex bill a tenth of Big Tech's, Apple's WWDC selloff cleaned up the thesis.</p>
+    <div class="meta">
+      58 min &middot; <a href="https://www.youtube.com/watch?v=BsFBYNR4aKc" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Apple held its developer conference and the stock dropped five percent. Then the people who own it said they were buying more. The Siri update was nothing. The LLM behind it is Google Gemini. Apple's AI capex bill this year runs around fourteen billion while the rest of Big Tech is burning one to two hundred. The bet is that Apple wins AI by being the device every model has to run on top of. The stock is up twenty percent in ten weeks anyway.</p>
+    <ul>
+      <li>Apple. WWDC unveiled a Siri rebuild that runs on Google's Gemini. <span class="tk">$AAPL</span> down roughly <span class="ch down">-5%</span> over two sessions, still up ten weeks in a row and over <span class="ch up">+20%</span> on the stretch. Apple capex this year about <span class="pr">$14B</span> vs peer Big Tech at <span class="pr">$100-200B+</span>.</li>
+      <li>Tape. Dow up <span class="ch up">+200</span> above <span class="pr">51,000</span>, <span class="tk">$SPX</span> <span class="ch up">+0.5%</span> at <span class="pr">7,453</span>, NDX pushing <span class="pr">30,000</span> at <span class="ch up">+~1%</span>, VIX under <span class="pr">18</span>. 30-year bond futures flat just under <span class="pr">112</span>.</li>
+      <li>Commodities. Crude <span class="ch down">-2%</span> at <span class="pr">$89</span>, copper <span class="ch up">+1.2%</span> at <span class="pr">$6.42</span>, gold flat at <span class="pr">$4,360</span>, silver flat at <span class="pr">$68.58</span>.</li>
+      <li>Crypto. <span class="tk">$BTC</span> <span class="pr">~$62,500</span> <span class="ch down">-1%</span>, <span class="tk">$ETH</span> <span class="pr">~$1,675</span> <span class="ch down">-1%</span>, <span class="tk">$SOL</span> <span class="pr">~$66</span> <span class="ch down">-1%</span>, total cap <span class="pr">~$2.14T</span>. Same neighborhood as February.</li>
+      <li>Korea. The won is bottoming at its March 2009 level, the same week the S&amp;P bottomed at <span class="pr">666</span>. KOSPI ripped <span class="ch up">+8%</span> overnight. Single-name leveraged Korean stock ETFs (double SK Hynix, double Samsung) are now ten billion in AUM each.</li>
+      <li>Dollar setup. DXY stuck below <span class="pr">101</span>. The desk wants a clean close above to go long, expressed short euro. Speculator positioning came off a decade-record low in long-minus-short and has flipped bullish.</li>
+      <li>The hurdle is high. Earnings revisions still going up, multiples expanding, but Big Tech is getting hit <span class="ch down">-10</span> to <span class="ch down">-15%</span> on tiny misses. Price is following earnings now instead of leading.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Sat in February's Range While the Equity Tape Sat at New Highs</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$62,500</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">~$1,675</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$66</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">~$2.14T</div>
+        <div class="stat-change flat">February levels</div>
+      </div>
+    </div>
+    <p>The total crypto market cap is at <span class="pr">2.14 trillion</span>, the same level it traded in February. Bitcoin is down a percent at <span class="pr">~$62,500</span>, Ethereum at <span class="pr">~$1,675</span>, Solana at <span class="pr">~$66</span>. None of the day's equity bid showed up in crypto. The NDX is pushing thirty thousand, copper is up, oil is down, the dollar is stuck under <span class="pr">101</span>, and BTC is doing none of it.<a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=300s" target="_blank" rel="noopener">[5:00]</a></p>
+    <p>The structural data point that matters more than today's flat tape came out of a Ben Carlson chart pack. The value of stocks owned by Americans under forty has tripled in five years. The share of IRA holders under thirty has doubled in ten years. The 30-to-50 cohort now owns more in stocks than the 65-and-older cohort does. That is the exact demographic that holds digital assets at the highest rate. The kids saving for retirement are the same kids holding the on-chain bag, and the size of that pool keeps growing whether or not the BTC tape moves this week.<a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=620s" target="_blank" rel="noopener">[10:20]</a></p>
+    <p>Add to that the day-trader regime change happening underneath it. The Pattern Day Trader rule, which capped accounts under twenty-five thousand to three round-trip trades a week, was officially killed Monday. Day one of free-fire and a microcap called <span class="tk">$INHD</span> went from <span class="pr">$3</span> to <span class="pr">$66</span> and got halted. New single-stock leveraged ETFs keep launching on names that already trade like options. The same retail force that turns up in those tickers turns up in coins.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Apple's Worldwide Developers Conference Cost the Stock Five Percent and Cleaned Up the Thesis</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">51,000+</div>
+        <div class="stat-change up">+200</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,453</div>
+        <div class="stat-change up">+0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NDX</div>
+        <div class="stat-value">~30,000</div>
+        <div class="stat-change up">+~1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">&lt;18</div>
+        <div class="stat-change down">crushed</div>
+      </div>
+    </div>
+    <p>Apple held its Worldwide Developers Conference on Monday and walked through what was billed as a Siri rebuild. The reveal was thin. Better voice assistant, the ability to converse with it, no live release until later in the year. The LLM doing the work behind it is Google's Gemini. <span class="tk">$AAPL</span> was down five percent from the start of the announcement to the open this morning. The rest of the MAG7 had to absorb the move because Apple is the number two weight in the NDX and the S&amp;P, so the other names took the offset and the indices ended up positive.<a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=940s" target="_blank" rel="noopener">[15:40]</a></p>
+    <p>The question on the show was whether you buy Apple here. Both regulars said yes. JC is overweight, added a month ago, and has no plan to trim. Strazza is the same. The frame both leaned on was simple. Apple's capex this year runs around <span class="pr">$14 billion</span>. The other megacap-tech names are spending <span class="pr">$100</span> to <span class="pr">$200 billion</span> apiece on AI infrastructure. The desk's read is that whoever wins the LLM war (Google, OpenAI, Anthropic, xAI), Apple wins by being the device that war gets fought on top of. Apple sits the spend out and collects the layer.<a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=1140s" target="_blank" rel="noopener">[19:00]</a></p>
+    <p>The five-percent move makes the entry cheaper on a name that ran ten weeks straight and over twenty percent in the process. The one risk the desk did flag is the only one that actually breaks Apple. Whatever finally replaces the iPhone as the dominant device in people's lives has to be made by Apple. The watch did not do it. Goggles, glasses, something else, the work has to land at One Apple Park. If somebody else ships that, the layer-on-top trade is over. Until that happens, the chart and the multiple are sitting in the same place they have been on every previous prior dip.</p>
+    <div class="note">
+      <div class="label">Korean won, March 2009 levels</div>
+      <p>The Korean won is bottoming at the same level it bottomed in March 2009. That week the S&amp;P printed <span class="pr">666</span>, the generational low of the last cycle. KOSPI was up <span class="ch up">+8%</span> overnight. Single-stock leveraged Korean ETFs (double SK Hynix, double Samsung) have built ten billion in AUM in names that the desk does not consider liquid enough to support them. If the won holds the line and breaks higher, the Korean semis cohort and the US tech tape that runs on it both get the bid.<a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=540s" target="_blank" rel="noopener">[9:00]</a></p>
+    </div>
+    <p>Underneath the equity tape the dollar is doing its slow work. DXY is stuck just under <span class="pr">101</span>, the level the desk wants to see a clean close above before going long. The cleanest expression of that view is short euro, which is printing a twelve-month distribution top while euro speculators (the big specs, six months ago very long) have rinsed positioning toward flat and are close to flipping bearish. The COT long-minus-short on the dollar came off a decade-record low at the end of 2025 and has flipped bullish. Strong dollar has been an equity-day-down event in this regime, but the desk noted that does not have to keep being true. Plenty of past windows had stocks up alongside the dollar. For crypto, the dollar question is whatever it has always been, which is whether the headwind that ran through spring stays in place.<a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=2030s" target="_blank" rel="noopener">[33:50]</a></p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Hurdle</div>
+    <h2>A Picture-Perfect Bull Market That Punishes Anything Less Than Perfect Earnings</h2>
+    <p>The setup the desk kept circling on the back half of the show was the hurdle rate. The bar that companies have to clear to keep stocks moving has gotten much higher this year. Earnings revisions keep climbing, which is the rare picture this late in a cycle. Multiples are expanding alongside that, which means investors are paying up for each dollar of expected earnings. Both of those things look like a sustained bull. The reaction function underneath has tightened all the same.<a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=2760s" target="_blank" rel="noopener">[46:00]</a></p>
+    <p>Big Tech is the cleanest place to see it. Stocks have been taking ten- and fifteen-percent hits on slightly soft guidance or a tiny revenue miss. Software is the extreme version of the same pattern. Reports have to be perfect or the tape rips them up. That is what happens when earnings are dragging price along behind them. In most regimes price sniffs out where earnings will land. Right now the desk's read is that the market is waiting for the report to print and rating the move off whatever shows up.<a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=2820s" target="_blank" rel="noopener">[47:00]</a></p>
+    <p>The other layer is that the bull is openly hated. Three years in, up double digits, breadth holding, and the dominant retail mood is hostile. Some of that is Trump treating the index as a personal scorecard, which turns off a chunk of the country from cheering anything that is working. Some of it is the wider read that capital is widening its lead over labor in real time, and the people watching their household balance sheet versus their neighbor's portfolio feel they are being left behind. The AI build-out is going to make that gap bigger before it makes it smaller. Until sentiment turns and people are objectively excited about stocks, the desk's read is that the bull has not run out of fuel.</p>
+    <p>A flat bond tape under all of it tells the same story. 30-year futures are stuck just under <span class="pr">112</span>. There is no message from rates today, no panic bid, no liquidation. The bid is going into equities. The hurdle just means the market is choosing which equities to keep.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="quotes-block">
+      <div class="pullquote">
+        <blockquote>"Who's going to win? Google, OpenAI, Anthropic, xAI, whatever. Who's going to win? As far as Apple's concerned, it doesn't matter. It doesn't matter at all."</blockquote>
+        <div class="attrib">JC, on the Apple layer-on-top trade <a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=1140s" target="_blank" rel="noopener">[19:00]</a></div>
+      </div>
+      <div class="pullquote">
+        <blockquote>"Apple just needs to make sure that they innovate that and they create that for people. They can't let the iPhone be replaced by somebody else. That's it. They could keep doing that, they stay top dog."</blockquote>
+        <div class="attrib">Strazza, on the one real risk to the Apple thesis <a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=1337s" target="_blank" rel="noopener">[22:17]</a></div>
+      </div>
+      <div class="pullquote">
+        <blockquote>"They got to be perfect with their reports these days or stocks will get killed. You'll look through the report, you'll say, what the hell was wrong? Stocks down ten, fifteen percent on slightly weak guidance."</blockquote>
+        <div class="attrib">Strazza, on the new Big Tech earnings hurdle <a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=2820s" target="_blank" rel="noopener">[47:00]</a></div>
+      </div>
+      <div class="pullquote">
+        <blockquote>"It is a picture-perfect bull market, yet it remains very, very much hated. Why would anyone expect the bull market to stop until that changes?"</blockquote>
+        <div class="attrib">The desk, on the sentiment regime <a class="ts" href="https://www.youtube.com/watch?v=BsFBYNR4aKc&amp;t=2884s" target="_blank" rel="noopener">[48:04]</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Apple is the cheap AI trade.</strong> <span class="tk">$AAPL</span> took a <span class="ch down">-5%</span> hit over the Siri reveal and the Gemini-on-the-back-end disclosure. The stock is still up over <span class="ch up">+20%</span> in ten weeks. Apple capex is roughly <span class="pr">$14B</span> while peer Big Tech is spending <span class="pr">$100-200B</span> on AI buildout. The desk owns it overweight and is buying the dip.</li>
+      <li><strong>Crypto is flat in the February range with a growing buyer base underneath.</strong> <span class="tk">$BTC</span> <span class="pr">~$62,500</span>, <span class="tk">$ETH</span> <span class="pr">~$1,675</span>, <span class="tk">$SOL</span> <span class="pr">~$66</span>, total cap <span class="pr">~$2.14T</span>. Under-forty stock ownership has tripled in five years. PDT rule officially dead day one. The pool of risk-on retail keeps widening even as today's BTC tape sits out the equity bid.</li>
+      <li><strong>The bull market is picture-perfect and openly hated.</strong> Earnings revisions still up, multiples expanding, Big Tech getting punished <span class="ch down">-10</span> to <span class="ch down">-15%</span> on small misses. The hurdle rate has tightened the reaction function. Dollar still under <span class="pr">101</span>, bonds flat. Until sentiment flips bullish, the desk's read is that the bull has not run out of fuel.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
