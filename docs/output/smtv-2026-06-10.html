@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Quiet CPI, a Loud VIX, and a Tape That Finally Lets Everything Else Bid - SMTV June 10, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "&rarr;"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 10, 2026</div>
+    <h1>A Quiet CPI, a Loud VIX, and a Tape That Finally Lets Everything Else Bid</h1>
+    <p class="subtitle">Four trading days into the rotation, real estate, regional banks, healthcare and Campbell Soup are catching the bid while semis cool off.</p>
+    <div class="meta">
+      78 min &middot; <a href="https://www.youtube.com/watch?v=mGP7y9qDnFM" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">7 min read</span>
+    </div>
+    <p class="tldr-headline">For two months the only thing that worked was tech. Four trading days ago that stopped. The VIX is back at twenty for the first time since spring, the CPI print said nothing interesting, and everything that hasn't worked since March is suddenly bidding. Real estate. Regional banks. Drug stocks. Soup stocks. The bull market is still on. It just changed which stocks it loves.</p>
+    <ul>
+      <li>Tape. S&amp;P, NASDAQ, Russell and Dow futures all red into the open. NDX the worst of the four. VIX <span class="ch up">+5%</span> at roughly <span class="pr">20</span>, first print at twenty in about two months.</li>
+      <li>CPI. Year-over-year core <span class="pr">2.9%</span> in line, headline <span class="pr">4.2%</span> in line, core month-over-month a smidge light. Gold spiked <span class="ch up">+$45</span> off the release on thin liquidity then started giving it back. Fed pricing unchanged. Roughly 60% of one hike still penciled in for year-end. Walsh's first meeting in two weeks.</li>
+      <li>Rotation. 70% of stocks were green yesterday with major averages red. Real estate, financials, healthcare, staples, industrials and materials in the leading quadrant of the daily RRG. Tech and discretionary are the only sectors leaving it.</li>
+      <li>Strazza loaded <span class="tk">$CPB</span> Campbell Soup calls. 30% short interest, 7 days to cover, sitting at its 2002 lows, paying close to a 7% dividend, base breakout in motion. <span class="tk">$KMB</span> Kimberly-Clark set up the same way. <span class="tk">$MDLZ</span> Mondelez called the tightest coil in the market.</li>
+      <li>Names outside tech worth a look. <span class="tk">$EXEL</span> cancer-treatment biotech on a multi-year base. <span class="tk">$MOH</span> Medicaid-focused managed care in the same volume pocket as <span class="tk">$UNH</span>. <span class="tk">$LLY</span> back in play above <span class="pr">$1,100</span>. <span class="tk">$CUBI</span>, <span class="tk">$FITB</span>, <span class="tk">$FLG</span> (ex-NYCB) on the bank side. <span class="tk">$SKT</span> Tanger Outlets, the mall REIT, above <span class="pr">$38</span>.</li>
+      <li>Crypto. <span class="tk">$BTC</span> <span class="pr">~$62,500</span> <span class="ch flat">~0%</span>, <span class="tk">$ETH</span> <span class="pr">~$1,675</span> <span class="ch flat">~0%</span>, <span class="tk">$SOL</span> <span class="pr">~$66</span> <span class="ch flat">~0%</span>. Total cap <span class="pr">~$2.14T</span>, same neighborhood since February. Gold dropped <span class="ch down">-$120</span> overnight, dollar still pinned at <span class="pr">100</span>.</li>
+      <li>SpaceX IPO is on for Friday. Sits in <span class="tk">$XLC</span> communications, not <span class="tk">$XLK</span> tech.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Sat Out a Day of Macro Fireworks</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$62,500</div>
+        <div class="stat-change flat">~0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">~$1,675</div>
+        <div class="stat-change flat">~0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$66</div>
+        <div class="stat-change flat">~0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">~$2.14T</div>
+        <div class="stat-change flat">February levels</div>
+      </div>
+    </div>
+    <p>Bitcoin and Ethereum futures opened unchanged into a softer equity tape. The total crypto market cap held near <span class="pr">$2.14T</span>, the same band it has traded since February. Solana is in the same range it has been in for weeks. None of the rotation churn on the equity side bled into either coin.<a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=1180s" target="_blank" rel="noopener">[19:40]</a></p>
+    <p>The macro tape moved hard around all of it. Gold dropped <span class="pr">$120</span> an ounce overnight, then ripped <span class="pr">$45</span> back in 90 seconds when the CPI release landed. Silver gave back a percent. Copper softened. The dollar is still pinned at <span class="pr">100</span>, the level the desk has been watching for weeks as the swing factor for crypto. A weakening dollar in front of a new Fed chair is supposed to be a structural BTC tailwind. Right now the dollar is holding the line and BTC is doing none of it.<a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=750s" target="_blank" rel="noopener">[12:30]</a></p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>A Snoozer CPI Lands in a Tape That's Already Rotating</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 fut</div>
+        <div class="stat-value">~7,415</div>
+        <div class="stat-change down">-0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NDX fut</div>
+        <div class="stat-value">~29,750</div>
+        <div class="stat-change down">-0.8%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow fut</div>
+        <div class="stat-value">~50,750</div>
+        <div class="stat-change down">-0.4%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">~20</div>
+        <div class="stat-change up">+5% &middot; 2mo high</div>
+      </div>
+    </div>
+    <p>The CPI print landed exactly where the consensus had it. Year-over-year core at <span class="pr">2.9%</span>, headline at <span class="pr">4.2%</span>, core month-over-month a smidge light. The market reaction was almost entirely positioning noise. Gold spiked <span class="pr">$45</span> off the release on thin liquidity and started giving it back inside the hour. The desk's macro guest called the whole thing run-of-the-mill and said it doesn't alter Fed pricing for the rest of the year. Roughly 60% of one hike is still penciled in. New Fed Chair Walsh has his first meeting in two weeks.<a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=720s" target="_blank" rel="noopener">[12:00]</a></p>
+    <p>The actual story is the second straight day of broad rotation. S&amp;P futures opened down half a percent, NASDAQ a touch worse, VIX at <span class="pr">20</span> for the first time in two months. The headline indexes look weak. Underneath, 70% of stocks were green yesterday with major averages red. Real estate broke out across the board. Financials, healthcare, staples, industrials and materials are all in the leading quadrant on the daily RRG. Discretionary and tech are the only sectors leaving it.<a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=600s" target="_blank" rel="noopener">[10:00]</a></p>
+    <p>The fund-flow chart that landed on the desk made the same point in dollars. Of the roughly <span class="pr">$30B</span> in net sector ETF inflows over the last two and a half months, the entire pile went to tech. Every other sector saw close to nothing. Fund flows are sentiment, not a leading indicator, but they tell you what positioning looks like four trading days into a regime shift. They are part of the reason a 4% XLK relative drop on Friday hit so hard.<a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=665s" target="_blank" rel="noopener">[11:05]</a></p>
+    <p>Strazza bought <span class="tk">$CPB</span> Campbell Soup calls into all of this. The stock has 30% short interest, seven days to cover, sits at its 2002 lows, and pays close to a <span class="pr">7%</span> dividend. The last earnings print was the first in four straight quarters that didn't get punished by the tape. Two follow-through days are starting to look like a base breakout. <span class="tk">$KMB</span> Kimberly-Clark, the consumer-staples paper and tissue conglomerate, is set up the same way. <span class="tk">$MDLZ</span> Mondelez, the Oreo and Cadbury parent, is coiled tight enough that he called it the tightest in the market.<a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=4290s" target="_blank" rel="noopener">[71:30]</a></p>
+    <p>The names lighting up outside tech read like a rolodex the desk hasn't opened in a year. <span class="tk">$EXEL</span> Exelixis, the cancer-treatment biotech, on a monster monthly base above <span class="pr">$50</span>. <span class="tk">$MOH</span> Molina Healthcare, the Medicaid managed-care insurer, filling the same volume pocket UnitedHealth filled last month. <span class="tk">$LLY</span> Eli Lilly back in play above <span class="pr">$1,100</span>. On the bank side, <span class="tk">$CUBI</span> Customers Bancorp, <span class="tk">$FITB</span> Fifth Third, and <span class="tk">$FLG</span> Flagstar (the renamed old NYCB regional) all setting up. <span class="tk">$SKT</span> Tanger Outlets, the mall REIT that owns properties across the US, above <span class="pr">$38</span>. Even <span class="tk">$VBR</span>, Vanguard Small Cap Value (a cheap broad-basket ETF that has underperformed the S&amp;P for 15 straight years), closed at an all-time high yesterday.<a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=2520s" target="_blank" rel="noopener">[42:00]</a></p>
+    <p>The structural read on tech is the same one the desk has worked all year. The 26-year base breakout of XLK relative to SPY is real and only one upside target has been hit. Tech reasserts at some point. The open question is how long the correction takes. A three-week pullback looks very different from a six-month one. While the market figures that out, the bid is everywhere except the names that led.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Framework</div>
+    <h2>Four Trading Days Is Enough to Change How the Desk Thinks</h2>
+    <p>There's an old framework that says the level of interest rates doesn't really matter for markets. The change in rates does. If rates are pinned high and not moving, you adapt. When they move, you don't. The same framework applies to anything markets price, including which stocks lead.</p>
+    <p>For roughly two months that leadership was tech, semis, and high-beta growth. Off the March lows the outperformance was historic. Four trading days ago the regime broke. The first crack was Friday's 4% XLK underperformance against the S&amp;P 500, the kind of single-day relative move the desk hasn't seen outside the 2000 top.<a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=1230s" target="_blank" rel="noopener">[20:30]</a></p>
+    <p>The mental side of that switch is the part traders underestimate. When predictions multiply, the desk read is that traders are insecure rather than certain. The volume of VIX calls in the chat right now is the tell. The practice when the environment shifts is to step away from the screen. Walk the backyard. Shoot some pool basketball. Think about what you're thinking. The trap is sitting at the turret cycling through bad outcomes while positions you should have closed get worse.<a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=3610s" target="_blank" rel="noopener">[60:10]</a></p>
+    <p>The harder skill is admitting the prior setup was wrong and just repositioning without judgment. Strazza was open about it on air. He used to feel like a loser repositioning his book because in his head he had to take the L on every name in it. He calls the unlearning of that a superpower now. The same skill is required when this rotation eventually reverses and tech reasserts. The 26-year base breakout from XLK relative to SPY is still intact and only one upside target has been hit. Switching regimes cleanly pays in both directions.<a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=4080s" target="_blank" rel="noopener">[68:00]</a></p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"Big cap tech stocks are dragging the indexes lower while everything else looks fine. That's the thing to know right now."</blockquote>
+      <div class="attrib">Strazza, on what's actually happening underneath the index moves <a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=1500s" target="_blank" rel="noopener">[25:00]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"I love a snoozer of a number. Snoozers are good."</blockquote>
+      <div class="attrib">Spencer, on the in-line CPI print <a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=1116s" target="_blank" rel="noopener">[18:36]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"It's important to think about what you're thinking about."</blockquote>
+      <div class="attrib">Strazza, on the practice that survives a regime change <a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=3803s" target="_blank" rel="noopener">[63:23]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Mondelez might be the tightest coil in the market right now."</blockquote>
+      <div class="attrib">Strazza, on <span class="tk">$MDLZ</span> setting up alongside Campbell Soup <a class="ts" href="https://www.youtube.com/watch?v=mGP7y9qDnFM&amp;t=4343s" target="_blank" rel="noopener">[72:23]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The rotation is the trade.</strong> Two and a half months of tech-only leadership broke last Friday and the rest of the tape is bidding for a second straight day. Real estate, financials, healthcare, staples and materials are all in the leading quadrant of the daily RRG. Tech and discretionary are the only sectors leaving it. Position into the new leadership and leave the tech overweight at the door for now.</li>
+      <li><strong>The Walsh meeting matters more than the CPI did.</strong> Year-over-year inflation was in line on both core and headline. The print didn't move Fed pricing. The new Fed Chair's first FOMC sits two weeks out. Roughly 60% of one hike is still penciled in for year-end and that's the actual event traders should be sizing for.</li>
+      <li><strong>Strazza's loudest call is Campbell Soup.</strong> <span class="tk">$CPB</span> has 30% short interest, 7 days to cover, sits at its 2002 lows, pays a near-<span class="pr">7%</span> dividend, and just printed its first un-punished earnings reaction in four quarters. <span class="tk">$KMB</span> looks the same. <span class="tk">$MDLZ</span> is coiling. Staples are the bench taking the field.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
