@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twenty Transports at Records the Day Before the Biggest IPO in History - SMTV June 11, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 11, 2026</div>
+    <h1>Twenty Transports at Records the Day Before the Biggest IPO in History</h1>
+    <p class="subtitle">Growth kept bleeding into a rotation that hit transports, regional banks and the consumer line, all the day before a SpaceX IPO that could open at three trillion dollars or fail to clear at all.</p>
+    <div class="meta">
+      64 min &middot; <a href="https://www.youtube.com/watch?v=xXLeDwhAUSw" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">7 min read</span>
+    </div>
+    <p class="tldr-headline">Everything that isn't growth is at all-time highs. Transports, community banks, Coca-Cola, even the airlines. The desk is sitting on this rotation the day before the largest IPO in history opens. The IPO could rally three trillion dollars on day one or fail to get out the door. Half the country is convinced this ends badly. Half the country has been wrong since March.</p>
+    <ul>
+      <li>Tape. S&amp;P fut <span class="ch up">+0.3%</span>, NDX fut <span class="ch up">+0.5%</span>, Russell fut <span class="ch up">+0.5%</span>, Dow fut <span class="ch up">+0.3%</span>. Industrials and transports closed <span class="ch down">-3%</span> yesterday, the community-bank index broke out to a fresh all-time high anyway.</li>
+      <li>Transports. Every one of the 20 stocks in the Dow Jones Transportation Average closed at all-time highs. <span class="tk">$ODFL</span>, <span class="tk">$DAL</span>, <span class="tk">$UAL</span>, <span class="tk">$JBHT</span>, <span class="tk">$FDX</span>, <span class="tk">$UNP</span>, <span class="tk">$CSX</span>, <span class="tk">$NSC</span> on base breakouts. Even <span class="tk">$LUV</span>, <span class="tk">$AAL</span> and <span class="tk">$ALK</span> basing.</li>
+      <li>Consumer. <span class="tk">$CBRL</span> <span class="ch up">+30%</span> on the week. <span class="tk">$CASY</span> (Iowa gas-station chain quietly slinging more pizza than most pizza chains) guided up. <span class="tk">$ELY</span> <span class="ch up">+7%</span> after spinning out Topgolf. <span class="tk">$LOVE</span> beat earnings. <span class="tk">$SEXY</span> (the renamed Victoria's Secret) printed 13 to 14% comp-store growth into 18% short interest.</li>
+      <li>Sentiment. AAII bull-bear hit the fewest bulls of 2026 this week. Half of individual investors bearish six months out. Daily RRG shows tech as the only sector still in the leading quadrant and pointed straight at lagging.</li>
+      <li>SpaceX. IPO opens Friday afternoon, reportedly four times oversubscribed. Base case is a clean print near <span class="pr">$2T</span>, possible <span class="pr">$3</span> to <span class="pr">$3.5T</span> if the indexers chase. Tail risk is that it doesn't open at all. The show is going live at 2pm Eastern.</li>
+      <li>Crypto. <span class="tk">$BTC</span> <span class="ch up">+2%</span>, <span class="tk">$ETH</span> <span class="ch up">+2%</span>, <span class="tk">$SOL</span> <span class="ch up">+3%</span>. Total cap <span class="pr">~$2.13T</span>, same range since February. Gold <span class="ch down">-1%</span>, silver <span class="ch down">-2.5%</span>, dollar bid.</li>
+      <li>Other names. <span class="tk">$KO</span> base breakout. <span class="tk">$RSI</span> (Rush Street Interactive online gambling) at new highs. <span class="tk">$CLOV</span> setup at <span class="pr">$2.50</span> with weekly options. <span class="tk">$AMPG</span> (sub-$10 Long Island microwave/defense buzzword stock) breaking out for those who like that sort of thing.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>A Two-Percent Bid Inside a Range That Hasn't Moved Since February</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$63,750</div>
+        <div class="stat-change up">+2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">~$1,710</div>
+        <div class="stat-change up">+2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$68</div>
+        <div class="stat-change up">+3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">~$2.13T</div>
+        <div class="stat-change flat">February band</div>
+      </div>
+    </div>
+    <p><span class="tk">$BTC</span> printed <span class="ch up">+2%</span> overnight, <span class="tk">$ETH</span> the same, <span class="tk">$SOL</span> <span class="ch up">+3%</span>. Total crypto market cap held <span class="pr">$2.13T</span>, the band it has lived in since February. Spencer skimmed the crypto line on the price tape and moved on. The desk has barely talked about coins all week.<a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=410s" target="_blank" rel="noopener">[6:50]</a></p>
+    <p>The macro tape that crypto leans on was mixed. Dollar bid a touch. Gold off 1%. Silver off 2.5%. Copper off three quarters of a percent. Oil added three quarters of a percent. The S&amp;P at all-time highs and a calm bond tape should be a BTC-friendly backdrop on paper. On the screen it isn't pulling. A 2% day inside a four-month range tells you positioning is quiet and the next leg has to come from a new catalyst.</p>
+    <p>The catalyst on the calendar is the SpaceX IPO. Nothing about it opens the door for crypto allocators directly. The dispersion question, either a <span class="pr">$3.5T</span> tape print on day one or no print at all, is a vol event for everything risk-on. Crypto vol screens are still priced for nothing happening. If the IPO breaks something on Friday, that is the first scenario in months where BTC has a real reason to leave its range.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Twenty Transports, the Bank Index and Coca-Cola Print Records While Growth Bleeds</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500 fut</div>
+        <div class="stat-value">~7,440</div>
+        <div class="stat-change up">+0.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NDX fut</div>
+        <div class="stat-value">~30,000</div>
+        <div class="stat-change up">+0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow fut</div>
+        <div class="stat-value">~50,900</div>
+        <div class="stat-change up">+0.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">spot</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+    </div>
+    <p>The headline tape opened mildly green and slightly tilted toward the cohorts the desk has been chasing for two weeks. S&amp;P up a third, NDX and Russell tied at <span class="ch up">+0.5%</span>, Dow up a third. Yesterday's session was the second straight day of red indexes and green breadth. Industrials closed <span class="ch down">-3%</span>. Transports closed <span class="ch down">-3%</span>. The community-bank index broke out to a fresh all-time high in the same session.<a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=1148s" target="_blank" rel="noopener">[19:08]</a></p>
+    <p>JC pulled up every name in the Dow Jones Transportation Average. All 20 closed at the highest levels they have ever printed. <span class="tk">$MATX</span> Matson and <span class="tk">$LSTR</span> Landstar (the big container shippers) at all-time highs. <span class="tk">$R</span> Ryder, the heavy-truck leasing operator, new highs. <span class="tk">$CSX</span>, <span class="tk">$NSC</span> Norfolk Southern, <span class="tk">$UNP</span> Union Pacific, <span class="tk">$JBHT</span> JB Hunt and <span class="tk">$CHRW</span> CH Robinson, freight rail and trucking logistics, all-time highs across the line. <span class="tk">$ODFL</span> Old Dominion, the cleanest stock in the trucking sleeve, breaking out of a base. <span class="tk">$DAL</span> Delta and <span class="tk">$UAL</span> United (two airlines the desk has spent ten years calling the worst businesses in the world) coming out of 10-year bases. Even <span class="tk">$LUV</span> Southwest, <span class="tk">$AAL</span> American and <span class="tk">$ALK</span> Alaska are basing. <span class="tk">$CAR</span> Avis squeezed. <span class="tk">$UPS</span> bottomed exactly at its COVID low. <span class="tk">$FDX</span> FedEx, <span class="tk">$EXPD</span> Expeditors and <span class="tk">$KEX</span> Kirby, all on base breakouts. As JC put it, when even the airlines look good, that is a bullish signal.<a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=1310s" target="_blank" rel="noopener">[21:50]</a></p>
+    <p>The community-bank index broke a multi-year base to a fresh all-time high in the same tape. This is the group that was the headline trauma of the 2023 regional-bank scare. The chart is moving in the opposite direction from a world that is ending. Sentiment hasn't caught up. The AAII bull-bear survey hit the fewest bulls of 2026 this week and half of individual investors are bearish six months out. The desk's framing was simple. The data isn't broken. People are angry.<a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=1170s" target="_blank" rel="noopener">[19:30]</a></p>
+    <p>Outside transports and banks, the rotation hit the consumer line all week. <span class="tk">$CBRL</span> Cracker Barrel up <span class="ch up">+30%</span>. <span class="tk">$CASY</span> Casey's General Stores, the Iowa gas-station chain that quietly sells more pizza than most pizza chains, guided to the upside on a pizza beat. <span class="tk">$ELY</span> Callaway, the golf-club maker, up 7% on the week after finally spinning off the unloved Topgolf range business at what looked like a fire-sale price. <span class="tk">$LOVE</span> Lovesac, the modular-couch operator that puts subwoofers in seat cushions, beat earnings handily. <span class="tk">$IMAX</span> moving for the first time in a year. <span class="tk">$SEXY</span>, the renamed Victoria's Secret, printed 13 to 14% comp-store-sales growth into 18% short interest with smart money still leaning the wrong way. None of these stocks was supposed to be working. All of them are working.<a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=1920s" target="_blank" rel="noopener">[32:00]</a></p>
+    <p>The relative rotation graph behind the move tells the story in one chart. On the daily timeframe, tech is the only sector still in the leading quadrant and it is pointed straight at lagging. Everything else is heading toward improving and leading. On the weekly timeframe tech is still the leader, but the rotation runs clockwise. If the weekly hooks the way the daily already has, the breadth trade has another quarter in it. Strazza's read was that tech is taking a breather and digesting gains while the rest of the tape gets a turn.<a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=1590s" target="_blank" rel="noopener">[26:30]</a></p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>If the breadth trade is real, BTC's range-bound tape may be a function of the same fund flows that kept tech in the leading quadrant for 30 months. The same <span class="pr">~$30B</span> in ETF inflows that piled into <span class="tk">$XLK</span> over the spring is the order book that left crypto. A rotation back toward improving sectors that includes crypto rather than the new winners would be the bullish read here. The early daily RRG hooks suggest it hasn't started yet.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The IPO</div>
+    <h2>Tomorrow's IPO Is Either a Three-Trillion-Dollar Print or No Print at All</h2>
+    <p>SpaceX prices its IPO Friday afternoon. The deal is reportedly four times oversubscribed. The desk's base case is that it opens. The desk's tail case is that it doesn't. Both are live outcomes, and the show is going live at 2pm Eastern to cover whichever one shows up.<a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=473s" target="_blank" rel="noopener">[7:53]</a></p>
+    <p>The size is the thing. The book is sized around <span class="pr">$2 trillion</span>. If oversubscription holds and the indexers move into it, the day-one print could be closer to <span class="pr">$3</span> or even <span class="pr">$3.5 trillion</span>. JC's read was that the high of the open is likely the high for the year. He thinks it gaps up, sells off, and a six-to-nine-month retail-bag-holder window starts before the eventual move higher into 2027. Strazza framed it the same way. The underwriters have spent six months making sure this thing prints cleanly. The index providers have changed rules to accommodate a single company this size. The order book is built on demand four times the supply. Something is going to print.<a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=590s" target="_blank" rel="noopener">[9:50]</a></p>
+    <p>The other tail is that it doesn't open at all on Friday. The desk's discussion was unusually frank on this point. A <span class="pr">$2T</span> IPO opening on a Friday afternoon in the summer is a clearing problem before it is a price problem. If the deal can't open, the equity tape probably reacts hard to the downside intraday and the show wants to be live to fade the dip. That is what the 2pm Eastern slot is for. Almost the entire bench will be on the stream.<a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=920s" target="_blank" rel="noopener">[15:20]</a></p>
+    <p>The smaller space-stock cohort has already been running this trade out. Most of the listed pure-play space names are down 30 to 50% from recent highs. The desk is split on whether the IPO lifts them with a sector tide or marks the cycle top in space. JC bought one on a pullback and has it on a tight leash with size he can cut intraday if the IPO fades. The position is open.<a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=1670s" target="_blank" rel="noopener">[27:50]</a></p>
+    <p>The longer-running point the show keeps coming back to is that space-adjacent capex has historically been a graveyard for shareholders. Boeing's long-term chart is the cleanest reminder. The trade the desk is willing to take is the IPO event itself, sized for a tape that could rally trillions of dollars on day one or refuse to clear at all. Anything past that, the desk wants nothing to do with on day one.</p>
+    <div class="note local">
+      <div class="label">Local angle &middot; PHT</div>
+      <p>For Manila timezone, the SpaceX open is the small hours of Saturday morning, June 13, PHT. The show's 2pm Eastern live stream lands roughly 2am PHT Saturday. If the open is the high of the year as JC suggested, the window to sell into strength is overnight in Asia hours. The deeper dip-buy is the dip nobody can buy unless they are awake.</p>
+    </div>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"If the world is coming to an end, why is the community bank index breaking out of a multi-year base?"</blockquote>
+      <div class="attrib">JC, on sentiment vs. the chart <a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=1148s" target="_blank" rel="noopener">[19:08]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"One thing I know from being around for some time, when even the airlines look good, that's a bullish signal."</blockquote>
+      <div class="attrib">JC, after running all 20 Dow Transports at all-time highs <a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=1430s" target="_blank" rel="noopener">[23:50]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Tech is taking a breather, cooling off. Well deserved. Digesting gains. And everything else is looking ready to pick up the slack."</blockquote>
+      <div class="attrib">Strazza, on the daily RRG hook <a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=1590s" target="_blank" rel="noopener">[26:30]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"There's a real possibility that it gaps up, sells off, and all the retail investors are left holding the bag as usual."</blockquote>
+      <div class="attrib">JC, on the SpaceX IPO open scenario <a class="ts" href="https://www.youtube.com/watch?v=xXLeDwhAUSw&amp;t=590s" target="_blank" rel="noopener">[9:50]</a></div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Breadth is the tape.</strong> Twenty <span class="tk">$DJT</span> components at all-time highs, the community-bank index breaking out of a multi-year base, <span class="tk">$CBRL</span> up <span class="ch up">+30%</span> on the week. The headline averages are barely participating in their own rally. The trade is in the names everybody stopped looking at.</li>
+      <li><strong>SpaceX is the calendar.</strong> The IPO opens Friday afternoon or it doesn't. A clean print could mark <span class="pr">$3T+</span> in fresh market cap on day one. A clearing failure is a sharp intraday equity downdraft. Either way the show is live at 2pm Eastern and a position size that survives both outcomes is the only correct one going in.</li>
+      <li><strong>Sentiment hasn't followed price.</strong> Fewest bulls of 2026 in the AAII survey. Half of individual investors bearish six months out. With this much breadth and this little bullishness, the dip-buyers have been the ones being right for ten weeks running.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
