@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dow Closes Its Highest Week in History on a Middle East Peace Bid - SMTV June 15, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 15, 2026</div>
+    <h1>The Dow Prints 52,000 on a Peace Bid the Desk Only Half Believes</h1>
+    <p class="subtitle">A Middle East ceasefire headline lit a risk-on fire across every asset class, SpaceX's flawless Friday debut cleared the runway for OpenAI and Anthropic, and Bitcoin moved in the same direction as stocks for the first time in weeks.</p>
+    <div class="meta">
+      63 min &middot; <a href="https://www.youtube.com/watch?v=R5wMz4a5bGs" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Stocks ripped on a Middle East peace headline the desk only half believes. The Dow just closed its best week in recorded history and tacked on another 500 points Monday morning. SpaceX's IPO went off without a hitch on Friday, so the read now is that OpenAI and Anthropic are public by Labor Day. Even Bitcoin joined the party for once. And the one scary bear chart making the rounds got taken apart live on air as a cherry-picked fake.</p>
+    <ul>
+      <li>Tape. Dow <span class="ch up">+1%</span> to <span class="pr">52,100</span>, the highest weekly close in recorded history. S&amp;P <span class="ch up">+1.2%</span> pushing <span class="pr">7,600</span>. NASDAQ <span class="ch up">+2%</span> back above <span class="pr">30,000</span> at <span class="pr">30,550</span>. VIX still calm at <span class="pr">16.5</span>.</li>
+      <li>Crypto. <span class="tk">$BTC</span> <span class="pr">~$66,280</span> <span class="ch up">+1%</span>, <span class="tk">$ETH</span> <span class="pr">~$1,737</span> <span class="ch up">+4.5%</span>, <span class="tk">$SOL</span> <span class="pr">~$72</span> <span class="ch up">+2.3%</span>. Total cap <span class="pr">~$2.25T</span>, holding the exact support it found in February. BTC moved with the tape on the peace pop for the first time in weeks.</li>
+      <li>Commodities. Crude smoked <span class="ch down">-5.5%</span> to <span class="pr">$80</span> on the ceasefire. Copper <span class="ch up">+4%</span> at <span class="pr">$6.50</span>, gold <span class="ch up">+3%</span> at <span class="pr">$4,366</span>, silver <span class="ch up">+4.7%</span> near <span class="pr">$71</span>.</li>
+      <li>SpaceX. Friday's debut was flawless. All <span class="pr">~550M</span> shares issued traded on day one. The desk called it maybe the most successful IPO ever. Read-through is that OpenAI and Anthropic now print July or August, both out by Labor Day.</li>
+      <li>Breadth. Small-cap financials broke an eight-year base to record highs, midcap industrials and small caps are outrunning the mega-caps, and Italy and Spain (the old "PIGS") closed at all-time highs. This is not a narrow rally.</li>
+      <li>Movers. Fox (<span class="tk">$FOXA</span>) is buying <span class="tk">$ROKU</span> for <span class="pr">$160</span> a share, a <span class="pr">$22B</span> deal. <span class="tk">$FISV</span> (Fiserv) sits in a <span class="ch down">-78%</span> drawdown and just fired its CEO.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Bitcoin Finally Moved the Same Direction as Stocks</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$66,280</div>
+        <div class="stat-change up">+1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">~$1,737</div>
+        <div class="stat-change up">+4.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$72</div>
+        <div class="stat-change up">+2.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">~$2.25T</div>
+        <div class="stat-change flat">February support</div>
+      </div>
+    </div>
+    <p><span class="tk">$BTC</span> added <span class="ch up">+1%</span> to <span class="pr">$66,280</span>, <span class="tk">$ETH</span> jumped <span class="ch up">+4.5%</span> to <span class="pr">$1,737</span>, and <span class="tk">$SOL</span> ran <span class="ch up">+2.3%</span> to <span class="pr">$72</span>. Total crypto market cap sat at <span class="pr">$2.25 trillion</span>, parked on the exact level that held as support back in early February. The whole complex is coiled in the same four-month range it has been stuck in all spring.<a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=395s" target="_blank" rel="noopener">[6:35]</a></p>
+    <p>The detail worth flagging is correlation. When the peace headline hit the wire overnight, equity futures popped and Bitcoin popped right alongside them. That is a change. For most of the spring crypto sat out the equity tape entirely, drifting in its own range while stocks made new highs. Seeing BTC trade as a clean risk-on asset again, in the same direction as the Dow on the same catalyst, is the kind of behavior that tends to show up before crypto tries to leave a range.<a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=421s" target="_blank" rel="noopener">[7:01]</a></p>
+    <p>The macro backdrop is about as friendly as it gets for a BTC breakout. The dollar is soft, crude collapsed more than five percent, metals caught a strong bid, and stocks are at record highs with a calm bond tape underneath. On paper that mix should pull crypto higher. The screen is still only showing a modest move, which says positioning is quiet and the next real leg needs a fresh catalyst that the range has not yet been handed.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>A Record Dow on a Ceasefire Nobody on the Desk Trusts</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">52,100</div>
+        <div class="stat-change up">+1% &middot; record</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">~7,600</div>
+        <div class="stat-change up">+1.2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ</div>
+        <div class="stat-value">30,550</div>
+        <div class="stat-change up">+2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">16.5</div>
+        <div class="stat-change flat">calm</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude (WTI)</div>
+        <div class="stat-value">$80</div>
+        <div class="stat-change down">-5.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,366</div>
+        <div class="stat-change up">+3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Silver</div>
+        <div class="stat-value">~$71</div>
+        <div class="stat-change up">+4.7%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Copper</div>
+        <div class="stat-value">$6.50</div>
+        <div class="stat-change up">+4%</div>
+      </div>
+    </div>
+    <p>The Dow Jones Industrial Average just closed its highest week in recorded history and added another full percent Monday morning, a 500-point move to <span class="pr">52,100</span>. The trigger was an overnight headline claiming a ceasefire in the Middle East. The desk's own read on that headline was open skepticism, with Spencer saying he would take the under on the peace actually holding. The tape did not care. Crude got smoked more than five percent toward <span class="pr">$80</span>, metals ripped, and the NASDAQ tacked on two percent back above <span class="pr">30,000</span>.<a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=345s" target="_blank" rel="noopener">[5:48]</a></p>
+    <p>The bigger structural story was Friday's SpaceX IPO. It went off without a single hitch. The company issued roughly 550 million shares and nearly all of them traded on the first day, which is the kind of clean absorption that almost never happens on a deal that size. The desk framed it as proof that the traditional IPO machine still works even for a company this large and this strange, and called it possibly the most successful debut in market history. The forward read matters more than the day itself. With the SpaceX print landing cleanly, the expectation now is that OpenAI and Anthropic move up their own timelines and price in July or August, with both likely trading by Labor Day.<a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=759s" target="_blank" rel="noopener">[12:39]</a></p>
+    <p>Under the surface the rally stayed broad, which is the part that keeps the desk constructive. Small-cap financials, meaning the regional and community banks, broke out of an eight-year base to their highest weekly close ever. Midcap industrials, the machinery and engineering names that sit at the core of the US economy, are pushing higher. Small caps are making new highs relative to the mega-caps, which undercuts the tired story that only a handful of stocks are holding the market up. Even Italy and Spain closed at all-time highs. A tape where the regional banks and the airlines lead is not the tape that usually marks a top.<a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=1034s" target="_blank" rel="noopener">[17:14]</a></p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>How to Spot a Cherry-Picked Scare Chart, Using the One Going Viral Now</h2>
+    <p>The bearish chart making the rounds this week came from Bloomberg. It claims that the first three months under a new Fed chair have historically delivered an average 12 percent drawdown. The US just installed a new Fed chair on May 22, so the implication is that a big drop is overdue. JC spent a full segment calling it fake news, and the way he took it apart is a useful lesson for anyone who gets rattled by a scary stat with an official-looking source.<a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=788s" target="_blank" rel="noopener">[13:08]</a></p>
+    <p>The trick is in the average. That 12 percent number is dragged down almost entirely by two Fed chairs, Eugene Meyer and Eugene Black, both installed in the depths of the Great Depression right after the 1929 crash. Of course stocks fell hard after those two took over, because the entire economy was collapsing around them. Strip out the Eugene effect and look at the modern era from Greenspan forward, and the picture is ordinary. Every rolling three-month window in market history carries an average drawdown of roughly 3 to 5 percent anyway. The scary chart is just describing normal market noise dressed up as a Fed-chair curse.<a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=875s" target="_blank" rel="noopener">[14:35]</a></p>
+    <p>The same denominator trick shows up in a second chart that was on screen later. A lot of sectors look like they are sitting at all-time lows relative to the S&amp;P 500, which sounds alarming until you remember that technology is now roughly 39 percent of that index, and almost 59 percent of the NASDAQ-100. Tech has been ripping, so it pulls the whole benchmark up. Financials are not actually falling apart. They just look weak when the thing you divide them by is 40 percent red-hot semiconductors and software. The honest question is whether the sector is weak or whether the denominator is strong, and most of the time lately the answer is the denominator.<a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=2661s" target="_blank" rel="noopener">[44:21]</a></p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>This is the exact move that runs through crypto FUD too. A headline that says some token is down 90 percent against Bitcoin, or that an alt is at "all-time lows versus ETH," is the same denominator game. The reference asset is doing the work, and the scary framing hides it. When a stat feels designed to scare you out of a position, check what it is being measured against before you react.</p>
+    </div>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"The CEO does not work for employees. The CEO works for shareholders. And when a CEO can't make money for shareholders, the CEO is not doing his job."</blockquote>
+      <div class="attrib">JC, on Fiserv firing its CEO into a 78% drawdown <a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=1789s" target="_blank" rel="noopener">[29:49]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"We cheat. We look to see what the market is actually doing."</blockquote>
+      <div class="attrib">JC, on reading price instead of arguing with it <a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=2431s" target="_blank" rel="noopener">[40:31]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"You will see things like that again. And when you do, that's not financial advice, but for real, you should probably buy it."</blockquote>
+      <div class="attrib">JC, on the November 2016 Russell 2000 weekly candle and buying into fear <a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=2185s" target="_blank" rel="noopener">[36:25]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"There's no euphoria. So for those saying the market is a massive top, it just doesn't add up."</blockquote>
+      <div class="attrib">The desk, on the gap between sentiment and price <a class="ts" href="https://www.youtube.com/watch?v=R5wMz4a5bGs&amp;t=2366s" target="_blank" rel="noopener">[39:26]</a></div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The tape made a record on a story it does not trust.</strong> The <span class="tk">$DJI</span> printed its highest weekly close in history and added <span class="ch up">+500</span> more points Monday on a Middle East ceasefire the desk openly doubts. Crude fell <span class="ch down">-5.5%</span> to <span class="pr">$80</span> on the same headline. Price moved first and the narrative came second, which is the order that actually matters.</li>
+      <li><strong>SpaceX cleared the runway.</strong> A flawless Friday debut, with nearly all <span class="pr">550M</span> issued shares trading on day one, is what greenlights the rest of the supply wave. The working assumption is now OpenAI and Anthropic public by Labor Day. The IPO flood the bears keep warning about is coming, and a clean print is exactly what brings it forward.</li>
+      <li><strong>The breadth kills the narrow-rally story.</strong> Small-cap financials out of an eight-year base, midcap industrials leading, small caps beating the mega-caps, and Italy and Spain at all-time highs. The same week, the scariest bear chart in circulation turned out to be two Depression-era data points doing all the work. Sentiment is washed out while price keeps grinding up, and the dip-buyers have been right for ten weeks straight.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
