@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Banks Cleared a 20-Year Base on the Same Day the Tape Ate SpaceX - SMTV June 16, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 16, 2026</div>
+    <h1>The Banks Cleared a 20-Year Base on the Same Day the Tape Ate SpaceX</h1>
+    <p class="subtitle">The Dow closed at the highest level in history, the S&amp;P bank index broke a two-decade range to new all-time highs, and a $2.5 trillion IPO landed without a single piece of the market breaking.</p>
+    <div class="meta">
+      59 min &middot; <a href="https://www.youtube.com/watch?v=TZ4Zw_erLcI" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The market just inhaled a 2.5-trillion-dollar IPO and asked for seconds. The Dow closed at the highest level in human history yesterday. The boring old S&amp;P bank index, which did almost nothing for two decades, quietly broke out to new all-time highs. SpaceX options went live this morning, including zero-day contracts on a stock that has existed for two trading sessions. The desk argued for ten minutes about whether banks even matter anymore. The chart says the answer barely matters.</p>
+    <ul>
+      <li>Tape. Dow closed Monday at a record <span class="pr">51,671</span>, futures <span class="ch up">+100</span> to <span class="pr">52,250</span>. S&amp;P 500 futures flat at <span class="pr">7,625</span> just below ATH. NASDAQ 100 futures flat at <span class="pr">30,850</span>. VIX <span class="pr">16</span>.</li>
+      <li>Crypto. <span class="tk">$BTC</span> <span class="pr">~$66,550</span> grinding higher, <span class="tk">$ETH</span> <span class="pr">$1,825</span> <span class="ch up">+1.6%</span>, <span class="tk">$SOL</span> <span class="pr">$74.50</span> <span class="ch up">+1.2%</span>. Total crypto cap <span class="pr">$2.26T</span>, now smaller than one single stock that started trading two days ago.</li>
+      <li>Commodities. Crude smoked <span class="ch down">-4.3%</span> to <span class="pr">$77</span> on continued Middle East de-escalation. Gold flat at <span class="pr">$4,366</span>, silver <span class="ch up">+1%</span> at <span class="pr">$71</span>, copper flat at <span class="pr">$6.50</span>. 30-year bond futures bid pushing <span class="pr">113</span>.</li>
+      <li>SpaceX. Day two of trading and the absorption is clean. Eleven leveraged 2x ETFs already running, roughly <span class="pr">$1B</span> in fresh inflows in a single session, options live this morning including 0DTE contracts. Other space names are getting mechanically sold as funds rebalance.</li>
+      <li>Banks. S&amp;P bank index closed at the highest level in world history, completing a 20-year base. Community banks at ATH. European banks (Barclays, HSBC) breaking out. <span class="tk">$GS</span> and <span class="tk">$MS</span> at fresh records. The brokers and the regionals are leading at the same time.</li>
+      <li>Breadth. The other 493 are beating the Mag 7 year-to-date. The count of stocks up triple digits over rolling 12-month windows keeps climbing. Industrials and tech are doing most of the lifting on that list, financials behind them.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>BTC Grinds Up Into the Friendliest Macro Backdrop in Months</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$66,550</div>
+        <div class="stat-change up">slow grind</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,825</div>
+        <div class="stat-change up">+1.6%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$74.50</div>
+        <div class="stat-change up">+1.2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.26T</div>
+        <div class="stat-change flat">&lt; SpaceX</div>
+      </div>
+    </div>
+    <p><span class="tk">$BTC</span> ticked up overnight to roughly <span class="pr">$66,550</span> and is continuing the steady walk higher it has been running for a couple of weeks. <span class="tk">$ETH</span> added <span class="ch up">+1.6%</span> to <span class="pr">$1,825</span> and <span class="tk">$SOL</span> ran <span class="ch up">+1.2%</span> to <span class="pr">$74.50</span>. Total crypto market cap printed <span class="pr">$2.26 trillion</span>, which Spencer flagged in real time as now smaller than the market cap of a single stock that has existed for two trading days, SpaceX.<a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=395s" target="_blank" rel="noopener">[6:35]</a></p>
+    <p>The macro screen is as bullish for crypto as it has been all spring. Crude got smoked another <span class="ch down">-4.3%</span> to <span class="pr">$77</span> on the continued unwind of the Iran war premium. The dollar is soft. Bond futures are bid, with the long bond pushing <span class="pr">113</span>. Gold sits at <span class="pr">$4,366</span>, silver caught a <span class="ch up">+1%</span> bid to <span class="pr">$71</span>, and the VIX is back at <span class="pr">16</span>. Stocks are at fresh records. That combination of soft dollar, weak crude, firm metals and a calm equity tape is the playbook backdrop for a BTC leg higher. The screen is still only showing a slow walk, which says positioning is light and the catalyst has not landed.</p>
+    <p>Strazza spent a chunk of the show praising Coinbase as a product. Not the stock, the app. A Visa credit card that drops bitcoin into your wallet on every swipe. A cash balance paying around <span class="pr">4.6%</span>. Sports futures markets that let him bet the Knicks to win the title in stablecoin-adjacent fiat balances. Options across a long list of names. The pitch is that this is the kind of super-app moat that does not show up in any one daily chart, which is part of why <span class="tk">$COIN</span> keeps grinding higher on flat BTC days.<a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=3289s" target="_blank" rel="noopener">[54:49]</a></p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>The Tape Inhaled a $2.5 Trillion IPO and the Dow Still Closed at a Record</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow (close)</div>
+        <div class="stat-value">51,671</div>
+        <div class="stat-change up">record</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow (futures)</div>
+        <div class="stat-value">52,250</div>
+        <div class="stat-change up">+100</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,625</div>
+        <div class="stat-change flat">near ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">30,850</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">16</div>
+        <div class="stat-change flat">calm</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude (WTI)</div>
+        <div class="stat-value">$77</div>
+        <div class="stat-change down">-4.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,366</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Silver</div>
+        <div class="stat-value">$71</div>
+        <div class="stat-change up">+1%</div>
+      </div>
+    </div>
+    <p>The Dow Jones Industrial Average closed Monday at <span class="pr">51,671</span>, the highest level in recorded history, and added another <span class="ch up">+100</span> in pre-market for an indicated open at <span class="pr">52,250</span>. S&amp;P 500 futures sit flat at <span class="pr">7,625</span>, fractionally below their own all-time high. NASDAQ 100 futures are unchanged at <span class="pr">30,850</span>. The VIX is back to <span class="pr">16</span>. Under the surface, crude got hammered another <span class="ch down">-4.3%</span> to <span class="pr">$77</span> as the Middle East war premium continues to bleed out of energy, while gold held <span class="pr">$4,366</span> and silver added <span class="ch up">+1%</span> to <span class="pr">$71</span>.<a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=337s" target="_blank" rel="noopener">[5:37]</a></p>
+    <p>What makes the print remarkable is what the market just swallowed without flinching. SpaceX IPO'd Friday and is still ripping. The free float in the name is in the neighborhood of <span class="pr">$2.5 trillion</span>, more than the entire crypto complex combined. Eleven leveraged 2x ETFs were already trading by Monday, the products pulled in roughly <span class="pr">$1 billion</span> in fresh inflows in a single session, and options on the name went live Tuesday morning, including 0DTE contracts on a stock that has existed for two trading days. JC's read on the new options was characteristically dry. He's all for creating new and creative ways for investors to lose money faster.<a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=445s" target="_blank" rel="noopener">[7:25]</a></p>
+    <p>The cleanest tell on what landing $2.5 trillion of fresh supply actually means is the second-order plumbing. The ARC Space and Defense Innovation ETF already has SpaceX at a <span class="pr">6.9%</span> weight, and the passive crowd is in the same boat. To make room for SpaceX, the rest of the basket has to shrink, which means the other space and exploration names are getting mechanically sold even on a day SpaceX itself is ripping. That mechanical drag is the cost of admission for a name this big landing in this many funds at once, and it is also the closest thing on the screen to a bearish footprint. The broader tape ate the supply and printed a record on top.<a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=702s" target="_blank" rel="noopener">[11:42]</a></p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>SpaceX's <span class="pr">$2.5T</span> float is now larger than the entire crypto complex's <span class="pr">$2.26T</span> total cap. A single stock that began trading on Friday outweighs every coin on every chain combined. It is a useful scale-check the next time someone tells you crypto has gotten too big to ignore at the institutional level. The institutions are still building bigger things, and faster, on the equity side of the wall.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>The S&amp;P Bank Index Just Broke a 20-Year Base, and the Desk Argued About Whether That Even Matters</h2>
+    <p>JC pulled up the S&amp;P bank index Monday morning and called it the most important chart on the planet, then upgraded it to the most important chart in the Milky Way. The point is the shape. The index just closed at the highest level in world history, completing a base that has been forming for two decades. Around it, the community banks are at all-time highs. European banks like Barclays and HSBC are breaking out. <span class="tk">$GS</span> and <span class="tk">$MS</span> are at fresh records. The big brokers, the regional names, and the community lenders are all leading at the same time. In the old framework, that is the kind of confirmation that announces a real bull market underneath the indices, with the financial plumbing turned on.<a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=1245s" target="_blank" rel="noopener">[20:45]</a></p>
+    <p>JC's read on what that chart means is that none of this happens without banks. He has been saying it for years and he said it again. Strazza pushed back hard, and the debate ran for ten minutes. His counter was that 2023 already broke the framework. First Republic and the West Coast regional banks blew up. The bank index fell off a cliff. The S&amp;P 500 corrected about 7.5% and then proceeded to rip into the back half of the year anyway. To Strazza, that was the moment banks stopped mattering at the index level. The sector has been socialized, the government will backstop it, and the broader market no longer needs the bank line to be green to keep grinding higher.<a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=1390s" target="_blank" rel="noopener">[23:10]</a></p>
+    <p>JC's counter to Strazza's counter was that the indices did pull back during the SVB crisis, the NASDAQ traded heavy, and the bottom of that pullback set the launchpad for everything that followed. The argument never quite resolved. Both ended in roughly the same place. The bank index closing a 20-year base into new all-time highs is bullish. Whether banks lead the next leg or merely confirm what other groups have already announced, the chart says the same thing. Sit long. For a reader trying to use the disagreement, the practical move is to ignore the debate and focus on the breakout. JC is keeping his bank exposure. Strazza is constructive on the tape for different reasons. The portfolio looks the same either way.<a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=1556s" target="_blank" rel="noopener">[25:56]</a></p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"None of this happens without banks. None of it. It's always been that way."</blockquote>
+      <div class="attrib">JC, on what the bank index breakout means for the broader tape <a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=1292s" target="_blank" rel="noopener">[21:32]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Things change, JC. You know, things change."</blockquote>
+      <div class="attrib">Strazza, on the 2023 banking crisis being the moment banks stopped mattering at the index level <a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=1410s" target="_blank" rel="noopener">[23:30]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"I'm all for creating new and very creative ways for investors to lose money faster."</blockquote>
+      <div class="attrib">JC, on SpaceX getting 0DTE options two trading days after IPO <a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=521s" target="_blank" rel="noopener">[8:41]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"I can't think of a chart in the entire Milky Way that has more bullish implications for equity shareholders than that one."</blockquote>
+      <div class="attrib">JC, on the S&amp;P bank index 20-year base breakout <a class="ts" href="https://www.youtube.com/watch?v=TZ4Zw_erLcI&amp;t=1556s" target="_blank" rel="noopener">[25:56]</a></div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>$2.5 trillion of supply hit the tape and nothing broke.</strong> SpaceX absorbed cleanly Friday, options including 0DTE went live two trading days after IPO, 11 leveraged 2x ETFs are already running, and the products took in roughly <span class="pr">$1B</span> in a single session. The Dow still closed Monday at a record <span class="pr">51,671</span> and added another <span class="ch up">+100</span> overnight. A tape that wide does not usually mark a top.</li>
+      <li><strong>The bank index just cleared a 20-year base.</strong> Community banks at ATH. European banks breaking out. <span class="tk">$GS</span> and <span class="tk">$MS</span> at fresh records. Whether banks still lead bull markets like the old playbook says (JC), or have been socialized into a coincident sector that no longer matters to the indices (Strazza), the chart says the same thing. The signal is bullish for equities and it is bullish for risk assets generally.</li>
+      <li><strong>Crypto is coiled inside the friendliest macro mix in months.</strong> <span class="tk">$BTC</span> <span class="pr">~$66,550</span>, <span class="tk">$ETH</span> <span class="ch up">+1.6%</span> at <span class="pr">$1,825</span>, <span class="tk">$SOL</span> <span class="ch up">+1.2%</span> at <span class="pr">$74.50</span>, total cap <span class="pr">$2.26T</span>. Soft dollar, crude <span class="ch down">-4.3%</span> to <span class="pr">$77</span>, firm metals, calm VIX at <span class="pr">16</span>. The setup is built for a BTC breakout. The screen is still showing a grind, which means positioning is light and the catalyst is still ahead.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
