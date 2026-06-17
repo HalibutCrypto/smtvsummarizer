@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nvidia Asked for Twenty Billion. Investors Offered Eighty-Five. - SMTV June 17, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 17, 2026</div>
+    <h1>Nvidia Asked for Twenty Billion. Investors Offered Eighty-Five.</h1>
+    <p class="subtitle">Even on the first Fed day under a new chair, the desk argued the real story was an investor survey showing the fewest bulls all year while every big AI raise blew past its target.</p>
+    <div class="meta">
+      74 min &middot; <a href="https://www.youtube.com/watch?v=WPE2wGd3AAo" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Companies keep asking for money and the market keeps handing them more than they ask for. Nvidia wanted twenty billion this week. Investors offered eighty-five. Google took eighty. SpaceX just printed the biggest IPO in history. The Dow closed at a record yesterday. And the survey of US individual investors still shows the fewest bulls of the year. The desk's read is that the gap between how angry people feel and how high the market sits is itself the bull case.</p>
+    <ul>
+      <li>Tape. Dow closed yesterday at a record <span class="pr">51,999.67</span>, futures flat at <span class="pr">52,420</span>. S&amp;P 500 futures flat at <span class="pr">7,590</span>. NASDAQ 100 futures <span class="ch up">+0.5%</span> at <span class="pr">30,480</span>. VIX <span class="pr">~16</span>.</li>
+      <li>Crypto. <span class="tk">$BTC</span> <span class="pr">$64,750</span> <span class="ch down">-1.3%</span>, <span class="tk">$ETH</span> <span class="pr">$1,750</span> <span class="ch down">-2.3%</span>, <span class="tk">$SOL</span> <span class="pr">$72</span> <span class="ch down">-2%</span>. Total crypto cap <span class="pr">$2.2T</span>.</li>
+      <li>Capital deluge. <span class="tk">$NVDA</span> tried to raise <span class="pr">$20B</span> in debt; investors offered <span class="pr">$85B</span>; the company took <span class="pr">$25B</span>. <span class="tk">$GOOGL</span> raised <span class="pr">$80B</span> with Berkshire writing a <span class="pr">$10B</span> check. OpenAI raised <span class="pr">$122B</span> recently. Anthropic another monster. SpaceX cleared the biggest IPO in history last Friday.</li>
+      <li>Sentiment. AAII survey shows the fewest bulls of the year and roughly half of US individual investors expect stocks lower in six months. The Dow is at a fresh ATH and the S&amp;P bank index is breaking above its 2007 highs as the desk speaks.</li>
+      <li>Fed. First FOMC under new chair Kevin Warsh. Bonds bid, 30-year futures flat at <span class="pr">113</span>. The desk's read on the meeting is that less Fed speak is the only thing about Warsh's chairmanship that matters in real money.</li>
+      <li>Commodities. Crude <span class="pr">$76</span> <span class="ch up">+1%</span> on the day, sitting mid-range between the <span class="pr">$67</span> pre-invasion print and the <span class="pr">$119</span> February high. Gold flat at <span class="pr">$4,350</span>, silver flat near <span class="pr">$70</span>, copper flat at <span class="pr">$6.50</span>.</li>
+      <li>Robotics. JC's basket of names that are working maps to body (<span class="tk">$ROK</span>, <span class="tk">$TER</span>), nervous system (<span class="tk">$TXN</span>, <span class="tk">$MCHP</span>) and brain (<span class="tk">$NXPI</span>). Strazza's biggest position is Swiss pure-play <span class="tk">$ABBNY</span>.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Gave a Bit Back While Everyone Else Was Looking at Stocks</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$64,750</div>
+        <div class="stat-change down">-1.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,750</div>
+        <div class="stat-change down">-2.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$72</div>
+        <div class="stat-change down">-2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.2T</div>
+        <div class="stat-change down">red day</div>
+      </div>
+    </div>
+    <p><span class="tk">$BTC</span> gave back about <span class="pr">$859</span> overnight to <span class="pr">$64,750</span>, a <span class="ch down">-1.3%</span> day. <span class="tk">$ETH</span> printed the deeper red at <span class="ch down">-2.3%</span> to <span class="pr">$1,750</span>, and <span class="tk">$SOL</span> went <span class="ch down">-2%</span> to <span class="pr">$72</span>. Total crypto cap dropped to <span class="pr">$2.2T</span>. The macro screen was actually friendly today, with bonds bid, dollar steady, and stocks at fresh records. Crypto sat out anyway.<a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=569s" target="_blank" rel="noopener">[9:29]</a></p>
+    <p>The desk's read on why this keeps happening is psychological. Strazza pointed out that people still hate crypto and cannot enjoy even one decent update without giving it all back the next session. Cryptopunks at <span class="pr">~$60K</span> got a passing mention as the kind of corner of the market that has quietly held its level while nobody is paying attention. The Friday equivalent crypto chapter, with Louis Sykes, will have more to say once the weekly setup is in. Today the move is the absence of one.<a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=1442s" target="_blank" rel="noopener">[24:02]</a></p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>The Capital Spigot Is Wide Open and the Dow Just Printed Another Record</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow (close)</div>
+        <div class="stat-value">51,999.67</div>
+        <div class="stat-change up">ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow (futures)</div>
+        <div class="stat-value">52,420</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,590</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">30,480</div>
+        <div class="stat-change up">+0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">~16</div>
+        <div class="stat-change flat">calm</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude (WTI)</div>
+        <div class="stat-value">$76</div>
+        <div class="stat-change up">+1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,350</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">30Y Bond</div>
+        <div class="stat-value">113</div>
+        <div class="stat-change flat">bid</div>
+      </div>
+    </div>
+    <p>The Dow Jones Industrial Average closed yesterday at <span class="pr">51,999.67</span>, the highest close in recorded history, and futures sit flat at <span class="pr">52,420</span> ahead of the Fed. S&amp;P 500 futures are unchanged at <span class="pr">7,590</span>, NASDAQ 100 is leading at <span class="ch up">+0.5%</span> to <span class="pr">30,480</span>, and the VIX is back near <span class="pr">16</span>. Bonds are quietly bid, with the 30-year future flat at <span class="pr">113</span> and the desk noting that the long bond has been the asset class with the best chart for weeks. Crude added <span class="ch up">+1%</span> to <span class="pr">$76</span>, still landing in the middle of the post-conflict range that traded as low as <span class="pr">$67</span> pre-invasion and spiked to <span class="pr">$119</span> at the February peak. Gold sits flat at <span class="pr">$4,350</span>, silver flat near <span class="pr">$70</span>.<a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=509s" target="_blank" rel="noopener">[8:29]</a></p>
+    <p>The actual story sits underneath the print. JC walked through the run of capital raises the market has cleared in the last few months and made the spreadsheet do the talking. <span class="tk">$NVDA</span> went out for <span class="pr">$20 billion</span> of fresh debt and the order book filled at <span class="pr">$85 billion</span>. The company shrugged, took <span class="pr">$25 billion</span>, and walked away. <span class="tk">$GOOGL</span> raised <span class="pr">$80 billion</span> with Berkshire Hathaway underwriting <span class="pr">$10 billion</span> of it. OpenAI raised <span class="pr">$122 billion</span> a couple of months ago. Anthropic raised another monster round. SpaceX printed the biggest IPO in market history last Friday and is still grinding higher with options live. There is a hum on the tape that says when companies ask for capital, investors are showing up with checks, and the checks are larger than what was asked for.<a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=181s" target="_blank" rel="noopener">[3:01]</a></p>
+    <p>The Fed sits inside this backdrop as scenery. Today is the first FOMC under Kevin Warsh, the new chair. Spencer asked three times in the open whether anyone on the desk actually cares about the meeting. JC's answer was that he was surprised the Fed still meets eight times a year for what amounts to ceremony, and that the bond market has already decided where it wants to go. Strazza was excited by exactly one thing, which is that Warsh is reported to want less Fed speak. Less talking, less disclosures, fewer parade-of-committee-members at every economic club around the country. After two terms of running the country on a Fed addiction, that dial-back is the lone signal worth pricing in.<a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=664s" target="_blank" rel="noopener">[11:04]</a></p>
+    <div class="note">
+      <div class="label">Robotics, the short version</div>
+      <p>JC keeps getting asked about robotics and the answer is that the headline ETFs are built badly because the indices behind them lag the theme. The five names that are actually working break into three buckets. The body of the robot is <span class="tk">$ROK</span> (Rockwell Automation) and <span class="tk">$TER</span> (Teradyne), both industrial workhorses. The nervous system is <span class="tk">$TXN</span> (Texas Instruments) and <span class="tk">$MCHP</span> (Microchip), the analog and microcontroller layer. The brain is <span class="tk">$NXPI</span> (NXP Semiconductors), which sits closest to the autonomy stack. Strazza's biggest position is <span class="tk">$ABBNY</span>, the over-the-counter line of Swiss industrial ABB, which is as close to a pure-play robotics megacap as the market offers.<a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=1098s" target="_blank" rel="noopener">[18:18]</a></p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Sentiment Paradox</div>
+    <h2>Phil Pearlman Asked Why Everyone Is Trying to Short the Highs. JC Said That Is the Bull Case.</h2>
+    <p>Phil Pearlman came on late in the show and asked the question the desk had been dancing around all morning. With the animal spirits this loud and the Dow at fresh records, why are there still so many people on Twitter and StockTwits begging him for the two-times inverse SpaceX ETF, trying to short the strongest stocks in the strongest tape of their lifetime, going against the grain and getting destroyed every session. He framed it in psychological terms, reaching for the Freud word for the death drive. The version a market reader cares about is the same one. Something in a large slice of the audience wants to take the steering wheel and aim for the bridge.<a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=3697s" target="_blank" rel="noopener">[61:37]</a></p>
+    <p>JC's answer was the most useful framework of the show. He started by refusing the why. Why people feel what they feel is not a tractable question. The data is. Last week the American Association of Individual Investors survey, which polls retail investors on the next six months, showed the fewest bulls all year and roughly half the sample bearish. That print landed on the same day the Dow closed at a fresh all-time high. The S&amp;P bank index is breaking above its 2007 great financial crisis highs as the desk speaks, which is the same kind of multi-decade base resolution that powered the run after 1929 took 25 years to round-trip. Consumer sentiment at the lowest levels ever with the stock market at the highest levels ever is a great combination for people who own stocks. The gap is not the warning sign. The gap is the fuel.<a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=3894s" target="_blank" rel="noopener">[64:54]</a></p>
+    <p>From there JC stacked the capital deluge against the survey. Companies asked for money and the market wrote checks every time. There is one observation he flagged as a near-certainty for some future date that is not this date. Human beings are incapable of discovering a genuinely transformative technology without eventually getting carried away. The day the capital stops showing up will be the day to worry. Today the capital is showing up in volumes that round to surprise. His practical advice for anyone caught between Twitter rage and the print was direct. Turn the financial television off. The angry guy on Twitter shorting SpaceX is mostly sad he is not making money in a bull market because he does not have any money to put in. None of that is your problem as the holder of assets. Focus on price.<a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=4018s" target="_blank" rel="noopener">[66:58]</a></p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>The same shape applies on the digital side. <span class="tk">$BTC</span> spent today red while every macro variable that usually correlates with a BTC bid was lined up bullishly. Strazza's line was that people still hate crypto and cannot enjoy a single decent update without selling it back. That is the exact crypto version of the AAII print. When the sentiment audience hates the asset and the chart still holds the trend, that is the same setup the desk is describing for equities. The catalyst lands when the people who hate it finally give up and pay up.</p>
+    </div>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"Consumer sentiment at the lowest levels ever with the stock market at the highest levels ever is a great combination for people who own stocks."</blockquote>
+      <div class="attrib">JC, on what the AAII bull count actually tells you when the Dow is at a record <a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=3894s" target="_blank" rel="noopener">[64:54]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Companies ask for money, investors cut a check. There will come a day when that will stop, but that day is not today."</blockquote>
+      <div class="attrib">JC, on the run of mega-raises from Nvidia, Google, OpenAI, Anthropic and SpaceX <a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=4006s" target="_blank" rel="noopener">[66:46]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"We know for a fact that human beings are incapable of discovering a genuinely transformative technology without eventually getting carried away. But we're not there yet."</blockquote>
+      <div class="attrib">JC, on why the AI raise cycle will end badly someday, just not this quarter <a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=4018s" target="_blank" rel="noopener">[66:58]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Less talking, less disclosures, less stuff for the market to dig through and create volatility on."</blockquote>
+      <div class="attrib">Strazza, on what is actually exciting about Kevin Warsh taking over the Fed <a class="ts" href="https://www.youtube.com/watch?v=WPE2wGd3AAo&amp;t=664s" target="_blank" rel="noopener">[11:04]</a></div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The capital spigot is wide open and oversubscribed.</strong> <span class="tk">$NVDA</span> went out for <span class="pr">$20B</span>, got offered <span class="pr">$85B</span>, took <span class="pr">$25B</span>. <span class="tk">$GOOGL</span> raised <span class="pr">$80B</span> with Berkshire on the cover. OpenAI <span class="pr">$122B</span>. Anthropic another monster. SpaceX cleared the biggest IPO in history Friday. The Dow closed at <span class="pr">51,999.67</span>, a fresh all-time high. Until the order book stops filling, the path of least resistance for the indices is up.</li>
+      <li><strong>The sentiment print is the bull case.</strong> AAII shows the fewest bulls of the year, with about half of US individuals bearish over six months, on a day the Dow prints records and the S&amp;P bank index breaks above its 2007 highs. The gap between how angry people feel and how high the screen sits is fuel. Worry when the survey catches up to the chart.</li>
+      <li><strong>Crypto sat out a friendly macro tape.</strong> <span class="tk">$BTC</span> <span class="ch down">-1.3%</span> to <span class="pr">$64,750</span>, <span class="tk">$ETH</span> <span class="ch down">-2.3%</span> at <span class="pr">$1,750</span>, <span class="tk">$SOL</span> <span class="ch down">-2%</span> at <span class="pr">$72</span>, total cap <span class="pr">$2.2T</span>. Bonds bid, dollar steady, stocks at fresh ATH. The setup is fine. The bid is just not showing up today, and the sentiment lens that explains equities applies cleanly here too.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
