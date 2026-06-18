@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dollar Broke Out and Every Asset Without Carry Paid the Bill - SMTV June 18, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 18, 2026</div>
+    <h1>The Dollar Broke Out and Every Asset Without Carry Paid the Bill</h1>
+    <p class="subtitle">Gold dropped two and a half percent, silver lost six, and bitcoin sat flat while the dollar broke a level the desk had been watching for months, all on the morning after the Fed leaned hawkish for the first time under a new chair.</p>
+    <div class="meta">
+      70 min &middot; <a href="https://www.youtube.com/watch?v=fdWtsqD30bM" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The Fed turned hawkish. The dollar tore through a level the desk has been watching for months. And the assets that don't pay you to hold them got picked off in unison. Gold dropped almost three percent. Silver lost six. The Swiss franc cracked. Bitcoin sat flat into the friendliest equity tape of the year. Earnings or yield, nothing in between.</p>
+    <ul>
+      <li>Tape. Dow <span class="ch up">+200</span> at <span class="pr">52,150</span>, S&amp;P 500 <span class="ch up">+1%</span> at <span class="pr">7,556</span>, NASDAQ 100 <span class="ch up">+1.6%</span> leading. VIX back to <span class="pr">17</span>. 30Y bond futures push <span class="pr">114</span>.</li>
+      <li>Crypto. <span class="tk">$BTC</span> <span class="pr">$64,250</span> flat, <span class="tk">$ETH</span> <span class="pr">$1,750</span> flat, <span class="tk">$SOL</span> <span class="pr">$71</span> <span class="ch down">-1%</span>. Total crypto cap <span class="pr">$2.2T</span>.</li>
+      <li>Dollar break-out. DXY clears <span class="pr">100</span> for a fresh 52-week high after the first FOMC under the new Fed chair. <span class="tk">$EUR</span> through <span class="pr">1.15</span>, sterling soft, dollar-Swiss bid.</li>
+      <li>No-carry basket. Gold <span class="ch down">-2.6%</span> to <span class="pr">$4,260</span>. Silver <span class="ch down">-6%</span> to <span class="pr">$66.66</span>. <span class="tk">$MSTR</span> and <span class="tk">$BMNR</span> getting smoked. Crude <span class="ch down">-2%</span> at <span class="pr">$74.50</span>, copper <span class="ch down">-1.3%</span> at <span class="pr">$6.40</span>.</li>
+      <li>Breakouts. S&amp;P bank index clears its 2007 great financial crisis highs. <span class="tk">$BAC</span> taking out its '06 peak. <span class="tk">$XBI</span> (biotech basket) breaks out. <span class="tk">$SMH</span> (semis basket) prints another <span class="pr">+4%</span> pre-market.</li>
+      <li>Trillion-dollar new highs. In all of June, only <span class="tk">$AAPL</span> and <span class="tk">$LLY</span> (Eli Lilly, the largest healthcare name in the world) have made fresh all-time highs from the trillion-dollar club. The quiet healthcare re-leadership trade is on the screen.</li>
+      <li>Korea. The 2x SK Hynix ETF on the Hong Kong exchange now sits at <span class="pr">$13B</span> AUM, second-largest of 250 ETFs there. Kospi round-tripped two <span class="pr">17-20%</span> selloffs back to all-time highs inside three months.</li>
+      <li>Tomorrow. NYSE closed for Juneteenth. No show.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Sat Out the Friendliest Equity Tape of the Year</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$64,250</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,750</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$71</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.2T</div>
+        <div class="stat-change flat">stuck</div>
+      </div>
+    </div>
+    <p><span class="tk">$BTC</span> held <span class="pr">$64,250</span> flat. <span class="tk">$ETH</span> held <span class="pr">$1,750</span> flat. <span class="tk">$SOL</span> slid <span class="ch down">-1%</span> to <span class="pr">$71</span>. Total crypto market cap stayed pinned at <span class="pr">$2.2 trillion</span>. The screen behind it was the strongest equity tape of the year for technology, with the NASDAQ 100 ripping <span class="ch up">+1.6%</span> and the dollar index breaking out to a fresh 52-week high. Crypto did nothing with any of it.<a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=830s" target="_blank" rel="noopener">[13:50]</a></p>
+    <p>The crypto equity proxies took the abuse the underlying refused. <span class="tk">$MSTR</span> (MicroStrategy, the levered bitcoin balance-sheet play) got smoked again. <span class="tk">$BMNR</span> (the BitMiner mining roll-up) did the same. Strazza's read was that the FXI chart of Chinese large-caps, which printed fresh 52-week lows yesterday, looks identical to MSTR and bitcoin on a chart right now. Anything bucketed as a BTC proxy is trading like one of the worst charts in the world.<a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=419s" target="_blank" rel="noopener">[6:59]</a></p>
+    <p>The flat tape sits inside a bigger framework the desk circled back to all morning. <span class="tk">$BTC</span>, gold, silver and the Swiss franc all share one feature, and the dollar breakout is the loudest tell of how the tape feels about that feature. That argument lands in chapter three. For the crypto chapter, the practical takeaway is that until the dollar rolls over, the bid is not showing up.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>A Hawkish Fed Reaction Lasted Until the Open</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">52,150</div>
+        <div class="stat-change up">+200</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,556</div>
+        <div class="stat-change up">+1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">leading</div>
+        <div class="stat-change up">+1.6%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">17</div>
+        <div class="stat-change flat">crushed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">DXY</div>
+        <div class="stat-value">&gt;100</div>
+        <div class="stat-change up">52w high</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">30Y Bond</div>
+        <div class="stat-value">~114</div>
+        <div class="stat-change up">bid</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude (WTI)</div>
+        <div class="stat-value">$74.50</div>
+        <div class="stat-change down">-2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Copper</div>
+        <div class="stat-value">$6.40</div>
+        <div class="stat-change down">-1.3%</div>
+      </div>
+    </div>
+    <p>Yesterday afternoon the new Fed chair, Kevin Warsh, ran his first FOMC. The tape read the statement as hawkish. Tech stocks fell roughly two percent in five minutes. By the close, the selloff had started to fight back. Overnight it reversed completely. This morning the Dow is up <span class="ch up">+200</span> to <span class="pr">52,150</span>, the S&amp;P 500 is up almost a full percent to <span class="pr">7,556</span>, the NASDAQ 100 is leading at <span class="ch up">+1.6%</span>, and the VIX is back at <span class="pr">17</span> after spiking yesterday. The 30-year bond future is pushing <span class="pr">114</span> on a quiet bid. The dollar index broke through <span class="pr">100</span> to a fresh 52-week high, which the desk flagged as by far the biggest deal of the session.<a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=830s" target="_blank" rel="noopener">[13:50]</a></p>
+    <p>The framework JC kept coming back to was that everything happening before the Fed kept happening after the Fed. The curve was flattening, and it flattened more. Two-year yields were climbing, and they climbed more. Biotech was breaking out via <span class="tk">$XBI</span> (the SPDR biotech basket), and <span class="tk">$XBI</span> ran today. The Mag 7 was underperforming, and it stayed underperforming. Hawkish surprises in the desk's experience tend to break in the direction of the pre-existing trend, which is exactly what played out here.<a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=1600s" target="_blank" rel="noopener">[26:40]</a></p>
+    <p>Underneath the headline indices, the rotation is the actual story. The S&amp;P 500 bank index cleared its 2007 great financial crisis highs, the kind of multi-decade base resolution that does not happen on quiet days. <span class="tk">$BAC</span> is just starting to take out its 2006 peak. Fifth Third (<span class="tk">$FITB</span>), PNC (<span class="tk">$PNC</span>), KeyCorp (<span class="tk">$KEY</span>), Regions (<span class="tk">$RF</span>) and East West Bancorp (<span class="tk">$EWBC</span>) all look the same. JC's line of the day was that financials are the heart and soul of every bull market, in the US and around the world, and the global ones look stronger than the US ones right now. Japanese banks via Mitsubishi UFG (<span class="tk">$MUFG</span>) printed new highs again this morning. Euro banks have been quiet leadership for three years.<a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=2580s" target="_blank" rel="noopener">[43:00]</a></p>
+    <p>Healthcare is the other re-leadership trade behind the print. In all of June only two stocks with a trillion-dollar market cap have made a fresh all-time high. One is <span class="tk">$AAPL</span>. The other is <span class="tk">$LLY</span> (Eli Lilly, the largest healthcare name on the planet by market value, weight-loss franchise included). <span class="tk">$XBI</span> broke out yesterday and ran today. Biogen, Alnylam, NBIX and J&amp;J all printed clean charts behind the move. Transports via <span class="tk">$IYT</span> (the iShares basket of US freight and logistics), the modern cousin of the original Dow average that Charles Dow built in 1884, broke out and are retesting their breakout level. <span class="tk">$SMH</span> (semis basket) ran another <span class="ch up">+4%</span> pre-market on top of a <span class="ch up">+4%</span> recovery yesterday afternoon. The NYSE is closed tomorrow for Juneteenth, no show, so today's bid is also the end of the week.<a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=3060s" target="_blank" rel="noopener">[51:00]</a></p>
+    <div class="note">
+      <div class="label">South Korea, the day's curiosity</div>
+      <p>The 2x SK Hynix leverage ETF on the Hong Kong exchange now holds <span class="pr">$13 billion</span> of assets, second-largest of the 250 ETFs listed there. The Kospi fell <span class="pr">17-18%</span> in the first week of June and is already back at all-time highs. It did the same thing in March, dropping <span class="pr">20%</span> in two days and printing fresh highs by April. US investors cannot buy the Hong Kong leverage product directly, but <span class="tk">$EWY</span> (the South Korea country ETF, Samsung-heavy) and the DRAM-focused names are the closest available proxy.<a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=200s" target="_blank" rel="noopener">[3:20]</a></p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>Gold, Bitcoin and the Swiss Franc Have One Feature in Common</h2>
+    <p>The dollar index broke through <span class="pr">100</span> for a fresh 52-week high. Gold dropped <span class="ch down">-2.6%</span> to <span class="pr">$4,260</span>. Silver dropped almost <span class="ch down">-6%</span> to <span class="pr">$66.66</span>. The Swiss franc continued the weakening it started earlier in the week, with dollar-Swiss turning higher in a way the desk thinks is the early signal of a regime shift. Bitcoin sat flat at <span class="pr">$64,250</span> into the strongest equity tape of the year. By mid-show the conversation kept circling one observation. Every asset on that list shares one feature. None of them pay you to hold them.<a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=2200s" target="_blank" rel="noopener">[36:40]</a></p>
+    <p>Gold has no yield. Silver has no yield. The Swiss franc trades at the lowest carry of any major currency. Bitcoin pays its holder nothing besides price. In a tape where the dollar has just broken higher and the front end of the curve is firming up, the price for not paying carry has gone up. The implicit message from this market is that an asset needs to either deliver exceptional earnings growth or pay something for the privilege of being held. Anything in the middle is a wasting position right now. That is the punishment going out to every asset class that has been described in store-of-value language across the last fifteen years of central-bank intervention.<a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=2220s" target="_blank" rel="noopener">[37:00]</a></p>
+    <p>The Swiss franc is the signal worth tracking most closely. It was the cleanest expression of fifteen years of negative-rate central banking, the place global money parked when it did not want to earn yield. Its weakening through dollar-Swiss is potentially the first market price marking a change in that regime. Gold and bitcoin are the two civilian-facing assets that have been sold in the same store-of-value frame for the last decade. Their joint weakness on the same day the dollar broke out is one coherent message about what the market wants from an asset right now. They are not three separate stories.</p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>For a bitcoin holder, the framework explains the tape's reluctance to bid even on the friendliest macro day in months. <span class="tk">$BTC</span> is being priced today the way silver and the Swiss franc are being priced, as an asset that costs the holder something to carry while the dollar pays them four-and-a-quarter to sit in cash. That re-rating only ends when the dollar tops or the macro shifts the carry math. Watch dollar-Swiss for the early break.</p>
+    </div>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"Dips continue to get bought. This market is teflon. There's a relentless bid for risk assets right now."</blockquote>
+      <div class="attrib">Strazza, opening the show on yesterday's selloff getting fully bought overnight <a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=181s" target="_blank" rel="noopener">[3:01]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"By far the biggest deal today is seeing the dollar rip through this 100 level that we've been watching for so long. I don't think that's a good thing."</blockquote>
+      <div class="attrib">Strazza, on the DXY breakout following the Fed <a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=854s" target="_blank" rel="noopener">[14:14]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"We don't have bull markets without financials. Financials are the heart and soul of not just America but countries around the world."</blockquote>
+      <div class="attrib">JC, on the S&amp;P bank index clearing its 2007 highs <a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=2786s" target="_blank" rel="noopener">[46:26]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Buy low and sell high is a lie. That's not how markets work. If you're trying to buy low and sell high, you're going to suck at this."</blockquote>
+      <div class="attrib">JC, on why all-time highs tend to lead to more all-time highs <a class="ts" href="https://www.youtube.com/watch?v=fdWtsqD30bM&amp;t=3633s" target="_blank" rel="noopener">[60:33]</a></div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The hawkish Fed reaction did not survive the open.</strong> NASDAQ 100 <span class="ch up">+1.6%</span>, S&amp;P 500 <span class="ch up">+1%</span>, Dow <span class="ch up">+200</span> to <span class="pr">52,150</span>. The dollar broke <span class="pr">100</span> to a fresh 52-week high. Two-year yields kept climbing. The S&amp;P bank index broke out above its 2007 highs. Biotech, semis and transports all printed clean charts behind the move. Everything that mattered before the Fed kept mattering after.</li>
+      <li><strong>The no-carry basket got picked off as a group.</strong> Gold <span class="ch down">-2.6%</span> to <span class="pr">$4,260</span>, silver <span class="ch down">-6%</span> to <span class="pr">$66.66</span>, the Swiss franc weakening through dollar-Swiss, <span class="tk">$BTC</span> flat at <span class="pr">$64,250</span> into the friendliest equity tape of the year. With the dollar making 52-week highs and cash paying real money, the market is asking for earnings or yield. Anything in the middle is a wasting position until the dollar tops.</li>
+      <li><strong>Crypto sat out, and the equity proxies got punished worse than the asset.</strong> <span class="tk">$BTC</span> held the line, but <span class="tk">$MSTR</span> and <span class="tk">$BMNR</span> took heavy selling. The FXI chart of Chinese large-caps closed at fresh 52-week lows yesterday and now looks identical to bitcoin. The macro tailwind is missing while the dollar is breaking out, and the bid only returns when that flips.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
