@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stocks Reopened Into a 52-Week-High Dollar and Took It - SMTV June 22, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 22, 2026</div>
+    <h1>Stocks Reopened Into a 52-Week-High Dollar and Took It</h1>
+    <p class="subtitle">MicroStrategy ground to multi-year lows even as bitcoin caught a 3% bid, and breadth finally broke out of the tech-only trade as small-cap industrials joined the highs.</p>
+    <div class="meta">
+      75 min &middot; <a href="https://www.youtube.com/watch?v=qFMnsU4WZnA" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The bull market just came off three trading days closed and shrugged. The dollar broke 52-week highs and stocks did not flinch. The morning's most useful chart was the all-time-high drawdown distribution since 1957. Only one in every 104 all-time highs ever turns into a bear market. MicroStrategy slid to multi-year lows while bitcoin traded back up at 65,000. Biotech kept printing 60% morning gaps and the shorts kept losing. The bears need a calculator.</p>
+    <ul>
+      <li>Markets reopen flat from a three-day Juneteenth recess. <span class="tk">$DJIA</span> <span class="pr">52,000</span> <span class="ch up">+60</span>. <span class="tk">$SPX</span> <span class="pr">7,570</span> flat. <span class="tk">$NDX</span> <span class="pr">30,800</span> <span class="ch up">+0.25%</span>. <span class="tk">$VIX</span> just above <span class="pr">17</span>. <span class="tk">$DXY</span> still printing fresh 52-week highs.</li>
+      <li>Crypto bid. <span class="tk">$BTC</span> <span class="pr">$65,000</span> <span class="ch up">+3%</span>. <span class="tk">$ETH</span> <span class="pr">$1,765</span> <span class="ch up">+3%</span>. <span class="tk">$SOL</span> <span class="pr">$74.50</span> <span class="ch up">+2.5%</span>. Total cap <span class="pr">$2.21T</span>.</li>
+      <li>Bitcoin treasury proxies stay broken. <span class="tk">$MSTR</span> printed multi-year lows even with <span class="tk">$BTC</span> running <span class="ch up">+3%</span>. The chart peaked the same day options began trading on <span class="tk">$IBIT</span>. The desk bought <span class="tk">$MSTR</span>, <span class="tk">$COIN</span> and <span class="tk">$BMNR</span> at the open anyway.</li>
+      <li>All-time-high math, closing prices only, S&amp;P 500 since 1957. Of every 100 ATHs, ~20 drop 1%, 8 drop 3%, 2 see a 10% correction, 1 turns into a bear market. 26 ATHs already in 2026 with the index only up <span class="ch up">+9.6%</span> YTD. All 10 historical years that ran this hot through June finished green, median <span class="ch up">+20.3%</span>.</li>
+      <li>Breadth broadens out of tech-only. <span class="tk">$XLI</span> flashed green on the breadth scan after two months of nothing. Small and mid-cap industrials at ATHs: <span class="tk">$TKR</span> (Timken, ball bearings), <span class="tk">$LECO</span> (Lincoln Electric, welding), <span class="tk">$DCI</span> (Donaldson, filtration), <span class="tk">$MIDD</span> (Middleby, commercial kitchens), <span class="tk">$VMI</span> (Valmont, transmission towers and irrigation).</li>
+      <li>Airlines on the screen. The S&amp;P 500 passenger airline index at 25-year highs. <span class="tk">$JETS</span> a couple of dollars from an ATH. Strong dollar is making international travel cheaper for Americans.</li>
+      <li>Biotech morning gaps continue. <span class="tk">$DFTX</span> <span class="ch up">+65%</span> pre-market on positive phase-three data for a depression drug. An AbbVie acquisition target up <span class="ch up">+50%</span>. Small-cap names printing 80-122% morning gaps. Short interest across the basket is high. Build a custom basket, <span class="tk">$XBI</span> remains the wrong vehicle.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Bitcoin Caught a 3% Bid While Its Equity Proxies Kept Bleeding</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$65,000</div>
+        <div class="stat-change up">+3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,765</div>
+        <div class="stat-change up">+3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$74.50</div>
+        <div class="stat-change up">+2.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.21T</div>
+        <div class="stat-change up">recovering</div>
+      </div>
+    </div>
+    <p><span class="tk">$BTC</span> caught a 3% bid back to <span class="pr">$65,000</span>, <span class="tk">$ETH</span> followed up <span class="ch up">+3%</span> to <span class="pr">$1,765</span>, and <span class="tk">$SOL</span> ran <span class="ch up">+2.5%</span> to <span class="pr">$74.50</span>. Total crypto market cap pushed back to <span class="pr">$2.21 trillion</span>. The catalyst was nothing specific. Markets were closed three full days for the Juneteenth long weekend, the bid that built into Friday's equity tape extended overnight, and bitcoin took its turn after sitting out Friday's stock rally.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=854s" target="_blank" rel="noopener">[14:14]</a></p>
+    <p>The story underneath the bid is what the equity proxies did with it. <span class="tk">$MSTR</span> (MicroStrategy, the levered bitcoin treasury name that holds about $20 billion of BTC on its balance sheet) printed multi-year lows even with the asset running 3%. The chart peaked on the exact session options began trading on <span class="tk">$IBIT</span> (the spot bitcoin ETF), and the desk spent most of the early show arguing whether the company is a slow-unwinding Ponzi or a transparent balance sheet whose preferred-stock yields could grind to zero if it can't fund them. The bear case is that they are paying old preferreds with new preferreds. The bull case is that every coin is visible on the blockchain in real time, so this is not Lehman.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=1281s" target="_blank" rel="noopener">[21:21]</a></p>
+    <p>Both sides bought <span class="tk">$MSTR</span> and <span class="tk">$COIN</span> at the open this morning. <span class="tk">$BMNR</span> (the BitMiner roll-up) sat in the same camp, with the trade idea being to fade the multi-year-lows print rather than press the short. Above its February lows but still inside the range, the trade idea was the range bounce rather than a structural call. For someone watching the asset rather than the equity wrapper, the read is that bitcoin keeps doing fine inside a tape that is openly hostile to anything packaged as a BTC proxy.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=1373s" target="_blank" rel="noopener">[22:53]</a></p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>A Bull That Came Off Three Days Closed With a 52-Week Dollar in Hand</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">52,000</div>
+        <div class="stat-change up">+60</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,570</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">30,800</div>
+        <div class="stat-change up">+0.25%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">17+</div>
+        <div class="stat-change up">tick higher</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">DXY</div>
+        <div class="stat-value">52w high</div>
+        <div class="stat-change up">bid</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">30Y Bond</div>
+        <div class="stat-value">~113</div>
+        <div class="stat-change down">-0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude (WTI)</div>
+        <div class="stat-value">$74.80</div>
+        <div class="stat-change down">-1.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,220</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+    </div>
+    <p>Stocks reopened from the three-day Juneteenth shutdown roughly where they closed Thursday. <span class="tk">$DJIA</span> futures up <span class="ch up">+60</span> handles at <span class="pr">52,000</span>, <span class="tk">$SPX</span> futures essentially unchanged at <span class="pr">7,570</span>, <span class="tk">$NDX</span> futures up <span class="ch up">+0.25%</span> at <span class="pr">30,800</span>, and the <span class="tk">$VIX</span> a tick higher at just above <span class="pr">17</span>. Crude pulled back <span class="ch down">-1.5%</span> to just under <span class="pr">$75</span> as the war-premium bid from Friday faded. The 30-year bond future dropped <span class="ch down">-0.5%</span> to just under <span class="pr">113</span> with the two-year yield holding at session highs. Gold and silver sat flat at <span class="pr">$4,220</span> and <span class="pr">$66.40</span>. The dollar index sat at 52-week highs.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=814s" target="_blank" rel="noopener">[13:34]</a></p>
+    <p>Friday's bullish action was driven by news of a Middle East peace agreement that, on the desk's read, was essentially an agreement to make an agreement. Over the weekend that paper got torn up. The administration is publicly playing good-cop bad-cop, with one side talking peace and the other side threatening to bomb. The only interpretation that matters is the one the tape gave. A market that ripped on a thin piece of slightly bullish news and then held the rip when the news went away is a market that wants to go higher.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=909s" target="_blank" rel="noopener">[15:09]</a></p>
+    <p>The biggest macro feature is still the dollar at 52-week highs. The standard cross-asset framework says this should be a headwind for stocks, since the post-2022 bull market has been driven by money rotating out of dollars into risk. The dollar peaked in the fall of 2022 and what followed was one of the largest rallies in stock-market history. The dollar now ripping higher with stocks at the same time is unusual, and the two-year yield breaking with it sharpens the puzzle. Strazza's call was for either a decisive break to confirm the dollar move or a hard rejection at this level from the bears. Sitting and drifting here is the worst outcome for risk assets, since it forces the dollar story to keep dominating the screen.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=1003s" target="_blank" rel="noopener">[16:43]</a></p>
+    <p>The morning's most quotable data point came from a guest's drawdown distribution. S&amp;P 500 only, closing prices only, since 1957. Of every five all-time highs, four barely drop at all before the next all-time high. Only one in thirteen all-time highs ever drops 3% below the high. Only one in 58 turns into a 10% correction. Only one in 104 ever turns into a bear market. The index has printed 26 all-time highs already in 2026 and is up just 9.6% on the year. Of the ten historical years that printed this many all-time highs by the end of June, all ten finished green, with a median full-year return of 20.3%. The footnote for the bears is that two of those ten years (1998 and 1987) still printed a full 20% bear move that started after June and ended by November. The base rate strongly favors more highs. The tail risk of a sharp, contained bear inside a green year is real but small.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=3000s" target="_blank" rel="noopener">[50:00]</a></p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>Staples Hit Cycle Lows, Heartland Industrials Hit Cycle Highs</h2>
+    <p>For two months the bull tape has been almost entirely a tech story. The Nasdaq 100 carried, the Mag 7 ran, semis ran, and the rest of the market followed without leading. This morning that picture broke in two ways at once. <span class="tk">$XLI</span> (the SPDR industrials sector ETF) flashed green on the breadth scan for the first time in months. Small-cap and mid-cap industrials hit fresh all-time highs alongside their large-cap cousins, which is the shape of a sector breakout that has actual breadth behind it rather than one index name doing all the work.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=3771s" target="_blank" rel="noopener">[62:51]</a></p>
+    <p>The list the desk pulled up was specific. Timken (<span class="tk">$TKR</span>, Ohio, ball bearings for industrial machinery) at all-time highs. Lincoln Electric (<span class="tk">$LECO</span>, Ohio, welding equipment) at all-time highs. Donaldson (<span class="tk">$DCI</span>, Minnesota, industrial filtration systems) at all-time highs. Middleby (<span class="tk">$MIDD</span>, Illinois, commercial kitchen equipment) at all-time highs. Valmont (<span class="tk">$VMI</span>, Nebraska, electric transmission towers and irrigation infrastructure) at all-time highs. JC's frame was that these are the picks-and-shovels of every supply chain in the country. If you believe in the AI capex story, the reshoring story or any flavor of America-is-building story, this is the basket making the highs first and quietly.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=3780s" target="_blank" rel="noopener">[63:00]</a></p>
+    <p>Airlines went along for the ride. The S&amp;P 500 passenger airline index sits at 25-year highs. <span class="tk">$JETS</span> (the global passenger airline ETF) is a couple of dollars from a fresh all-time high. Part of the read is the dollar at 52-week highs, which makes international travel cheaper for Americans, which feeds the booking data. The macro headwind in chapter two is the bookings tailwind in chapter three.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=3834s" target="_blank" rel="noopener">[63:54]</a></p>
+    <p>The flipside was the other end of the equity barbell. Equally-weighted consumer staples relative to the equally-weighted S&amp;P 500 just printed a fresh all-time low. The last time that ratio bottomed was April 2020, right before one of the largest 12-month rallies in S&amp;P history. The current low says no one in this tape is reaching for canned goods and chicken products. Some high-short-interest staple names (<span class="tk">$KMB</span> Kimberly-Clark, <span class="tk">$CPB</span> Campbell Soup) could see individual squeezes off the lows, but staples-as-allocation is a broken trade.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=1217s" target="_blank" rel="noopener">[20:17]</a></p>
+    <p>Biotech is the third leg of the broadening. The pattern that has emerged across the last few weeks is a daily morning print of <span class="ch up">+40%</span> to <span class="ch up">+80%</span> in individual names on clinical-trial data or M&amp;A announcements. Today's tape carried <span class="tk">$DFTX</span> (Definium Therapeutics) up <span class="ch up">+65%</span> pre-market on positive phase-three results for a depression drug, an AbbVie acquisition target up roughly <span class="ch up">+50%</span>, a sympathy bid in <span class="tk">$ORCA</span>, and a 122% pre-market print in a small-cap AI drug-discovery name. Short interest across biotech is at multi-year highs, every event is a squeeze waiting to happen, and the desk's read was to build a custom basket of individual names rather than buy <span class="tk">$XBI</span>, which dilutes the move with constant share issuance.<a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=3871s" target="_blank" rel="noopener">[64:31]</a></p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"This is that level where you want to either see a big green candle higher confirming a decisive upside resolution or you want to see the dollar bears come in and slam this thing at resistance."</blockquote>
+      <div class="attrib">Strazza, on the DXY 52-week-high level <a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=1003s" target="_blank" rel="noopener">[16:43]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Market still wants to go up. It took this little tiny piece of slightly bullish news and just ramped everything higher on it. It's a market that wants to move higher."</blockquote>
+      <div class="attrib">JC, on Friday's rip holding into Monday's reopen <a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=940s" target="_blank" rel="noopener">[15:40]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Staples are the most defensive asset. And guess what? Nobody wants your canned goods. Nobody wants your chicken products."</blockquote>
+      <div class="attrib">JC, on staples printing fresh relative all-time lows <a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=1217s" target="_blank" rel="noopener">[20:17]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"I don't know what these people are so angry about."</blockquote>
+      <div class="attrib">Strazza, on the biotech shorts taking another beating <a class="ts" href="https://www.youtube.com/watch?v=qFMnsU4WZnA&amp;t=3998s" target="_blank" rel="noopener">[66:38]</a></div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The three-day recess didn't crack the bull.</strong> <span class="tk">$DJIA</span> <span class="ch up">+60</span> at <span class="pr">52,000</span>, <span class="tk">$SPX</span> flat at <span class="pr">7,570</span>, <span class="tk">$NDX</span> <span class="ch up">+0.25%</span> at <span class="pr">30,800</span>. The dollar held at 52-week highs alongside fresh all-time highs in equities, an unusual configuration since the bull has run on a falling dollar since late 2022. Until the dollar breaks decisively in either direction, the tape will keep getting graded against this puzzle.</li>
+      <li><strong>The base rate strongly favors more highs.</strong> Of every 100 all-time highs since 1957, only 1 ever becomes a bear market. The S&amp;P has printed 26 ATHs in 2026 already and is only up <span class="ch up">+9.6%</span> YTD. All 10 historical years that ran this hot through June finished green with a median return of <span class="ch up">+20.3%</span>. The footnote is that two of those years (1998 and 1987) still printed a full bear move inside the green year, so the tail of a sharp summer drop is real but small.</li>
+      <li><strong>Breadth broadened past tech for the first time in two months.</strong> Industrials popped on the screen with small and mid-caps hitting all-time highs alongside large caps. <span class="tk">$TKR</span>, <span class="tk">$LECO</span>, <span class="tk">$DCI</span>, <span class="tk">$MIDD</span> and <span class="tk">$VMI</span> are the heartland basket worth watching. Passenger airlines printed 25-year highs. Biotech kept printing 40-80% morning gaps on event catalysts. Consumer staples ratio hit fresh all-time relative lows, the same setup that preceded the April 2020 rally. The opportunity set has widened well past the Mag 7.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
