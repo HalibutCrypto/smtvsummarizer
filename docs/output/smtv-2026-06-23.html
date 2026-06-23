@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Kospi Cracked 10% Overnight, the Desk Spent the Morning Hunting Biotech - SMTV June 23, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 23, 2026</div>
+    <h1>The Kospi Cracked 10% Overnight, the Desk Spent the Morning Hunting Biotech</h1>
+    <p class="subtitle">Korea had its worst single-day stock crash in history. Memory took the U.S. contagion. Small-cap therapeutics kept printing fresh all-time highs.</p>
+    <div class="meta">
+      55 min &middot; <a href="https://www.youtube.com/watch?v=WXcpSpayU9w" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Korea just had its worst single-day stock crash in history. The Kospi fell 9.99% in one session and the country's own market regulator went on the record regretting single-stock leveraged ETFs after the fact. The memory wreck spilled into the U.S. pre-market and dragged the semis with it. None of that stopped the desk from doing what it has been doing for weeks. They walked into small-cap biotech. While everyone else watched memory bleed, anything with "therapeutics" in the name kept printing new highs. The rotation underneath the indexes is still the trade.</p>
+    <ul>
+      <li>Korea Black Tuesday. <span class="tk">$KOSPI</span> <span class="ch down">-9.99%</span> on the session, the single biggest one-day crash in its history. <span class="tk">$005930</span> (SK Hynix) <span class="ch down">-10% to -12%</span>. Korea's markets chief publicly regrets allowing single-stock leveraged ETFs after roughly <span class="pr">$12B</span> blew through two of them.</li>
+      <li>U.S. memory caught the contagion. <span class="tk">$MU</span> (Micron) <span class="ch down">-10%</span> pre-market with earnings tomorrow. <span class="tk">$SNDK</span> (Sandisk) down ~<span class="pr">200</span> points. <span class="tk">$SMH</span> (semiconductor sector ETF) <span class="ch down">-6%</span> pre-market.</li>
+      <li>Biotech holding green into the tape. JC's scan of the day was simply names containing the word "therapeutics" sorted by proximity to all-time highs. <span class="tk">$KYMR</span> (Kymera Therapeutics) broke out to fresh ATH. Strazza is running an 18-name equal-weight basket with deliberately no edge.</li>
+      <li>The genomics shelf is waking up after six dead years. <span class="tk">$ARKG</span> (Ark Genomic Revolution ETF) top holdings <span class="tk">$TWST</span> (Twist Bioscience, synthetic DNA), <span class="tk">$CRSP</span> (CRISPR Therapeutics) and <span class="tk">$TXG</span> (10x Genomics) bid hard. Old name <span class="tk">$ILMN</span> (Illumina) breaking back out of a multi-year structural base.</li>
+      <li><span class="tk">$BFLY</span> (Butterfly Network, handheld AI-imaging ultrasound) <span class="ch up">+50%</span> earlier in the week on a fresh enterprise deal. Roadmap to 50,000 install sites by 2030. The desk's read is the company just crossed from speculation into a viable business.</li>
+      <li><span class="tk">$TSLA</span> off <span class="pr">$1.5T</span> in market cap since last Monday, more than the entire current value of Tesla. It joins the <span class="tk">$NDX</span> today and the <span class="tk">$RUI</span> (Russell 1000) by the end of this week. The desk's frame is that index inclusion is a known event the market prices in before it lands.</li>
+      <li>The annual Russell rebalance lands Friday. More money tracks FTSE Russell indexes than any other index family, so this is the single biggest forced-flow day of the year. Trade the setup before or after, the day itself is mechanical.</li>
+      <li>The dollar at 100 is the macro question still open. Pound at 1.30 and a euro break would be the confirming signal that risk has a problem. Sitting and drifting at this level keeps the dollar story on the screen.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Took the Asia Tape With It While the Liquidity Backdrop Stayed Friendly</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$63,800</div>
+        <div class="stat-change down">-1.8%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,705</div>
+        <div class="stat-change down">-3.4%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$71.80</div>
+        <div class="stat-change down">-3.6%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.16T</div>
+        <div class="stat-change down">slip with Asia</div>
+      </div>
+    </div>
+    <p><span class="tk">$BTC</span> drifted back from <span class="pr">$65,000</span> to roughly <span class="pr">$63,800</span> overnight as the Asia tape cracked, with <span class="tk">$ETH</span> down to about <span class="pr">$1,705</span> and <span class="tk">$SOL</span> back to <span class="pr">$71.80</span>. Total crypto market cap settled near <span class="pr">$2.16 trillion</span>. The catalyst was not crypto-native. It was a 9.99% single-session crash in the Korean stock market that spread into every memory and semiconductor name on the planet and pulled the whole risk complex with it. Bitcoin behaved exactly like risk this morning.</p>
+    <p>The structural read out of the desk is still constructive, which matters more than the overnight tick. Strazza's framing on the close was that this is one of the most favorable liquidity environments he has seen, the risk-on groups are working, animal spirits are alive, and the four-year cycle has just entered its most bullish seasonal window.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=3230s" target="_blank" rel="noopener">[53:50]</a> For bitcoin the backdrop matters more than today's candle. Down 1.8% on a day Korea takes a 10% body shot is the kind of behavior you want to see.</p>
+    <div class="note crypto">
+      <div class="label">The Dollar Catch</div>
+      <p>The one open question for crypto is the dollar, which is still pressed against the 100 level. The desk split on it. Grant's view is that a dollar break does not auto-mean sell stocks. Strazza wants to see <span class="tk">GBPUSD</span> hold above <span class="pr">1.30</span> and the euro hold its level, because the bear scenario for risk is a dollar above 100, pound completing a top, euro collapsing and equities cracking at the same time. Crypto reads off the same dollar tape as equities, so this is the one chart to watch for the next few sessions.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Korea Had a 9.99% Day and U.S. Memory Came With It</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Kospi</div>
+        <div class="stat-value">-9.99%</div>
+        <div class="stat-change down">historic 1-day</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">SK Hynix</div>
+        <div class="stat-value">-10 to -12%</div>
+        <div class="stat-change down">memory rout</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">$MU pre-mkt</div>
+        <div class="stat-value">-10%</div>
+        <div class="stat-change down">earnings Wed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">$SMH</div>
+        <div class="stat-value">-6%</div>
+        <div class="stat-change down">pre-market</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow futures</div>
+        <div class="stat-value">~-250</div>
+        <div class="stat-change down">drag</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NDX futures</div>
+        <div class="stat-value">~-3%</div>
+        <div class="stat-change down">memory-led</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">$TSLA cap lost</div>
+        <div class="stat-value">$1.5T</div>
+        <div class="stat-change down">since last Mon</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">$DXY</div>
+        <div class="stat-value">~100</div>
+        <div class="stat-change up">pinned</div>
+      </div>
+    </div>
+    <p>The story everywhere this morning was Korea. The Kospi printed a 9.99% one-session loss, the biggest single-day decline in its history.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=121s" target="_blank" rel="noopener">[02:01]</a> The Korean equity market is heavily concentrated in two memory and semiconductor names, with SK Hynix down 10% to 12% on the day doing most of the damage. The official postmortem from Korea's own markets chief landed mid-session, openly regretting the decision to allow single-stock 2x leveraged ETFs, two of which carry roughly $12 billion of exposure between them.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=333s" target="_blank" rel="noopener">[05:33]</a> A regulator publishing the cause of the crash while the crash is still printing is not how confidence gets rebuilt.</p>
+    <p>The contagion bled directly into U.S. memory and semis. <span class="tk">$MU</span> (Micron, the U.S. memory pure-play) was down 10% pre-market with the company reporting earnings Wednesday after the close. The desk noted the chart had simply round-tripped two sessions, so the damage in context was minor. The street is front-running the print. <span class="tk">$SNDK</span> (Sandisk, NAND flash) was off roughly 200 points. <span class="tk">$SMH</span>, the broad semiconductor ETF, was indicated 6% lower pre-market. Software, which had been in freefall for three weeks, looked set to outperform on a relative basis simply because memory was finally checking in lower with it.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=420s" target="_blank" rel="noopener">[07:00]</a></p>
+    <p>JC's framing was that this is not a story about a thousand stocks going down. It is a story about two stocks going down in a country that wraps two stocks into the whole index. Most major-country indexes are equally concentrated. The U.S. is actually the diversification outlier, despite the popular framing in the other direction. A Korean memory accident is a Korean memory accident first.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=395s" target="_blank" rel="noopener">[06:35]</a></p>
+    <p>Inside the U.S. tape, the desk has been more careful since June 5th, when the Nasdaq printed a 4.8% single-session loss they read as a warning shot. Tech overweight came off in early June, exposure shifted out into other groups, and a single-day tell got treated as a signal even though it did not become a trend.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=2380s" target="_blank" rel="noopener">[39:40]</a> Today's gap fits the same playbook. Big-cap tech is bifurcating, with semis under pressure and software trying to bottom, and the action under the indexes will be very different from the action at the index level. The closing note from Strazza was that the way parabolic uptrends correct is parabolically, so 10% down days in memory are the cost of admission for the kind of returns those names have already paid.</p>
+    <p>The other clean storyline was <span class="tk">$TSLA</span>. Since last Monday the name has erased roughly $1.5 trillion of market cap, equal to the entire current value of Tesla.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=2000s" target="_blank" rel="noopener">[33:20]</a> It joins the <span class="tk">$NDX</span> today and the <span class="tk">$RUI</span> (Russell 1000) by the end of this week. The desk's broader point on index inclusions is that the market is efficient at pricing them in advance, sometimes via mega-cap selling to make room for the new addition, so the "forced buying must lift the stock" intuition almost never plays out on the day itself. The trade is before the inclusion or after the rebalance, never on it.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=2050s" target="_blank" rel="noopener">[34:10]</a> The annual Russell rebalance on Friday is the bigger structural event for the same reason, with more money tracking FTSE Russell indexes than any other family.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=3173s" target="_blank" rel="noopener">[52:53]</a></p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Sector Story</div>
+    <h2>Biotech Is Where the Money Walks When Memory Breaks</h2>
+    <p>Underneath the headline, the desk's actual book activity was almost entirely in biotech. Strazza is running a basket of 18 names, deliberately equal-weighted, and his stated edge is that he has none. The methodology is to pick a wide slate, half-size every position, sell into 50% and 100% up days and right-size the winners back down so the basket stays roughly balanced. It is a way to express a thematic view without having to be right on any single name.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=697s" target="_blank" rel="noopener">[11:37]</a> When small-cap M&amp;A is hot, single-name risk in biotech is the wrong unit of measurement.</p>
+    <p>JC's scan tool was even blunter, and worth stealing as a recipe. Filter for U.S. names that contain the word "therapeutics" in the company name. Sort by proximity to a new all-time high. Start your work there. <span class="tk">$KYMR</span> (Kymera Therapeutics, a clinical-stage small-cap developing protein-degradation drugs) broke out to fresh all-time highs in the morning tape as an example of what the scan kicks out.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=1320s" target="_blank" rel="noopener">[22:00]</a> The why is operational. Capital flowing into the group is funding the small caps so they can become the big caps, which is the only mechanic that has ever made biotech a wealth-building sector.</p>
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Where the bid is</div>
+        <ul>
+          <li><span class="tk">$XBI</span> · small-cap biotech ETF</li>
+          <li><span class="tk">$KYMR</span> · breakout to ATH</li>
+          <li><span class="tk">$TWST</span> · synthetic DNA, ARKG top holding</li>
+          <li><span class="tk">$CRSP</span> · CRISPR gene editing, squeeze watch</li>
+          <li><span class="tk">$TXG</span> · 10x Genomics</li>
+          <li><span class="tk">$ILMN</span> · Illumina, breaking a multi-year base</li>
+          <li><span class="tk">$BFLY</span> · handheld AI ultrasound</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Where the bid is not</div>
+        <ul>
+          <li><span class="tk">$IBB</span> · large-cap biotech, full of names already big</li>
+          <li><span class="tk">$BIIB</span> · Biogen, large-cap shot didn't work</li>
+          <li><span class="tk">$AMGN</span> · Amgen, large-cap shot didn't work</li>
+        </ul>
+      </div>
+    </div>
+    <p>The IBB versus XBI framing is the operative call. <span class="tk">$IBB</span> (the iShares biotech ETF) is a vehicle full of large-cap names that already did their growth. The desk's view is that this defeats the point of being in biotech at all. You want exposure to small caps before the market turns them into big caps, which is what <span class="tk">$XBI</span> (the SPDR equal-weight small-cap biotech ETF) gives you. The desk has tried Biogen and Amgen as large-cap shots in the same cycle and watched them go nowhere while every small-cap position they put on has zoomed higher. That kind of asymmetric feedback is what the market is using to tell you which size bucket to fish in.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=1027s" target="_blank" rel="noopener">[17:07]</a></p>
+    <p>The genomics shelf is the most interesting wrinkle. <span class="tk">$ARKG</span> (Cathie Wood's genomic revolution ETF) has been a graveyard for six years. The fact that the top holdings are now flagged as bid-side action, <span class="tk">$TWST</span> (Twist Bioscience, synthetic DNA), <span class="tk">$CRSP</span> (CRISPR Therapeutics, gene editing), <span class="tk">$TMDX</span> (TransMedics) and <span class="tk">$TXG</span> (10x Genomics), says the dead names are waking up at the same time. <span class="tk">$ILMN</span> (Illumina, the old DNA sequencing leader that went through a long structural drawdown) is starting to base out of multi-year compression and was singled out as one to watch.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=1240s" target="_blank" rel="noopener">[20:40]</a></p>
+    <p>The standout in the wider basket is <span class="tk">$BFLY</span> (Butterfly Network). It builds handheld ultrasound probes that pair with a phone and run AI imaging on the scan. The company signed a fresh enterprise deal earlier in the week that lifted the stock 50% on the day, and the public roadmap calls for roughly 50,000 install sites by 2030. The desk's read is that the chart just broke out of a multi-year base on a fundamental inflection. The company is still not profitable and probably not for another year, but the market is starting to price it as a real business rather than a speculative option. It is the cleanest pure-play in the basket for someone who wants one name to underwrite the theme.<a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=900s" target="_blank" rel="noopener">[15:00]</a></p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"If there's five reasons, then there's zero reasons. You combine the surging yields with some near-term profit taking and the Mag 7 down yesterday and the Fed last week and blah blah blah, throw it all together into a sell-off pie and that's what you get."</blockquote>
+      <div class="attrib">JC, on the standard journalist explanation for a memory selloff <a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=581s" target="_blank" rel="noopener">[09:41]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"You don't get volatility in one direction. The way that stocks correct that have gone in a parabolic uptrend is parabolically. It's just the other side of the same coin."</blockquote>
+      <div class="attrib">Strazza, on memory stocks dropping 10% in a session <a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=2715s" target="_blank" rel="noopener">[45:15]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"The IBB defeats the whole purpose of being in biotech. The reason you want to be in biotech is to get a little guy to turn into a big guy. By the time the IBB owns them, they're already big guys."</blockquote>
+      <div class="attrib">JC, on why the small-cap basket beats the large-cap ETF <a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=1027s" target="_blank" rel="noopener">[17:07]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Animal spirits are alive and well in this market and we are entering one of the most bullish seasonal periods of the four-year cycle."</blockquote>
+      <div class="attrib">Strazza, closing read on the structural backdrop <a class="ts" href="https://www.youtube.com/watch?v=WXcpSpayU9w&amp;t=3230s" target="_blank" rel="noopener">[53:50]</a></div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Korea's Black Tuesday is a memory story first.</strong> A 9.99% one-session loss in the <span class="tk">$KOSPI</span>, the worst in its history, with <span class="tk">$005930</span> (SK Hynix) down 10-12% and roughly <span class="pr">$12B</span> of single-stock leveraged ETFs blamed by Korea's own regulator. U.S. memory came along for the ride. <span class="tk">$MU</span> <span class="ch down">-10%</span> pre-Micron earnings, <span class="tk">$SMH</span> <span class="ch down">-6%</span>. Treat it as a sector accident inside a concentrated index. The broader risk-off case still needs its own evidence.</li>
+      <li><strong>Index inclusions are not a trade.</strong> <span class="tk">$TSLA</span> joins the <span class="tk">$NDX</span> today and the <span class="tk">$RUI</span> by the end of this week, after erasing <span class="pr">$1.5T</span> of cap in a single trading week, an amount roughly equal to the entire current value of Tesla itself. The annual Russell rebalance on Friday is the single biggest forced-flow day of the year. The market priced both of these events in before they arrived. Trade the setup before or the unwind after, never the print day itself.</li>
+      <li><strong>The biotech rotation has fresh fuel.</strong> Run JC's scan, names containing "therapeutics" sorted by proximity to all-time highs, and you find the move. <span class="tk">$KYMR</span> broke out fresh this morning. The genomic shelf is waking up after six dead years, with <span class="tk">$ARKG</span> top holdings <span class="tk">$TWST</span>, <span class="tk">$CRSP</span> and <span class="tk">$TXG</span> all bid and <span class="tk">$ILMN</span> basing out of a multi-year compression. <span class="tk">$BFLY</span> is the cleanest pure-play in the basket, <span class="ch up">+50%</span> on a fresh enterprise deal with a roadmap to 50,000 sites by 2030. Stay in small caps. <span class="tk">$IBB</span> already owns the names that already grew.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
