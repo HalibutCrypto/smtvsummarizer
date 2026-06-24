@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chip Stocks Got Hammered and the Tape Barely Noticed - SMTV June 24, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">MORNING SHOW &middot; WEDNESDAY</div>
+    <h1>Chip Stocks Got Hammered and the Tape Barely Noticed</h1>
+    <p class="subtitle">Micron reports tonight, Cerebras dropped eight percent on margin compression, and the dollar broke above 100. Underneath the chip carnage, 330 S&amp;P names closed green and biotech is breaking out of a multi-month base.</p>
+    <div class="meta">
+      69 MIN &middot; <a href="https://www.youtube.com/watch?v=gIMLSOzccW8" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">7 MIN READ</span>
+    </div>
+    <p class="tldr-headline">Yesterday looked like a chip wreck and somehow 330 stocks in the S&amp;P 500 closed green. The desk called it sector rotation. Semis got hammered ahead of Micron tonight, software stayed under pressure, but biotech, copper miners, and even a sleepy Google caught a real bid. The dollar broke above 100 and the cleanest way to play it is shorting the metals. There are two Chinese stock markets right now. One is ripping. One is bleeding.</p>
+    <ul>
+      <li>Tuesday's session: software and big-cap chips dragged <span class="tk">$NDX</span> down, but over 330 S&amp;P 500 names still closed green. Constructive sector rotation kept the rest of the tape working.</li>
+      <li>Pre-market today: <span class="tk">$NDX</span> futures <span class="ch up">+0.5%</span>, <span class="tk">$DJIA</span> flat, modest green across <span class="tk">$SPX</span>. Recovery bid into the Micron print.</li>
+      <li>Micron reports tonight after the close. Expected move roughly <span class="pr">$170</span>. Whole semi space moves off the result.</li>
+      <li><span class="tk">$CBRS</span> (Cerebras, the AI inference chip company) <span class="ch down">-8%</span> pre-market on margin compression after disclosing it had to lease back data-center capacity it previously sold. Topline still almost doubled year-over-year.</li>
+      <li><span class="tk">$FDX</span> earnings carried the same margin-compression language, first report since the freight spinoff. Stock held in.</li>
+      <li>Oil <span class="ch down">-3%</span> below <span class="pr">$70</span>, first time since February. Gold <span class="ch down">-3%</span>, silver <span class="ch down">-5%</span>, copper <span class="ch down">-1.5%</span>. <span class="tk">$DXY</span> above <span class="pr">101</span>.</li>
+      <li>Crypto sat flat through the metals dump. <span class="tk">$BTC</span> ~<span class="pr">$65,200</span>, <span class="tk">$ETH</span> ~<span class="pr">$1,770</span>, <span class="tk">$SOL</span> ~<span class="pr">$74.60</span>.</li>
+      <li><span class="tk">$GOOGL</span> rallied yesterday and was named as <span class="tk">$VZ</span>'s replacement in the Dow this morning. <span class="tk">$WEN</span> <span class="ch up">+26%</span> on a CFO change with 30%+ short interest and 5-6 days to cover.</li>
+      <li><span class="tk">$RUN</span> <span class="ch up">+15%</span> on a Tesla deal. <span class="tk">$HTZ</span> <span class="ch down">-20%</span> on a dilution offering.</li>
+      <li>SK Hynix is finally listing on NASDAQ. First clean single-stock vehicle to play South Korea memory chips.</li>
+      <li><span class="tk">$ASHR</span> (mainland A-shares) is on a 27&rarr;37 run; <span class="tk">$KWEB</span> and <span class="tk">$FXI</span> (H-shares) are in deep drawdowns. Same country, opposite tape.</li>
+      <li><span class="tk">$IBB</span> broke out of its base in a slightly down market. Biotech keeps printing event-driven gaps.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTER 1: CRYPTO -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Bitcoin Sat Out the Metals Dump and the Dollar Breakout</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$65,200</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,770</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$74.60</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Cap</div>
+        <div class="stat-value">$2.21T</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+    </div>
+    <p>Spencer called the whole crypto complex "basically unchanged" inside the first six minutes of the show and pulled up other tabs. <span class="tk">$BTC</span> around <span class="pr">$65,200</span>, <span class="tk">$ETH</span> around <span class="pr">$1,770</span>, <span class="tk">$SOL</span> around <span class="pr">$74.60</span>, total crypto market cap holding at <span class="pr">$2.21 trillion</span>. The texture matters more than the prices today. The macro backdrop was openly hostile to anything most allocators still treat as a risk currency. Gold dropped another <span class="ch down">-3%</span>, silver another <span class="ch down">-5%</span>, oil printed below <span class="pr">$70</span> for the first time since February. The dollar index broke above <span class="pr">100</span> to <span class="pr">101</span>. The textbook reaction in <span class="tk">$BTC</span> is to roll over with the metals. It didn't.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=326s" target="_blank" rel="noopener">[5:26]</a></p>
+    <p>The reason the desk shrugged is that there is genuinely less to do day-to-day in this corner of the market right now. Spencer reminisced about the cycle when JC was buying metaverse real estate, the desk was staking NFTs, yield farming, and running mining rigs at home. That ecosystem is gone. The take Strazza put on the screen was that there was a massive brain drain from crypto to AI, with the engineering talent that built the last cycle now shipping for OpenAI and Anthropic instead. Both companies have filed S-1s. Neither has a date. The desk expected the road shows to start within days of SpaceX going public last week and has been waiting on the announcement.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=420s" target="_blank" rel="noopener">[7:00]</a></p>
+    <p>The trade-level read is that <span class="tk">$BTC</span> ignoring a 101 dollar print is its own piece of information. Every other risk asset with no carry attached, gold and silver being the obvious cousins, is bleeding into the breakout. <span class="tk">$BTC</span> isn't. If the dollar rolls back over the way Strazza eventually expects, the metals reload and crypto wakes up. If the dollar keeps grinding higher and crypto still holds, the read is that the asset has decoupled from the dollar trade in a way it never had before.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=480s" target="_blank" rel="noopener">[8:00]</a></p>
+  </section>
+
+  <!-- CHAPTER 2: MARKETS -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Tuesday Was a Tech Wreck Inside a Bull Tape</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,540</div>
+        <div class="stat-change up">recovery bid</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">30,350</div>
+        <div class="stat-change up">+0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude (WTI)</div>
+        <div class="stat-value">$69</div>
+        <div class="stat-change down">-3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dollar (DXY)</div>
+        <div class="stat-value">101.2</div>
+        <div class="stat-change up">breakout</div>
+      </div>
+    </div>
+    <p>Tuesday's session looked ugly on the headlines and held up underneath them. Over 330 S&amp;P 500 names closed positive on the day. The gap-down hit at the open and the indices never caught a real intraday rally because the names that dragged carried the most weight. Software stocks took the worst of it. Palantir, the desk said, looks like absolute garbage and has completed its top. The big-cap chip names that anchor the Nasdaq weighting added the rest of the damage. Underneath the index print, the constructive sector rotation that's been running for a month kept going.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=152s" target="_blank" rel="noopener">[2:32]</a></p>
+    <p>Micron reports tonight after the close and the expected move on options is roughly <span class="pr">$170</span> give or take. Strazza's read on the pre-earnings selldown was straightforward. When a stock gets sold this aggressively just ahead of a print, the market is usually telling you it ran too far, too fast. The whole semiconductor space will move off the result. Cerebras (<span class="tk">$CBRS</span>) gave the early read this morning, down <span class="ch down">-8%</span> pre-market after disclosing that it has had to lease back data-center capacity it previously sold because demand outran its ability to deliver. Topline revenue almost doubled year-over-year. The company is at break-even. "If they want a reason, they'll find a reason," Spencer said about the market's choice of margin compression as the headline.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=1015s" target="_blank" rel="noopener">[16:55]</a></p>
+    <p>FedEx tells a similar story without the chip wrapper. The first report since the company spun off its freight business, the headline was margin compression and the language matched Cerebras almost word for word. The stock didn't run into the print and the chart has gone sideways for weeks. Strazza talked his book on UPS as a long-and-hold dividend position with a monster yield, even while admitting nobody on the desk can fully explain why FedEx and UPS decoupled this hard over the last few years. They used to trade as one stock.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=1240s" target="_blank" rel="noopener">[20:40]</a></p>
+    <p>The macro pressure underneath the chip story is the same one driving the metals. The dollar index broke above <span class="pr">100</span> and the trade Strazza has been pressing as the cleanest expression is to short the precious metals. He runs it through DUST (a 2x inverse gold ETF, basically a leveraged bet on a falling gold price) and through <span class="tk">$SLV</span> and <span class="tk">$GDX</span> puts. Oil printed below <span class="pr">$70</span> for the first time since February with <span class="pr">$60</span> in sight by the desk's read. Copper sold off <span class="ch down">-1.5%</span> and the topping pattern that had been forming finally broke this morning. The dollar above 100 is the unifying chart.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=445s" target="_blank" rel="noopener">[7:25]</a></p>
+    <p>Movers worth flagging. Google (<span class="tk">$GOOGL</span>) caught a real bid yesterday after weeks of underperforming the Mag 7. Overnight it was named as Verizon's replacement in the Dow Jones Industrial Average. The desk had called that one on Twitter about a month ago in a guessing game. Verizon out, Google in. SK Hynix is listing on NASDAQ this morning, the first clean single-stock vehicle to express a South Korea bull thesis after years of the desk talking the country with no good way in. Memory chips, larger in that segment than Samsung. Wendy's (<span class="tk">$WEN</span>) ripped <span class="ch up">+26%</span> on a new CFO announcement, with the kicker that short interest sits above 30% of float and days-to-cover is in the 5-6 range. That is a textbook squeeze setup the desk has been waiting on for months, and the running thesis is that private equity eventually takes the chain out. Sun Run (<span class="tk">$RUN</span>) jumped <span class="ch up">+15%</span> on a Tesla deal. Hertz (<span class="tk">$HTZ</span>) dropped <span class="ch down">-20%</span> on a dilution offering.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=1980s" target="_blank" rel="noopener">[33:00]</a></p>
+    <p>Biotech is the breakout under the chip selloff. IBB (the iShares biotech ETF) cleared its base inside a slightly red tape this morning, which is the relative-strength tell the desk respects most. The group is living up to its reputation as the one uncorrelated corner of the market. A reminder before sizing up an individual biotech name. Ask whatever AI tool you trust for upcoming PDUFA dates (the FDA's decision deadlines on new drug applications, which routinely move a stock 25% in a morning) before you put the position on.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=905s" target="_blank" rel="noopener">[15:05]</a></p>
+  </section>
+
+  <!-- CHAPTER 3: CHINA -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>Two Chinese Stock Markets and Only One Is Working</h2>
+    <p>There are two ways to own China and they are diverging hard. The H-shares are Hong Kong-listed, where the tech and growth-y names live. <span class="tk">$KWEB</span> (KraneShares CSI China Internet ETF, the standard tech-heavy proxy) and <span class="tk">$FXI</span> (iShares China Large-Cap) sit inside ugly multi-year drawdowns. The A-shares are mainland Shanghai and Shenzhen, where industrials, financials and most of the actual domestic economy trade. <span class="tk">$ASHR</span> (Xtrackers Harvest CSI 300, the A-share proxy) is on what Strazza called "an absolute ripper," running from 27 to 37 over the last year. For an index that size, that is a real move.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=1330s" target="_blank" rel="noopener">[22:10]</a></p>
+    <p>The driver is policy. The Chinese government has been running a steady push to get the domestic retail base into mainland-listed stocks. Not forced buying, just a heavy nudge that has shown up in flows. The H-share market is where the global capital that fled in 2021 never came back. The A-share market is where the policy carrot lives and where the daily marginal buyer actually sits. <span class="tk">$KBA</span> (the KraneShares Bosera MSCI China A 50 ETF) is the other A-share vehicle. Far less liquid than <span class="tk">$ASHR</span>, but it has been around forever and KraneShares were the original pioneers of US-listed China index products.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=1395s" target="_blank" rel="noopener">[23:15]</a></p>
+    <p>The trap for US investors who tried to "buy China" over the last decade is that they were almost certainly buying H-shares. Spencer owned <span class="tk">$KWEB</span> ten years ago when the pitch was the demographic story, and admitted on air that it didn't work out. Strazza flagged India as the next demographic story now hitting retail with the same population-growth framing, and his read was to stay away while it is being marketed. The pattern is that by the time a population-driven narrative arrives at the broker app, the trade is usually late.<a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=1590s" target="_blank" rel="noopener">[26:30]</a></p>
+    <p>For anyone holding emerging-markets exposure, two questions matter. Which index do you actually own. And how comfortable are you with a trade whose driver is policy rather than fundamentals. A policy-driven push is tradable while the policy is in place. It also reverses faster than a fundamental thesis would. The setup is real, the move has been real, and the vehicle selection is the entire trade.</p>
+  </section>
+
+  <!-- CHAPTER 4: QUOTES -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"Stocks go up, stocks go down, babies are born, people die. That's just what happens here on a day-to-day basis."</blockquote>
+      <div class="attrib">Spencer, on Google having a down day after weeks at the top of the Mag 7 <a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=248s" target="_blank" rel="noopener">[4:08]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Typically when a stock gets sold aggressively just ahead of an earnings report, it tends to be a situation of the market just saying, too far, too fast."</blockquote>
+      <div class="attrib">Strazza, on the pre-earnings selldown in Micron <a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=1015s" target="_blank" rel="noopener">[16:55]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"If they want a reason, they'll find a reason."</blockquote>
+      <div class="attrib">Spencer, on the market choosing margin compression as the explanation for the Cerebras selloff <a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=1215s" target="_blank" rel="noopener">[20:15]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"I don't know if I'm ever over crypto."</blockquote>
+      <div class="attrib">Spencer, after months of the asset class going quiet <a class="ts" href="https://www.youtube.com/watch?v=gIMLSOzccW8&amp;t=350s" target="_blank" rel="noopener">[5:50]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Micron sets the tone for the chip space tonight.</strong> Expected move on the print is roughly <span class="pr">$170</span>. The desk reads the pre-earnings selldown as "too far, too fast" price action. <span class="tk">$CBRS</span> already wore the same margin-compression line for <span class="ch down">-8%</span> with topline still almost doubling year-over-year. The buyer's reaction to the result will say more than the result itself.</li>
+      <li><strong>Dollar above 100 makes the metals trade the cleanest expression.</strong> <span class="tk">$DXY</span> sits at <span class="pr">101.2</span>. Strazza is short via DUST and <span class="tk">$SLV</span>/<span class="tk">$GDX</span> puts. Oil knocking on <span class="pr">$60</span>, copper giving way at <span class="ch down">-1.5%</span>, and silver down <span class="ch down">-5%</span> on the morning all confirm the macro. Bitcoin sitting flat through the move is its own piece of information.</li>
+      <li><strong>Know which China you actually own.</strong> <span class="tk">$ASHR</span> and <span class="tk">$KBA</span> (mainland A-shares, industrials and financials) are on a multi-month run that took the index from 27 to 37 in a year. <span class="tk">$KWEB</span> and <span class="tk">$FXI</span> (H-share tech proxies) are in deep drawdowns. The driver is policy-driven retail buying inside the mainland, which is tradable while it is in place and faster to reverse than a fundamental thesis would be.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
