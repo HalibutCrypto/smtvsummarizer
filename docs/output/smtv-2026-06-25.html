@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micron Detonates, the Magnificent Seven Quietly Print Fresh 52-Week Relative Lows - SMTV June 25, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 25, 2026</div>
+    <h1>Micron Detonates, the Magnificent Seven Quietly Print Fresh 52-Week Relative Lows</h1>
+    <p class="subtitle">The Dow is on pace for its best weekly close ever and the leadership is everywhere except the seven names that were supposed to be the leadership.</p>
+    <div class="meta">
+      68 min &middot; <a href="https://www.youtube.com/watch?v=vW1DAliTGBo" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">A memory-chip earnings print just ripped the NASDAQ 2.4% higher and put the Dow on track for its best weekly close in history. The Magnificent Seven sat the rally out and printed fresh 52-week lows relative to the S&amp;P. Russell 2000 and large-cap value are at fresh 52-week highs against the same group. Biotech, builders and banks are ripping together, which usually means the bond market is whispering that rates are heading lower. Retailers, REITs and community banks keep adding fresh all-time highs every morning. The bull is much broader than the cable-news version of it.</p>
+    <ul>
+      <li>Tape. <span class="tk">$DJIA</span> futures up <span class="pr">114</span> at <span class="pr">52,400</span>, on pace for the highest weekly close in Dow history. <span class="tk">$SPX</span> futures up <span class="ch up">+60</span> handles. <span class="tk">$NDX</span> futures up <span class="ch up">+2.4%</span> on Micron. <span class="tk">$VIX</span> near <span class="pr">18</span>. 30Y bond future <span class="ch up">+0.5%</span> at <span class="pr">114.5</span>.</li>
+      <li>Micron blew the doors off. <span class="tk">$MU</span> <span class="ch up">+17-20%</span> pre-market on a beat and strong guidance. Memory and chip sympathy: <span class="tk">$SNDK</span> <span class="ch up">+16%</span> on someone else's earnings, <span class="tk">$WDC</span> double-digits, <span class="tk">$QCOM</span> ripping after its first investor day in years.</li>
+      <li>The Lag Seven. Magnificent Seven hit fresh 52-week lows relative to the <span class="tk">$SPX</span>. Russell 2000 and the large-cap value index at fresh 52-week highs versus the same Mag 7. The rotation away from concentration leadership is now eight months in.</li>
+      <li>Crypto. <span class="tk">$BTC</span> <span class="pr">$61,250</span> flat. <span class="tk">$ETH</span> <span class="pr">$1,634</span> <span class="ch up">+1%</span>. <span class="tk">$SOL</span> <span class="pr">$69</span> <span class="ch up">+1%</span>. Total crypto cap <span class="pr">$2.09T</span>. <span class="tk">$MSTR</span> in an 80% drawdown from November 2024 highs, <span class="tk">$BMNR</span> 90% drawdown from last summer.</li>
+      <li>Three Bs ripping together. Biotech, builders, banks all making fresh highs at the same time. <span class="tk">$IBB</span> printed new 5-year highs. Strazza's read is that bonds are signaling lower rates ahead.</li>
+      <li>Retail breakouts everywhere. <span class="tk">$M</span> (Macy's) at a 52-week high. <span class="tk">$VKTX</span> (Viking Holdings, luxury cruises) and <span class="tk">$SPG</span> (Simon Property Group, the largest mall REIT) at all-time highs. <span class="tk">$BBWI</span>/<span class="tk">$VSCO</span> (Victoria's Secret) comping in the high teens. <span class="tk">$WEN</span> Wendy's bouncing two days on a Reddit-driven 9% dividend-yield squeeze.</li>
+      <li>The desk's pulled-up list of fresh ATHs from Sean: <span class="tk">$CAH</span> Cardinal Health, <span class="tk">$ETSY</span>, <span class="tk">$WPC</span> (W. P. Carey REIT) and <span class="tk">$CFG</span> (Citizens Financial, a community bank). Cosby (Korean equity index) up <span class="ch up">+5.4%</span> back to pre-Black-Tuesday levels.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>BTC Sits Flat While Its Equity Wrappers Keep Bleeding</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$61,250</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,634</div>
+        <div class="stat-change up">+1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$69</div>
+        <div class="stat-change up">+1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.09T</div>
+        <div class="stat-change flat">range-bound</div>
+      </div>
+    </div>
+    <p><span class="tk">$BTC</span> sat flat at <span class="pr">$61,250</span> while the morning's energy went to memory chips. <span class="tk">$ETH</span> caught a <span class="ch up">+1%</span> bid to <span class="pr">$1,634</span>, <span class="tk">$SOL</span> followed up <span class="ch up">+1%</span> to <span class="pr">$69</span>, and total crypto market cap traded at <span class="pr">$2.09 trillion</span>. The desk barely revisited spot all morning. The story for bitcoin holders right now is what is happening to the equity wrappers around the asset.<a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=720s" target="_blank" rel="noopener">[12:00]</a></p>
+    <p><span class="tk">$MSTR</span> (MicroStrategy, the levered bitcoin treasury name that holds roughly $20 billion of BTC on its balance sheet) sat in an 80% drawdown from its late-November 2024 peak. <span class="tk">$BMNR</span> (BitMiner Immersion, a smaller crypto-treasury roll-up) sat in a 90% drawdown from last summer's high. JC pulled up January's Forbes magazine cover of Michael Saylor labelled "the Bitcoin alchemist" and Steve Strazza labelled "the volatility virtuoso." The cover timed the top within two months. <span class="tk">$MSTR</span> is down another 72% since.<a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=354s" target="_blank" rel="noopener">[5:54]</a></p>
+    <p>The thread the desk kept pulling on was that bitcoin is fine and the wrappers keep selling off anyway. The Three Bs framework discussed in chapter two (biotech, builders and banks bidding on a falling-rates signal) is a clean tailwind for BTC even with the dollar still firm. Total crypto cap parked at <span class="pr">$2.09T</span> is back at early-2025 levels, which is uncomfortable for anyone who bought the ETF-ization narrative at the top of last year.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Micron Lights Up the Tape, the Lag Seven Sit It Out</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">52,400</div>
+        <div class="stat-change up">+114 · weekly ATH pace</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,485</div>
+        <div class="stat-change up">+60</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">+2.4%</div>
+        <div class="stat-change up">on Micron</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">~18</div>
+        <div class="stat-change up">still elevated</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">30Y Bond</div>
+        <div class="stat-value">114.5</div>
+        <div class="stat-change up">+0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude (WTI)</div>
+        <div class="stat-value">&lt;$70</div>
+        <div class="stat-change down">-1.36</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,017</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Silver</div>
+        <div class="stat-value">$57.70</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+    </div>
+    <p>Micron blew the doors off. <span class="tk">$MU</span> printed up nearly 20% pre-market on a top-and-bottom-line beat with forward guidance that the desk read as unambiguously strong. The print mattered less than the reaction. Heading into the report the stock had been front-running it to the downside, which usually telegraphs a bad number. Last quarter's reaction was a textbook earnings reversal that took the stock down 30% in the two weeks after the print. This time it crushed it and the chip basket lit up in sympathy.<a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=807s" target="_blank" rel="noopener">[13:27]</a></p>
+    <p><span class="tk">$SNDK</span> (SanDisk, NAND flash storage) ran <span class="ch up">+16%</span> on someone else's earnings. <span class="tk">$WDC</span> (Western Digital, hard drives and SSDs) jumped double digits. <span class="tk">$QCOM</span> ripped higher after holding what the team described as its first investor day in years. <span class="tk">$AMAT</span> (Applied Materials, semi-equipment) was up <span class="ch up">+7%</span>.</p>
+    <p>The futures tape went along. <span class="tk">$DJIA</span> up <span class="pr">114</span> handles at <span class="pr">52,400</span>, on pace for the highest weekly close in the index's history. <span class="tk">$SPX</span> up <span class="ch up">+60</span> handles at <span class="pr">7,485</span>. <span class="tk">$NDX</span> up <span class="ch up">+2.4%</span> on Micron alone. The 30-year bond future up <span class="ch up">+0.5%</span> at <span class="pr">114.5</span>. Crude <span class="ch down">-1.36</span> under <span class="pr">$70</span>. Copper above <span class="pr">$6</span>. Gold flat at <span class="pr">$4,017</span>. Silver flat at <span class="pr">$57.70</span>. <span class="tk">$VIX</span> sits near <span class="pr">18</span>, which is unusually high for a tape this close to fresh all-time highs.<a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=678s" target="_blank" rel="noopener">[11:18]</a></p>
+    <p>The footnote no one outside this show is talking about is who is NOT participating. JC walked through fresh charts of the Magnificent Seven hitting new 52-week lows relative to the S&amp;P 500. The "Lag Seven," as he has been calling them since October when a Ron DeSantis tweet about the seven-stocks-going-up narrative marked the top of their outperformance. Russell 2000 and the large-cap value index both printed fresh 52-week highs relative to the same Mag 7 over that same window. Eight months of rotation away from concentration leadership, and the cable-news version of the story is still about how a handful of names carry everything.<a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=120s" target="_blank" rel="noopener">[2:00]</a></p>
+    <p>The other framework on the screen this morning was the Three Bs. Strazza's frame is that biotech, builders and banks all do better when rates are lower, and all three are now ripping at once. Builders joining the biotech-and-banks party is the new piece. Bonds confirming with the 30-year future up half a percent says the cross-asset message is real. <span class="tk">$IBB</span> (the iShares biotech ETF, the large-cap biotech index) printed fresh 5-year highs.<a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=775s" target="_blank" rel="noopener">[12:55]</a></p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>A bond market signalling lower rates and a tape rotating breadth into Russell 2000 and value is the friendliest macro backdrop crypto has had since spring. The story showing up in <span class="tk">$MSTR</span> and <span class="tk">$BMNR</span> is the wrapper trade unwinding, separate from BTC's own price action. Spot bitcoin can keep grinding sideways above <span class="pr">$60k</span> with this setup. The treasury proxies remain a different trade than the asset.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>Vibes vs Spending: A Tape Where the Sentiment Polls Stopped Predicting the Register</h2>
+    <p>The morning's most interesting frame came from Jeff Mackey's retail block. The central argument is that the consumer is fine and the sentiment polls are broken. University of Michigan consumer sentiment used to hang around 100. It now sits near 55 and rolls sideways at that level regardless of what happens in the actual economy. Spending data says the opposite of the polls. Prime Day this week is on pace for $27 billion in US online sales, which would be the biggest cyber week of the year. Companies that report continue to print good comps. Carnival Cruise just reported "completely booked" and sold off on the news anyway.<a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=2813s" target="_blank" rel="noopener">[46:53]</a></p>
+    <p>The list of fresh highs in the consumer-discretionary basket is long enough to be hard to dismiss. <span class="tk">$M</span> (Macy's) at a 52-week high. <span class="tk">$VKTX</span> (Viking Holdings, the Minnesota-based luxury river and ocean cruise operator) at an all-time high. <span class="tk">$SPG</span> (Simon Property Group, the largest US mall REIT) at an all-time high. <span class="tk">$BBWI</span>/<span class="tk">$VSCO</span> (Victoria's Secret) comping in the high teens. Aritzia (Canadian premium women's apparel) packed with moms on a weekday. <span class="tk">$TGT</span> trades at roughly 15 times earnings while the mannequins in its stores are full again. The equally-weighted consumer discretionary ETF doesn't look bad either, which is what would matter if money started rotating into the group at the index level.<a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=2288s" target="_blank" rel="noopener">[38:08]</a></p>
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Have</div>
+        <ul>
+          <li><span class="tk">$M</span> Macy's &middot; 52-week high</li>
+          <li><span class="tk">$VKTX</span> Viking Cruises &middot; ATH</li>
+          <li><span class="tk">$SPG</span> Simon Property &middot; ATH (mall REIT)</li>
+          <li><span class="tk">$VSCO</span> Victoria's Secret &middot; comping high teens</li>
+          <li><span class="tk">$TGT</span> Target &middot; cheap at ~15x</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Have-not</div>
+        <ul>
+          <li><span class="tk">$WEN</span> Wendy's &middot; 9% div yield, Reddit squeeze</li>
+          <li><span class="tk">$LULU</span> Lululemon &middot; "chairman-Mao business suits"</li>
+          <li><span class="tk">$NKE</span> Nike &middot; Caitlin Clark shoe four years late</li>
+          <li><span class="tk">$SHAK</span> Shake Shack &middot; hideous chart</li>
+        </ul>
+      </div>
+    </div>
+    <p>The other half of Mackey's frame is the operator-quality split. Wendy's has bounced two days on a Wall Street Bets short squeeze that ballooned the dividend yield to roughly 9% and pulled Nelson Peltz and Trian back into the headlines. The underlying business is badly run, mostly by the franchisees who own most of the stores. Lululemon is selling chairman-Mao-looking business suits while waiting for its new CEO to start in September. Nike just released a Caitlin Clark signature shoe four years after starting to pay her, because management did not want to upset other WNBA players first. All three are management-mistake stories. The consumer is still showing up.<a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=2531s" target="_blank" rel="noopener">[42:11]</a></p>
+    <p>The fresh-all-time-high list Sean walked through later in the show rhymed with the Mackey frame. <span class="tk">$CAH</span> (Cardinal Health, healthcare distribution) at an all-time high. <span class="tk">$ETSY</span> at an all-time high. <span class="tk">$WPC</span> (W. P. Carey REIT) at an all-time high. <span class="tk">$CFG</span> (Citizens Financial, a US community bank) at an all-time high. Healthcare, retail, REITs and small banks all at fresh highs the same morning Micron is trying to drag the chip basket back to highs. The tape composite reads less like a cyclical buy thesis and more like an execution sort. Aspirational sells. Sentiment lies.<a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=3211s" target="_blank" rel="noopener">[53:31]</a></p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Lines Worth Saving</h2>
+    <div class="pullquote">
+      <blockquote>"What a piece of [expletive] this group has turned into."</blockquote>
+      <div class="attrib">JC, on the Magnificent Seven printing fresh 52-week lows relative to the S&amp;P <a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=140s" target="_blank" rel="noopener">[2:20]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"These guys are literally lighting money on fire."</blockquote>
+      <div class="attrib">JC, on MicroStrategy and BitMiner extending their drawdowns <a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=410s" target="_blank" rel="noopener">[6:50]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"We used to talk about the three Bs as groups that would do better if rates were lower. Biotech, builders and banks. All ripping. Finally builders joining that party. That to me says lower rates are coming."</blockquote>
+      <div class="attrib">Strazza, on the cross-asset signal in the rate-sensitive basket <a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=778s" target="_blank" rel="noopener">[12:58]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"You know what people don't do when they're feeling financially strapped? They don't go shopping."</blockquote>
+      <div class="attrib">Jeff Mackey, on the gap between sentiment polls and what is actually printing in spending data <a class="ts" href="https://www.youtube.com/watch?v=vW1DAliTGBo&amp;t=2854s" target="_blank" rel="noopener">[47:34]</a></div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Micron blew it out and the Mag 7 still didn't lead.</strong> <span class="tk">$MU</span> up nearly 20% pre-market, <span class="tk">$NDX</span> futures <span class="ch up">+2.4%</span>, semis ripping in sympathy. <span class="tk">$DJIA</span> at <span class="pr">52,400</span> on pace for the best weekly close in Dow history. Yet the Magnificent Seven printed fresh 52-week lows relative to the <span class="tk">$SPX</span> at the same time Russell 2000 and large-cap value printed fresh 52-week highs against them. Index level says all-time highs. Composition says rotation.</li>
+      <li><strong>The Three Bs are saying the bond market wants lower rates.</strong> Biotech, builders and banks broke out together. 30-year bond future <span class="ch up">+0.5%</span>. <span class="tk">$IBB</span> at 5-year highs. The cross-asset configuration is rate-sensitive groups bidding while the 30-year future climbs, which is the bond market voting. Stays friendly for crypto and for the small-cap and value baskets that have been leading the Lag Seven.</li>
+      <li><strong>The consumer is fine, the polls are broken.</strong> <span class="tk">$M</span>, <span class="tk">$VKTX</span> and <span class="tk">$SPG</span> at all-time highs. <span class="tk">$VSCO</span> comping high teens. Prime Day on pace for $27B in US online sales. The cyclical buy thesis lives in execution-good retailers, REITs and community banks. The value traps stay <span class="tk">$WEN</span>, <span class="tk">$LULU</span> and <span class="tk">$NKE</span> until the managers either ship a real product or get replaced.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
