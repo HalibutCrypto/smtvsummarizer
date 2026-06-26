@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Tech Bleeds Through a Dow Record as MicroStrategy Joins the Lehman Comp Set - SMTV June 26, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 26, 2026</div>
+    <h1>Big Tech Bleeds Through a Dow Record as MicroStrategy Joins the Lehman Comp Set</h1>
+    <p class="subtitle">The NASDAQ opened Friday down 1.3%, total crypto cap dropped to twenty-month lows, and Louis put a number on the discount the market is now applying to the bitcoin on Michael Saylor's balance sheet.</p>
+    <div class="meta">
+      64 min &middot; <a href="https://www.youtube.com/watch?v=WpGrAbO5ZPU" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The Dow printed an intraday all-time high Thursday. Friday morning big tech is bleeding, crypto is at twenty-month lows, and the public companies built around hoarding bitcoin are getting compared to Lehman Brothers. MicroStrategy now trades at a 34% discount to the bitcoin it holds. Solana was the only green print on the crypto board. The desk's read is that the bull market is splitting in two and the part still working is not the part anyone is talking about.</p>
+    <ul>
+      <li>Tape. <span class="tk">$DJIA</span> <span class="pr">52,250</span> <span class="ch down">-90</span> (Thursday's intraday print of <span class="pr">51,999</span> was a record). <span class="tk">$SPX</span> <span class="pr">7,386</span> <span class="ch down">-0.5%</span>. <span class="tk">$NDX</span> futures <span class="ch down">-1.3%</span> / <span class="ch down">-400</span> handles. <span class="tk">$VIX</span> above <span class="pr">20</span>. 30Y bond future flat near <span class="pr">114</span>. <span class="tk">$WTI</span> <span class="ch down">-3.3%</span> under <span class="pr">$70</span>. Copper <span class="ch up">+0.5%</span> at <span class="pr">$6.17</span>. Gold flat at <span class="pr">$4,050</span>. Silver flat at <span class="pr">$58.50</span>.</li>
+      <li>Crypto. <span class="tk">$BTC</span> <span class="pr">$59,000</span> <span class="ch down">-1%</span>. <span class="tk">$ETH</span> <span class="pr">$1,530</span> <span class="ch down">-2.2%</span>. <span class="tk">$SOL</span> <span class="pr">~$70</span> <span class="ch up">+2.8%</span> on relative strength. Total crypto cap back at <span class="pr">~$2T</span>, the lowest level since the fall of 2024.</li>
+      <li>The Lag Seven. JC dates the Magnificent Seven top to October 29, the day Florida governor Ron DeSantis went on TV calling this "the Mag Seven economy." <span class="tk">$AAPL</span> sliding on a price-hike story Spencer reads as a tape excuse. <span class="tk">$NFLX</span> printed fresh 52-week lows. Strazza bought <span class="tk">$INTC</span> and <span class="tk">$MU</span> puts at Thursday's open on tired semi tape.</li>
+      <li>The Sailor discount. <span class="tk">$MSTR</span> (MicroStrategy, the levered bitcoin treasury) trades at <span class="pr">0.66x</span> NAV, a <span class="pr">34%</span> discount to its bitcoin holdings (<span class="pr">39%</span> on basic shares). <span class="tk">$BMNR</span> in the same trade. Combined unrealized losses north of <span class="pr">$20B</span> in recent months. Louis's comp set: AIG, Fannie Mae, Freddie Mac, Lehman Brothers, WorldCom, Enron.</li>
+      <li>Louis is a buyer of <span class="tk">$CME</span> at multi-month lows. CFTC just approved perpetual futures for Coinbase and Kalshi, and the narrative is that CME's moat is gone. Louis calls it the most ridiculous sell-off he has ever seen.</li>
+      <li>Louis's tokenization shortlist. <span class="tk">$BK</span> (Bank of New York Mellon, custodies <span class="pr">$58T</span> in assets, breaking out of a 20-year base). BNP Paribas (Europe's largest custodian bank). JSCC (Japan's clearing house, moving bond settlement onto a chain). Euroclear. Citi and JP Morgan with tokenized deposits going live next year.</li>
+      <li>S&amp;P bank index printed new all-time highs Thursday, the first move above its great-financial-crisis highs. JC's bear-case challenge: if you are bearish this market your thesis has to start with this chart failing.</li>
+      <li>South Korea's stock market halted <span class="ch down">-8%</span> overnight, the second historic crash of the week. <span class="tk">$VIX</span> above 20 with the Dow at an all-time high is a rare combination.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Twenty-Month Lows, a Green Solana Print, and Louis's Tokenization Shortlist</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$59,000</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,530</div>
+        <div class="stat-change down">-2.2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$70</div>
+        <div class="stat-change up">+2.8%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">~$2T</div>
+        <div class="stat-change down">20-month low</div>
+      </div>
+    </div>
+    <p>The whole crypto complex is at its weakest level in twenty months. Total market cap dropped under <span class="pr">$2 trillion</span> for the first time since the fall of 2024, before any of the moves that defined this cycle. <span class="tk">$BTC</span> sits at <span class="pr">$59,000</span> and <span class="tk">$ETH</span> at <span class="pr">$1,530</span>, both red on the day. <span class="tk">$SOL</span> is the green print on the board, up <span class="ch up">+2.8%</span> with everything else bleeding. That kind of relative strength on a fully red tape is the only thing the desk had to flag intraday.<a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=624s" target="_blank" rel="noopener">[10:24]</a></p>
+    <p>Louis spent most of his segment on tokenization. His read is that the winners of the tokenization race are the old institutions. The crypto-native startups everyone is watching will not be the rails. Bank of New York Mellon (<span class="tk">$BK</span>) already custodies <span class="pr">$58 trillion</span> in assets and just broke out to all-time highs after twenty flat years. Euroclear is moving stocks and bonds onto a chain. The JSCC, Japan's equivalent of the DTCC, is putting bond settlement onto the Canton network. BNP Paribas, the largest custodian bank in Europe, is front and center on tokenized deposits. Citi and JP Morgan have tokenized deposit products going live next year.<a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=1745s" target="_blank" rel="noopener">[29:05]</a></p>
+    <p>Louis also made the case for <span class="tk">$CME</span> at multi-month lows. The selloff has been driven by the CFTC approving perpetual futures for Coinbase and Kalshi, which traders have read as a moat threat to the existing exchange. Louis treats this as the most ridiculous setup he has seen. The CME will integrate perps and run them at institutional scale the way it already runs every other futures product. The selloff is a gift.<a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=1538s" target="_blank" rel="noopener">[25:38]</a></p>
+    <p>The footnote worth keeping is the Solana print. Total cap at 20-month lows, BTC and ETH down, and SOL still trading green is the kind of intraday tell the desk likes to file away for later. It does not mean anything on its own, but it usually means something later.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Dow Record on Thursday, NASDAQ Bleeding on Friday, Mag Seven Doing Both</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">52,250</div>
+        <div class="stat-change down">-90 · Thu intraday ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,386</div>
+        <div class="stat-change down">-0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">-1.3%</div>
+        <div class="stat-change down">-400 handles</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">&gt;20</div>
+        <div class="stat-change down">rare with Dow ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">30Y Bond</div>
+        <div class="stat-value">~114</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude (WTI)</div>
+        <div class="stat-value">&lt;$70</div>
+        <div class="stat-change down">-3.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Copper</div>
+        <div class="stat-value">$6.17</div>
+        <div class="stat-change up">+0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold / Silver</div>
+        <div class="stat-value">$4,050</div>
+        <div class="stat-change flat">flat · Ag $58.50</div>
+      </div>
+    </div>
+    <p>The split is the story. The Dow tagged an intraday all-time high on Thursday at <span class="pr">51,999</span> and closed barely below it. Friday opened with the index off ninety handles at <span class="pr">52,250</span>, the S&amp;P down half a percent at <span class="pr">7,386</span>, and the NASDAQ 100 futures down <span class="ch down">-1.3%</span> and four hundred handles. Big tech has stopped leading and started bleeding outright. Everything else has stopped caring.<a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=540s" target="_blank" rel="noopener">[9:00]</a></p>
+    <p>Apple is down on a story that it is raising prices, which would normally help the stock. Spencer's read is that the news is a tape-driven excuse. The actual catalyst is that <span class="tk">$AAPL</span> is catching down with the rest of its peer group. <span class="tk">$NFLX</span> printed fresh 52-week lows yesterday. Strazza spent Thursday morning buying puts on <span class="tk">$INTC</span> and <span class="tk">$MU</span> because Micron's earnings were a strong beat and the stock still could not make a new high. Most of the best semis went on to new highs in the past few weeks without ever getting overbought on a 14-day RSI, which usually marks tired tape rather than fresh strength.<a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=3274s" target="_blank" rel="noopener">[54:34]</a></p>
+    <p>JC dates the Mag Seven peak to October 29 of last year, the day Florida governor Ron DeSantis went on TV calling this "the Mag Seven economy." The group has lagged for almost eight weeks since. Today's tape is the first time in a while that lag has shown up as a clean red day instead of just relative underperformance.<a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=684s" target="_blank" rel="noopener">[11:24]</a></p>
+    <p>Underneath the surface a different market is humming. The S&amp;P bank index broke above its great-financial-crisis highs Thursday for the first time. JC builds the entire bear case off this single chart. Two-thirds of Americans tell pollsters they expect a recession around the corner. Only one in four thinks now is a good time to invest. The wall of worry is intact while the bank index quietly clears 2007.<a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=1958s" target="_blank" rel="noopener">[32:38]</a></p>
+    <p>Around the edges the rest of the tape is strange. South Korea's stock market halted <span class="ch down">-8%</span> overnight, its second historic crash of the week. Crude oil is down another <span class="ch down">-3.3%</span> and trading under <span class="pr">$70</span>. Copper is up half a percent at <span class="pr">$6.17</span>. The <span class="tk">$VIX</span> sits above <span class="pr">20</span> with the Dow at an all-time high, an unusual pairing JC asked anyone with a screener to historically back-test.</p>
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>The macro backdrop is mixed for bitcoin. Falling oil and a still-bid 30-year bond are friendly. The dollar's been firm and the equity wrappers around BTC are getting their faces ripped off, both unfriendly. Spot can keep grinding inside the <span class="pr">$59-65k</span> range with this setup. The treasury proxies are now a fully separate trade from the asset itself.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Sailor Discount</div>
+    <h2>The Bitcoin Treasury Companies Are Now Trading in the Lehman Drawer</h2>
+    <p class="chapter-sub">Louis pulled the historical comp set for the biggest unrealized losses in the public-company record. Those names belong to a specific decade.</p>
+    <p>Louis ran through the unrealized losses on the public companies built around hoarding crypto. <span class="tk">$MSTR</span> is down <span class="pr">85%</span> from its peak in February 2025, when Forbes put Michael Saylor on its cover. <span class="tk">$BMNR</span> (Bitmine) is in the same trade. Combined, the two have lost more than <span class="pr">$20 billion</span> in unrealized capital in the last few months alone.<a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=1198s" target="_blank" rel="noopener">[19:58]</a></p>
+    <p>That number put Louis in a specific historical drawer. The only public-company comparisons that match the speed and the scale are AIG, Fannie Mae, Freddie Mac, Lehman Brothers, WorldCom, and Enron. That is the company these two crypto-treasury names are now keeping in the historical record.<a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=1238s" target="_blank" rel="noopener">[20:38]</a></p>
+    <p>The flywheel built around <span class="tk">$MSTR</span> only worked when the stock traded at a premium to its bitcoin holdings. The company raised money against the premium and used the proceeds to buy more BTC, which raised the holdings and supposedly raised the premium. As of this morning the stock trades at <span class="pr">0.66x</span> its net asset value. On diluted shares that is a <span class="pr">34%</span> discount to the bitcoin sitting on the balance sheet. On basic shares it is closer to <span class="pr">39%</span>. The market is now actively pricing the company at well less than the BTC it owns.<a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=2347s" target="_blank" rel="noopener">[39:07]</a></p>
+    <p>Louis is not in the bankruptcy camp. He thinks the company survives, underperforms BTC on the way back up, and never restores the wrapper trade. There is no active CDS market on <span class="tk">$MSTR</span>, which Louis takes as the bond market quietly agreeing with him so far. Strazza, who called Saylor a scammer two years ago at an advisor conference in Miami back when the stock was 80% higher, agreed. He still trades the name in both directions through the leveraged ETFs (<span class="tk">$MSTU</span> and <span class="tk">$MSTZ</span>) rather than holding either side long.</p>
+    <p>The interesting tell is not whether the company makes it. It is the discount. A <span class="pr">34%</span> haircut to spot BTC is the market saying these treasury wrappers do not get to participate in the next leg up the way their shareholders thought they would. The flywheel is now a one-way ratchet pointing down.</p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Friday's Quotables</h2>
+    <div class="pullquote">
+      <blockquote>"They're legally lighting money on fire at a faster rate than anyone in history."</blockquote>
+      <div class="attrib">JC on the bitcoin-treasury cohort <a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=2576s" target="_blank" rel="noopener">[42:56]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"I think this is the most ridiculous sell-off that I've ever seen in the history of financial markets."</blockquote>
+      <div class="attrib">Louis on <span class="tk">$CME</span> getting whacked over the Coinbase / Kalshi perp-futures news <a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=1538s" target="_blank" rel="noopener">[25:38]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"Hard to find a chart out there in the world that has more bullish implications than this one."</blockquote>
+      <div class="attrib">JC on the S&amp;P bank index clearing its 2007 highs <a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=1958s" target="_blank" rel="noopener">[32:38]</a></div>
+    </div>
+    <div class="pullquote">
+      <blockquote>"These are the most conservative entities in all of finance and they're racing to adopt this technology."</blockquote>
+      <div class="attrib">Louis on Bank of New York Mellon, BNP Paribas, JSCC and Euroclear building tokenization rails <a class="ts" href="https://www.youtube.com/watch?v=WpGrAbO5ZPU&amp;t=2078s" target="_blank" rel="noopener">[34:38]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The market split shows up in price now, after months of showing up only as relative weakness.</strong> The Dow printed an intraday record Thursday and the NASDAQ 100 opened down <span class="ch down">-1.3%</span> Friday. <span class="tk">$AAPL</span> is sliding, <span class="tk">$NFLX</span> sits at fresh 52-week lows, Strazza is short <span class="tk">$INTC</span> and <span class="tk">$MU</span> via puts. The Mag Seven top dates to October 29 and today is the first day the lag has shown up as outright red instead of relative weakness.</li>
+      <li><strong>Crypto is at a 20-month low and the public wrappers around it are sitting in the Lehman drawer.</strong> Total cap fell back under <span class="pr">$2T</span>. <span class="tk">$BTC</span> at <span class="pr">$59,000</span>, <span class="tk">$ETH</span> at <span class="pr">$1,530</span>. <span class="tk">$MSTR</span> and <span class="tk">$BMNR</span> have run up combined unrealized losses north of <span class="pr">$20B</span> in months, putting them alongside AIG, Lehman, WorldCom and Enron in the historical record. <span class="tk">$MSTR</span> now prints at <span class="pr">0.66x</span> NAV, a <span class="pr">34%</span> discount to the BTC on its balance sheet. <span class="tk">$SOL</span> printing <span class="ch up">+2.8%</span> green on a fully red tape is the only intraday tell worth keeping.</li>
+      <li><strong>The two contrarian setups are <span class="tk">$CME</span> and the bank index.</strong> Louis treats the Coinbase / Kalshi-driven sell-off in <span class="tk">$CME</span> as the most ridiculous he has ever seen and a screaming buy. The S&amp;P bank index just broke above its great-financial-crisis highs for the first time, and JC's frame is the bear case has to start with this chart failing. Both setups are quiet, both are real, and both run counter to the recession story two-thirds of Americans are still telling pollsters.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
