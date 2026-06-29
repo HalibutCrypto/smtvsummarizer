@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare and Small Caps Print Fresh Highs as Comcast Buries the Telecom Playbook - SMTV June 29, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 29, 2026</div>
+    <h1>Healthcare and Small Caps Print Fresh Highs as Comcast Buries the Telecom Playbook</h1>
+    <p class="subtitle">Baker Brothers' biotech book leads the rotation, the S&amp;P advance-decline line confirms it, and Verizon gets dropped from the Dow for Google.</p>
+    <div class="meta">
+      62 min &middot; <a href="https://www.youtube.com/watch?v=U7aS7Azy9Vk" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Three sectors quietly printed all-time highs last week and the sentiment indicators are still flashing extreme fear. Healthcare. Banks. Small caps. The S&amp;P 500 advance-decline line, which counts how many stocks are participating, also closed at a fresh all-time high on Friday. The bull market did not break. It walked across the room. Tech took a nap and the money showed up in industrials, financials and biotech.</p>
+    <ul>
+      <li><span class="tk">$XLV</span> healthcare and the S&amp;P bank index both closed at fresh all-time highs last week. The Russell 2000 broke a multi-year base, retested it, and went.</li>
+      <li>S&amp;P 500 and NYSE advance-decline lines both closed at all-time highs Friday. 30% of S&amp;P names hit 20-day highs, one print short of a breadth thrust trigger.</li>
+      <li>Baker Brothers' biotech book is doing the heavy lifting. <span class="tk">$INCY</span>, <span class="tk">$ACAD</span>, <span class="tk">$INSM</span>, <span class="tk">$RVMD</span> and <span class="tk">$KYMR</span> all working.</li>
+      <li><span class="tk">$MSTR</span> ripped on a stack of company-policy announcements, including a switch from monthly to twice-monthly STRC dividends and a new digital credit capital framework.</li>
+      <li>Comcast spinning off NBC Universal into a new entity called Versant. The 2010s "own the pipe and the content" telecom thesis is officially dead.</li>
+      <li>Verizon out of the Dow today, Google in. SpaceX joins the NASDAQ-100 at the close on July 6.</li>
+      <li>BTC, ETH and SOL essentially flat over the weekend. Bitdeer signed a colocation lease for a Norway AI data center.</li>
+    </ul>
+  </section>
+
+  <!-- Chapter 1: Crypto -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Bitcoin Sat the Weekend Out While MSTR Did All the Work</h2>
+    <p class="chapter-sub">Spot prices drifted. The action sat in corporate-policy filings.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">~$59K</div>
+        <div class="stat-change flat">weekend drift</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">~$1,530</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">~$72</div>
+        <div class="stat-change up">relative strength</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">MSTR</div>
+        <div class="stat-value">up huge</div>
+        <div class="stat-change up">policy stack</div>
+      </div>
+    </div>
+
+    <p>Crypto sat the weekend out. <span class="tk">$BTC</span> drifted, <span class="tk">$ETH</span> drifted, <span class="tk">$SOL</span> held the relative strength JC flagged last week. Strazza's read of the tape was that there was literally nothing to report.</p>
+
+    <p>The action was in <span class="tk">$MSTR</span>, which ripped on a stack of corporate-policy announcements. A new digital credit capital framework. A USD reserve policy. An update to the Bitcoin monetization program. And a switch from monthly to twice-monthly STRC dividends. The cadence change on STRC is the part the equity market was actually trading. After last week's drawdown in the BTC-treasury proxies, this is the company tightening the bolts on the income story that institutional holders were starting to question.</p>
+
+    <p>Bitdeer also signed a colocation lease for a Norway AI data center site. The crypto miners that pivoted into AI compute infrastructure are now writing leases like any other hyperscaler tenant, just with cleaner power and a balance sheet that already knows how to talk about megawatts.</p>
+
+    <p>JC threw out a side comment that belongs in this chapter. "Crypto has literally just built the future of traditional financial markets before our very eyes. Literally built it. Showed TradFi how this is done. And now TradFi has been slowly but surely moving on over." His example was tokenization of equities, framed as a fix for the home-country bias that pins international investors to their own underperforming indices. An Australian who wants to own American stocks today still has friction. Tokenized equity rails take that away.</p>
+  </section>
+
+  <!-- Chapter 2: Markets / Lead -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; The Rotation</div>
+    <h2>Healthcare, Banks and the Baker Brothers Are Doing the Work Tech Used to Do</h2>
+    <p class="chapter-sub">Three sectors at all-time highs, the A/D line at an all-time high, and a 13F you can copy.</p>
+
+    <p>Healthcare made a quiet all-time high last week and nobody talked about it. The S&amp;P bank index closed at an all-time high on Friday too. The Russell 2000 broke a multi-year base, ran a successful retest, and took off. The Russell 2000's two largest sector buckets are biotechs and regional banks, so when Strazza talks about "the bees" being hot, it is shorthand for the two industries actually carrying the small-cap breakout.</p>
+
+    <p>Both come with the same secondary fact. Biotech short interest is heavy. Bank short interest is heavy. Both sit at all-time highs. That setup tends to resolve one way.</p>
+
+    <p>The desk spent most of the show on Baker Brothers, a hedge fund run by Felix and Julian Baker, two physician-investors who have been the most respected name in biotech allocation for two decades. Strazza's hack is to skip trying to read the clinical-trial readouts and just copy their 13F. The top holdings are <span class="tk">$INCY</span> (Incyte, the largest of the big-biotechs), <span class="tk">$ACAD</span> (Acadia), <span class="tk">$INSM</span> (Insmed), <span class="tk">$RVMD</span> (Revolution Medicines), <span class="tk">$KYMR</span> (Kymera), Madrigal, and Summit <span class="tk">$SMMT</span>. They also own roughly 35% of the float of Kodiak Bio, a smaller name they've been in for years. New stakes since the last filing include Compass (a mushroom-based therapeutics play), AKTS, Gen B, Miram, Evomune and Vermilion. Strazza's whole playbook is to buy ten to fifteen of them, stop out of the ones that fail, and ride the rest. He has been doing it for fifteen years and the trades keep working.</p>
+
+    <div class="note">
+      <div class="label">Reading biotech headlines for non-specialists</div>
+      <p>Strazza's compressed cheat sheet. A biotech either met its primary endpoint or missed it. Met is good. Missed is bad. Everything else in the press release is texture. He's not wrong.</p>
+    </div>
+
+    <p>The bigger frame came from the desk's bull market checklist. Six of eight signals are still green. The soft one is global participation, which dropped from the mid-40s to the mid-30s in percentage of world indices above their 50-day moving averages. Underneath the US index, however, breadth is screaming. The S&amp;P 500 advance-decline line closed at an all-time high on Friday. So did the NYSE A/D line, which is half international by composition. 30% of S&amp;P names hit 20-day highs on Friday, one print away from a breadth thrust trigger.</p>
+
+    <p>The sector rotation chart goes out of tech and into <span class="tk">$XLI</span> (industrials), <span class="tk">$XLV</span> (healthcare), and financials. Staples on a relative basis hit fresh all-time lows two weeks ago and a fresh equal-weight all-time low last week, so this is an offensive rotation. Spencer floated the bear case anyway. What if the only sectors outperforming were defensive ones? Strazza answered with the line that mattered most on the tape. "There's nothing defensive about financials hitting all-time highs, bro." That is the tell.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Where the rotation went</div>
+        <ul>
+          <li><span class="tk">$XLV</span> healthcare &middot; fresh ATH</li>
+          <li>S&amp;P bank index &middot; closed at the highest level ever</li>
+          <li>Russell 2000 &middot; ATH after multi-year base + retest</li>
+          <li><span class="tk">$XLI</span> industrials &middot; relative leadership</li>
+          <li>S&amp;P 500 A/D line &middot; ATH on Friday</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Where it left from</div>
+        <ul>
+          <li><span class="tk">$XLK</span> tech &middot; lost relative leadership</li>
+          <li>Staples &middot; fresh relative ATL two weeks ago</li>
+          <li>Precious metals &middot; still under pressure</li>
+          <li>Energy futures &middot; still under pressure</li>
+          <li>CNN Fear &amp; Greed &middot; pinned at extreme fear</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 3: Comcast/Dow story -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Index Plumbing</div>
+    <h2>Comcast Frees NBC Universal, Verizon Gets Dropped From the Dow</h2>
+    <p class="chapter-sub">Two news beats with the same subtext. The corporate playbook of the 2010s is being closed out in public.</p>
+
+    <p>Comcast announced this morning that it is spinning NBC Universal, which is the cable channels, the streaming, and the theme parks, into a separate publicly traded company called Versant. That closes a fifteen-year retreat by all three of the major US telcos from content ownership. AT&amp;T bought DirecTV in 2014 and Time Warner in 2018, then spun WarnerMedia back out in 2022. Verizon bought AOL in 2015 and Yahoo in 2017, then sold the lot off. Comcast bought NBC Universal in 2011 and is now letting it walk.</p>
+
+    <p>The 2010s thesis was that owning the pipe was no longer enough and the carriers had to own the content too. Three of them tried it. Three of them concluded vertical integration didn't work and unwound the deals at material losses. Today's spinoff is the final chapter of a strategy that aged about as well as any synergy story tends to.</p>
+
+    <p>On the index side, Google takes Verizon's seat in the Dow today. JC's reminder is worth filing. The last time the Dow swapped names, Exxon Mobil rallied roughly 400% in the two years after it was kicked out, and Salesforce, the name that took its seat, is down 40% from where it joined. File that as historical pattern rather than price target. Verizon has been a total-return dog on a price-only chart for fifteen years and a perfectly fine bond substitute when the dividend is reinvested. The 6% yield is the only reason to be in it.</p>
+
+    <p>SpaceX is also being added to the NASDAQ-100 at the close on July 6, effective for the Tuesday-the-7th open. Space stocks ripped on the back of two unrelated deals this morning. <span class="tk">$IRDM</span> Iridium is being acquired by Rocket Lab, and a separate small-cap satellite name was reported as being in early investment talks with a UAE firm. The whole space complex caught a bid after a rough couple of weeks.</p>
+  </section>
+
+  <!-- Chapter 4: Quotes -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Quotables From the Tape</h2>
+
+    <div class="pullquote">
+      <blockquote>"There's nothing defensive about financials hitting all-time highs, bro."</blockquote>
+      <div class="attrib">Strazza, answering the bear-case-by-rotation question <a class="ts" href="https://www.youtube.com/watch?v=U7aS7Azy9Vk&amp;t=2900s" target="_blank">[48:20]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Crypto has literally just built the future of traditional financial markets before our very eyes. Literally built it. Showed TradFi how this is done."</blockquote>
+      <div class="attrib">JC, on tokenization of equities <a class="ts" href="https://www.youtube.com/watch?v=U7aS7Azy9Vk&amp;t=2585s" target="_blank">[43:05]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Banks and bios. I own a bunch of biotechs and I own a bunch of banks."</blockquote>
+      <div class="attrib">JC, on what's working in the Russell 2000 <a class="ts" href="https://www.youtube.com/watch?v=U7aS7Azy9Vk&amp;t=1620s" target="_blank">[27:00]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"This is the most communist sentiment indicator in stock market history. A cancer to market participants across the globe. This thing is in a league of its own."</blockquote>
+      <div class="attrib">JC, on the CNN Fear &amp; Greed Index reading extreme fear <a class="ts" href="https://www.youtube.com/watch?v=U7aS7Azy9Vk&amp;t=3120s" target="_blank">[52:00]</a></div>
+    </div>
+  </section>
+
+  <!-- Bottom Line -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The bull market rotated.</strong> Healthcare, banks, small caps and the S&amp;P advance-decline line all closed at all-time highs last week while CNN's Fear &amp; Greed indicator sat at extreme fear. Six of eight signals on the desk's bull-market checklist are still green. The divergence between sentiment and the tape is the trade.</li>
+      <li><strong>Biotech is doing the heavy lifting.</strong> Copying the Baker Brothers' 13F is the non-specialist's shortcut. The names doing the work include <span class="tk">$INCY</span>, <span class="tk">$ACAD</span>, <span class="tk">$INSM</span>, <span class="tk">$RVMD</span> and <span class="tk">$KYMR</span>. Buy ten, stop out of the ones that don't work, ride the rest.</li>
+      <li><strong>MSTR moved on company policy.</strong> The switch from monthly to twice-monthly STRC dividends is the change the equity market was actually trading. BTC spot barely moved. Watch how the rest of the BTC-treasury comp set responds this week.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
