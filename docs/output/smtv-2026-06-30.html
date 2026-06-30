@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best First Half in a Generation, Printed by the Stocks Nobody Was Watching - SMTV June 30, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; June 30, 2026</div>
+    <h1>Best First Half in a Generation, Printed by the Stocks Nobody Was Watching</h1>
+    <p class="subtitle">Highest quarterly Dow close on record, best Russell 2000 first half since 1991, fresh 52-week lows on total crypto market cap, and Korea's Kospi doubled in six months.</p>
+    <div class="meta">
+      53 min &middot; <a href="https://www.youtube.com/watch?v=2jT514XM5lM" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">H1 2026 just closed and the headline is records everywhere. The Dow Jones Industrial Average printed its highest quarterly close in 130 years of data. Small caps had their strongest first half since 1991. Banks broke out above the highs that capped the run into the 2008 financial crisis. South Korea doubled. The two big stories that did not show up to the party are crypto, which printed fresh 52-week lows on total market cap this morning, and the Magnificent Seven, which are at fresh 52-week relative lows against the market they were supposed to be carrying.</p>
+    <ul>
+      <li><span class="tk">$BTC</span> <span class="pr">$58,600</span> <span class="ch down">-2.5%</span>, <span class="tk">$ETH</span> <span class="pr">$1,560</span> <span class="ch down">-3.3%</span>, <span class="tk">$SOL</span> <span class="pr">$72</span> <span class="ch down">-3.3%</span>. Total crypto market cap at <span class="pr">$2.01T</span> printed a fresh 52-week low.</li>
+      <li>Dow Jones Industrial Average books the highest quarterly close in its 130-year history. Quarterly candle officially marks at the 4 PM close.</li>
+      <li>Russell 2000 closing its strongest first half since 1991. S&amp;P bank index broke out above the January 2007 highs that capped the run into the GFC.</li>
+      <li>S&amp;P 500 and NYSE advance-decline lines both at fresh all-time highs. Mag 7 at fresh 52-week relative lows. Microsoft alone cost the S&amp;P 500 a hundred points this quarter.</li>
+      <li>Kospi roughly doubled in H1, from 4,214 to about double. JC framed it as the equivalent of the Dow rallying 50,000 points in six months.</li>
+      <li>SK Hynix filed to list on the NASDAQ. First of the major Asian tech conglomerates to break from the home-listing tradition that has kept Nintendo, Tencent and Samsung off US exchanges.</li>
+      <li><span class="tk">$AVAV</span> up ~28% on earnings. Drone names moving with the space trade. X Money launched a bank-partner account with up to $10M FDIC coverage.</li>
+    </ul>
+  </section>
+
+  <!-- Chapter 1: Crypto -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>The Everything Rally Booked Records Without Crypto</h2>
+    <p class="chapter-sub">Total crypto market cap printed a fresh 52-week low into the last quarterly candle of H1.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$58,600</div>
+        <div class="stat-change down">-2.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,560</div>
+        <div class="stat-change down">-3.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$72</div>
+        <div class="stat-change down">-3.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.01T</div>
+        <div class="stat-change down">52-week low</div>
+      </div>
+    </div>
+
+    <p>The everything rally rolled into the last day of the quarter and crypto sat it out again. <span class="tk">$BTC</span> dropped <span class="ch down">-2.5%</span> to <span class="pr">$58,600</span>, <span class="tk">$ETH</span> dropped <span class="ch down">-3.3%</span> to <span class="pr">$1,560</span>, <span class="tk">$SOL</span> dropped <span class="ch down">-3.3%</span> to <span class="pr">$72</span>, and total crypto market cap closed at <span class="pr">$2.01T</span>, a fresh 52-week low.<a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=820s" target="_blank" rel="noopener">[13:40]</a></p>
+
+    <p>Spencer pulled up the long-term Bitcoin chart and said out loud what the desk has been chewing on for weeks. He had to check twice that the October 2025 all-time high was only nine months ago. It feels like two years. A normal Bitcoin bear runs at least a year. Strazza's read of the calendar was the one thing he offered about crypto all morning. "Tells me we're halfway done."<a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=900s" target="_blank" rel="noopener">[15:00]</a></p>
+
+    <p>The only crypto-stock crossover that moved the conversation was Coinbase tokenizing US equities. The desk's framing of who the customer is matters. An international investor with no access to a US brokerage account today can buy <span class="tk">$NVDA</span> through a tokenized wrapper tomorrow. JC took the same point in a different direction. The reason foreign indices are concentrated into two or three names is that local capital has nowhere else to go. Tokenization breaks that and routes money toward the deepest pool, which has been the US tape for two generations.<a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=720s" target="_blank" rel="noopener">[12:00]</a></p>
+
+    <p>X Money launched the same morning with bank-partner accounts that spread cash across FDIC institutions for up to $10 million in coverage. Same theme from a different angle. The bank account, the brokerage account and the on-ramp into US securities are all getting unbundled from the bank.<a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=500s" target="_blank" rel="noopener">[8:20]</a></p>
+  </section>
+
+  <!-- Chapter 2: Markets / H1 close -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; The H1 Close</div>
+    <h2>The Dow's Highest Quarterly Close in History, and the Mag Seven Sat It Out</h2>
+    <p class="chapter-sub">Bank index breakout above the 2007 highs, Russell 2000 best H1 in 35 years, and the seven names everyone was supposed to own are at 52-week relative lows.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow Jones</div>
+        <div class="stat-value">ATH</div>
+        <div class="stat-change up">highest quarterly close ever</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Russell 2000</div>
+        <div class="stat-value">Best H1</div>
+        <div class="stat-change up">since 1991</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P Bank Index</div>
+        <div class="stat-value">Breakout</div>
+        <div class="stat-change up">above Jan 2007 highs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Mag 7 Relative</div>
+        <div class="stat-value">52-wk low</div>
+        <div class="stat-change down">printing daily</div>
+      </div>
+    </div>
+
+    <p>Today is the last quarterly candle of H1 2026 and it printed the kind of close that reframes the whole year. The Dow Jones Industrial Average is sitting at the highest quarterly close in its history, a record that goes back to the 1890s. Strazza walked through the slides one at a time. Russell 2000 closing its strongest first half since 1991. The S&amp;P bank index breaking out above the highs of January 2007, which were the levels that capped the nine-month build to the great financial crisis. Twenty years of pain in that index, and the print just took the top out.<a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=1020s" target="_blank" rel="noopener">[17:00]</a></p>
+
+    <p>Underneath the tape the story is the same. The S&amp;P 500 advance-decline line and the NYSE advance-decline line both closed at fresh all-time highs. Both measure how many stocks are participating. Both say nearly every stock is participating. Which is the opposite of what big tech is doing. The Magnificent Seven, the seven names everyone was told a year ago were the only stocks that mattered, are printing fresh 52-week relative lows against the market every single day. Microsoft alone has cost the S&amp;P 500 a hundred points this quarter.<a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=1115s" target="_blank" rel="noopener">[18:35]</a></p>
+
+    <p>The morning tape itself was 0.0 across the Dow, the S&amp;P and the Nasdaq. Crude held above <span class="pr">$71</span>, copper added <span class="ch up">+1.5%</span>, gold sat flat near <span class="pr">$4,030</span>, silver was flat under <span class="pr">$59</span>, and the VIX hung at 17.5. The market did not need to do anything today. The record is in the close.<a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=820s" target="_blank" rel="noopener">[13:40]</a></p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">H1 leaders</div>
+        <ul>
+          <li>Russell 2000 &middot; best first half since 1991</li>
+          <li>S&amp;P bank index &middot; breakout above Jan 2007 highs</li>
+          <li>S&amp;P 500 and NYSE A/D lines &middot; fresh ATH</li>
+          <li><span class="tk">$AVAV</span> &middot; +28% on earnings, drone-stock leadership</li>
+          <li>Fintech (PayPal, SoFi, Upstart, <span class="tk">$XYZ</span> Block) &middot; waking up</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">H1 laggards</div>
+        <ul>
+          <li>Mag 7 &middot; 52-week relative lows against the index</li>
+          <li>Microsoft &middot; cost the S&amp;P 100 points this quarter</li>
+          <li><span class="tk">$MSTR</span> &middot; ~$100B of market cap unwound from the high</li>
+          <li>Total crypto market cap &middot; 52-week lows</li>
+          <li>European equities &middot; absolute highs, no relative leadership</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 3: Korea / international -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Korea Tape</div>
+    <h2>Korea Doubled in Six Months and the US Is Still the Less Concentrated Index</h2>
+    <p class="chapter-sub">The single most jarring stat on the show, and the line that ended the "Apple, Microsoft and Nvidia are too big" argument.</p>
+
+    <p>The Kospi doubled in the first six months of 2026. It opened the year at 4,214 and is closing H1 at roughly twice that level. JC's framing was that this would be the equivalent of the Dow rallying 50,000 points in six months, or the S&amp;P adding 7,500. And the move is not in some emerging-market frontier name. It is in one of the most important industrial economies on the planet.<a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=1255s" target="_blank" rel="noopener">[20:55]</a></p>
+
+    <p>The asterisk on the move is that the Kospi is effectively two stocks. Samsung and SK Hynix carry the index. Spencer's pushback was that the doubling is really about those two companies more than about the broader Korean economy. JC's counter is the line worth filing. The United States is one of the least concentrated equity markets in the world. The complaint that Apple, Microsoft and Nvidia are too large a share of the S&amp;P 500 does not survive a global comparison. Every other major index is more concentrated than the US one, and Korea is the example that ended the argument.<a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=1335s" target="_blank" rel="noopener">[22:15]</a></p>
+
+    <p>SK Hynix filed to list in the US, which is the second part of the story. The major Asian tech conglomerates have historically kept their primary listings at home. Nintendo. Tencent. Samsung. Hynix breaking with that pattern and bringing a US listing is the same theme that ran through the Crypto chapter. Whoever sits closest to deep dollar liquidity wins, and the rails to get there now include both tokenization and traditional NASDAQ paperwork.<a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=1400s" target="_blank" rel="noopener">[23:20]</a></p>
+
+    <div class="note">
+      <div class="label">European footnote</div>
+      <p>JC also flagged the DAX on its own absolute breakout, but Strazza killed the trade. On a relative basis against the S&amp;P 500, Europe is a straight line down for years and there is no base in sight. The absolute chart looks fine. The relative chart says uninvestable. Same lesson as the Mag 7 in reverse.</p>
+    </div>
+  </section>
+
+  <!-- Chapter 4: Quotes -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Lines Worth Saving</div>
+    <h2>Quotables From the Tape</h2>
+
+    <div class="pullquote">
+      <blockquote>"Highest quarterly close ever. This goes back to the 1890s. Never has the Dow Jones Industrial Average been higher."</blockquote>
+      <div class="attrib">Strazza, on the quarterly Dow candle <a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=1010s" target="_blank">[16:50]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"After almost 20 years, the S&amp;P bank index is just now breaking out above those great financial crisis highs. How is this not the most important one?"</blockquote>
+      <div class="attrib">JC, on the bank index taking out the January 2007 highs <a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=215s" target="_blank">[3:35]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"I feel like people don't understand just what we've just seen in Korea. It literally doubled in the first six months of the year."</blockquote>
+      <div class="attrib">JC, on the Kospi <a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=1260s" target="_blank">[21:00]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"You're not going to get it in one direction without getting it in the other direction, too."</blockquote>
+      <div class="attrib">Strazza, on holding high-beta names like Black Sky and Ouster through a 40-50% drawdown <a class="ts" href="https://www.youtube.com/watch?v=2jT514XM5lM&amp;t=2550s" target="_blank">[42:30]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>H1 closed at the top.</strong> The Dow printed its highest quarterly close in 130-plus years of data. The Russell 2000 is closing its strongest first half since 1991. The S&amp;P bank index just broke out above the highs that capped the run into the 2008 financial crisis. The bull is wide and the timeline is early.</li>
+      <li><strong>Big tech is the absence in the picture.</strong> The Magnificent Seven are at fresh 52-week relative lows against the market. The advance-decline lines say everything else is participating. <span class="tk">$MSFT</span> alone cost the S&amp;P 500 a hundred points this quarter. The bear case for the index is also the case against owning the seven names.</li>
+      <li><strong>Crypto is still bleeding.</strong> Total crypto cap closed at fresh 52-week lows. Bitcoin is nine months from its October all-time high, and Strazza's read of the calendar puts the cycle roughly halfway through. If the rest of the market keeps printing records and Bitcoin keeps bleeding, the question is which side capitulates first.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
