@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Six Straight Record Quarters, and the Exchanges That Ran Them Are Down Thirty Percent - SMTV July 1, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show · @StockMarketMedia · July 1, 2026</div>
+    <h1>Six Straight Record Quarters, and the Exchanges That Ran Them Are Down Thirty Percent</h1>
+    <p class="subtitle">Bitcoin and Ether hit new lows, gold's ten-quarter run just snapped, and the companies that operate the US stock and futures markets keep collapsing while the market itself keeps printing highs.</p>
+    <div class="meta">
+      69 min · <a href="https://www.youtube.com/watch?v=FRWtSWOo0nw" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">5 min read</span>
+    </div>
+    <p class="tldr-headline">The Dow just closed its sixth record quarter in a row. And the companies that run the US stock and futures exchanges are down more than thirty percent this quarter. Old exchanges like CME, CBOE and ICE are getting demolished the same year tokenized stocks started trading around the clock. Bitcoin and Ether printed their lowest levels since late 2024 while Solana quietly ripped 25 percent off its own bottom. Gold snapped a ten-quarter winning streak. The second half is not going to look like the first.</p>
+    <ul>
+      <li>Dow closed Q2 at record highs, sixth consecutive quarterly gain. NYSE Composite Index ran the same six-for-six streak of record closes.</li>
+      <li>Gold posted its first down quarter since 2023, breaking a ten-quarter green run. <span class="pr">$4,040</span> flat on the day, silver near <span class="pr">$60</span> <span class="ch down">-1.3%</span>.</li>
+      <li><span class="tk">$CME</span>, <span class="tk">$CBOE</span> and <span class="tk">$ICE</span> down roughly 33% while the markets they operate print all-time highs. Tokenized stocks are the reason on the desk.</li>
+      <li>Bitcoin <span class="pr">$58,350</span> and Ether <span class="pr">$1,565</span> at their lowest levels since late 2024. Total crypto market cap <span class="pr">$2.01T</span>, weakest since last summer.</li>
+      <li>Solana <span class="pr">$74.50</span> <span class="ch up">+1.5%</span>. SOL/ETH ratio at the highest level all year, up 25% from lows a couple weeks ago.</li>
+      <li>Small-cap tech, small-cap biotech, regional banks and home builders all making new highs. Rotation out of the Mag Seven still running.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTER 1: CRYPTO -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 · Crypto</div>
+    <h2>Solana Is the Only Coin the Desk Talks About Like It Works</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$58,350</div>
+        <div class="stat-change down">Lowest since late 2024</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ether</div>
+        <div class="stat-value">$1,565</div>
+        <div class="stat-change down">Lowest since late 2024</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$74.50</div>
+        <div class="stat-change up">+1.5% · SOL/ETH at YTD high</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total crypto cap</div>
+        <div class="stat-value">$2.01T</div>
+        <div class="stat-change down">Weakest since last summer</div>
+      </div>
+    </div>
+
+    <p>Bitcoin and Ether spent the last day of Q2 on their lows and opened Q3 the same way. Both prints are back to levels not seen since late 2024, and total crypto market cap dropped through <span class="pr">$2.01T</span>, the softest number since last summer. On the desk, the language is bear-market language now. Not for the first time this year, and not with any conviction that this is the bottom.</p>
+
+    <p>Solana is the tell in the other direction. It sat at <span class="pr">$74.50</span> <span class="ch up">+1.5%</span> while everything else bled, and its ratio versus Ether just hit the highest level all year. Off its own local low a couple weeks ago, it's up about 25% while Bitcoin and Ether printed new ones. When the majors flatline or bleed and one alt runs, that alt is usually where the relative strength is telling you the next up leg starts.</p>
+  </section>
+
+  <!-- CHAPTER 2: MARKETS / MID-YEAR -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 · Markets</div>
+    <h2>Q2 Closed at All-Time Highs Everywhere Except Metals and Crypto</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,530</div>
+        <div class="stat-change down">-0.2% · Q2 close ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">30,280</div>
+        <div class="stat-change down">-0.75%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">52,500</div>
+        <div class="stat-change down">-0.3% · 6 quarters in a row</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,040</div>
+        <div class="stat-change flat">Q2 broke 10-quarter streak</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude</div>
+        <div class="stat-value">$68.90</div>
+        <div class="stat-change down">-1.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">16.9</div>
+        <div class="stat-change up">Pushing 17</div>
+      </div>
+    </div>
+
+    <p>Q2 closed with the Dow at record highs, its sixth consecutive quarterly gain. The NYSE Composite Index, a broad index that includes a lot of foreign listings on the New York exchange, ran the same six-for-six streak of record closes. Everything at all-time highs going into Independence Day week has been the base rate of this bull for months, and Q2 did not break the pattern.</p>
+
+    <p>Q3 opened red. SPX <span class="pr">7,530</span> <span class="ch down">-0.2%</span>, NDX <span class="pr">30,280</span> <span class="ch down">-0.75%</span>, Dow <span class="pr">52,500</span> <span class="ch down">-0.3%</span>. Crude fell 1% to just under <span class="pr">$69</span>. Copper <span class="ch down">-1.7%</span> to <span class="pr">$6.15</span>. VIX pushed 17 without really scaring anyone.</p>
+
+    <p>Gold sat flat around <span class="pr">$4,040</span> and closed its first down quarter since 2023. Ten straight green quarterly candles, snapped. Silver was uglier, off 1.3% and back under <span class="pr">$60</span>. The bigger-picture uptrend is still intact, but the near-term setup on the desk is that silver retests the old <span class="pr">$48</span>-<span class="pr">$50</span> zone that capped it for decades before the Hunt brothers rally in 1980. A pullback that runs longer than most gold bulls want.</p>
+
+    <p>Underneath the surface the rotation kept doing what it has done for weeks. Small-cap technology printed a god candle across the last two sessions. Small-cap healthcare and biotech are surging on breakouts big enough that the desk is treating them as initiation thrusts, the kind of move that shows up at the start of a new primary uptrend. Regional and community banks closed June at all-time highs. Home builders keep working. Coffee futures had their best session since 2021 yesterday. Every corner of the tape outside the Mag Seven is doing the work, and the desk is finally comfortable calling the Mag Seven the ATM for it.</p>
+
+    <p>The single-stock story of the morning was <span class="tk">$META</span>. It's launching a cloud storage business, and the whole cloud group is trading down on the news. <span class="tk">$CRWV</span> got hit on the open. It's the same playbook that took Snap out of Meta's copy of Stories, and every operator in that stack is going to have to price the risk that Zuck ships it for free.</p>
+  </section>
+
+  <!-- CHAPTER 3: TOKENIZATION FRAMEWORK -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 · Framework</div>
+    <h2>The Companies That Run the Stock Market Are Down 30%. The Stock Market Is at All-Time Highs.</h2>
+    <p class="chapter-sub">Tokenized equities are eating exchange revenue in real time, and the tape is starting to say it out loud.</p>
+
+    <div class="compare">
+      <div class="losers">
+        <div class="head">Exchange stocks bleeding</div>
+        <ul>
+          <li><span class="tk">$CBOE</span> · down ~33% in six weeks</li>
+          <li><span class="tk">$CME</span> · down ~33% in six weeks</li>
+          <li><span class="tk">$ICE</span> · down ~33% on the year, massive top</li>
+          <li><span class="tk">$NDAQ</span> · slightly less horrible, still ugly</li>
+        </ul>
+      </div>
+      <div class="winners">
+        <div class="head">The other side of the trade</div>
+        <ul>
+          <li><span class="tk">$BK</span> · Bank of NY Mellon, custodies the collateral</li>
+          <li>Tokenized <span class="tk">$AAPL</span>, <span class="tk">$GOOGL</span> live on chain</li>
+          <li>SpaceX had tokenized shares trading pre-IPO</li>
+          <li>24/7 equity liquidity, cross-border access</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>The Dow just printed six record quarters in a row. Meanwhile <span class="tk">$CME</span>, <span class="tk">$CBOE</span> and <span class="tk">$ICE</span>, the three companies that operate the biggest US derivative and stock exchanges, are down roughly a third over the last six weeks. <span class="tk">$NDAQ</span>, the operator behind the Nasdaq index itself, is holding up a little better and still looks broken. The market their business exists to run is at record highs while the stocks themselves keep collapsing.</p>
+
+    <p>The one-word explanation on the desk is tokenization. SpaceX's IPO had tokenized shares trading before the actual IPO, which had never happened for any listing in history. Tokenized versions of <span class="tk">$AAPL</span>, <span class="tk">$GOOGL</span> and most of the S&amp;P are now live on chain. For an investor in Kuala Lumpur or Lagos who cannot open a US brokerage account, that is the first working door to Wall Street. For a US investor, it is the first working door to stocks in countries that were never going to list here.</p>
+
+    <p>The desk had a live debate about how fast this goes. JC's guess for the day tokenized volume beats traditional exchange volume is April 20, 2031, roughly five years out. Strazza pushed back on the timeline, arguing that anyone who lived through 2008 remembers the Sunday nights when they wanted a regulated broker-dealer standing between them and their positions. Both of them were staring at the same chart of <span class="tk">$CME</span> rolling over.</p>
+
+    <p>The bank that keeps getting named on the winning side is <span class="tk">$BK</span>, Bank of New York Mellon. It is the plumbing bank most likely to hold the collateral that backs tokenized equities at institutional scale, and it keeps drifting higher while the exchange stocks give back 30% of their market cap. If you already live in crypto, none of this is news. Twenty-four seven markets have been the default for years. This is the equity world admitting it.</p>
+  </section>
+
+  <!-- CHAPTER 4: QUOTES -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 · Quotables From the Tape</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"This is a revolution. It is a revolution we are watching. They are tokenizing the stocks."</blockquote>
+      <div class="attrib">JC, on why the exchange stocks are falling apart <a class="ts" href="https://www.youtube.com/watch?v=FRWtSWOo0nw&amp;t=622s" target="_blank">[10:22]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"I think CME, everything's fine there. That stock's going to be right back at new highs by the end of the year."</blockquote>
+      <div class="attrib">Strazza, taking the other side of the tokenization panic <a class="ts" href="https://www.youtube.com/watch?v=FRWtSWOo0nw&amp;t=1030s" target="_blank">[17:10]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"The Mag Sevens are overowned, and when everything else starts working, they become a source of funds. That's the ATM."</blockquote>
+      <div class="attrib">Strazza, on the rotation dynamic <a class="ts" href="https://www.youtube.com/watch?v=FRWtSWOo0nw&amp;t=1273s" target="_blank">[21:13]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Ten green quarterly candles in a row for gold. What the hell do you want? What more do you want? Geez Louise."</blockquote>
+      <div class="attrib">JC, on the gold pullback being healthy <a class="ts" href="https://www.youtube.com/watch?v=FRWtSWOo0nw&amp;t=2737s" target="_blank">[45:37]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Records closed, Q3 opened red.</strong> Dow, NYSE Composite and everything adjacent to them printed sixth-in-a-row quarterly ATH closes. The first tape of Q3 is a soft down day with <span class="tk">$VIX</span> pushing 17. Base rate is still bullish, but the first-half trade has been priced.</li>
+      <li><strong>Solana is the only crypto working.</strong> <span class="tk">$BTC</span> <span class="pr">$58,350</span> and <span class="tk">$ETH</span> <span class="pr">$1,565</span> both look like bear-market lows. <span class="tk">$SOL</span> <span class="pr">$74.50</span> <span class="ch up">+1.5%</span> broke to a new relative high versus Ether and is up 25% off its own recent bottom. Whichever way crypto resolves, SOL is where the relative strength lives.</li>
+      <li><strong>The exchanges are the tell on tokenization.</strong> <span class="tk">$CME</span>, <span class="tk">$CBOE</span> and <span class="tk">$ICE</span> bleeding 33% while the market they operate prints records is a real dislocation. The desk debated when the tokenized world catches the traditional one. Nobody on the show argued it doesn't happen. Watching <span class="tk">$BK</span> on the other side of the trade.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
