@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weak Jobs, Records Everywhere, and a Bitcoin That Refused to Break - SMTV July 2, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; July 2, 2026</div>
+    <h1>Weak Jobs, Records Everywhere, and a Bitcoin That Refused to Break</h1>
+    <p class="subtitle">Gold traded three times its priced move on the payrolls miss. The Dow ran at 53,000. Solana's ratio against Ethereum hit its highest level since October.</p>
+    <div class="meta">
+      74 min &middot; <a href="https://www.youtube.com/watch?v=zYV1Jtv-7Qk" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Weak jobs came in and markets took the miss as permission to rip. The Dow pushed 53,000. London and Germany hit fresh records. Bitcoin unwound what looked like a breakdown just twelve hours earlier. Gold traded three times its priced move on the print. The last hint of hike odds went with the payrolls report, and the desk is starting to see what a Fed with no dot plot actually feels like.</p>
+    <ul>
+      <li>Dow futures up 250 pushing <span class="pr">53,000</span>, S&amp;P at <span class="pr">7,570</span>, NASDAQ 100 <span class="ch up">+0.5%</span>. NYSE Composite, London FTSE 350, Euro Stoxx 600 and German DAX all at record quarterly closes.</li>
+      <li><span class="tk">$BTC</span> <span class="pr">$61,500</span> <span class="ch up">+2.5%</span>, <span class="tk">$ETH</span> <span class="pr">$1,660</span> <span class="ch up">+3.5%</span>, <span class="tk">$SOL</span> <span class="pr">$81.25</span> <span class="ch up">+5.2%</span>. Total crypto cap <span class="pr">$2.1T</span>, SOL/ETH ratio at its highest since October.</li>
+      <li>June nonfarm payrolls missed after last month's four-sigma beat. Unemployment ticked down to 4.2% on falling participation. Eight bps of hike premium at the next Fed meeting wiped out.</li>
+      <li>Gold <span class="pr">$4,130</span> <span class="ch up">+1.3%</span>, silver just under <span class="pr">$62</span> <span class="ch up">+2%</span>. Gold call options traded roughly three times the priced-in move on the payrolls print.</li>
+      <li>Yen ripped overnight against record speculator shorts. USDJPY under pressure, market pricing rising Bank of Japan intervention risk.</li>
+      <li>Semiconductors rolling over as the rest of the tape broadens. Software (<span class="tk">$IGV</span>) leadership picks up. Strazza taking profits on his semi puts.</li>
+    </ul>
+  </section>
+
+  <!-- Chapter 1: Crypto -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Bitcoin Unwound a Breakdown Overnight and Solana Ran Ahead</h2>
+    <p class="chapter-sub">The setup coming in looked like a break. The tape refused it.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$61,500</div>
+        <div class="stat-change up">+2.5% &middot; failed breakdown</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,660</div>
+        <div class="stat-change up">+3.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$81.25</div>
+        <div class="stat-change up">+5.2% &middot; SOL/ETH high since Oct</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.1T</div>
+        <div class="stat-change up">reclaim</div>
+      </div>
+    </div>
+
+    <p>Twelve hours before the US open, Bitcoin looked like it was breaking down. By the time the tape got here, <span class="tk">$BTC</span> was up two and a half percent at <span class="pr">$61,500</span>, and JC was calling it what it was, a massive failed breakdown that turned into a rip in real time. <span class="tk">$ETH</span> caught the same lift at <span class="pr">$1,660</span> <span class="ch up">+3.5%</span>. Solana ran the hardest of the three at <span class="pr">$81.25</span> <span class="ch up">+5.2%</span>, and the SOL/ETH ratio ran to its highest level since October. When the desk can talk about relative strength in Solana, that is a change from most of 2026.</p>
+
+    <p>Ethereum's market cap has become close enough to Tether's that the gap is now a legitimate line to watch. USDT sits at roughly <span class="pr">$185B</span> against ETH's <span class="pr">$200B</span>. Stablecoins are not altcoins, but the fact that the number two altcoin by market cap is barely ahead of a dollar wrapper says something about how much of the crypto stack is still just plumbing.</p>
+
+    <p>Robin Hood (<span class="tk">$HOOD</span>, the retail broker) broke out this week and rolled out tokenized stock trading through the weekend. The desk is split on whether tokenization actually gets adopted at scale, but the stock keeps getting rewarded for pushing on it, and the broader crypto tape is happy to bid the exchange complex (<span class="tk">$COIN</span>, <span class="tk">$HOOD</span>, <span class="tk">$MSTR</span>) any time BTC catches a bid. Strazza has calls on and took some off yesterday, which is roughly the right way to trade a group like this.</p>
+  </section>
+
+  <!-- Chapter 2: Markets / lead story -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>The Dow Runs at 53,000 Into a Weak Jobs Print</h2>
+    <p class="chapter-sub">Every major benchmark that mattered went out at a fresh record. The world confirmed.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow Jones</div>
+        <div class="stat-value">~53,000</div>
+        <div class="stat-change up">+250 pts &middot; ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,570</div>
+        <div class="stat-change up">+0.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">futures</div>
+        <div class="stat-change up">+0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Gold</div>
+        <div class="stat-value">$4,130</div>
+        <div class="stat-change up">+1.3%</div>
+      </div>
+    </div>
+
+    <p>The Dow was up 250 points pushing 53,000 by the time the payrolls print landed, a fresh record high on the world's most important stock index. The S&amp;P was a third of a percent higher at <span class="pr">7,570</span>, and the NASDAQ 100 was up close to half a percent. NYSE Composite (the broad look at what actually trades on the New York exchange) went out at a record quarterly close. NASDAQ Composite did the same. The S&amp;P just posted its best quarter since COVID.</p>
+
+    <p>The catalyst was the June nonfarm payrolls miss. Last month's number was a four-sigma beat, and this month came in soft. Headline unemployment fell a tenth to 4.2%, driven by a drop in participation rather than actual hiring. That reading killed the last eight basis points of hike premium still priced into the next Fed meeting. Fixed income rallied. Gold ran 1.3% to <span class="pr">$4,130</span>, silver added 2% to just under <span class="pr">$62</span>.</p>
+
+    <p>The bull case does not stop at the US border. London's FTSE 350 (the broad UK index rather than just the mega-cap FTSE 100) closed the quarter at a record. Euro Stoxx 600 broke out of a twenty-year base. German DAX printed a fresh quarterly all-time high. European banks specifically are at all-time highs, and JC's frame is straightforward. If the world was actually breaking, European banks would not be leading. KOSPI (South Korea) is back green after being down eight percent yesterday, and even Karachi 100 (Pakistan) hit a four-month high.</p>
+
+    <p>The one clear dispersion in the tape is semiconductors. Strazza was taking profits on his semi puts by the open, and his read is that when people start calling themselves memory stock investors, that is usually the top. Software (<span class="tk">$IGV</span>, the tech software ETF that owns names like Salesforce, Adobe and Oracle) is picking up the leadership handoff.</p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>Global ATH tape with a rate-hike premium getting wiped and the dollar under pressure is the exact macro setup Bitcoin usually likes. Today's failed breakdown in <span class="tk">$BTC</span> is easier to read against that backdrop than against the crypto-only chart, and it is why <span class="tk">$SOL</span> ran hardest into the same wind.</p>
+    </div>
+  </section>
+
+  <!-- Chapter 3: Framework -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>A Fed Without a Dot Plot Is Starting to Show Up in the Tape</h2>
+    <p class="chapter-sub">John Netto came on to sketch the second-order story most desks are not watching yet.</p>
+
+    <p>The Fed has quietly stepped away from formal forward guidance. The dot plot is no longer the anchor it used to be. That means every data print is doing more work than it used to, because there is no running Fed narrative flattening the surprise before the market gets it.</p>
+
+    <p>You could see it in the reaction to this morning's miss. Gold call options traded roughly three times the move that was priced into them ahead of the print. That is a disproportionate reaction relative to the actual beat-or-miss magnitude of the data itself. In a forward-guidance regime, moves like that get absorbed by whatever the last Fed communication was. In a no-guidance regime, the whole volatility surface has to reprice off the raw data instead.</p>
+
+    <p>Netto's translation is that rate of change is now the game. Rates themselves probably stay rangebound. He said stocks like the sideways in rates, and the two-month hiccup earlier this quarter has already unwound. But the dispersion around every economic print is going to widen from here, because there is no pre-baked story softening the impact.</p>
+
+    <p>The first place a shift like that shows up is the option surface on gold and silver. The S&amp;P headline lags it. Today made the regime change visible for the first time. If future prints keep drawing three-x priced reactions, everyone repricing their vol books becomes the next chapter.</p>
+  </section>
+
+  <!-- Chapter 4: Quotes -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Quotables</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;Every now and again, when everyone gets comfortable with the yen, Bank of Japan comes out and shoves it right up their ass.&rdquo;</blockquote>
+      <div class="attrib">JC, on speculators sitting on record short-yen positions the morning the yen ripped <a class="ts" href="https://www.youtube.com/watch?v=zYV1Jtv-7Qk&amp;t=176s" target="_blank" rel="noopener">[2:56]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;When things just get that extended and that euphoric and people start calling themselves memory stock investors, you know it's over.&rdquo;</blockquote>
+      <div class="attrib">Strazza, taking profits on semiconductor puts <a class="ts" href="https://www.youtube.com/watch?v=zYV1Jtv-7Qk&amp;t=424s" target="_blank" rel="noopener">[7:04]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;If the dot plot is no longer a thing and we're going to be data dependent, that means these data points actually mean something again.&rdquo;</blockquote>
+      <div class="attrib">John Netto, on why gold options traded 3x their priced move on today's payrolls miss <a class="ts" href="https://www.youtube.com/watch?v=zYV1Jtv-7Qk&amp;t=3660s" target="_blank" rel="noopener">[61:00]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;We've gone full circle. The government is taking stakes in private sector companies and we're saying it's a good thing. This was communism when it happened to the banks.&rdquo;</blockquote>
+      <div class="attrib">JC, on the rumored OpenAI 5% stake to the White House <a class="ts" href="https://www.youtube.com/watch?v=zYV1Jtv-7Qk&amp;t=3040s" target="_blank" rel="noopener">[50:40]</a></div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The dot-plot vacuum is starting to bite.</strong> Gold options trading three times their priced-in move on a routine payrolls miss is the first clean tell that a Fed with no forward guidance changes how every macro print gets absorbed by the vol surface. The S&amp;P headline is not where you go looking for the regime shift.</li>
+      <li><strong>Global records are confirming the US highs.</strong> London FTSE 350, Euro Stoxx 600, German DAX and the NYSE Composite all closed the quarter at new highs alongside a Dow at <span class="pr">53,000</span>. European banks specifically at ATH says the world is not actually breaking anywhere important.</li>
+      <li><strong>Bitcoin's failed breakdown reset the setup.</strong> <span class="tk">$BTC</span> <span class="pr">$61,500</span> <span class="ch up">+2.5%</span>, <span class="tk">$ETH</span> <span class="pr">$1,660</span> <span class="ch up">+3.5%</span>, <span class="tk">$SOL</span> <span class="pr">$81.25</span> <span class="ch up">+5.2%</span> with the SOL/ETH ratio at its highest since October. The overnight rip took out the shorts positioned for the break, and the desk is watching Solana leadership carry into the long weekend.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
