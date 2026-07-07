@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Dow Record, a Samsung Punch, and Biotech's First Real Breakout in a Decade - SMTV July 7, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; July 7, 2026</div>
+    <h1>A Dow Record, a Samsung Punch, and Biotech's First Real Breakout in a Decade</h1>
+    <p class="subtitle">Samsung's twenty-x earnings growth got sold. IBB took out its 2021 and 2022 highs. The desk is buying gene editors into an FDA that is now using AI to accelerate approvals.</p>
+    <div class="meta">
+      57 min &middot; <a href="https://www.youtube.com/watch?v=vUUsqP8hPSc" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The Dow kept running and the semis got punched in the mouth. Samsung reported earnings growth of roughly twenty times last year and the stock fell six percent anyway. That is what happens when a group is priced for perfection and delivers exactly perfection. Meanwhile, biotech ripped through highs it has not seen since 2021. The desk was buying gene editors before the tape opened. This is the first time in years the leadership rotation actually looks real.</p>
+    <ul>
+      <li>Dow up ~225 pushing <span class="pr">53,600</span>, world's most important index at fresh ATH. NASDAQ 100 <span class="ch down">-1%</span> at <span class="pr">29,685</span> on the Samsung print. S&amp;P flat at <span class="pr">7,585</span>. VIX under 16.</li>
+      <li><span class="tk">$BTC</span> <span class="pr">$63,500</span> <span class="ch down">-0.8%</span>, <span class="tk">$ETH</span> <span class="pr">$1,780</span> <span class="ch down">-1%</span>, <span class="tk">$SOL</span> <span class="pr">$81</span> <span class="ch flat">flat</span> and still leading on relative strength. Total crypto cap <span class="pr">$2.17T</span>.</li>
+      <li>Samsung Q2 earnings roughly <span class="pr">20x</span> year-on-year, stock down <span class="ch down">-6 to -7%</span> overnight. Peak-cycle rotation out of semis into the rest of the tape.</li>
+      <li>IBB (the market-cap-weighted large-cap biotech ETF) closes at a new all-time high, taking out the 2021 and 2022 peaks. Desk bought two CRISPR names yesterday, now roughly ten biotech positions in two weeks, into the FDA saying it will use AI to accelerate drug approvals.</li>
+      <li>Apple closes at a fresh ATH. Tesla printing <span class="ch up">+8%</span>/<span class="ch down">-6%</span> daily swings, Strazza and JC read that as resolution-style action and both lean higher.</li>
+      <li>H1 2026 US equity ETF inflows around <span class="pr">$700B</span>, already at 2024's full-year pace by the halfway mark. Levered ETFs now trade <span class="pr">$50B</span> a day, ten times 2019 volume.</li>
+    </ul>
+  </section>
+
+  <!-- Chapter 1: Crypto -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Solana Holds the Line While the Rest of Crypto Bleeds</h2>
+    <p class="chapter-sub">The stat you want is not the price. It is the fact that SOL is still flat on a red day.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$63,500</div>
+        <div class="stat-change down">-0.8%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,780</div>
+        <div class="stat-change down">-1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$81</div>
+        <div class="stat-change flat">flat &middot; leading on RS</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.17T</div>
+        <div class="stat-change flat">range-bound</div>
+      </div>
+    </div>
+
+    <p><span class="tk">$BTC</span> sits at <span class="pr">$63,500</span>, off about half a percent, and <span class="tk">$ETH</span> is at <span class="pr">$1,780</span>, off close to a percent. Solana is the one still holding a bid, flat at <span class="pr">$81</span> and change while everything else in the crypto tape bleeds. That relative strength is the only crypto tell today worth pulling out. Total crypto market cap sits at <span class="pr">$2.17T</span>, right where it has been camped for weeks.</p>
+
+    <p>The macro backdrop for a Bitcoin bid is quietly getting cleaner. The VIX (the S&amp;P's implied volatility gauge, a rough proxy for how nervous the market is) sits under 16 and near this year's lows. The NYSE advance/decline line, which measures how many stocks are participating in the rally versus fading, printed an all-time high yesterday. The Dow is at fresh records. Gold is holding near <span class="pr">$4,177</span>. That is the exact wind Bitcoin usually eats, and it has not gotten paid yet. When BTC does not respond to the ideal setup, the alt sleeve leading on a red day is usually the first place any rotation shows up. Solana holding the line is that.</p>
+  </section>
+
+  <!-- Chapter 2: Markets -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>The Dow Runs to 53,600 While the Samsung Print Cracks the Semis</h2>
+    <p class="chapter-sub">The most-important-stock-in-the-world designation has quietly stopped meaning NVDA.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow Jones</div>
+        <div class="stat-value">~53,600</div>
+        <div class="stat-change up">+225 &middot; fresh ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,585</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">29,685</div>
+        <div class="stat-change down">-1% &middot; -250 pts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">&lt;16</div>
+        <div class="stat-change flat">near YTD lows</div>
+      </div>
+    </div>
+
+    <p>The Dow closed at the highest level in American history yesterday and is up another 225 points this morning, pushing <span class="pr">53,600</span>. Fresh all-time high on the world's most important stock index. The S&amp;P 500 is flat at <span class="pr">7,585</span>. The NASDAQ 100 is down close to a full percent at <span class="pr">29,685</span>. That divergence is the story of the day.</p>
+
+    <p>The reason NASDAQ is bleeding is Samsung. Overnight, Samsung reported preliminary Q2 numbers with earnings growth roughly twenty times last year. The stock fell six to seven percent anyway. When a group's news gets that good and the tape refuses to bid, it usually means the crowd is already fully positioned. Semis have run something like 100 percent off the March lows and the market is telling them to take a break. Strazza's read is that the primary trend for the group is fine, but a corrective wave of 30 to 50 percent off the highs would still fit inside that trend, and it will feel worse than it is when it hits.</p>
+
+    <p>Apple closes today at a fresh all-time high after two quiet years as the megacap nobody was talking about. Google was bought yesterday looking for the same setup. Tesla is the chart to watch. It has been printing <span class="ch up">+8%</span> one day and <span class="ch down">-6%</span> the next, and both Strazza and JC read that kind of intraday volatility as resolution-style action. Both are leaning higher. The MAG7 (Apple, Microsoft, Google, Amazon, Meta, Nvidia, Tesla, the seven megacaps that carried most of the last two years' returns) is bifurcated enough now that treating it as a bloc has stopped meaning anything.</p>
+
+    <p>The rest of the tape confirms the record. The NYSE advance/decline line printed an all-time high yesterday. Argentina is acting well. Even the KOSPI (South Korea's benchmark, driven by Samsung and SK Hynix) is off the overnight lows. Gold is flat at <span class="pr">$4,177</span>. Silver is off a percent at <span class="pr">$61.82</span>. Crude added a percent to <span class="pr">$69.25</span>. The one hole in the tape the desk keeps flagging is the discretionary versus staples ratio, which has not confirmed the broader breadth. Getting that ratio to catch up needs Tesla and Amazon to break out. That is the piece to watch this week.</p>
+  </section>
+
+  <!-- Chapter 3: Framework -->
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Rotation</div>
+    <h2>Biotech's First Real Breakout Since Nobody Called Themselves a Biotech Investor</h2>
+    <p class="chapter-sub">A decade-dead group takes out its 2021 highs on the same day the FDA turns on the AI hose.</p>
+
+    <p>Biotech quietly did something today it has not done in a decade. IBB, the market-cap-weighted biotech ETF loaded up with the group's biggest names, closed at an all-time high and took out the 2021 and 2022 peaks that had stopped every rally in between. XBI, the equal-weighted version that behaves like a small-cap biotech pure play, is still climbing back to those old highs. History says when the market-cap version cleans out the ceiling first, the equal-weighted version usually catches up and goes further, because the small end is where the surprise winners hide.</p>
+
+    <p>JC's frame on this was a memory. From 2011 through 2014, biotech was the tech of its era. People called themselves biotech investors the way people call themselves tech investors today. There were biotech newsletters and biotech analysts. Names ran thousands of percent over five years, blew off in a giant top, and then went dead money for a decade. Nobody has called themselves a biotech investor in years. That is the sentiment reset the group needed to break out cleanly.</p>
+
+    <p>The catalyst on top of the reset is that the FDA said this week it is going to lean on AI to accelerate reporting and approvals. AI compresses the discovery timeline on the drug-development side and AI compresses the review timeline on the regulator side, and the two hitting at once is the reason a decade-dead group turns real. The desk has added roughly ten biotech positions across portfolios in the last two weeks and picked up two more <span class="tk">CRISPR</span>-adjacent gene-editor names yesterday. If they end up right on the sentiment call, this is the group where letting winners run for years actually works.</p>
+
+    <p>The ETF review that ran on the show today put biotech on its Q3 shortlist alongside consumer discretionary (via PEJ, an ETF heavy on hotels, cruise lines and restaurants) and quality mid-caps. Broader ETF flows tell the same rotation story. US equity ETFs pulled in roughly <span class="pr">$700B</span> in the first half of 2026, already matching what all of 2024 did. Levered and derivative-based products are the fastest-growing sleeve of the industry, trading around <span class="pr">$50B</span> a day, ten times what they moved in 2019. Most of that flow lives on top of large-cap tech and semis, which is exactly why a semi correction from these levels would feel painful even inside a fine primary trend.</p>
+  </section>
+
+  <!-- Chapter 4: Quotes -->
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Quotables</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;When stocks advance 100% in a matter of a month or two, the down leg is going to be 30, 40, 50%. It's going to hurt people. It's going to feel like a lot more than it is. And the primary trends will probably still be fine.&rdquo;</blockquote>
+      <div class="attrib">Strazza, on how semis correct after the Samsung print gets sold <a class="ts" href="https://www.youtube.com/watch?v=vUUsqP8hPSc&amp;t=836s" target="_blank" rel="noopener">[13:56]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;This is the kind of group where when it breaks out, give them space, let them run. Sentiment's been totally reset. Nobody's a biotech investor anymore.&rdquo;</blockquote>
+      <div class="attrib">JC, on IBB taking out its 2021 and 2022 highs <a class="ts" href="https://www.youtube.com/watch?v=vUUsqP8hPSc&amp;t=1107s" target="_blank" rel="noopener">[18:27]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;They're using the AI to make the drugs better and faster and they're using the AI to approve them better and faster. That's money.&rdquo;</blockquote>
+      <div class="attrib">JC, on the FDA leaning on AI as the desk was buying gene-editor names <a class="ts" href="https://www.youtube.com/watch?v=vUUsqP8hPSc&amp;t=1164s" target="_blank" rel="noopener">[19:24]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;You're seeing resolution style action in Tesla, up 8%, down 6%. That extreme volatility over the short term typically means a resolution is near. Whatever direction it shows momentum next, take it. I'm thinking higher.&rdquo;</blockquote>
+      <div class="attrib">Strazza, on Tesla's daily swings and the coming resolution <a class="ts" href="https://www.youtube.com/watch?v=vUUsqP8hPSc&amp;t=1537s" target="_blank" rel="noopener">[25:37]</a></div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The Dow's record ran on top of a Samsung-punched NASDAQ.</strong> Dow pushed <span class="pr">53,600</span> while NASDAQ 100 gave up <span class="ch down">-1%</span> after Samsung's roughly <span class="pr">20x</span> earnings growth got sold. Peak-cycle chip prints being met with red tape is what a real rotation looks like, and it is what the desk has been calling for.</li>
+      <li><strong>Biotech's IBB breakout is the first fresh leadership signal from a decade-dead group.</strong> Large-cap biotech took out its 2021 and 2022 highs with the FDA signaling AI-accelerated approvals, and the desk has stacked roughly ten biotech positions in two weeks. Give the group space to run.</li>
+      <li><strong>Solana's flat print on a red crypto day is the only tell to save.</strong> <span class="tk">$BTC</span> <span class="pr">$63,500</span> <span class="ch down">-0.8%</span>, <span class="tk">$ETH</span> <span class="pr">$1,780</span> <span class="ch down">-1%</span>, <span class="tk">$SOL</span> <span class="pr">$81</span> <span class="ch flat">flat</span>. Total crypto cap <span class="pr">$2.17T</span>. BTC has not paid the clean macro setup yet, and SOL leading into that vacuum is where the alt-sleeve rotation would show up first.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
