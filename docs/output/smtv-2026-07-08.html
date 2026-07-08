@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpaceX Printed Fresh Lows on Its Way Into the S&P 500 - SMTV July 8, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">The Morning Show &middot; @StockMarketMedia &middot; July 8, 2026</div>
+    <h1>SpaceX Printed Fresh Lows on Its Way Into the S&amp;P 500</h1>
+    <p class="subtitle">Cerebras is cut in half. Rivian dropped ninety-five percent. Speculators are the most long the dollar in a decade, and the desk keeps pointing at the same line on every IPO chart.</p>
+    <div class="meta">
+      67 min &middot; <a href="https://www.youtube.com/watch?v=xgtrW12sFXQ" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 MIN READ</span>
+    </div>
+    <p class="tldr-headline">The most-hyped stocks on the tape keep printing lows on the days you would expect them to rip. SpaceX made new all-time lows the same session it got added to the S&amp;P 500 and the NASDAQ 100. Cerebras is down fifty percent since its IPO high. Rivian just did a secondary and is off ninety-five percent from where it went public. The desk has one line for all of it. If the average buyer since inception is losing money, you are not a buyer yet, you are the next bag holder in line.</p>
+    <ul>
+      <li>Session was a broad risk-off. <span class="tk">$SPX</span> <span class="pr">7,511</span> <span class="ch down">-0.5%</span>, <span class="tk">$NDX</span> <span class="pr">29,170</span> <span class="ch down">-0.75%</span>, Dow futures <span class="ch down">-400 pts</span> at <span class="pr">52,770</span>, VIX up at <span class="pr">17.5</span>.</li>
+      <li>Metals hammered on dollar strength. Gold <span class="pr">$4,085</span> <span class="ch down">-1.75%</span>, silver back under <span class="pr">$59</span> <span class="ch down">-4%</span>, copper <span class="pr">$6.08</span> <span class="ch down">-2.2%</span>. Crude ripped <span class="ch up">+4%</span> on Trump/Iran headlines.</li>
+      <li>Crypto bled with the tape. <span class="tk">$BTC</span> <span class="pr">$62,000</span> <span class="ch down">-2%</span>, <span class="tk">$ETH</span> <span class="pr">$1,740</span> <span class="ch down">-1.5%</span>, <span class="tk">$SOL</span> <span class="pr">$77.5</span> <span class="ch down">-4%</span>. Total crypto cap at <span class="pr">$2.12T</span>.</li>
+      <li>Strazza flagged speculator dollar positioning at its most bullish since 2015. The desk reads the extreme as a setup for a dollar top, which would be a tailwind for BTC and everything else risk.</li>
+      <li>Alibaba <span class="ch up">+10%</span> pre-market on an AI monetization headline, one day after coverage flagged the opposite.</li>
+      <li>JC's discretionary/staples ratio is still making lower highs while the S&amp;P prints new ones. He wants to see consumer discretionary break out before he backs a year-end rally starting now.</li>
+      <li>Rivian, SpaceX, Cerebras: all trading below their anchored VWAP from IPO. The desk's rule is wait for the average buyer to be back above water before stepping in.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>The Whole Tape Sold, and Crypto Went With It</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$62,000</div>
+        <div class="stat-change down">-2.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,740</div>
+        <div class="stat-change down">-1.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$77.5</div>
+        <div class="stat-change down">-4.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.12T</div>
+        <div class="stat-change down">Lower again</div>
+      </div>
+    </div>
+
+    <p>Crypto had nowhere to hide today. Bitcoin lost a percent and change, Solana got the worst of it with a four percent leg down, and the total market cap ticked lower for another session. Spencer read the tape and moved on, which is about the right response for how quiet it has been.</p>
+
+    <p>The macro read is more interesting than the price. Strazza put up the dollar-index positioning chart and pointed out that speculators are the most bullish they have been on the dollar since 2015. His framing on the CFTC data is that the speculator cohort is the dumb-money end of the table, and extreme longs tend to mark tops. If that resolves the way he expects, a dollar rollover would be a tailwind for BTC and everything risk-side.</p>
+
+    <p>Underneath the dollar-index level, JC pointed at emerging-market FX to make the same point from a different angle. The Colombian peso is at six-year highs. Peru and Argentina already went through similar moves after political turnovers. The dollar strength story lives inside the euro at <span class="pr">1.14</span>, and the euro is roughly sixty percent of the DXY weighting, so the whole "king dollar" narrative is really a chart of one cross that has not broken yet.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>A Risk-Off Session With Crude Ripping and Metals Getting Cracked</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,511</div>
+        <div class="stat-change down">-0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">29,170</div>
+        <div class="stat-change down">-0.75%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Dow Futures</div>
+        <div class="stat-value">52,770</div>
+        <div class="stat-change down">-400 pts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">17.5</div>
+        <div class="stat-change up">Ripping</div>
+      </div>
+    </div>
+
+    <p>The Dow futures came in down four hundred handles and worked back some of it into the cash open. The S&amp;P shed half a percent, the NASDAQ 100 lost three quarters, and the VIX got out of its recent range on the upside. Nothing about the print says regime change, but it was the first day in a while where the tape acted heavy across the board rather than in one sector at a time.</p>
+
+    <p>Under the surface it was an energy day. Crude oil ripped four percent on Trump saying the Iranians are, in Spencer's read of the wires, cuckoo. That is a headline-driven move rather than a supply-side one, so the follow-through matters more than the print. What did move on fundamentals was metals. Gold gave back <span class="ch down">1.75%</span> to <span class="pr">$4,085</span>, silver lost four percent and slipped back under <span class="pr">$59</span>, and copper dropped <span class="ch down">2.2%</span> to <span class="pr">$6.08</span>. Metals selling into a strong-dollar session is the textbook reaction and does not break the up-trend on its own.</p>
+
+    <p>The green stock on the board pre-market was <span class="tk">$BABA</span> up ten percent. The catalyst was a headline that Alibaba is starting to monetize its AI, which is funny because the desk read a piece the day before making the opposite argument. That is the shape of Chinese AI narrative right now. One headline per week, wild reactions in both directions, no durable trend on either side of the pair yet. On the domestic-China side, the crew spent a minute on the <span class="tk">$KSTR</span> ETF, which is basically Chinese semiconductors packaged as the "Cranshares CSI STAR Market 50 Index" and has three hundred million dollars in assets it would obviously not have if anyone could remember the name.</p>
+
+    <p>JC keeps circling one relative chart for the medium-term read. The consumer-discretionary-to-staples ratio (a proxy for whether shoppers are being aggressive or defensive) is still making lower highs even as the S&amp;P prints new ones. His argument is that a durable year-end rally that starts here rather than late October needs to see consumer discretionary break out on an absolute and relative basis. Tesla acting well after a five-year consolidation, Amazon behaving, Apple flat. Enough to watch. Not enough yet to size up on.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>The Anchored VWAP Rule for Every Recent IPO on the Board</h2>
+
+    <p>The single thread that ran through the show was SpaceX. It got added to the S&amp;P 500 and the NASDAQ 100 at Monday's close, which historically is the day passive money shows up as a bid. Instead it printed a new all-time low today, cleanly under its IPO level, and the desk spent most of the show explaining why that was not surprising.</p>
+
+    <p>JC's framework is one line on every chart. He puts an anchored VWAP (a volume-weighted average price line, anchored to a starting date, that shows where the average buyer since that date is sitting) starting from the IPO print. If price is above it, the average buyer since IPO is making money. If price is below it, they are losing. He calls the line "genesis" and the rule is simple. Do not buy until the line is beneath you.</p>
+
+    <p>Run it across the class of recent IPOs and the picture is grim. SpaceX has been under its genesis line the whole way and made a new low today, on the exact session it was supposed to get a passive bid. Cerebras (<span class="tk">$CBRS</span>, an AI-chip startup that priced its IPO recently) is already cut in half from its listing high. Rivian (<span class="tk">$RIVN</span>, the EV maker) is the worst of the three, down from <span class="pr">$180</span> at IPO to <span class="pr">$8</span>, a ninety-five percent drawdown, and this week it did a secondary offering that got hammered on the announcement. The desk was not calling any of it a zero. It was calling all of it wait-and-see.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Working</div>
+        <ul>
+          <li><span class="tk">$BABA</span> &middot; <span class="ch up">+10%</span> on AI monetization headline</li>
+          <li><span class="tk">$CL</span> crude &middot; <span class="ch up">+4%</span> on Trump/Iran</li>
+          <li><span class="tk">$JPM</span> &middot; base breakout above <span class="pr">$340</span></li>
+          <li><span class="tk">$EOG</span> &middot; anchored VWAP support at <span class="pr">$134</span></li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Not Working</div>
+        <ul>
+          <li><span class="tk">$SPCX</span> &middot; new all-time low on S&amp;P inclusion day</li>
+          <li><span class="tk">$CBRS</span> &middot; cut in half from IPO high</li>
+          <li><span class="tk">$RIVN</span> &middot; <span class="ch down">-95%</span> from IPO, secondary just tanked</li>
+          <li>Silver &middot; <span class="ch down">-4%</span>, back under <span class="pr">$59</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p>The show's closing beat turned the same setup into a life thesis. Humans will stand in a line for almost anything just because there is a line. The bag-holder cohort in SpaceX and Cerebras is the same behavior as the crowd standing behind a velvet rope at a club that lets you walk right up if you ignore the rope. Write down three things that are actually important to you, and if a hot IPO is not one of them, stop lining up to own it. That landed as the cleanest expression of what the charts had been saying for the whole hour.</p>
+
+    <div class="note">
+      <div class="label">Index inclusion, one more time</div>
+      <p>SpaceX was added to two major indices at Monday's close and made a new all-time low the very next session. The desk's read is that passive-buying events are hyper-efficient and mostly priced before the trigger. A hedge fund like Millennium reportedly made billions on index rebalance flow last month, which is what the retail cohort is competing against on this trade. Being added to an index is not, on its own, a reason a stock has to go up.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="quotes-block">
+      <div class="pullquote">
+        <blockquote>"The dumbest money in the world, the worst investors on the planet, are the most bullish they've been in a decade. Do you think they're going to be right, or are they going to completely roll over and fall apart as they usually do?"</blockquote>
+        <div class="attrib">Strazza, on speculators net long the dollar <a class="ts" href="https://www.youtube.com/watch?v=xgtrW12sFXQ&amp;t=180s" target="_blank">[3:00]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>"The average buyer since inception in Rivian is a bag holder. Just like SpaceX, just like Cerebras. Below that genesis line, you're just standing in the back of the line to be the next bag holder."</blockquote>
+        <div class="attrib">JC, on the anchored VWAP rule <a class="ts" href="https://www.youtube.com/watch?v=xgtrW12sFXQ&amp;t=3775s" target="_blank">[62:55]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>"Just because you're being added to an index does not mean you have to go up. Just because you're being kicked out does not mean you have to go down."</blockquote>
+        <div class="attrib">JC, on the SpaceX index-inclusion trade <a class="ts" href="https://www.youtube.com/watch?v=xgtrW12sFXQ&amp;t=3230s" target="_blank">[53:50]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>"Just a nice little appetizer, you know, just to wet the beak a little, create some bag holders before the big mega dump comes in."</blockquote>
+        <div class="attrib">JC, on the recent IPO class ahead of Anthropic <a class="ts" href="https://www.youtube.com/watch?v=xgtrW12sFXQ&amp;t=3130s" target="_blank">[52:10]</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Broad risk-off, not a break.</strong> Every major index sold, VIX popped to <span class="pr">17.5</span>, and crypto followed the tape. Metals got hit on dollar strength while crude ripped <span class="ch up">+4%</span> on Iran headlines. Nothing here breaks the up-trend, but it was the first session in a while where the whole board went the same way at the same time.</li>
+      <li><strong>The dollar is the interesting chart.</strong> Speculator positioning is the most long since 2015, an extreme the desk reads as a setup for a top. If the dollar rolls, that is bullish for <span class="tk">$BTC</span>, EM FX, and metals in that order. Watch the euro at <span class="pr">1.14</span> as the practical trigger.</li>
+      <li><strong>Do not buy the IPO class until it's above the line.</strong> <span class="tk">$SPCX</span> new lows on S&amp;P inclusion day, <span class="tk">$CBRS</span> cut in half, <span class="tk">$RIVN</span> down <span class="ch down">-95%</span>. All three trade under their anchored VWAP from IPO, so the average buyer since day one is still losing money. The desk's rule is wait for the line to be beneath price before you take a shot.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
