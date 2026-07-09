@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Best Stock in the Market Trades at a Six PE - SMTV July 9, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; July 9, 2026 &middot; The Morning Show</div>
+    <h1>The Best Stock in the Market Trades at a Six PE</h1>
+    <p class="subtitle">Nvidia slipped under twenty, healthcare breadth just posted its highest reading in fifteen years, and the market is refusing to reward the secular AI story the bulls keep selling.</p>
+    <div class="meta">
+      56 min &middot; <a href="https://www.youtube.com/watch?v=_XXDdbzqKr4" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The AI names were supposed to be the ones that broke the cycle. Micron trades at six times earnings. Nvidia slipped under twenty. Every strategist calls them secular. The market keeps stamping them with cyclical multiples anyway. The Dow printed another new high all the same, and healthcare quietly staged the biggest breadth thrust the desk has seen in fifteen years.</p>
+    <ul>
+      <li>Dow at fresh all-time highs of <span class="pr">52,675</span>, S&amp;P <span class="pr">7,555</span> <span class="ch up">+0.3%</span>, NASDAQ 100 leading at <span class="pr">29,780</span> <span class="ch up">+1%</span>, VIX still around <span class="pr">16</span>.</li>
+      <li>Healthcare's 21-day relative-strength breadth is the highest in <strong>fifteen years</strong>. The XLV (the S&amp;P healthcare sector ETF, biggest weights UnitedHealth and Eli Lilly) was the second-worst sector three weeks ago and now leads.</li>
+      <li><span class="tk">$NVDA</span> forward PE has fallen below <span class="pr">20</span>. Micron sits at somewhere between six and eight. Strazza covered his semi shorts and bought <span class="tk">$NVDA</span> and <span class="tk">$AVGO</span> calls out to July 24 the same week he was fading Intel and Qualcomm.</li>
+      <li>Crypto held. <span class="tk">$BTC</span> <span class="pr">$62,900</span> <span class="ch up">+1%</span>, <span class="tk">$ETH</span> <span class="pr">$1,744</span> <span class="ch flat">flat</span>, <span class="tk">$SOL</span> <span class="pr">$78</span> outperforming again. Total crypto cap <span class="pr">$2.14T</span>.</li>
+      <li>Metals kept ripping. Gold <span class="pr">$4,130</span> <span class="ch up">+1%</span>, silver back above <span class="pr">$60</span> <span class="ch up">+2.5%</span>, copper <span class="pr">$6.25</span> <span class="ch up">+2%</span>. The Bitcoin/gold ratio looks meaningfully worse than the Bitcoin/dollar chart.</li>
+      <li>Strazza on the &ldquo;<span class="tk">$BTC</span> to 30,000&rdquo; call making the rounds: if that&rsquo;s the destination, the bull market in stocks is over.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Bitcoin Held, Solana Kept Outperforming, and the Gold Chart Is the One That Stings</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$62,900</div>
+        <div class="stat-change up">+1.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,744</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$78</div>
+        <div class="stat-change up">Relative strength</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.14T</div>
+        <div class="stat-change up">+$20B</div>
+      </div>
+    </div>
+
+    <p>Bitcoin ticked up a percent to <span class="pr">$62,900</span> and Ethereum went nowhere at <span class="pr">$1,744</span>. Solana did what it has done every session this week, which is hold its level while the rest of the majors decide what they want to do. That is now three straight days of quiet outperformance for <span class="tk">$SOL</span> against a flat-to-heavy tape, and the desk is still treating it as the only large-cap coin behaving like it works.</p>
+
+    <p>JC pulled up the BTC/gold ratio, a chart he has not looked at in a while. Against the dollar, Bitcoin looks like a stuck market. Against gold, which just added another percent to <span class="pr">$4,130</span> while silver ripped <span class="ch up">+2.5%</span> back above <span class="pr">$60</span>, it looks like a broken one. Same coin, two very different charts. If you were only allowed to watch one to size gross exposure, the gold-denominated version is the one screaming.</p>
+
+    <p>Jeff Degraf's <span class="tk">$BTC</span> to <span class="pr">$30,000</span> call came up in passing. Strazza would not touch it. His logic was clean. If Bitcoin cuts in half again from here, the tape you would have to be looking at underneath is a stock market nowhere near <span class="pr">7,555</span> on the S&amp;P. The two moves are not independent. So either the 30 handle is wrong, or the equity index level is wrong, and the desk is not sitting long semis into that second scenario.</p>
+
+    <div class="note">
+      <div class="label">Reader translation</div>
+      <p>&ldquo;Speculators are the most bullish they&rsquo;ve been in a decade&rdquo; is CFTC positioning data. It reads how much of the futures market is leaning one way. Extreme long readings historically mark tops in the underlying because everyone who was going to buy already has. That is what Strazza was pointing at yesterday on the dollar, and it is the same lens he is applying to the &ldquo;Bitcoin to 30&rdquo; call today. Extreme predictions want extreme setups. This tape does not have one.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>The Dow Kept Printing New Highs While Healthcare Booked a 15-Year Breadth Extreme</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">52,675</div>
+        <div class="stat-change up">Fresh ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,555</div>
+        <div class="stat-change up">+0.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">29,780</div>
+        <div class="stat-change up">+1.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">16</div>
+        <div class="stat-change flat">Steady</div>
+      </div>
+    </div>
+
+    <p>The tape opened green across the board and the Dow tagged another new all-time high at <span class="pr">52,675</span>. NASDAQ 100 led up a full percent to <span class="pr">29,780</span>, S&amp;P added a third of a percent to <span class="pr">7,555</span>, and thirty-year bond futures sat flat at <span class="pr">111</span>. Crude was quiet at <span class="pr">$74</span>. Everything with any beta to a weaker dollar caught a bid. Copper up two percent to <span class="pr">$6.25</span>, gold up a percent to <span class="pr">$4,130</span>, silver ripping back above <span class="pr">$60</span> for the first time in weeks.</p>
+
+    <p>The show's most durable read was underneath the index prints. Turning Point Research put up the 21-day rolling percentage of healthcare stocks outperforming the S&amp;P, and the reading was the highest in fifteen years. Ninety percent of the sector outperforming the benchmark on a trailing-month basis is the kind of number that only shows up around the beginning of a regime shift. As recently as three weeks ago the XLV was the second-worst-performing sector of the year. It leads now, and the desk has been pounding the table on this since well before the breadth data confirmed the tape.</p>
+
+    <p>The most attributed name inside the sector is <span class="tk">$UNH</span>, where the desk is up something like <span class="pr">250%</span> on December 2027 calls put on when the company's CEO was killed on the street in midtown Manhattan. The technical setup at the time was a 61.8% Fibonacci retracement from the 1987 crash low up to the recent highs, which the desk read as a floor. The medical-equipment sub-group is the catch-up trade being watched next, on the logic that if everything else in healthcare is working, devices should follow.</p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>A quiet, drifty index tape with metals ripping is a friendly backdrop for BTC in principle. Bitcoin is not participating today, and that is the point. When the whole world is chasing store-of-value assets and Bitcoin sits flat while gold and silver print new highs, the &ldquo;digital gold&rdquo; pitch is running behind physical for the second cycle in a row. That gap does not have to close inside the current move, but it is the read that keeps the desk cautious on <span class="tk">$BTC</span> even as they stay long metals and healthcare.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>Nvidia Slipped Under 20x and the Market Is Still Pricing Semis Like Cyclicals</h2>
+
+    <p>The single framework worth writing down from today was Strazza's read on semiconductor multiples. Nvidia now trades below a 20x forward earnings multiple. That is under the S&amp;P blended multiple of roughly 22-25. Micron, which the desk was calling &ldquo;the best stock in the market&rdquo; on air, trades at somewhere between a 6 and an 8 PE (forward earnings; for context, mature cyclicals like steel and oil trade there, mega-cap growth names live in the 30s and 40s).</p>
+
+    <p>The bull case in every strategist note is that semis are no longer cyclical, that AI infrastructure demand has re-rated the group into a secular growth trend the same way software got re-rated after 2013. If that were true, the multiples would show it. They do not. The market is stamping <span class="tk">$NVDA</span> and Micron with the exact same cyclical multiples they have always carried, and it is doing that in a year the entire narrative machine has been pointing the other direction.</p>
+
+    <p>Strazza's tape says two things are happening inside the group at once. The equipment names and the smaller semis are rolling over. Nvidia and Broadcom are re-accelerating out of a coiled bear flag. His book reflects it. He was short Intel puts, short Micron, short Qualcomm at the start of the week. By yesterday he had covered the shorts and bought five different Nvidia call contracts out to July 24, plus Broadcom, which was up four percent this morning after ripping yesterday. Being long and short the same sector in the same week is not a hedge. It is the bifurcation actually showing up in the book.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Rerating higher</div>
+        <ul>
+          <li><span class="tk">$NVDA</span> &middot; sub-20 PE, coiled base breaking out</li>
+          <li><span class="tk">$AVGO</span> &middot; <span class="ch up">+4%</span> pre-market, similar pattern</li>
+          <li><span class="tk">$UNH</span> &middot; desk up <span class="ch up">+250%</span> on Dec 2027 calls</li>
+          <li>Gold <span class="pr">$4,130</span> &middot; <span class="ch up">+1%</span>, silver back above <span class="pr">$60</span></li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Still cyclical</div>
+        <ul>
+          <li>Micron &middot; 6-8 PE, &ldquo;best stock in the market&rdquo; and nobody pays up</li>
+          <li>Semi equipment &middot; rolling over while <span class="tk">$NVDA</span>/<span class="tk">$AVGO</span> break out</li>
+          <li>Home builders &middot; getting hit on bond weakness</li>
+          <li>Levi&rsquo;s &middot; earnings fine, denim just is not hot</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>The uncomfortable version of the read, for anyone long the AI leaders because they believe the secular story, is that the multiples are the market's tell. If the crowd genuinely believed AI infrastructure demand had removed the boom-bust cycle from these companies forever, Micron would not sit at 8 times earnings. It sits there because the marginal buyer is still pricing in a down-cycle at some point. The stocks can still work from these levels. The framework the buyer is working from is not the one the strategists have been selling.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="quotes-block">
+      <div class="pullquote">
+        <blockquote>&ldquo;Micron, okay, the best stock in the market. It's like an 8 PE. Might even be six, but it's a joke. That is the market telling you these are still cyclical names.&rdquo;</blockquote>
+        <div class="attrib">Strazza, on the semi rerating that isn&rsquo;t happening <a class="ts" href="https://www.youtube.com/watch?v=_XXDdbzqKr4&amp;t=888s" target="_blank">[14:48]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;If Bitcoin's going to 30, the bull market in stocks is over. I got news for you. So I think that's a big like assumption that you would have to accept for that.&rdquo;</blockquote>
+        <div class="attrib">Strazza, on the &ldquo;<span class="tk">$BTC</span> to 30,000&rdquo; call <a class="ts" href="https://www.youtube.com/watch?v=_XXDdbzqKr4&amp;t=1670s" target="_blank">[27:50]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;As recently as three weeks ago the XLV was the second-worst performing sector of the year. It's not anymore, obviously.&rdquo;</blockquote>
+        <div class="attrib">JC, on the healthcare regime shift <a class="ts" href="https://www.youtube.com/watch?v=_XXDdbzqKr4&amp;t=1425s" target="_blank">[23:45]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;You got to be a special kind of clown to think that a 20% decline means it's a bear market.&rdquo;</blockquote>
+        <div class="attrib">JC, on the headlines calling South Korea a bear market after a first-half double <a class="ts" href="https://www.youtube.com/watch?v=_XXDdbzqKr4&amp;t=198s" target="_blank">[3:18]</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Healthcare breadth is the signal.</strong> The 21-day relative-strength reading inside the XLV is the highest it has been in fifteen years. A sector goes from second-worst to leader in three weeks only when structural money is rotating in. Devices are the sub-group the desk is watching for the catch-up.</li>
+      <li><strong>The AI-secular story is not in the multiples.</strong> <span class="tk">$NVDA</span> under a 20 PE and Micron at 6-8 says the market is still pricing these as cyclicals. Nvidia and Broadcom can still work as the two names that decouple from the rest of the group. The way to read the tape is bifurcated, with the megacaps re-accelerating and the equipment/smaller-cap semis rolling over.</li>
+      <li><strong>Bitcoin's flat print masks a worse chart.</strong> <span class="tk">$BTC</span> at <span class="pr">$62,900</span> looks fine against dollars, ugly against gold and silver at fresh highs. If the &ldquo;<span class="tk">$BTC</span> to 30&rdquo; call ever comes true, the S&amp;P is not staying at <span class="pr">7,555</span>. Position accordingly.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
