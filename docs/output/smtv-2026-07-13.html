@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semis Bled, Software Ran, and the Banks Have to Prove It Tomorrow - SMTV July 13, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; July 13, 2026 &middot; The Morning Show</div>
+    <h1>Semis Bled, Software Ran, and the Banks Have to Prove It Tomorrow</h1>
+    <p class="subtitle">The rotation the desk has been flagging since June went loud on a Monday morning, with SK Hynix down ten percent overnight and every big semi red pre-market.</p>
+    <div class="meta">
+      56 min &middot; <a href="https://www.youtube.com/watch?v=pYdzDonVkPQ" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The semi list opened bleeding and the software list opened green. That rotation has been running quietly since June and today it stopped being quiet. Banks kick off earnings tomorrow, which is the first time this month a chart argument has to survive an actual print. The dollar broke out of a two-year range and is retesting from above. If it heads back to last year's highs, the whole current setup gets rearranged. Crypto sold with the rest of risk.</p>
+    <ul>
+      <li>Semis red across the board pre-market. <span class="tk">$SNDK</span> <span class="ch down">-6%</span>, <span class="tk">$WDC</span> <span class="ch down">-6%</span>, <span class="tk">$MU</span> <span class="ch down">-5.5%</span>, plus <span class="tk">$NVDA</span>, <span class="tk">$AMD</span>, <span class="tk">$ASML</span>, <span class="tk">$AVGO</span>, <span class="tk">$INTC</span>, <span class="tk">$QCOM</span>, <span class="tk">$KLAC</span>, <span class="tk">$LRCX</span>, <span class="tk">$TXN</span> all off <span class="ch down">3%+</span>.</li>
+      <li>Software leaders went the other way. <span class="tk">$SHOP</span> <span class="ch up">+3%</span>, <span class="tk">$CDNS</span> <span class="ch up">+1.7%</span>, <span class="tk">$WDAY</span> <span class="ch up">+1.4%</span>, <span class="tk">$SNPS</span> <span class="ch up">+1.2%</span>, <span class="tk">$INTU</span> <span class="ch up">+1.2%</span>, <span class="tk">$ADBE</span> <span class="ch up">+1%</span>.</li>
+      <li>SK Hynix printed a <span class="ch down">-10%</span> session in Korea overnight, its worst day on record, one week after a <span class="pr">$26B</span> raise. The desk's running joke was &ldquo;fourth bear market this week for South Korea.&rdquo;</li>
+      <li>Crypto sold with everything. <span class="tk">$BTC</span> <span class="pr">$62,570</span> <span class="ch down">-2%</span>, <span class="tk">$ETH</span> <span class="pr">$1,770</span> <span class="ch down">-2%</span>, <span class="tk">$SOL</span> <span class="pr">$75.80</span> <span class="ch down">-1%</span>. Total crypto cap <span class="pr">$2.14T</span>, rolling back into February resistance.</li>
+      <li>Crude <span class="pr">$74.25</span> <span class="ch up">+4%</span> on the Middle East ceasefire ending over the weekend. Gold <span class="pr">$4,072</span> <span class="ch down">-1%</span>, silver <span class="pr">$58.88</span> <span class="ch down">-2%</span>, VIX <span class="pr">16.5</span>.</li>
+      <li>Bank earnings Tuesday, <span class="tk">$ASML</span> and <span class="tk">$JNJ</span> Wednesday, <span class="tk">$NFLX</span> Thursday. Bull-market checklist sits at six of eight green, with the breadth thrust still un-triggered.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Sold With the Rest of Risk and the Total Cap Is Back at February Resistance</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$62,570</div>
+        <div class="stat-change down">-2.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,770</div>
+        <div class="stat-change down">-2.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$75.80</div>
+        <div class="stat-change down">-1.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.14T</div>
+        <div class="stat-change down">Retesting Feb resistance</div>
+      </div>
+    </div>
+
+    <p>Bitcoin lost roughly <span class="pr">$1,100</span> to <span class="pr">$62,570</span> and Ethereum gave back the same two percent to <span class="pr">$1,770</span>. Solana held up a touch better at <span class="pr">$75.80</span>, which continues a pattern the desk has been noting for weeks. The rest of the majors do what the tape does and Solana loses less on down days. On a slow crypto Monday that is worth writing down. It is still the only large-cap the desk talks about like it works.</p>
+
+    <p>The bigger read sits on the aggregate. Total crypto market cap is back at <span class="pr">$2.14T</span>, right into a level that was support in February and is now acting as resistance from below. The reclaim to start the month has faded over the last week and the tape is grinding back into that ceiling. A break either way from here is the first honest signal in a month of chop.</p>
+
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Semis Sold, Software Ran, and the Banks Are Up Tomorrow</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">52,850</div>
+        <div class="stat-change flat">Flat &middot; near ATH</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,593</div>
+        <div class="stat-change down">-0.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">29,700</div>
+        <div class="stat-change down">-1.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude</div>
+        <div class="stat-value">$74.25</div>
+        <div class="stat-change up">+4%</div>
+      </div>
+    </div>
+
+    <p>The Dow sat flat near all-time highs at <span class="pr">52,850</span>, the S&amp;P leaked a third of a percent to <span class="pr">7,593</span>, and the NASDAQ 100 was the ugly one at <span class="pr">29,700</span>, down a full percent. Under the index level, the semi list read like a small-cap crash. <span class="tk">$SNDK</span> and <span class="tk">$WDC</span> both down six percent, <span class="tk">$MU</span> off five and a half, then a straight run through <span class="tk">$NVDA</span>, <span class="tk">$AMD</span>, <span class="tk">$ASML</span>, <span class="tk">$AVGO</span>, <span class="tk">$INTC</span>, <span class="tk">$ARM</span>, <span class="tk">$QCOM</span>, <span class="tk">$KLAC</span>, <span class="tk">$LRCX</span>, <span class="tk">$MRVL</span>, <span class="tk">$TXN</span>, <span class="tk">$NXPI</span>, and <span class="tk">$MPWR</span>, all off three percent or more before the bell.</p>
+
+    <p>The direct catalyst was SK Hynix, the South Korean memory maker that supplies the HBM chips Nvidia stacks on top of its accelerators. Hynix printed a <span class="ch down">-10%</span> session in Korea overnight, its worst day on record, a week after raising <span class="pr">$26B</span> in secondary stock. The desk called it &ldquo;the fourth bear market this week for South Korea,&rdquo; which is a joke about how the Kospi has been round-tripping every week for a month.</p>
+
+    <p>What made the day interesting is that the software leaders ran the other way at the same time. <span class="tk">$SHOP</span> up three, <span class="tk">$CDNS</span> up 1.7, <span class="tk">$WDAY</span> up 1.4, <span class="tk">$SNPS</span> and <span class="tk">$INTU</span> up 1.2, <span class="tk">$ADBE</span> up one. Strazza's read was that this has quietly become the market's default pattern since June. Money is not leaving tech on these big semi down days. It is rotating from semis into software inside the same sector.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Running today</div>
+        <ul>
+          <li><span class="tk">$SHOP</span> &middot; <span class="ch up">+3%</span></li>
+          <li><span class="tk">$CDNS</span> &middot; <span class="ch up">+1.7%</span>, design software</li>
+          <li><span class="tk">$WDAY</span> &middot; <span class="ch up">+1.4%</span></li>
+          <li><span class="tk">$SNPS</span>, <span class="tk">$INTU</span> &middot; <span class="ch up">+1.2%</span></li>
+          <li><span class="tk">$ADBE</span> &middot; <span class="ch up">+1%</span></li>
+          <li>Crude <span class="pr">$74.25</span> &middot; <span class="ch up">+4%</span></li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Bleeding today</div>
+        <ul>
+          <li><span class="tk">$SNDK</span>, <span class="tk">$WDC</span> &middot; <span class="ch down">-6%</span></li>
+          <li><span class="tk">$MU</span> &middot; <span class="ch down">-5.5%</span></li>
+          <li>SK Hynix &middot; <span class="ch down">-10%</span> in Korea overnight</li>
+          <li><span class="tk">$NVDA</span>, <span class="tk">$AMD</span>, <span class="tk">$ASML</span>, <span class="tk">$AVGO</span> &middot; <span class="ch down">3%+</span></li>
+          <li>Silver <span class="pr">$58.88</span> &middot; <span class="ch down">-2%</span></li>
+          <li>Gold <span class="pr">$4,072</span> &middot; <span class="ch down">-1%</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p>The other frame running through the desk was the dollar. Strazza's counter to JC's &ldquo;bank chart is the most important thing in the world&rdquo; opener was that the DXY (the dollar index, a basket weighted against the euro, yen, pound, and a few others) has already broken out of a two-year range and is retesting the breakout from above. If it grinds back into last year's highs around <span class="pr">110</span>, risk assets globally start bleeding for real. That trade is already showing up in international equities and commodities, which is why gold and silver both got sold hard this morning even with crude ripping four percent on the ceasefire ending over the weekend.</p>
+
+    <p>Bank earnings tomorrow are the first live test the market has faced in a month. JC has been calling the bank chart &ldquo;the most important chart in the world&rdquo; going into the print. Everything up to this point has been chart argument. Tomorrow morning it has to survive an actual earnings report. Then <span class="tk">$ASML</span> and <span class="tk">$JNJ</span> Wednesday, <span class="tk">$NFLX</span> Thursday, and the season is fully open.</p>
+
+    <p>One breadth thread worth keeping. The bull-market checklist that the show runs on Mondays sits at six of eight green, with two red flags. The breadth thrust still has not triggered. Roughly forty percent of S&amp;P stocks are at 20-day new highs against a fifty-five percent threshold the desk wants to see. Global participation improved to fifty-three percent above their 50-day averages, up from the mid-forties last week. The tape is rotating without thrusting.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>The Winners in the Agentic Economy Are the Ones Clearing the Trades</h2>
+
+    <p>JC opened the show with a Jeremy Allaire essay. Allaire runs Circle, the company behind the <span class="tk">USDC</span> stablecoin. His piece argued that AI agents will spend most of their working hours transacting with other AI agents, and those transactions need a settlement rail that clears in seconds and does not care what time zone the counterparties live in. Stablecoins are the obvious answer.</p>
+
+    <p>JC's next move was the interesting part. The bull case in that world is not to own the stablecoins themselves, because the issuers are commodities and their spreads get competed to zero once settlement volume gets big enough to matter. The bull case is to own the layer above them. Whoever clears, custodies, and reconciles those on-chain settlements ends up with the take rate. Bank of New York Mellon on the trad-fi side. Coinbase on the crypto-native side. &ldquo;The winners are the clearing agents. The ones that win regardless of who wins.&rdquo;</p>
+
+    <p>This is a specific bull thesis on <span class="tk">$COIN</span> that has almost nothing to do with the retail trading revenue Coinbase has historically been valued on. The AI capex build-out ends up needing programmable dollars to settle machine-to-machine payments. Coinbase is the primary institutional venue for those dollars in the US. That optionality is not currently in the sell-side multiple.</p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p><span class="tk">$COIN</span> is not being valued as a crypto broker in a sideways market. It is being valued as the settlement rail for whatever the AI infrastructure companies build on top of stablecoins over the next five years. If the agentic economy story lands anywhere close to Allaire's version, the multiple looks obviously wrong today.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="quotes-block">
+      <div class="pullquote">
+        <blockquote>&ldquo;It's not like semis are getting crushed and leading to the downside. Oh, and software is down too. That makes sense. No, it's like semis getting rocked and software stocks are all up. And this has become a habit for the market since the beginning of June.&rdquo;</blockquote>
+        <div class="attrib">Strazza, on the rotation showing up again <a class="ts" href="https://www.youtube.com/watch?v=pYdzDonVkPQ&amp;t=1380s" target="_blank">[23:00]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;The winners aren't so much the stable coins. The winners are the clearing agents. The ones that win regardless of who wins. That's who I'm interested in.&rdquo;</blockquote>
+        <div class="attrib">JC, on where the agentic economy value ends up <a class="ts" href="https://www.youtube.com/watch?v=pYdzDonVkPQ&amp;t=283s" target="_blank">[4:43]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;The dollar's gone straight up since last summer. How have stocks done? So while I'm with you that in theory a weaker dollar should be a tailwind for stocks, this year has been the opposite of that.&rdquo;</blockquote>
+        <div class="attrib">JC and Strazza, arguing about the dollar breakout <a class="ts" href="https://www.youtube.com/watch?v=pYdzDonVkPQ&amp;t=420s" target="_blank">[7:00]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;Bloomberg is saying the US stock market is becoming very lopsided. They're saying that because it's a good thing. It's actually one of the least concentrated on the planet.&rdquo;</blockquote>
+        <div class="attrib">JC, on the concentration headlines <a class="ts" href="https://www.youtube.com/watch?v=pYdzDonVkPQ&amp;t=735s" target="_blank">[12:15]</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The semis-to-software rotation is now the default tape.</strong> Since June, every big semi red day has come with a software green day. Today's pre-market list was the loudest version yet, with <span class="tk">$SNDK</span> and <span class="tk">$WDC</span> down <span class="ch down">6%</span> against <span class="tk">$SHOP</span> up <span class="ch up">3%</span>. Position accordingly, and stop assuming a red semi tape means the whole NASDAQ 100 is broken.</li>
+      <li><strong>Bank earnings tomorrow are the first live test.</strong> Everything up to this point has been chart argument. Tomorrow morning the season opens with the money-center banks, then <span class="tk">$ASML</span> and <span class="tk">$JNJ</span> Wednesday, <span class="tk">$NFLX</span> Thursday. JC's &ldquo;most important chart in the world&rdquo; framing was theatrical, but banks setting up into an ATH tape while the yield curve is where it is has been the desk's clearest bull tell for months.</li>
+      <li><strong>The dollar is the risk to the whole picture.</strong> DXY broke out of a two-year range and is retesting from above. A move back to <span class="pr">110</span> unwinds a lot of the current bull setup, and it is already showing up in international equities and gold. The tape is fine while the dollar sits just above <span class="pr">100</span>. If it heads higher, everything gets re-priced.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
