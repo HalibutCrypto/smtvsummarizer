@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bank Index Just Cleared Its 2007 Ceiling on the Day IBM Cracked Twenty Percent - SMTV July 14, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; July 14, 2026 &middot; The Morning Show</div>
+    <h1>The Bank Index Just Cleared Its 2007 Ceiling on the Day IBM Cracked Twenty Percent</h1>
+    <p class="subtitle">IBM pre-announced a bad quarter and dragged every enterprise software name with it, CPI came in cool, and underneath the noise the equal-weight bank index cleared its January 2007 high for the first time since the great financial crisis.</p>
+    <div class="meta">
+      70 min &middot; <a href="https://www.youtube.com/watch?v=JPMwyChVTeQ" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The banks just cleared a level they haven't touched since before the great financial crisis. Nineteen years is a long time to sit under one number. Meanwhile IBM opened down twenty-two percent on a preemptive earnings warning, and the whole software space got carried out with it. Servers keep winning, software keeps losing. The macro side handed the bull case another gift with a cool inflation print. The reason to stay bearish keeps getting harder to say out loud.</p>
+    <ul>
+      <li><span class="tk">$IBM</span> <span class="ch down">-22%</span> pre-open after cutting Q2 guidance a week before the print. Blamed clients moving capex to AI servers, memory, and storage away from software. Worst IBM session since Black Monday 1987.</li>
+      <li>Enterprise software sold in sympathy. <span class="tk">$WDAY</span> <span class="ch down">-10%</span>, <span class="tk">$TEAM</span> <span class="ch down">-9%</span>, <span class="tk">$HUBS</span> <span class="ch down">-8%</span>, <span class="tk">$NOW</span> <span class="ch down">-7.5%</span>, <span class="tk">$ACN</span> <span class="ch down">-7.5%</span>.</li>
+      <li>The S&amp;P equal-weight bank index (<span class="tk">$KBE</span> as proxy) cleared its January 2007 high. First time since the GFC. Failed at that level after COVID, in 2024, and in 2025.</li>
+      <li>Bank earnings clean. <span class="tk">$JPM</span>, <span class="tk">$BAC</span>, <span class="tk">$WFC</span> all posted healthy loan growth, trading revenue solid, consumer credit stable. Jamie Dimon named Golden Dome as a tailwind in the release.</li>
+      <li>CPI <span class="pr">3.5%</span> vs 3.8% est, core <span class="pr">2.6%</span> vs 2.9% est. Bonds bid, dollar leaked, gold pushed <span class="pr">$4,100</span> and silver pushed <span class="pr">$60</span>.</li>
+      <li>Crypto flat to mildly up on the macro tailwind. <span class="tk">$BTC</span> <span class="pr">$63,360</span> <span class="ch up">+2%</span>, <span class="tk">$ETH</span> <span class="pr">$1,820</span> <span class="ch up">+3%</span>, <span class="tk">$SOL</span> <span class="pr">$76</span> <span class="ch up">+1.5%</span>. Total cap <span class="pr">$2.16T</span>.</li>
+      <li>Yen positioning is the most short it has ever been in the futures data. Nikkei tagged a 1.618 long-term projection. If the BOJ so much as speaks, that positioning gets its face ripped off.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>The Macro Handed Crypto Every Card in the Deck and Crypto Sat</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$63,360</div>
+        <div class="stat-change up">+2.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,820</div>
+        <div class="stat-change up">+3.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$76</div>
+        <div class="stat-change up">+1.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.16T</div>
+        <div class="stat-change flat">Bumping Feb resistance</div>
+      </div>
+    </div>
+
+    <p>The macro backdrop this morning is about as Bitcoin-friendly as it gets. CPI came in cool on both prints. The dollar leaked lower into the number. Precious metals ripped with gold at <span class="pr">$4,100</span> and silver pushing <span class="pr">$60</span>, both <span class="ch up">+2.5%</span> on the day. Every one of those inputs, in isolation, has been correlated with Bitcoin strength for years.</p>
+
+    <p>None of that showed up in crypto with any real force. <span class="tk">$BTC</span> added roughly <span class="pr">$1,100</span> to <span class="pr">$63,360</span>, <span class="tk">$ETH</span> got a bigger three percent bounce to <span class="pr">$1,820</span>, and <span class="tk">$SOL</span> ticked up a percent and a half to <span class="pr">$76</span>. Aggregate crypto cap sits at <span class="pr">$2.16T</span>, still parked against the February resistance level the desk flagged yesterday from below.</p>
+
+    <p>The desk didn't spend a minute on it. That's the read. Crypto is being handed a green-macro morning and choosing not to run. Whatever moves the tape from here has to come from inside crypto itself.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>IBM Cracked Twenty-Two on a Preemptive Cut, Software Went With It, and Bank Earnings Came In Clean</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">52,700</div>
+        <div class="stat-change flat">Flat, was down 600 pre-CPI</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,586</div>
+        <div class="stat-change up">+0.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">29,822</div>
+        <div class="stat-change up">+1.2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude</div>
+        <div class="stat-value">$81</div>
+        <div class="stat-change up">+3%</div>
+      </div>
+    </div>
+
+    <p>IBM pre-announced. The next scheduled print was a week out. Late in the quarter, management watched a wave of enterprise clients shift capex out of software and into AI servers, memory, and storage, so they got out ahead of the report with preliminary numbers below estimates. The reaction was a twenty-two percent open-lower. The only two comparable IBM sessions in the last quarter century are a pair of fifteen-percent drops during the 2000-2001 dotcom unwind. The last time IBM traded down more than twenty percent in a session was October 19th, 1987. Black Monday.</p>
+
+    <p>Zoom out on the chart and it's less dramatic than the tape. The stock is still inside the same range it has traded since Q1 2025. The 2013 highs are what has to hold. Strazza's read was that this now looks distributive inside that two-year range. A breakdown still requires a clean loss of the support at those 2013 highs. Until that happens, the tape is ugly and the chart is intact.</p>
+
+    <p>The sympathy tape was worse than IBM itself in percentage terms. Workday down ten, Atlassian down nine, HubSpot down eight, ServiceNow and Accenture both down seven and a half. The wider frame is that software and semis are still moving in opposite directions week over week. Money is not leaving tech on days like this. It's rotating from software into servers, memory, and networking inside the same enterprise budgets.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Running today</div>
+        <ul>
+          <li>Gold <span class="pr">$4,100</span> &middot; <span class="ch up">+2.3%</span></li>
+          <li>Silver <span class="pr">$60</span> &middot; <span class="ch up">+2.5%</span></li>
+          <li>Crude <span class="pr">$81</span> &middot; <span class="ch up">+3%</span></li>
+          <li>Copper <span class="pr">$6.40</span> &middot; <span class="ch up">+2%</span></li>
+          <li><span class="tk">$SKHY</span> (SK Hynix ADR) &middot; <span class="ch up">+10%</span></li>
+          <li>Tower Semi &middot; <span class="ch up">+16%</span> on earnings</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Bleeding today</div>
+        <ul>
+          <li><span class="tk">$IBM</span> &middot; <span class="ch down">-22%</span></li>
+          <li><span class="tk">$WDAY</span> &middot; <span class="ch down">-10%</span></li>
+          <li><span class="tk">$TEAM</span> &middot; <span class="ch down">-9%</span></li>
+          <li><span class="tk">$HUBS</span> &middot; <span class="ch down">-8%</span></li>
+          <li><span class="tk">$NOW</span>, <span class="tk">$ACN</span> &middot; <span class="ch down">-7.5%</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Bank earnings came in clean across the majors. JPMorgan, Bank of America, and Wells Fargo all posted the same broad picture. Loan growth healthy, trading revenue solid, deal revenue recovering, consumer credit stable, delinquencies low. Jamie Dimon's release language leaned harder on the tailwinds than usual, calling out AI-driven capital investment, fiscal stimulus, Golden Dome, and, most importantly, the benefits of more efficient regulation. That last one is the one to underline. Fifteen years of post-crisis capital constraints on the biggest banks are being rolled back, and Wells Fargo in particular has spent most of that period under a growth cap that's now getting eased. Morgan Stanley, BlackRock, PNC, and Bank of New York Mellon report tomorrow. Regionals hit Wednesday and Thursday.</p>
+
+    <p>CPI came in below on both prints. Headline <span class="pr">3.5%</span> year-over-year against a <span class="pr">3.8%</span> estimate. Core <span class="pr">2.6%</span> versus <span class="pr">2.9%</span>. Thirty-year bond futures caught a bid, rates leaked lower, and the metals complex went straight up. Gold added two and a third percent pushing <span class="pr">$4,100</span>. Silver added two and a half pushing <span class="pr">$60</span>. Copper up two, crude up three near <span class="pr">$81</span>. The Dow was down 600 into the pre-market on the IBM print, then flat on the CPI. VIX sits under <span class="pr">17</span>.</p>
+
+    <div class="note">
+      <div class="label">One positioning setup to keep on the desk</div>
+      <p>Speculators have never been more short yen in the history of the futures data. Japanese rates have moved from negative to over two percent in a straight line. Dollar-yen is sitting right into a 1.27 long-term price projection off the Bretton Woods low. The Nikkei just tagged a 1.618 projection from its 1970s low, and <span class="tk">$EWJ</span> (the dollar-priced Japan ETF) shows a bearish divergence at resistance. Historical parallel is the tiny 2024 BOJ move that unwound the carry trade globally in a session. If the Bank of Japan so much as speaks this week, that positioning gets its face ripped off, and the whole risk complex moves with it.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>The Bank Index Cleared Its January 2007 High for the First Time in Nineteen Years</h2>
+
+    <p>JC has been calling the S&amp;P bank index &ldquo;the most important chart in the world&rdquo; going into this week's earnings. The specific index he means is the equal-weight one, roughly ninety bank stocks (<span class="tk">$KBE</span> is the retail proxy). Equal weighting matters here. It gives you a clean read on the banking industry as a group rather than a JPMorgan-plus-friends aggregate weighted by the top five.</p>
+
+    <p>The January 2007 high on that index was the last major top before financials led the market into the great financial crisis. Financials peaked nine months before the S&amp;P did. That level has now been the ceiling for nineteen years. The COVID reclaim attempt failed. The 2024 attempt failed. The 2025 attempt failed. This week it cleared.</p>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;This is brand new. This just happened. This isn't like an old thing. This is brand spanking new. So if you're bullish, you're betting on rising stocks, this confirms you're probably on the right track. However, if you are bearish of equities, if the bank index is above the 07 highs, you're wrong.&rdquo;</blockquote>
+      <div class="attrib">JC, on the equal-weight bank index breakout <a class="ts" href="https://www.youtube.com/watch?v=JPMwyChVTeQ&amp;t=1122s" target="_blank">[18:42]</a></div>
+    </div>
+
+    <p>Strazza's read agreed on the technical setup. The level was tested a handful of times before this print, and each attempt absorbed more of the overhead supply, which is what a real breakout wants to look like. Breadth across the financial sector is broad-based across the whole group. The Kenny-style caveat about how &ldquo;last time we were here look what happened&rdquo; got answered directly. Every prior visit to this level rolled over. This is the first time in modern history the index has cleared it.</p>
+
+    <p>The trade expression is the harder question. The big six banks (<span class="tk">$JPM</span>, <span class="tk">$GS</span>, <span class="tk">$MS</span>, <span class="tk">$WFC</span>, <span class="tk">$BAC</span>, <span class="tk">$C</span>) are already at or right below all-time highs. Chasing them is a bad entry. <span class="tk">$KBE</span> versus the S&amp;P 500 has been sideways because tech's two-month run flattens every ratio chart against SPY. Even <span class="tk">$KBE</span> against the Dow is still below its November 2024 highs. JC's answer was that the bank index breakout isn't a signal to buy the banks specifically. It's a signal to buy stocks, period. Financials are the confirming chart. The trade lives everywhere else in the market.</p>
+
+    <p>The historical parallel the desk kept returning to is Louise Yamada's line, repeated across the show, that the bigger the collapse, the longer the time needed for repair. The GFC took roughly nineteen years to grind through this specific level. Not eighteen months. Nineteen years. That's the frame worth carrying into the next few weeks of tape.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="quotes-block">
+      <div class="pullquote">
+        <blockquote>&ldquo;The bigger the collapse, the longer the time needed for repair. That's exactly what this is.&rdquo;</blockquote>
+        <div class="attrib">JC, quoting Louise Yamada, on why it took the bank index nineteen years to reclaim the 2007 top <a class="ts" href="https://www.youtube.com/watch?v=JPMwyChVTeQ&amp;t=1427s" target="_blank">[23:47]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;The US economy has demonstrated notable resiliency this year, being supported by several tailwinds including AI-driven capital investment, fiscal stimulus, Golden Dome, and the benefits of more efficient regulation.&rdquo;</blockquote>
+        <div class="attrib">Jamie Dimon, from the JPM release, read on-air <a class="ts" href="https://www.youtube.com/watch?v=JPMwyChVTeQ&amp;t=779s" target="_blank">[12:59]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;The level's been tested a handful of times already, so each time absorbing more and more of that overhead supply. And I think that breadth is really supporting a big upside resolution here.&rdquo;</blockquote>
+        <div class="attrib">Strazza, on the KBE breakout <a class="ts" href="https://www.youtube.com/watch?v=JPMwyChVTeQ&amp;t=1181s" target="_blank">[19:41]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;Software stocks and semiconductors are just moving in opposite directions.&rdquo;</blockquote>
+        <div class="attrib">Strazza, on the enterprise capex substitution behind the IBM print <a class="ts" href="https://www.youtube.com/watch?v=JPMwyChVTeQ&amp;t=1620s" target="_blank">[27:00]</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The bear thesis now has to explain the bank chart.</strong> The equal-weight S&amp;P bank index is above its January 2007 high on a daily close, for the first time since the great financial crisis. That level held as a ceiling through the COVID reclaim, the 2024 attempt, and the 2025 attempt. Losing it back on a weekly close reopens the question. Until then, JC's frame stands, and it's a hard one to argue against.</li>
+      <li><strong>The IBM print is a software-wide signal, not a market-wide one.</strong> <span class="tk">$IBM</span> cracked <span class="ch down">-22%</span> because enterprise clients diverted capex toward AI servers, memory, and storage. The sympathy list (<span class="tk">$WDAY</span>, <span class="tk">$TEAM</span>, <span class="tk">$HUBS</span>, <span class="tk">$NOW</span>, <span class="tk">$ACN</span>) confirms the substitution is happening across the customer base. Software is losing budget to semis inside the same corporate wallet. That's the trade to size around, not the index level.</li>
+      <li><strong>Yen positioning is the tail risk sitting on top of the tape.</strong> Speculators have never been more short yen in the futures data. The Nikkei tagged a 1.618 long-term projection from the 1970s low. If the Bank of Japan intervenes or even signals this week, the unwind moves the whole risk complex, exactly the way the smaller 2024 BOJ move did. Sizing decisions this week should account for a right-tail yen move the same way they account for one in oil.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
