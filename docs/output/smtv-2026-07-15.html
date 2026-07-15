@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Six Software Coils, One Setup, and Hedge Funds Are Short the Whole NASDAQ - SMTV July 15, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; July 15, 2026 &middot; The Morning Show</div>
+    <h1>Six Software Coils, One Setup, and Hedge Funds Are Short the Whole NASDAQ</h1>
+    <p class="subtitle">Strazza walked through six enterprise software leaders showing the exact same volatility-compression pattern that just fired higher on Crowd Strike and Octa yesterday, while hedge funds picked this week to be the most net-short the NASDAQ 100 they have been in three years.</p>
+    <div class="meta">
+      65 min &middot; <a href="https://www.youtube.com/watch?v=LEvWyWKJMms" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Every big enterprise software leader on the desk's board is coiled up in the same setup. Data Dog, HPE, NetApp, Crowd Strike, Snowflake, and Octa all just gapped up on earnings, then spent a month compressing tight. Crowd Strike ripped twelve percent yesterday and Octa ripped ten. The rest of the list is the trade. And picking this exact moment to bet against it, hedge funds are the most net-short the NASDAQ 100 they have been since 2023. The 200-day moving average of the S&amp;P has been going up for 300 straight days. This is not a tape that pays bearishness.</p>
+    <ul>
+      <li>Strazza's software basket, all showing the same high-and-tight coil after a monster earnings gap. <span class="tk">$DDOG</span>, <span class="tk">$HPE</span>, <span class="tk">$NTAP</span>, <span class="tk">$CRWD</span>, <span class="tk">$SNOW</span>, <span class="tk">$OKTA</span>. First movers yesterday were <span class="tk">$CRWD</span> <span class="ch up">+12%</span> and <span class="tk">$OKTA</span> <span class="ch up">+10%</span>.</li>
+      <li>Semis and software have decoupled. The historical correlation runs in the seventies. Right now it is near zero, with the two groups trading in opposite directions day after day.</li>
+      <li>Speculators are the most net-short the NASDAQ 100 since Spring 2023. Same crowd was the most net-long right before the Q4 2023 tech pullback.</li>
+      <li>The S&amp;P 500's 200-day moving average has now been rising for 300 consecutive days. The primary trend has been up for ten months without a break.</li>
+      <li>Bank earnings running clean. Morgan Stanley trading revenue up <span class="ch up">50-60%</span>, JPMorgan and Goldman growing top-line <span class="ch up">~30%</span>. Wells Fargo entering the options clearing market.</li>
+      <li>Energy back in play. 321 crack spread at all-time highs, oil refiners ETF (<span class="tk">$CRAK</span>) at all-time highs, December heating oil futures at all-time highs. Crude pushing <span class="pr">$80</span>.</li>
+      <li>Crypto sat still. <span class="tk">$BTC</span> <span class="pr">$64,800</span> <span class="ch flat">flat</span>, <span class="tk">$ETH</span> <span class="pr">$1,900</span> <span class="ch flat">flat</span>, <span class="tk">$SOL</span> just under <span class="pr">$78</span>. Total crypto cap <span class="pr">$2.21T</span>.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Sat Out a Tape That Handed Software an Explosion</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$64,800</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,900</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$77.90</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.21T</div>
+        <div class="stat-change flat">Grinding at Feb ceiling</div>
+      </div>
+    </div>
+
+    <p>Crypto did not participate in either direction this morning. <span class="tk">$BTC</span> sat at <span class="pr">$64,800</span>, <span class="tk">$ETH</span> pushed <span class="pr">$1,900</span>, and <span class="tk">$SOL</span> parked just under <span class="pr">$78</span>. Total crypto cap crossed <span class="pr">$2.21T</span>, still grinding under the same February resistance ceiling the aggregate has been fighting all month.</p>
+
+    <p>The read that matters here is not price. It is that on a day when the desk spent an hour laying out a specific, tradeable, multi-name breakout setup in software, and another twenty minutes on a fresh all-time high in the crack spread, crypto did not come up once. On a slow crypto Wednesday with the tech tape doing something interesting, this is what sitting-out looks like.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>The Software Leaders Are All Coiling the Same Way and the Correlation to Semis Just Snapped</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow</div>
+        <div class="stat-value">52,900</div>
+        <div class="stat-change up">+113 pts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,607</div>
+        <div class="stat-change up">+0.25%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">29,934</div>
+        <div class="stat-change up">+0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Crude</div>
+        <div class="stat-value">$79.80</div>
+        <div class="stat-change up">+0.5%</div>
+      </div>
+    </div>
+
+    <p>The whole episode was built around one idea. Strazza put up chart after chart of enterprise software leaders and they all looked identical. Data Dog (<span class="tk">$DDOG</span>, an observability platform for cloud infrastructure), Hewlett Packard Enterprise (<span class="tk">$HPE</span>, the enterprise server and networking business Meg Whitman spun out of HP), NetApp (<span class="tk">$NTAP</span>, storage and data management for enterprise IT), Crowd Strike (<span class="tk">$CRWD</span>), Snowflake (<span class="tk">$SNOW</span>), and Octa (<span class="tk">$OKTA</span>). Each one showed a monster breakaway gap on the last earnings report, a five to six week high-and-tight consolidation on top of that gap, and now a curl higher on Strazza's proprietary volatility indicator that measures compression giving way to expansion. Same trade, six times.</p>
+
+    <p>Crowd Strike and Octa were the first two names in that group to fire yesterday. Crowd Strike ran twelve percent. Octa ran ten. Strazza said out loud that he had banned taking doubles on options positions in the group this week because he expects the rest of the basket to make the same move. The trades expire this Friday and the following one.</p>
+
+    <p>The frame that made the software basket interesting was the second point. Semiconductors and software have historically moved together, with a correlation coefficient (a statistical measure of how tightly two things track, running from negative one to positive one) that lives up in the mid-seventies. Right now that number is near zero. It has been near zero since last year, and the day-to-day directional split has only widened. Money is not leaving big tech. It is rotating from semis into software inside the same institutional accounts.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Coiled and ready</div>
+        <ul>
+          <li><span class="tk">$DDOG</span> &middot; monster gap, six-week high-tight coil</li>
+          <li><span class="tk">$HPE</span> &middot; reclaiming VWAP from ATH, best in the basket today</li>
+          <li><span class="tk">$NTAP</span> &middot; compression giving way to expansion</li>
+          <li><span class="tk">$SNOW</span> &middot; high-and-tight consolidation on the gap</li>
+          <li><span class="tk">$OKTA</span> &middot; already fired <span class="ch up">+10%</span> yesterday, best base</li>
+          <li><span class="tk">$CRWD</span> &middot; already fired <span class="ch up">+12%</span> yesterday</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Legacy tech laggards</div>
+        <ul>
+          <li><span class="tk">$IBM</span> &middot; stopped bleeding at yesterday's close after worst day ever</li>
+          <li><span class="tk">$ORCL</span> &middot; bottom of its range, still going nowhere</li>
+          <li><span class="tk">$PYPL</span> &middot; takeover chatter at <span class="pr">$60</span>, bag holders bought at <span class="pr">$200</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Palantir (<span class="tk">$PLTR</span>) got its own moment. Strazza's read was that the recent breakdown of the February-to-May range was a failed pattern that is now setting up a fast move higher. The weekly RSI never registered oversold, which he flagged as the tell that healthy uptrends do not. Volatility on the stock has compressed to the tightest level on record for the name. His book is long in the IRA and long options short-dated into next week, sized for a break out of the coil.</p>
+
+    <p>Bank earnings continue to print clean. Morgan Stanley reported trading revenue growth of fifty to sixty percent. JPMorgan and Goldman are growing top-line at roughly thirty percent. Wells Fargo is entering the options clearing market, a business it was locked out of for most of the last fifteen years under the growth cap. The desk kept returning to the same idea. Banks have quietly become an AI beneficiary trade in their own right, both because they finance the capex build-out and because they are internal adopters using the tools to cut cost.</p>
+
+    <p>Energy is the other side that lit up this morning. The 321 crack spread (a measure of the gross profit margin refiners earn turning crude oil into gasoline and heating oil) printed a new all-time high. So did the December heating oil contract. So did the oil refiners ETF (<span class="tk">$CRAK</span>). The straightforward mental model is that the refiners are apple pie stands, and if they are making record margins on pies, they are going to buy more apples, which is crude oil. Crude pushed <span class="pr">$79.80</span> this morning off the ceasefire coming off the table again. Names like Phillips 66 (<span class="tk">$PSX</span>) and Valero (<span class="tk">$VLO</span>) are already at fresh highs.</p>
+
+    <div class="note">
+      <div class="label">One name to keep on the radar</div>
+      <p>PayPal (<span class="tk">$PYPL</span>) is fielding takeover headlines this morning. The desk's read is that a takeout in the sixties is on the table, which would leave a lot of retail bag holders who bought the stock during the fintech peak at two hundred with a very ugly exit. It is a reminder that the same "money-good, one-day-worth-owning" name can round-trip a decade of narrative before the strategic-buyer bid finally shows up.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The Framework</div>
+    <h2>Hedge Funds Are the Most Short the NASDAQ in Three Years and the Primary Trend Just Hit 300 Days</h2>
+
+    <p>Two facts, one behind the other, ran through the whole morning. Speculators (the CFTC futures data lumps hedge funds and asset managers together under that label) are net-short the NASDAQ 100 e-mini futures at the most extreme level since Spring 2023. The last time they were positioned this bearish, the NASDAQ was months away from a run that took it from 12,000 to 20,000 and beyond. Right before that run, the same crowd was as net-long as they had ever been, and they faded the entire October-November 2023 melt-up.</p>
+
+    <p>Sitting on top of that positioning read, Spencer quietly noted that the 200-day moving average of the S&amp;P 500 has now been rising for 300 straight days in a row. That is a technical way of saying the primary trend of the biggest index in the world has been up, uninterrupted, for ten months. The desk has been trained by twenty years of bull markets to see this stat as unremarkable, which is exactly the point. It is not.</p>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;These are speculators. So these are hedge funds, asset managers. These are the worst investors in the world consistently. This is bullish as hell. Look at how that positioning flipped right into the consolidation.&rdquo;</blockquote>
+      <div class="attrib">JC, on the NASDAQ 100 speculator net-short print <a class="ts" href="https://www.youtube.com/watch?v=LEvWyWKJMms&amp;t=1010s" target="_blank">[16:50]</a></div>
+    </div>
+
+    <p>JC leaned on Morgan Housel's frame to close the loop. Everyone is a product of the market they came up in. Strazza started his career in 2010. Spencer graduated college in 2013. Both careers have been spent watching tech leadership work over and over again while the punditry told them it had to end. The other side of the same generational sample is Michael Burry, who came up in the 1998-2002 unwind and has been positioned for the top ever since. Both readings are honest. Only one has been paid.</p>
+
+    <p>The specific trade this framework points to is not more complicated than it looks. When the tape's primary trend has been up for 300 days and the biggest allocators are positioned the most short they have been in three years, the pain trade is up. Continuation patterns resolve in the direction of the trend more often than they reverse. That is the same argument the six software coils in Chapter 2 are making, only expressed in position data.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="quotes-block">
+      <div class="pullquote">
+        <blockquote>&ldquo;Software stocks are not just working. They're not just rotating into them. These things are screaming higher.&rdquo;</blockquote>
+        <div class="attrib">Strazza, on the yesterday's Crowd Strike and Octa fires <a class="ts" href="https://www.youtube.com/watch?v=LEvWyWKJMms&amp;t=1160s" target="_blank">[19:20]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;The correlation between semis and software is near zero. It's amazing.&rdquo;</blockquote>
+        <div class="attrib">Strazza, on the historic decoupling between the two biggest tech groups <a class="ts" href="https://www.youtube.com/watch?v=LEvWyWKJMms&amp;t=1195s" target="_blank">[19:55]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;I've learned in my career that it's really difficult to bet against big tech stocks. It's maybe the single hardest game to play in the market.&rdquo;</blockquote>
+        <div class="attrib">Strazza, on the last fifteen years of the desk's playbook <a class="ts" href="https://www.youtube.com/watch?v=LEvWyWKJMms&amp;t=555s" target="_blank">[9:15]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;From compression comes expansion. This is a mean-reverting indicator. You could see it curling higher right there.&rdquo;</blockquote>
+        <div class="attrib">Strazza, on the volatility-compression signal firing across the software basket <a class="ts" href="https://www.youtube.com/watch?v=LEvWyWKJMms&amp;t=1395s" target="_blank">[23:15]</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The software basket is one trade with six expressions.</strong> <span class="tk">$DDOG</span>, <span class="tk">$HPE</span>, <span class="tk">$NTAP</span>, <span class="tk">$CRWD</span>, <span class="tk">$SNOW</span>, and <span class="tk">$OKTA</span> all show the same pattern of a monster earnings gap followed by tight consolidation, with volatility compression giving way to expansion on the desk's indicator. <span class="tk">$CRWD</span> and <span class="tk">$OKTA</span> already fired yesterday at <span class="ch up">+12%</span> and <span class="ch up">+10%</span>. The rest is the trade to work.</li>
+      <li><strong>Trade the software group directly.</strong> Semis and software have decoupled to a near-zero correlation from a historical seventy-plus. On any given day this month, one has been up while the other has been down, and the direction has flipped several times. Sector-level tech exposure is now a hedge against itself. Picking the right group is where the return lives.</li>
+      <li><strong>The positioning tape and the trend tape both point up.</strong> Hedge funds are the most net-short the NASDAQ 100 since Spring 2023 while the S&amp;P 500's primary trend has been up for 300 straight days. Both extremes fade in the same direction. Any near-term dip has a large forced-cover buyer waiting on the other side of it. The pain trade continues to be higher.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
