@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Tech Earnings Land in Seventy-Two Hours and the Margin Panic Is Using the Wrong Chart - SMTV July 20, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; The Morning Show &middot; July 20, 2026</div>
+    <h1>Big Tech Earnings Land in Seventy-Two Hours and the Margin Panic Is Using the Wrong Chart</h1>
+    <p class="subtitle">Alphabet and Tesla report Wednesday after the close, Intel follows Thursday, and the desk spends the morning taking apart the bearish chart that keeps getting posted.</p>
+    <div class="meta">
+      64 min &middot; <a href="https://www.youtube.com/watch?v=H3t4L3FBUGI" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Big tech earnings week starts today. Alphabet and Tesla report Wednesday after the close, Intel follows Thursday, and the guides those companies give will steer the tape into next week's Meta and Amazon prints. Going in, the mood on financial television is not calm. A chart of margin debt at record highs keeps circulating with the argument that the market is dangerously leveraged. JC spent the morning showing why the chart is wrong, and the correct version sits below 1987 and 2008 readings. Underneath the flat index, rotation keeps ripping, tech leadership looks like it might be exhausting, and the two-month quiet in currency markets is about to break.</p>
+    <ul>
+      <li>Bitcoin flat at <span class="pr">$64,650</span>, <span class="tk">$ETH</span> flat at <span class="pr">$1,875</span>, <span class="tk">$SOL</span> flat at <span class="pr">$77</span>, total crypto cap <span class="pr">$2.19T</span>.</li>
+      <li>Big Tech earnings this week. <span class="tk">$GOOGL</span> and <span class="tk">$TSLA</span> Wednesday after the close, <span class="tk">$INTC</span> Thursday. <span class="tk">$CME</span> and <span class="tk">$NDAQ</span> also Wednesday, with the tokenization overhang in the room.</li>
+      <li>Margin debt as a percent of US market cap sits well below the peaks that preceded the 1987 crash and the 2008 financial crisis. All inverse and leveraged ETFs added together are under <span class="pr">$200B</span> AUM, roughly a quarter of one percent of US stock market cap.</li>
+      <li>BitMine Immersion (<span class="tk">$BMNR</span>) treasury now sits at 5.8 million <span class="tk">$ETH</span> and <span class="pr">$11.5B</span> in total holdings.</li>
+      <li><span class="tk">$XLK</span>/<span class="tk">$SPY</span> ratio posted its worst relative week since 2009, right after posting its biggest week since the dot-com bubble in early May.</li>
+      <li>Breadth solid. Two thirds of stocks in the S&amp;P 500, S&amp;P 400, and S&amp;P 600 sit above their 200-day moving average.</li>
+      <li>Sector leaders are financials, energy, healthcare, real estate. Consumer discretionary sits at the bottom of the table.</li>
+      <li>REITs (real-estate investment trusts) vs utilities printed a new 52-week high for the first time in roughly fifteen years.</li>
+      <li><span class="tk">$IREN</span> <span class="ch up">+8%</span> on an upgraded AI cloud annualized run rate. <span class="tk">$IMAX</span> and <span class="tk">$AMC</span> ripping on Nolan's <em>Odyssey</em> opening (<span class="pr">$52M</span> IMAX-only, biggest opening of Nolan's career).</li>
+      <li>SpaceX (<span class="tk">$SPCE</span>) trading at <span class="pr">$124</span> against an average holder cost of <span class="pr">$167</span>. The platforms are still nudging holders not to sell.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Bitcoin Sits Flat With the Broad Tape and BitMine's Ether Pile Crosses Six Million</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$64,650</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,875</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$77</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.19T</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+    </div>
+
+    <p>Everything sat still. <span class="tk">$BTC</span> at <span class="pr">$64,650</span>, <span class="tk">$ETH</span> at <span class="pr">$1,875</span>, <span class="tk">$SOL</span> at <span class="pr">$77</span>, aggregate crypto cap at <span class="pr">$2.19T</span>. No move to trade, no dispersion story between the majors. On a Monday going into a heavy US earnings week, crypto not going anywhere is close to the setup you would expect.</p>
+
+    <p>The one meaningful onchain data point in the tape this morning was BitMine Immersion (<span class="tk">$BMNR</span>, one of the ether-treasury companies the desk has tracked all year) crossing 5.8 million <span class="tk">$ETH</span> and <span class="pr">$11.5B</span> in total crypto plus cash holdings. Doing the math against ether at <span class="pr">$1,875</span>, the ETH itself is worth roughly <span class="pr">$10.9B</span>, meaning the rest is cash. A treasury company at that size is now a real overhang on any ether unwind, since a stack that big has to sell into something.</p>
+
+    <p>Also worth noting. Alibaba shipped a new Chinese model overnight that the desk described as apparently really good, in the same week the market is going to price how Alphabet and the US model labs are compounding. If Chinese frontier models keep landing at parity, the framing around Gemini, GPT, and Claude margin structures gets messier. That is a story to watch this week. Trading it today would be early.</p>
+
+    <p>Louis is not on this morning. The tokenization thread in the show, covered in the Markets chapter below, is his read from a couple of weeks ago carrying forward.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Big Tech Earnings Week Opens With the Board Wide Open</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow Futures</div>
+        <div class="stat-value">45,115</div>
+        <div class="stat-change flat">+13</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,530</div>
+        <div class="stat-change up">+0.4%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">29,000+</div>
+        <div class="stat-change up">+1.0%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">18+</div>
+        <div class="stat-change flat">Still elevated</div>
+      </div>
+    </div>
+
+    <p>The week's calendar is what everything else keys off. <span class="tk">$GOOGL</span> and <span class="tk">$TSLA</span> report Wednesday after the close, both max-multiple names in different ways, and both give the market its first real look this cycle at how it wants to price mega-cap growth against the AI capex bill. <span class="tk">$INTC</span> lands Thursday, straight after the 26-year comeback trade the desk chronicled at its all-time-high print. The exchanges (<span class="tk">$CME</span>, the futures venue, and <span class="tk">$NDAQ</span>, the stock exchange operator) also report Wednesday, with an unusual overhang. Both stocks got beaten up on the fear that equity tokenization pulls order flow out of their venues, and Louis flagged the lows a couple of weeks ago as a buy on those names. Wednesday's prints will test that call.</p>
+
+    <p>On the commodity side, <span class="tk">$FCX</span> (Freeport-McMoRan, the copper miner), <span class="tk">$STLD</span> (Steel Dynamics), <span class="tk">$GEV</span> (GE Vernova, the power-generation spinoff feeding AI data centers), <span class="tk">$CB</span> (Chubb, the insurer), and <span class="tk">$SLB</span> (Schlumberger, oil services) all print this week. Any one of them can move a whole industry group.</p>
+
+    <p>The pre-market is polite. Dow futures flat, <span class="tk">$SPX</span> up almost half a percent at <span class="pr">7,530</span>, NASDAQ 100 futures leading up close to one percent through <span class="pr">29,000</span>. Copper up one percent at <span class="pr">$6.33</span>, silver up one and a half at <span class="pr">$57</span>, gold pinned just over <span class="pr">$4,000</span>. Crude flat under <span class="pr">$82</span>. VIX is still above 18. The dollar barely moved again, and the quiet itself is the whole setup. Currency markets have been in a volatility compression regime for weeks, and the desk expects it to resolve into a real move soon. If the dollar breaks lower, it is broadly bullish for risk. If it breaks higher, the euro and pound complete tops and equities take a reaction leg down. Either direction is finally in play.</p>
+
+    <p>Under the flat index, the tape is anything but flat. Breadth is broad. Two thirds of stocks in the large-cap S&amp;P 500, the mid-cap S&amp;P 400, and the small-cap S&amp;P 600 all sit above their 200-day moving average, a rare sync across cap tiers. Energy, financials, healthcare, and real estate led on Friday, with energy printing 72% of its S&amp;P 1500 constituents advancing on the day. Real estate in particular is pressing on the top of a five-year reversal pattern. And REITs versus utilities printed a new 52-week high for the first time in roughly fifteen years, which the desk called out as a genuine regime shift that would not have been possible in the previous cycle.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Leading</div>
+        <ul>
+          <li>Energy &middot; 72% of S&amp;P 1500 energy names advanced Friday</li>
+          <li>Financials &middot; bank index still riding its multi-decade breakout</li>
+          <li>Healthcare &middot; broad rotation across offensive names too</li>
+          <li>Real estate &middot; pressing the top of a five-year reversal</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Lagging</div>
+        <ul>
+          <li>Consumer discretionary &middot; second-worst sector after staples</li>
+          <li>Consumer staples &middot; still the worst on the board</li>
+          <li><span class="tk">$XLK</span>/<span class="tk">$SPY</span> ratio &middot; worst week since 2009</li>
+          <li>Small-cap discretionary is the lone bright spot inside a broken group</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>The tech-leadership story is the one worth staring at. The <span class="tk">$XLK</span>/<span class="tk">$SPY</span> ratio, tech's relative line against the broad index, just posted its worst relative week since 2009. That comes right after early May, when the same ratio posted its biggest week of tech outperformance since the dot-com bubble. A move that big in both directions inside a few months is what turning points look like on a weekly chart. Morgan Stanley published a note this morning arguing semis will bounce off these lows but will not regain leadership in the second half, and the desk agreed with the shape while gently roasting the timing.</p>
+
+    <p>Movers worth flagging. <span class="tk">$IREN</span> (Iris Energy, the bitcoin-miner-turned-AI-data-center) up about eight percent on an upgraded annualized run rate for its AI cloud business. <span class="tk">$IMAX</span> and <span class="tk">$AMC</span> ripping on the opening of Chris Nolan's <em>Odyssey</em>, which delivered a <span class="pr">$52M</span> IMAX-only worldwide debut, the biggest opening of Nolan's career. Personalis (<span class="tk">$PCNL</span>, precision genomics) getting acquired by Tempus (<span class="tk">$TEM</span>), though the premium under <span class="pr">$16</span> a share is thin enough to sting existing holders.</p>
+
+    <p>And the SpaceX (<span class="tk">$SPCE</span>) print. The recent IPO is at <span class="pr">$124</span> against an average holder cost of <span class="pr">$167</span>. Robinhood was reportedly nudging retail buyers at IPO to hold their allocations, warning they might not get the next deal if they flipped. JC's tip on that whole flow was simple. If the platform lets you have as many shares as you want at an IPO, you probably do not want them, because the reason the shares are available is that the insiders are trying to unload.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Framework</div>
+    <h2>The Bears' Favorite Chart Is Using the Wrong Denominator</h2>
+
+    <p>The chart that goes viral every few months, and did again this weekend, is US margin debt plotted against US GDP. It shows a line running to record highs and gets shared with the argument that the stock market is dangerously leveraged and about to snap. JC's take, which took most of ten minutes of the show, was that the chart is drawn wrong. Margin debt is money that traders borrow against their stock holdings to buy more stock. GDP is the country's total output of goods and services. There is no direct link between the two. The correct denominator is the market cap of the stock market itself, because that is what margin debt is a claim on.</p>
+
+    <p>When you swap denominators, the picture inverts. Margin debt as a percent of US stock market cap sits well below the readings that preceded the 1987 crash and the 2008 financial crisis. It is genuinely low for this stage of a bull cycle. The puzzle is not "why are people so leveraged," it is "why is not more margin being used given how far the tape has run." Two-thirds of adult Americans still believe a recession is imminent, and that positioning survey shows up in the margin data as underexposure, which inverts the usual scare-chart framing.</p>
+
+    <p>The natural rebuttal is that retail moved from cash margin into leveraged ETFs, so the traditional gauge misses the real leverage. Add every inverse and leveraged ETF on the US tape together and the combined AUM is under <span class="pr">$200B</span>. That is roughly a quarter of one percent of US stock market cap. A rounding error, even before adjusting for the fact that these products are designed to be day-traded and rarely held for more than a session. Two things can both be true. The category is growing fast, and it is still tiny in absolute size.</p>
+
+    <p>None of this means bears are wrong that the market can correct. It means the specific bear case that circulates every weekend on financial television, retail leveraged to the eyeballs and about to blow up, is not what the data shows. Someone who wants to be short needs a better reason. The desk closed the segment with the reminder that they are welcome to make the trade, but they should bring a better chart.</p>
+
+    <div class="note">
+      <div class="label">The reason to notice</div>
+      <p>The audience for the wrong-denominator chart is not traders. It is retirees and financial advisers who watch cable and read newspapers, and every one of them who moves to cash on a bad chart pushes their real return down for the next cycle. This is why the debunk mattered enough for the show to spend ten minutes on it.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="quotes-block">
+      <div class="pullquote">
+        <blockquote>&ldquo;Why would you compare margin debt to US GDP, which is the goods? Compare the money borrowed to the things the money borrowing is buying. Margin debt is debt on the S&amp;P 500, basically. So compare it to that.&rdquo;</blockquote>
+        <div class="attrib">JC, on the wrong-denominator chart <a class="ts" href="https://www.youtube.com/watch?v=H3t4L3FBUGI&amp;t=825s" target="_blank">[13:45]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;You would have to go back to '09 for a week that was this bad relative to the S&amp;P 500. When you see volatility spike in both directions like it is right now, usually means you are at some sort of a turning point.&rdquo;</blockquote>
+        <div class="attrib">Strazza, on <span class="tk">$XLK</span>/<span class="tk">$SPY</span> exhaustion <a class="ts" href="https://www.youtube.com/watch?v=H3t4L3FBUGI&amp;t=421s" target="_blank">[7:01]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;Here's a tip. If you can get it, you probably don't want it.&rdquo;</blockquote>
+        <div class="attrib">JC, on how easily retail was allocated SpaceX at IPO <a class="ts" href="https://www.youtube.com/watch?v=H3t4L3FBUGI&amp;t=2133s" target="_blank">[35:33]</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Earnings week is the whole tape.</strong> <span class="tk">$GOOGL</span> and <span class="tk">$TSLA</span> report Wednesday after the close, <span class="tk">$INTC</span> Thursday, with <span class="tk">$CME</span> and <span class="tk">$NDAQ</span> also on Wednesday. How the market wants to price mega-cap growth and the tokenization overhang gets set in these three sessions, and everything about next week's <span class="tk">$META</span>/<span class="tk">$AMZN</span>/<span class="tk">$MSFT</span>/<span class="tk">$AAPL</span> print inherits the tone.</li>
+      <li><strong>The margin-debt panic runs on the wrong chart.</strong> Margin borrowing as a percent of the US stock market's cap sits well below 1987 and 2008 readings. Every inverse and leveraged ETF added together is under <span class="pr">$200B</span>, roughly a quarter percent of the market. Bears can still be right for other reasons. This chart is not one of them.</li>
+      <li><strong>Rotation is the market.</strong> Two-thirds of stocks in every cap tier are above the 200-day moving average. Financials, energy, healthcare, and real estate lead, discretionary lags, and the <span class="tk">$XLK</span>/<span class="tk">$SPY</span> ratio just posted its worst week since 2009 after its biggest since the dot-com bubble in May. Buy leadership when it prints and be ready to hand off when the data changes.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
