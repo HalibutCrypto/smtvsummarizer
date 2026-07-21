@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asia Ran Three Percent, the Yen Cracked, and the Old Sixty-Forty Portfolio Kept Dying in Silence - SMTV July 21, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; The Morning Show &middot; July 21, 2026</div>
+    <h1>Asia Ran Three Percent, the Yen Cracked, and the Old Sixty-Forty Portfolio Kept Dying in Silence</h1>
+    <p class="subtitle">Kospi up three and a half, Nikkei up three, semis ripping into big-tech week, and the correlation chart JC pulled up shows bonds moved to the same side as stocks years ago while most of the money still assumes the old hedge.</p>
+    <div class="meta">
+      62 min &middot; <a href="https://www.youtube.com/watch?v=0-PNFW163PA" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Asia ran three percent overnight. Kospi added three and a half, the Nikkei added three, the yen cracked to levels it has not seen in decades, and the US pre-market took the cue quietly. Underneath, semis ripped while software sold for the second straight day, the same daily whipsaw JC keeps calling a stretched-positioning mean-reversion. And a rolling correlation chart made the case that bonds and stocks stopped hedging each other years ago. The sixty-forty portfolio broke in 2022. Most of the money in it still hasn't noticed.</p>
+    <ul>
+      <li>Bitcoin <span class="pr">$66,500</span> <span class="ch up">+2%</span>, <span class="tk">$ETH</span> <span class="pr">$1,940</span> <span class="ch up">+2%</span>, <span class="tk">$SOL</span> <span class="pr">$78.25</span> <span class="ch flat">flat</span>, total crypto cap <span class="pr">$2.25T</span> at six-week highs.</li>
+      <li>Kospi <span class="ch up">+3.5%</span>, Nikkei <span class="ch up">+3%</span>. Yen at lows not seen since the Mets last won a World Series.</li>
+      <li><span class="tk">$SPX</span> up a third at <span class="pr">7,511</span>. NASDAQ 100 futures up over one percent. Dow futures <span class="ch up">+100</span> at <span class="pr">52,170</span>. VIX at <span class="pr">18</span>.</li>
+      <li>Semis rip, software sells for a second straight session. <span class="tk">$CRM</span> <span class="ch down">-3%</span>, <span class="tk">$NOW</span> <span class="ch down">-3%</span>. On an equal-weight relative line, software has quietly gained on semis for months and just printed fresh three-month highs.</li>
+      <li>Silver <span class="ch up">+4%</span> at <span class="pr">$59.25</span>. Copper <span class="ch up">+3%</span> at <span class="pr">$6.51</span>. Crude <span class="ch up">+2%</span> at <span class="pr">$84</span>. Gold <span class="ch up">+1%</span> at <span class="pr">$4,060</span>.</li>
+      <li>Todd Sohn correlation chart: <span class="tk">$SPX</span> now moves with US Treasury bonds and against US energy stocks. The signs on the classic sixty-forty portfolio have flipped.</li>
+      <li>Energy is 3% of the S&amp;P 500 and 0% of the NASDAQ 100. Refiners still lead the group. Crack spreads ripping.</li>
+      <li><span class="tk">$GM</span> at all-time highs on a "dot-com" base (its modern chart starts after the 2009 bankruptcy and relisting). <span class="tk">$F</span> sits on a similarly shaped base.</li>
+      <li>Utz Brands (<span class="tk">$UTZ</span>, Pennsylvania snack company, a former SPAC) taken out at <span class="pr">$14.25</span> from a <span class="pr">$7</span> close. A roughly 100% premium.</li>
+      <li>Big-tech earnings begin tomorrow after the close: <span class="tk">$GOOGL</span> and <span class="tk">$TSLA</span> Wednesday, <span class="tk">$INTC</span> Thursday. Nothing on the calendar today.</li>
+    </ul>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Quietly Rode the Risk-On Tape Back to Six-Week Highs on Aggregate Cap</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$66,500</div>
+        <div class="stat-change up">+2% · +$1,400</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,940</div>
+        <div class="stat-change up">+2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$78.25</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.25T</div>
+        <div class="stat-change up">Six-week high</div>
+      </div>
+    </div>
+
+    <p>Bitcoin added roughly fourteen hundred points overnight to <span class="pr">$66,500</span>. Ethereum matched the two percent move to <span class="pr">$1,940</span>. Solana stayed pinned near <span class="pr">$78.25</span> and finally started to move as the equity open approached. Aggregate crypto cap crossed <span class="pr">$2.25T</span>, its highest print in about six weeks and back through what has been resistance since early June.</p>
+
+    <p>The macro handed crypto every card in the deck. Silver added four percent, copper three, crude two, gold one, and the yen cracked to levels not seen since the Mets last won a World Series. Asia posted a synchronized three percent risk-on tape overnight, with the Kospi up three and a half and the Nikkei up three. That combination of weaker dollar-yen, hot metals, and Asian equity rip is the setup crypto is meant to trade with. The complex quietly took the cue and stopped underperforming.</p>
+
+    <p>Louis is not on this morning. Onchain flow was thin on the show; today's driver was macro rather than any one token story.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Asia Ran Overnight, the Yen Cracked, and the Software-Semis Whipsaw Ran a Second Day</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow Futures</div>
+        <div class="stat-value">52,170</div>
+        <div class="stat-change up">+100</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,511</div>
+        <div class="stat-change up">+0.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">Up 1.2%</div>
+        <div class="stat-change up">Semis-led</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">VIX</div>
+        <div class="stat-value">18</div>
+        <div class="stat-change flat">Still elevated</div>
+      </div>
+    </div>
+
+    <p>Overnight moved. The Kospi added three and a half percent, the Nikkei added three, and the yen cracked to its weakest levels in decades. Silver ran four percent, copper three, crude two, gold one. The US pre-market took the cue politely, with <span class="tk">$SPX</span> up a third of a percent at <span class="pr">7,511</span>, NASDAQ 100 futures leading up more than one percent, and Dow futures adding a hundred at <span class="pr">52,170</span>. The VIX stayed pinned at 18.</p>
+
+    <p>Under the polite index, the whipsaw ran again. Semis ripped, software sold, for the second straight session. Salesforce (<span class="tk">$CRM</span>) down three percent, ServiceNow (<span class="tk">$NOW</span>) down three, the whole software cohort giving back to a semiconductor tape that added double-digit-single-name moves. These are all tech stocks going in opposite directions on a daily basis, and JC's read is that this is not one investor swinging back and forth. It is massive positioning in favor of semis over software that got stretched over months and is now mean-reverting, and the reversion is volatile rather than smooth. Under all of that, on an equal-weight relative basis, software has been quietly gaining on semis for several months and just printed fresh three-month highs on the ratio.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Leading</div>
+        <ul>
+          <li>Semis &middot; the whole index move today</li>
+          <li>Financials, small-cap consumer disc &middot; advance-decline line at ATH</li>
+          <li>Refiners &middot; crack spreads ripping, still the group leader</li>
+          <li>Asia risk (Kospi, Nikkei) &middot; +3% synchronized</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Lagging</div>
+        <ul>
+          <li>Software &middot; <span class="tk">$CRM</span> <span class="ch down">-3%</span>, <span class="tk">$NOW</span> <span class="ch down">-3%</span></li>
+          <li>Yen &middot; multi-decade lows overnight</li>
+          <li>Long-duration Treasurys &middot; correlation to stocks now positive; no longer a hedge</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>The internals do not read like a top. The advance-decline line just printed fresh all-time highs on the sixteenth. Financials sit at all-time highs. Egyptian equities are pressing all-time highs, which nobody in US financial media is talking about. Even the seasonally-weak August-September window, which historically has been the worst two-month stretch since 1990 for the Dow, S&amp;P and NASDAQ, has been getting overrun by the internals all year. The tape has bucked every seasonal weak spot in 2026, and the trend that got you here does not care what the calendar says next.</p>
+
+    <p>News to log. General Motors (<span class="tk">$GM</span>) at all-time highs on what the desk called a dot-com-style base, because the modern chart only starts after the 2009 bankruptcy and relisting. Ford (<span class="tk">$F</span>) sits on a base of the same shape from the dot-com bust. And Utz Brands (<span class="tk">$UTZ</span>, the Pennsylvania snack company, a former SPAC), got taken out at <span class="pr">$14.25</span> from a <span class="pr">$7</span> close the session before. A roughly 100% takeout premium is the kind of print that maybe happens once or twice a year. Small-cap discretionary and Egyptian equities both got shouted out as pockets of relative strength most of the tape has not noticed.</p>
+
+    <p>Big-tech earnings begin tomorrow after the close, with Alphabet (<span class="tk">$GOOGL</span>) and Tesla (<span class="tk">$TSLA</span>) both reporting Wednesday and Intel (<span class="tk">$INTC</span>) reporting Thursday. Nothing else moves the index today. This morning is the last quiet pre-print session of the week.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Framework</div>
+    <h2>Bonds Moved to the Stocks Side of the Ledger and Energy Moved to the Other</h2>
+
+    <p>The chart JC spent the segment on came from Todd Sohn, and it plots the rolling correlation of the S&amp;P 500 against two other things at the same time. In blue, the S&amp;P versus US energy stocks. In red, the S&amp;P versus the US Treasury bond market. The blue line used to sit at the top of the chart, meaning energy tended to move with stocks. The red line used to sit at the bottom, meaning bonds tended to move against them. Every retirement portfolio in the country was designed around that geometry.</p>
+
+    <p>Somewhere in the last several years, the lines crossed. Bonds now move with stocks. Energy now moves against them. The famous sixty-forty portfolio, sixty percent stocks and forty percent bonds, was built on the assumption that when the stock side falls the bond side rises to soften the drawdown. That relationship broke in 2022, when stocks fell and bonds fell harder. JC said on air he had never seen that in his career. The relationship is stronger today than it was then.</p>
+
+    <p>The corollary is that the modern version of the sixty-forty must include commodities or energy. Energy is three percent of the S&amp;P 500 today. It is zero percent of the NASDAQ 100. Investors do not own it because the last two decades of index math argued they did not need to. Now the correlation math argues they do, and the amount of institutional money still positioned like the old chart, across pension funds, financial-adviser books, and generic balanced strategies, is enormous. That is a multi-year rebalance the market has barely started to price.</p>
+
+    <div class="note">
+      <div class="label">Where it shows up first</div>
+      <p>Refiners are the leading edge inside the group. Crack spreads (the profit margin between what a refiner pays for crude and what it charges for the refined products it sells) have been ripping, and refiner stocks already had their leg higher and have led the sector for years. The desk's read is that this is not a beta trade on the price of oil. It is an alpha trade on a category the market is structurally underweight, and it plays out over years rather than weeks.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="quotes-block">
+      <div class="pullquote">
+        <blockquote>&ldquo;Reversal patterns by definition fail more often than they complete because trends persist.&rdquo;</blockquote>
+        <div class="attrib">JC, on the semis-topping narrative <a class="ts" href="https://www.youtube.com/watch?v=0-PNFW163PA&amp;t=742s" target="_blank">[12:22]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;2022 was a warning. When stocks fell in early '22 and bonds fell even more. That was the first time I saw that in my entire career.&rdquo;</blockquote>
+        <div class="attrib">JC, on why bonds stopped being a hedge <a class="ts" href="https://www.youtube.com/watch?v=0-PNFW163PA&amp;t=945s" target="_blank">[15:45]</a></div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>&ldquo;It doesn't matter if these stocks are moving ten, fifteen percent in a single day. All the other stocks are moving like normal stocks, one, two, three percent. Semiconductors are driving all the gains or losses. That's what's been going on. I don't see that ending right now.&rdquo;</blockquote>
+        <div class="attrib">Strazza, on why the indexes still do what semis do <a class="ts" href="https://www.youtube.com/watch?v=0-PNFW163PA&amp;t=1617s" target="_blank">[26:57]</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Asia is the trade the US barely priced.</strong> Kospi <span class="ch up">+3.5%</span>, Nikkei <span class="ch up">+3%</span>, yen at multi-decade lows, metals across the board bid. That is a synchronized global risk-on tape. The US pre-market added a third of a percent on <span class="tk">$SPX</span>. Asia leadership on a tape like this usually leads the US in rather than the other way around.</li>
+      <li><strong>The sixty-forty broke in 2022 and is still broken.</strong> Bonds and stocks now move together, the correlation chart is unambiguous, and the classic hedge is not a hedge. The rebalance into commodities and energy is a multi-year drift most institutional money has not started. Energy at three percent of <span class="tk">$SPX</span> and zero percent of the <span class="tk">$NDX</span> is the size of the underweight.</li>
+      <li><strong>The semis-software whipsaw is stretched positioning mean-reverting.</strong> Ignore the daily flip. On the equal-weight relative line, software has been gaining on semis for months and just printed fresh three-month highs. The base trade is that both sides of the AI-capex ledger take turns, and semis leading the index does not mean the mean-reversion is over.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
