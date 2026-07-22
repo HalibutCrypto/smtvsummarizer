@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMD Locks In Anthropic Hours Before Google and Tesla Report Tonight - SMTV July 22, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; The Morning Show &middot; July 22, 2026</div>
+    <h1>AMD Locks In Anthropic Hours Before Google and Tesla Report Tonight</h1>
+    <p class="subtitle">The semi trade nobody was writing about a month ago becomes the story of pre-market, and the inflation run spreads past oil into softs and grains.</p>
+    <div class="meta">
+      65 min &middot; <a href="https://www.youtube.com/watch?v=txUYIKNPVBU" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">5 min read</span>
+    </div>
+    <p class="tldr-headline">The AI headline the market wanted arrived before sunrise. Anthropic is buying two gigawatts of AMD's latest chips in a deal worth tens of billions of dollars. AMD is putting five billion back into Anthropic as equity. Alphabet and Tesla print earnings after the close tonight. And underneath the earnings noise, energy quietly kept ripping. Wheat, soybean oil and natural gas came along for the ride.</p>
+    <ul>
+      <li><span class="tk">$AMD</span>-Anthropic deal: Anthropic to buy up to 2 GW of AMD's latest AI chips (tens of billions in headline size); AMD invests <span class="pr">$5B</span> equity into Anthropic.</li>
+      <li>Big-tech earnings tonight after the close: <span class="tk">$GOOGL</span>, <span class="tk">$TSLA</span>, <span class="tk">$NOW</span> (Service Now), <span class="tk">$TXN</span> (Texas Instruments).</li>
+      <li><span class="tk">$SMCI</span> gapping higher pre-market on a claim of a <span class="pr">$60B</span> order backlog and doubled-margin guidance. Desk openly skeptical given credibility history.</li>
+      <li><span class="tk">$T</span> (AT&amp;T) <span class="ch up">+4.5%</span> pre-market on earnings, a move it almost never makes in either direction.</li>
+      <li>Crude at a six-week high. YTD: heating oil <span class="ch up">+200%</span>, gasoline <span class="ch up">+100%</span>, Brent <span class="ch up">+100%</span>, crude <span class="ch up">+84%</span>, soybean oil <span class="ch up">+50%</span>, wheat <span class="ch up">+30%</span>, natural gas <span class="ch up">+30%</span>.</li>
+      <li>Semis-software YTD spread sits near ninety-two percentage points. <span class="tk">$SMH</span> <span class="ch up">+73%</span>, <span class="tk">$IGV</span> <span class="ch down">-20%</span>. Peaked at 103 points end of June; the narrowing since is chips softening while software stays weak.</li>
+      <li><span class="tk">$MU</span> in the trillion-dollar club, now larger than <span class="tk">$JPM</span>, <span class="tk">$WMT</span>, <span class="tk">$V</span>, <span class="tk">$AMD</span> and <span class="tk">$XOM</span>. Functionally a Magnificent Eight name.</li>
+      <li>State of the tape: <span class="tk">$SPX</span> futs <span class="ch down">-0.33%</span>, NDX <span class="ch down">-0.86%</span>, Russell <span class="ch down">-0.33%</span>, Dow <span class="ch down">-0.13%</span>. VIX <span class="ch up">+2.7%</span>. Dollar <span class="pr">101.1</span>.</li>
+      <li>Bitcoin <span class="pr">$65,850</span> <span class="ch down">-1%</span>, <span class="tk">$ETH</span> <span class="pr">$1,930</span> <span class="ch down">-0.5%</span>, <span class="tk">$SOL</span> <span class="pr">$78</span> <span class="ch flat">flat</span>, total crypto cap <span class="pr">$2.24T</span>.</li>
+      <li><span class="tk">$WGMI</span> (miner ETF) announced a rename away from Bitcoin toward data-center branding. Sentiment-negative marker for the data-center trade broadly.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Sits Out a Semis Morning, and the Miner Group Loses Its Name</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$65,850</div>
+        <div class="stat-change down">&minus;1%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,930</div>
+        <div class="stat-change down">&minus;0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$78</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.24T</div>
+        <div class="stat-change flat">Off Monday's six-week high</div>
+      </div>
+    </div>
+
+    <p>Bitcoin lost about one percent overnight to <span class="pr">$65,850</span>. Ethereum slipped roughly half a percent to <span class="pr">$1,930</span>. <span class="tk">$SOL</span> sat near <span class="pr">$78</span>. Aggregate crypto cap eased to <span class="pr">$2.24T</span>, a hair below Monday's six-week high. There is no crypto-specific story in today's tape. The desk did not open a token debate this morning.</p>
+
+    <p>Where crypto surfaced was in the miner and data-center chatter. <span class="tk">$HUT</span> got flagged as the best-in-breed name in a group that has quietly gone from Bitcoin-mining pure-play to what the desk now calls a data-center basket. The stock retested its base breakout around <span class="pr">$85</span> last week and sets up for the next Fibonacci extension near <span class="pr">$130</span>. Insider activity and asset-manager flow are lining up behind it.</p>
+
+    <p>Meanwhile the industry ETF <span class="tk">$WGMI</span> announced it will rename itself away from Bitcoin toward data-center branding. That kind of rebrand usually shows up late in a marketing cycle. The data-center trade has now hit the phase where ETF sponsors want to grab the branding. That phase rarely coincides with the start of the run.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Lead Story</div>
+    <h2>Anthropic Buys Two Gigawatts of AMD Chips, and Google and Tesla Face the Tape Tonight</h2>
+
+    <p>The Wall Street Journal broke the <span class="tk">$AMD</span>-Anthropic story in the early morning. Anthropic is committing to purchase up to two gigawatts of AMD's latest AI chips. The order is tens of billions of dollars in headline size. AMD is investing five billion dollars in Anthropic in return, the same vendor-customer loop that has become the norm across the AI supply chain. The stock did not run hard on the news, which is a common enough reaction when a deal this size gets pre-leaked and picked apart in the hour before the bell.</p>
+
+    <p>The context is that <span class="tk">$AMD</span> quietly outperformed the entire semiconductor peer group through the recent correction. The Semiconductor ETF <span class="tk">$SMH</span> (a basket dominated by <span class="tk">$NVDA</span>, <span class="tk">$TSM</span> and <span class="tk">$AMD</span> itself) sat at a multi-month top pattern with the biggest names rolling over. AMD went sideways in what looked more like a bull flag. The Anthropic deal is the fundamental catalyst that names the divergence.</p>
+
+    <p>Tonight is the first big earnings night of the quarter for the two names retail actually watches. <span class="tk">$GOOGL</span> reports after the close. <span class="tk">$TSLA</span> reports after the close. Service Now (<span class="tk">$NOW</span>) and Texas Instruments (<span class="tk">$TXN</span>) round out the calendar. Google and Tesla back-to-back is the largest single-night AI capex readthrough of the quarter, and any single result could pull the software-semis divergence in either direction.</p>
+
+    <p>That divergence is the trade the desk has been talking about all summer. The Software ETF <span class="tk">$IGV</span> (iShares basket of large-cap application and infrastructure software) is down around twenty percent for the year. <span class="tk">$SMH</span> is up roughly seventy-three percent over the same window. The YTD spread peaked around one-hundred-and-three percentage points at the end of June and has narrowed to about ninety-two in July. The narrowing came from chips softening rather than software rallying, which matters for anyone hoping the software side is finally getting off the mat.</p>
+
+    <p>Two more names moved on their own overnight. <span class="tk">$SMCI</span> gapped higher pre-market on a claim of a sixty-billion-dollar order backlog and guidance to double gross margins. The desk was openly skeptical, given the company's ongoing accounting and disclosure history. And <span class="tk">$T</span> (AT&amp;T) opened up around four and a half percent on earnings, a move it almost never makes in either direction on any given day. Micron (<span class="tk">$MU</span>) also passed a milestone worth flagging, its market cap crossing into the trillion-dollar tier and now sitting larger than <span class="tk">$JPM</span>, <span class="tk">$WMT</span>, <span class="tk">$V</span>, <span class="tk">$AMD</span> and <span class="tk">$XOM</span>. It is functionally a Magnificent Eight name now.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Commodities</div>
+    <h2>The Inflation Run Broke Out of Oil, and Wheat, Soybean Oil and Natural Gas Joined It</h2>
+
+    <p>Crude printed a fresh six-week high overnight. The refiners ETF <span class="tk">$CRAK</span> (VanEck basket of pure-play oil refiners like Marathon Petroleum and Valero) is at new highs. <span class="tk">$XLE</span>, the broad energy sector ETF, is still catching up. The refiners have been the leading edge inside the group since late last year, and the crack spread (the profit margin between what a refiner pays for crude and what it charges for the refined products it sells) is still widening.</p>
+
+    <p>What is new is what else is now moving with it. The agriculture ETF <span class="tk">$DBA</span> (Invesco basket of soft commodities including wheat, soybeans, corn, coffee, sugar and cocoa) is running. <span class="tk">$MOO</span>, the agribusiness ETF, is running with it. On a year-to-date basis, heating oil is up around two hundred percent. Gasoline is up about one hundred. Brent is up around one hundred. Crude is up eighty-four. Wheat is up thirty. Natural gas is up nearly thirty. Soybean oil is up more than fifty. None of those are numbers a trader spends the year expecting from the commodity aisle.</p>
+
+    <p>The tie-in the desk kept coming back to was the 30-year Treasury yield. Heating oil, crude and energy stocks tend to move ahead of long-end yields, which tend to move ahead of consumer inflation prints. Yields held up all year even as crude had short pullbacks, which the desk read as the bond market already pricing the second leg of the commodity move. Gold is not part of this leg. It topped in the summer of last year and has traded sideways through the current commodity run. That is the sequence to remember. Gold peaks first, then the rest of the complex takes the baton.</p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>Bitcoin's underperformance while wheat, natural gas and heating oil rip is a data point people arguing "BTC is digital gold" have to sit with. In the previous energy super cycle from late 2020 into 2021, Bitcoin ran with the commodities. This cycle, so far, it has not. If the commodity leg is really the second one, BTC catching up is the trade that gets watched.</p>
+    </div>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"If you told me I had to buy a semiconductor stock today, it would be AMD."</blockquote>
+      <div class="attrib">Strazza, on the semi trade nobody was naming a month ago <a class="ts" href="https://www.youtube.com/watch?v=txUYIKNPVBU&amp;t=244s" target="_blank">[04:04]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"There's a culture of corruption and misleading investors at this company that I think Wall Street's grown tired of, which is why it's gone absolutely sideways or lower for the past two, three years now."</blockquote>
+      <div class="attrib">Strazza, on why the SMCI backlog claim is not getting a full re-rate <a class="ts" href="https://www.youtube.com/watch?v=txUYIKNPVBU&amp;t=407s" target="_blank">[06:47]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Well, here's the thing with energy. Ninety-five percent of these stocks, you're betting on crude oil."</blockquote>
+      <div class="attrib">Strazza, on why the energy sector trades like one asset and why every leg gets amplified <a class="ts" href="https://www.youtube.com/watch?v=txUYIKNPVBU&amp;t=1253s" target="_blank">[20:53]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Earnings night starts tonight.</strong> <span class="tk">$GOOGL</span> and <span class="tk">$TSLA</span> report after the close, with <span class="tk">$NOW</span> and <span class="tk">$TXN</span> alongside. Positioning into tomorrow's tape should assume any single result could rewrite the AI capex narrative that has driven leadership all quarter.</li>
+      <li><strong>AMD became the semi story of the morning.</strong> Anthropic committed to two gigawatts of AMD chips; AMD put <span class="pr">$5B</span> back into Anthropic. The relative strength through the recent correction was the setup. The Anthropic print is the catalyst.</li>
+      <li><strong>The inflation trade broadened past oil.</strong> Heating oil is up two hundred percent for the year. Wheat, soybean oil and natural gas are running with it. This is now a full commodity cycle, and the bond market has been holding onto that read all year even when crude wobbled.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
