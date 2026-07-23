@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alphabet Just Burned More Cash Than It Made and Tesla's Car Economics Cracked With It - SMTV July 23, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; The Morning Show &middot; July 23, 2026</div>
+    <h1>Alphabet Just Burned More Cash Than It Made and Tesla's Car Economics Cracked With It</h1>
+    <p class="subtitle">The Mag Seven cash-cow story cracked on both ends of the tape overnight, and the leadership that has quietly run the market for nine months sits somewhere entirely different.</p>
+    <div class="meta">
+      60 min &middot; <a href="https://www.youtube.com/watch?v=KQNk3HWflrE" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">5 min read</span>
+    </div>
+    <p class="tldr-headline">Google made more money than ever and still ran out of cash for the first time in its history. Tesla's cars stopped making sense on the P&amp;L, and the stock got hit for a completely different reason. Meanwhile the biggest mall REIT in the country is at an all-time high and nobody is writing about it. The parts of the tape that never trend on social media are the ones quietly running the market.</p>
+    <ul>
+      <li><span class="tk">$GOOGL</span> posted its first-ever quarter of negative free cash flow. Revenue and operating income were records. AI capex outran operating cash generation. Stock down big pre-market.</li>
+      <li><span class="tk">$TSLA</span> <span class="ch down">&minus;7%</span> pre-market. Regulatory-credit revenue collapsed, auto margins compressed. Full self-driving hit 1.5M paid subscriptions at <span class="pr">$100/mo</span>, 2.5M paid robotaxi miles this quarter, ~10% weekly growth in US robotaxi presence.</li>
+      <li><span class="tk">$NOW</span> (Service Now) reported after the bell. Software sold off pre-report and reversed into it. If <span class="tk">$NOW</span> lands a strong session, <span class="tk">$IGV</span> (software basket dominated by <span class="tk">$MSFT</span>, <span class="tk">$CRM</span>, <span class="tk">$ORCL</span> and <span class="tk">$NOW</span> itself) tends to follow.</li>
+      <li>State of the tape pre-open: crude <span class="ch up">+4.25%</span> to <span class="pr">$90</span>, dollar broke out of a multi-month base, dollar-yen breakout, silver <span class="ch down">&minus;3%</span>, gold down, 10Y yield near a 52-week high, S&amp;P and NDX futures down 85-130 pips.</li>
+      <li>Breadth check: <span class="tk">$PAA</span> (midstream pipelines), <span class="tk">$PK</span> (upscale hotel REIT), <span class="tk">$CTVA</span> (ag inputs / seed and crop protection), <span class="tk">$PM</span> (international tobacco / Zyn), and <span class="tk">$SPG</span> (largest US mall REIT) all at multi-year or all-time highs.</li>
+      <li><span class="tk">$AAPL</span> printed a fresh all-time high last week. Almost nothing was written about it.</li>
+      <li><span class="tk">$IMAX</span> beat pre-Odyssey release; <span class="tk">$VSCO</span> (Victoria's Secret) at all-time highs after a base breakout; consumer discretionary broadly running.</li>
+      <li><span class="tk">$CSX</span> beat, extending a multi-quarter railroad run.</li>
+      <li><span class="tk">$T</span> (AT&amp;T) opened up <span class="ch up">~4.5%</span> on earnings, a move it almost never makes in either direction.</li>
+      <li>Airlines: American ate roughly half of an 83% year-over-year fuel-cost jump. <span class="tk">$DAL</span> best-in-breed; <span class="tk">$UAL</span> constructive above <span class="pr">$115-$116</span>.</li>
+      <li>Bitcoin <span class="pr">$64,850</span> <span class="ch down">&minus;1.5%</span>, <span class="tk">$ETH</span> <span class="pr">$1,895</span> <span class="ch down">&minus;1.8%</span>, <span class="tk">$SOL</span> <span class="pr">$76.50</span> <span class="ch down">&minus;2%</span>, total crypto cap <span class="pr">$2.19T</span>.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Drifts Lower as the Dollar Rips Out of Its Base and Silver Gets Cut Three Percent</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$64,850</div>
+        <div class="stat-change down">&minus;1.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,895</div>
+        <div class="stat-change down">&minus;1.8%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$76.50</div>
+        <div class="stat-change down">&minus;2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.19T</div>
+        <div class="stat-change down">Off six-week highs</div>
+      </div>
+    </div>
+
+    <p>Bitcoin gave back roughly one and a half percent overnight to <span class="pr">$64,850</span>. Ethereum dropped a hair under two percent to <span class="pr">$1,895</span>. <span class="tk">$SOL</span> slid to <span class="pr">$76.50</span>. Aggregate crypto cap eased to <span class="pr">$2.19T</span>. There is no crypto-specific story on the tape this morning and Louis is not on. The Friday desk is where crypto gets its own hour.</p>
+
+    <p>The macro handed crypto every bearish card in the deck overnight. The dollar broke out of a multi-month base, oil ripped to <span class="pr">$90</span> on a <span class="ch up">+4.25%</span> overnight session, the 10-year yield sat near a 52-week high, and silver got cut three percent. That is the classic risk-off intermarket pattern for anything speculative, and crypto sat inside it quietly. The complex went along for the ride rather than fought it.</p>
+
+    <p>Where crypto brushed the show was through the Big Tech capex discourse. Alphabet posting a negative free-cash-flow quarter for the first time in its history matters for anyone tracking the AI and data-center trade that miners have been riding. If the cash cows spending on data centers just started burning cash faster than they generate it, the second-order compute-buildout thesis that <span class="tk">$WGMI</span> and the miner group have been sold on gets a harder time.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Lead Story</div>
+    <h2>Alphabet Just Ran Out of Free Cash Flow for the First Time in Its History</h2>
+
+    <p><span class="tk">$GOOGL</span> reported after the close last night. Revenue and operating income were records. That was not the story. The story was the cash-flow statement. For the first time in the company's history, Alphabet posted a quarter of negative free cash flow. Operating cash could not cover the AI capex. Stock down big pre-market. There was a small boost from an Alphabet investment in SpaceX that flowed through the print, and even that footnote could not save the reaction.</p>
+
+    <p>The concern is not this quarter's headline number. The concern is what negative free cash flow does to the risk tolerance of a business that had been building the next decade's compute on the assumption its printing press would keep printing. Mag Seven ex-Tesla built its identity as a cash-flow monster, with the money made every quarter reinvested into whatever came next. That structural cushion is what let these companies chase moonshots for a decade. Once operating cash cannot cover investing cash, the margin for error on any single AI bet gets thinner. Miss the AI wave, the stock breaks. Cut capex to preserve cash flow, the stock breaks. There is no clean way out from here.</p>
+
+    <p><span class="tk">$TSLA</span> is a different story with the same fingerprint. Down about seven percent pre-market. Regulatory-credit revenue collapsed. Automotive margins compressed. Full self-driving now has 1.5 million paid subscriptions at <span class="pr">$100</span> a month, 2.5 million paid robotaxi miles logged in the quarter, and about ten percent weekly growth in US robotaxi presence. The stock does not care about the car business anymore. It cares about whether the market still believes 90% of cars on the road in five to ten years are Teslas. That is what Tesla actually trades on. Every quarter the stock gets tested on whether that belief is intact. Today the belief held. The car economics did not. And the stock still got hit because the correlation between <span class="tk">$TSLA</span> and SpaceX has fully re-coupled for July, so Tesla trades every day now with a name whose freefall has no obvious stopping point.</p>
+
+    <p>Service Now printed after the bell. Software had sold off ahead of the report yesterday morning and then reversed hard into it, with <span class="tk">$NOW</span> itself trading up in the pre-market this morning. If it lands a strong green session, the software group tends to follow, since <span class="tk">$NOW</span> reports first among the software heavies and sets the tone for <span class="tk">$CRM</span>, <span class="tk">$MSFT</span>, and <span class="tk">$INTU</span>. <span class="tk">$IBM</span> pre-announced a bad quarter a week ago and still got sold anyway when the print landed. Peacock, Comcast's streaming service, posted its first quarterly profit. Defense primes Lockheed and Raytheon lifted on the Golden Dome theme. <span class="tk">$CSX</span> beat again, extending a multi-quarter railroad run. <span class="tk">$T</span> (AT&amp;T) opened up about four and a half percent, a move it almost never makes in either direction on any given day.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Breadth</div>
+    <h2>Pipelines, Malls, Cigarettes, and Fashion Are All at New Highs and the Discourse Skips Every One</h2>
+
+    <p>The tape's leadership is much broader than the tickers people fight about on social media. Multi-year highs this morning showed up in <span class="tk">$PAA</span> (Plains All American Pipeline, midstream oil pipelines), <span class="tk">$PK</span> (Park Hotels &amp; Resorts, upscale hotel REIT spun out of Hilton), <span class="tk">$CTVA</span> (Corteva, agricultural inputs including seed genetics and crop-protection chemistry), and <span class="tk">$PM</span> (Philip Morris International, tobacco including the Marlboro international franchise and the Zyn nicotine-pouch brand). Pipelines, hotels, seeds, cigarettes. Four sectors with nothing structurally in common except that all four charts printed the same kind of breakout at the same time.</p>
+
+    <p>The consumer side of the tape is doing the same thing, and the online discourse keeps missing it. <span class="tk">$SPG</span> (Simon Property Group, the largest US shopping-mall REIT) is at an all-time high. The mall has been called dead every year since roughly 2015, and yet the largest mall landlord in the country now trades at a level that never existed before. <span class="tk">$VSCO</span> (Victoria's Secret, the lingerie and beauty retailer spun out of L Brands in 2021) is at an all-time high after breaking out of a multi-month base and holding the earnings gap that came with it. <span class="tk">$IMAX</span> beat pre-Odyssey release and continues to shape up as a buyout target. <span class="tk">$MODG</span> (Callaway Golf) is working. <span class="tk">$AAPL</span> printed a fresh all-time high last week, and almost nothing was written about that either. The Mag Seven has not led the broader market since October or November of last year, a nine-month stretch during which the tape kept making new highs on the backs of names nobody was tracking.</p>
+
+    <p>The framework the desk kept coming back to is simple. If you don't follow what everyone talks about on social media, there is a lot of leadership happening across the globe. Pipelines, malls, tobacco, and agricultural chemistry do not make for good bull-market memes. They make for good returns. The rally has been broader than the discourse for the better part of a year, and the last two earnings mornings from Big Tech are what it takes for the rest of the market to finally catch a glance.</p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;The margin of error for mistakes or bad business decisions slowly evaporates when you're burning your cash that fast. These guys have always felt free to take shots. But they got to deliver with this AI stuff now, they can't miss, because they've spent so much.&rdquo;</blockquote>
+      <div class="attrib">Strazza, on Alphabet's first-ever negative free-cash-flow quarter <a class="ts" href="https://www.youtube.com/watch?v=KQNk3HWflrE&amp;t=181s" target="_blank">[3:01]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;I've been doing this for a long time. I am a John Murphy disciple. I love intermarket analysis and I'm just following the charts here. Dollar's going up, precious metals are going down. I think that's going to continue to be the case.&rdquo;</blockquote>
+      <div class="attrib">Strazza, on the dollar breakout and the three-percent cut in silver <a class="ts" href="https://www.youtube.com/watch?v=KQNk3HWflrE&amp;t=635s" target="_blank">[10:35]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;I believe Tesla reacts more based on the broader environment and sentiment for growth stocks than it does on its own individual merit. We've seen this company come out and report a quarter that's not so good and it's up huge. It usually comes down to the environment, how they're treating speculative stocks, growth stocks, long-duration equities.&rdquo;</blockquote>
+      <div class="attrib">Strazza, on Tesla as a vibes trade even on earnings mornings <a class="ts" href="https://www.youtube.com/watch?v=KQNk3HWflrE&amp;t=893s" target="_blank">[14:53]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Google's first negative FCF quarter matters more than the earnings beat.</strong> Revenue and operating income were records; free cash flow was negative for the first time in <span class="tk">$GOOGL</span>'s history because AI capex outran operating cash. The Mag Seven cash cushion that made every AI bet feel free just shrank, and the next several quarters will get judged on whether the spend is generating return.</li>
+      <li><strong>Tesla is a story stock and today the story held, but the car economics broke.</strong> <span class="tk">$TSLA</span> <span class="ch down">&minus;7%</span> pre-market on collapsing regulatory-credit revenue and worse auto margins. The stock traded lower alongside SpaceX because the two names have fully re-coupled for July. Full self-driving is running at 1.5M subscribers and 2.5M paid robotaxi miles this quarter, which is what the stock actually trades on.</li>
+      <li><strong>The leadership tape is broader than the discourse.</strong> <span class="tk">$PAA</span> (pipelines), <span class="tk">$PK</span> (hotel REIT), <span class="tk">$CTVA</span> (ag chemistry), <span class="tk">$PM</span> (tobacco), <span class="tk">$SPG</span> (largest US mall REIT), <span class="tk">$VSCO</span>, and <span class="tk">$AAPL</span> all sit at fresh highs. Mag Seven has not led since October. Nine months of index highs were built on names social media does not track.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
