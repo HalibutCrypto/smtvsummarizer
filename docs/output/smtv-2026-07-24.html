@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jackson Hole Puts Tokenization on the Fed's Agenda and the Dollar Breakout Is Only in Two Currencies - SMTV July 24, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; The Morning Show &middot; July 24, 2026</div>
+    <h1>Jackson Hole Puts Tokenization on the Fed's Agenda and the Dollar Breakout Is Only in Two Currencies</h1>
+    <p class="subtitle">BitMEX is shutting down, BNY Mellon is at an all-time high, and the DXY chart that made the show's title turns out to be a euro-and-yen weakness story hiding a range-bound rest of the world.</p>
+    <div class="meta">
+      67 min &middot; <a href="https://www.youtube.com/watch?v=JlpO7gh9d_I" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Bitcoin sat still at sixty-five thousand. The dollar looks like it's breaking out, except only two currencies are actually cracking. Individual investors just turned their most bearish since September while big banks print new all-time highs on the same tape. And the biggest crypto signal of the week is a Wyoming economics symposium finally putting tokenization on the agenda. The wild-west crypto era is quietly getting absorbed by the boring institutions that always win.</p>
+    <ul>
+      <li><span class="tk">$BTC</span> <span class="pr">$65,000</span> <span class="ch flat">flat</span>. <span class="tk">$ETH</span> <span class="pr">$1,900</span> <span class="ch flat">flat</span>. <span class="tk">$SOL</span> <span class="pr">$75</span> <span class="ch down">&minus;1.3%</span>. Total crypto cap <span class="pr">$2.19T</span>.</li>
+      <li><span class="tk">$DXY</span> broke out of a multi-month flag on the front chart. Strazza's caveat: an equal-weighted G10 currency basket is still range-bound, and emerging currencies are stronger than developed. The move is a yen-and-euro concentration story.</li>
+      <li>Yesterday's rotation ran through financials, industrials, healthcare, energy, and utilities. Everything else heavy. Google and Tesla got smacked on earnings. Intel reports today. Tech and big-cap growth are trading as the funding source.</li>
+      <li><span class="tk">$JPM</span> at an all-time high again yesterday alongside the rest of the big-bank group. Shares have literally doubled the <span class="tk">$SPX</span>'s return since Jamie Dimon's June 2022 hurricane-and-recession call.</li>
+      <li>AAII bulls at their fewest since September of last year. Bears at their highest reading over the same window. <span class="tk">$SPX</span> sits <span class="ch flat">~2.5%</span> from a fresh all-time high while the survey prints. In 1987, 2000, and 2007 AAII was long into every peak.</li>
+      <li>Broadridge Financial's institutional survey landed a median timeline of <span class="pr">4 years</span> to material money-market-fund tokenization. Louis's own prior estimate was late 2030s.</li>
+      <li>BitMEX shutting down. Arthur Hayes invented the perpetual swap there in 2016. The exchange's insurance fund quietly compounded liquidation fees into roughly <span class="pr">$4B</span> of Bitcoin from a base near zero.</li>
+      <li><span class="tk">$BK</span> (Bank of New York Mellon) at all-time highs, priced as the biggest institutional crypto beneficiary. <span class="tk">$JPM</span> and Citigroup building tokenized deposits with full launch scheduled for H2 next year.</li>
+      <li>Jackson Hole 2026 agenda covers financial technology, innovation, payments, and stable coins. Louis flagged it as the first time tokenization is on the Fed's radar in that room. Historical precedents include 1985 (dollar theme into the Plaza Accord) and 2007 (housing months before the crack).</li>
+      <li>Stable coins are already the seventh or eighth largest global holder of US Treasuries, mandated by law to hold Treasury bills as collateral.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>BitMEX Shuts Down, BNY Mellon Prints All-Time Highs, and Jackson Hole Finally Talks Tokenization</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$65,000</div>
+        <div class="stat-change flat">Flat &middot; scene of the crime</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,900</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$75</div>
+        <div class="stat-change down">&minus;1.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.19T</div>
+        <div class="stat-change flat">Unchanged on the day</div>
+      </div>
+    </div>
+
+    <p>Louis Sykes joined from a New Zealand Airbnb at one in the morning with a spotty connection, and Bitcoin sat pinned at <span class="pr">$65,000</span>, the level Spencer called the &ldquo;scene of the crime.&rdquo; Louis's price read was one sentence. Above sixty, he likes it. The actual meat of the Friday hour lived somewhere else entirely.</p>
+
+    <p>Broadridge Financial ran an institutional survey on tokenization timelines this week and the numbers collapsed the range people in the space had been using. Money-market funds materially tokenize in four years by the median institutional estimate. Louis's own prior guess was late 2030s, closer to 2040. Two independent sources he talked to this week (Chris Perkins at Franklin Templeton and a seventy-year-old ETF veteran who started as a paper-record runner in the 1960s) both told him the same thing about the mechanism. Tokenization is being built as the next wrapper for the existing ETF market. A token can hold the fund itself, which means it trades around the clock, and it can be programmed. If a client wants the S&amp;P 500 with three specific stocks stripped out, an ETF cannot deliver that. A tokenized fund can. Louis flagged the combination as &ldquo;completely just not being talked about.&rdquo;</p>
+
+    <p>The end of the Wild West arrived on the same day. BitMEX is shutting down. Arthur Hayes invented the perpetual swap at BitMEX in 2016, and the insurance fund the exchange built out of liquidation fees quietly compounded into one of the best-performing pools of Bitcoin anywhere, roughly four billion dollars from a base near zero. That book is closing. The institutions absorbing the technology into the mainstream are the DTCC (rolling out its own tokenization service), <span class="tk">$JPM</span> and Citigroup (both building tokenized deposits scheduled for full operational launch in the second half of next year), and <span class="tk">$BK</span>, Bank of New York Mellon, the world's largest custodian, now printing all-time highs as the market prices it as the biggest single institutional beneficiary of the trend. Louis's forecast for the next few years is an acquisition spree, with traditional banks buying up the private companies quietly building the tokenization stack.</p>
+
+    <p>Jackson Hole ties the ribbon. Every August the Kansas City Fed hosts a symposium that is usually forgettable monetary-policy talk. 1985 was the exception, with the high-and-rising-dollar theme that led into the Plaza Accord to devalue the dollar a few weeks later. 2007 was the other one, with housing on the agenda months before the housing market cracked. This year's theme is financial technology, innovation, payments, and stable coins. Louis said it is the first time tokenization has been on the Fed's radar in that room. Kevin Walsh, in the running for the next Fed chair on some short lists, personally holds nearly two hundred million dollars in digital assets, including live positions in DeFi lending and decentralized exchanges. Stable coins are legally required to hold US Treasury bills as collateral, and even at today's early stage they already rank as the seventh or eighth largest holder of US Treasuries globally.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>The Dollar Breakout the DXY Prints and the Equal-Weighted G10 Basket Doesn't</h2>
+
+    <p>The show's title was the dollar. <span class="tk">$DXY</span> (the ICE US Dollar Index, weighted heaviest to the euro and yen) looks like it broke out of a multi-month flag on the front chart, right at the upper bound of the base. Strazza's caveat is the entire reason to pay attention. An equal-weighted basket of the developed G10 currencies is still range-bound, and emerging currencies are actually stronger than the developed set. The DXY breakout is a yen-and-euro weakness story dressed up as broad dollar strength, since those two currencies dominate the index weighting. Confirmation would need the equal-weighted G10 basket to break higher too. Until then, the chart says one thing about the dollar and the currencies underneath the chart say another.</p>
+
+    <p>JC pushed back on the immediate risk-asset implication. The dollar has been printing higher highs and higher lows all year and stocks have done fine, which he read as impressive resilience. Strazza responded with the timing. Since the dollar broke out of its base in the second week of June, <span class="tk">$NDX</span>, <span class="tk">$SPX</span>, and big-cap tech growth all stalled around June 10 and have been messy and sideways since. Yesterday's rotation belongs to the same picture. Financials, industrials, healthcare, energy, and utilities were up. Everything else was heavy. Google and Tesla got smacked after earnings, Intel reports today, and tech and big-cap growth are trading as the funding source for the rotation into the boring cyclicals.</p>
+
+    <p>The other side of the same rotation is where the highs are being printed. <span class="tk">$JPM</span> made another all-time high yesterday alongside Goldman, Morgan Stanley, and Bank of America. Jamie Dimon showed up in headlines earlier this week telling people not to buy stocks. He did not actually say that. What he said was that he does not like buying bonds and that stocks with good valuations are worth buying, and the headline was a fugazi. The desk noted his June 2022 hurricane-and-recession call for perspective. Since Dimon made that call, <span class="tk">$JPM</span> shares have literally doubled the return of the <span class="tk">$SPX</span>. His job is to grow shareholder value at JP Morgan, and he is doing it.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Sentiment</div>
+    <h2>AAII Bulls Just Hit a Ten-Month Low Two and a Half Percent From a New All-Time High</h2>
+
+    <p>JC pulled up the American Association of Individual Investors survey and had to download the raw data to find the last time bulls were this rare. The answer was September of last year. Bulls have not been this scarce in ten months, and bears just spiked to their highest reading over the same window. The <span class="tk">$SPX</span> sits about two and a half percent from a fresh all-time high while this reading was landing.</p>
+
+    <p>The context is what makes the print odd. JC checked 1987, 2000, and 2007. In every one of those cases AAII was bullish right before the top, with retail long into the peak. This week the peak is directly in front of the tape and retail has moved the other direction. Financials and industrials are running. <span class="tk">$JPM</span> and the big-bank group are at all-time highs. The advance-decline line and equal-weighted breadth are healthy. The rotation is doing what rotations are supposed to do. Nothing in the market itself is warning of an event, and the sentiment survey is warning of one anyway.</p>
+
+    <p>The honest read from the desk was that nobody on the panel has a clean explanation. JC's summary was that it is hard to imagine what people are so scared about. The disconnect itself is what to flag. Historically it resolves by the sentiment catching up to the price, and bulls came back before the last several moves higher. If that pattern repeats, the tape has more room in it than the mood suggests.</p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;This is a major upgrade to the overall ETF and fund distribution market. And I think it's something that's completely just not being talked about.&rdquo;</blockquote>
+      <div class="attrib">Louis Sykes, on tokenization as the next-generation ETF wrapper <a class="ts" href="https://www.youtube.com/watch?v=JlpO7gh9d_I&amp;t=2801s" target="_blank">[46:41]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;This is the first time that tokenization is on the radar.&rdquo;</blockquote>
+      <div class="attrib">Louis Sykes, on the Jackson Hole 2026 agenda <a class="ts" href="https://www.youtube.com/watch?v=JlpO7gh9d_I&amp;t=3194s" target="_blank">[53:14]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;He doesn't give a damn about you or your portfolio. Nor should he.&rdquo;</blockquote>
+      <div class="attrib">JC, on Jamie Dimon and what a bank CEO's job actually is <a class="ts" href="https://www.youtube.com/watch?v=JlpO7gh9d_I&amp;t=1017s" target="_blank">[16:57]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;It's hard to imagine what people are so scared about, you know.&rdquo;</blockquote>
+      <div class="attrib">JC, on AAII bulls at a ten-month low two and a half percent from the highs <a class="ts" href="https://www.youtube.com/watch?v=JlpO7gh9d_I&amp;t=1257s" target="_blank">[20:57]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The DXY breakout the G10 basket doesn't confirm.</strong> <span class="tk">$DXY</span> broke out of a multi-month flag, but an equal-weighted G10 currency basket is still range-bound and emerging currencies are actually stronger than developed. The move is a yen-and-euro weakness story dressed as broad dollar strength, and those two currencies dominate the DXY weighting. Confirmation needs the equal-weighted basket to follow. Until then, risk assets get treated cautiously without the blanket short signal the front chart seems to imply.</li>
+      <li><strong>Tokenization compressed from &ldquo;next decade&rdquo; to &ldquo;next four years.&rdquo;</strong> Broadridge Financial's institutional survey put the median timeline to material money-market-fund tokenization at four years. Franklin Templeton and legacy ETF veterans both frame token wrappers as the next-generation ETF. <span class="tk">$BK</span> (Bank of New York Mellon) at all-time highs. <span class="tk">$JPM</span> and Citigroup launching tokenized deposits in H2 next year. Jackson Hole put the whole theme on the Fed's radar for the first time.</li>
+      <li><strong>AAII bulls at a ten-month low with the S&amp;P two and a half percent from a high.</strong> Bears spiked to the highest reading over the same window. In 1987, 2000, and 2007 AAII was long right before every top. This time retail sat out the last leg entirely. Big banks are at all-time highs and financials and industrials are the ones running. Historically the mood catches up to the tape.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
