@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Gave Back Seven Percent in July and Nothing Else Broke - SMTV July 27, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; The Morning Show &middot; July 27, 2026</div>
+    <h1>Tech Gave Back Seven Percent in July and Nothing Else Broke</h1>
+    <p class="subtitle">A Chinese memory chipmaker ripped 450 percent overnight, and the desk's seasonality vet is sitting the next two months out and buying October.</p>
+    <div class="meta">
+      64 min &middot; <a href="https://www.youtube.com/watch?v=3SicIwTdpH4" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Everyone spent the weekend calling this a broken tape. Monday opened with the New York Composite at all-time highs, financials at a record weekly close, and industrials and railroads leading the board. Technology is down seven percent for July and nothing else broke. The desk's read did not change. This is what a healthy bull market looks like when it stops being led by one thing. In Shanghai overnight, a memory chipmaker IPO'd, ripped four hundred and fifty percent from its offer price, and briefly became the largest listed company on the mainland.</p>
+    <ul>
+      <li>Dow futures <span class="ch up">+1.1%</span> at <span class="pr">52,711</span>. S&amp;P <span class="ch up">+1%</span> at <span class="pr">7,510</span>. NASDAQ 100 <span class="ch up">+1.33%</span>. VIX under <span class="pr">18</span>.</li>
+      <li>Technology sector index down <span class="ch down">&minus;7%</span> for July after the greatest two-month run in its history. April and May printed close to <span class="ch up">+50%</span> for the group. June flat. July gave a piece back.</li>
+      <li>Financials closed Friday at the highest weekly close ever. European financials did the same. Advance-decline lines are at all-time highs. The New York Composite (a proxy for the full universe of NYSE-listed stocks) went out Friday at its highest levels in history.</li>
+      <li>Chinese memory chipmaker CXMT IPO'd overnight on Shanghai's Star Market. Ripped up to <span class="ch up">+450%</span> from the IPO price intraday. IPO valuation <span class="pr">$85B</span>. Peak intraday cap <span class="pr">$550B</span>. Retail was <span class="pr">212x</span> oversubscribed. Only 6% of the float was released.</li>
+      <li>DRAM chip prices at <span class="pr">$53</span> now, <span class="pr">$81</span> a month ago. US memory names are the funding source for the rotation into everything else.</li>
+      <li>Nvidia is reportedly guaranteeing financing for OpenAI to lease a data center that will then buy Nvidia chips. Circular chip funding is the market's chatter today.</li>
+      <li>Crypto flat. <span class="tk">$BTC</span> <span class="pr">$64,860</span> <span class="ch down">&minus;0.7%</span>. <span class="tk">$ETH</span> <span class="pr">$1,945</span> off weekend highs. <span class="tk">$SOL</span> <span class="pr">$76.70</span> <span class="ch flat">flat</span>. Total crypto cap <span class="pr">$2.2T</span>.</li>
+      <li>Money-market fund balances at all-time highs at roughly <span class="pr">$8T</span>. Framed correctly, that is <span class="pr">10%</span> of US equity market cap. In 2008 it was <span class="pr">33%</span>. The cash-on-the-sidelines take does not hold up on the ratio.</li>
+      <li>AAII bulls at the fewest since September of last year. Bears spiked. Only <span class="pr">5%</span> of individual investors have become more aggressive.</li>
+      <li>Seasonality read: MACD flashed a NASDAQ sell signal last week. Midterm-election-year Q2 and Q3 is historically the weakest window in the four-year cycle. Historically, low-of-midterm to high-of-pre-election runs about <span class="ch up">+50%</span> on the Dow and <span class="ch up">+60%</span> on the NASDAQ.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Sits Out a Risk-On Monday While Equities Rip Off the Ceasefire Headline</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$64,860</div>
+        <div class="stat-change down">&minus;0.7% &middot; off the highs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,945</div>
+        <div class="stat-change flat">Off weekend highs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$76.70</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.2T</div>
+        <div class="stat-change flat">Unchanged</div>
+      </div>
+    </div>
+
+    <p>Equities futures ripped through the overnight session on a paused-hostilities headline out of the Middle East, and crypto did not join the party. Bitcoin came off its early highs by four to five hundred dollars and sat under sixty-five thousand. Ethereum made the big move over the weekend and is holding those gains rather than extending them. Solana is flat. The wider risk-on tape (Dow futures up 1.1%, S&amp;P up 1%, NASDAQ 100 up 1.33%, VIX under 18) is running in equities and metals rather than crypto today.</p>
+
+    <p>The one macro thread with a real crypto angle sits in the money-market-fund data. Balances are at all-time highs, roughly eight trillion dollars, and the popular framing calls that a tailwind waiting to hit stocks. Reframed as a ratio to market cap it is roughly ten percent. In 2008 that same ratio was thirty-three percent. In 2017, 2019, and 2021 it sat around eight percent. The absolute number is high because the market is bigger; the ratio is not signaling capitulation cash sitting under a mattress ready to rotate into risk. Similar math applies to the crypto stablecoin float sitting on the sidelines. Big absolute numbers do not automatically translate to fresh bid pressure when the underlying assets have also scaled.</p>
+
+    <p>The lighter moment of the crypto conversation was Brazil, of all places, tokenizing its cattle. Farmers can now put a specific cow on-chain and borrow against it. The reasonable question is whether this ends up as a working collateral primitive or as a rerun of the agricultural-lending frauds that have run for decades on paper. If you can lie about how many cows you own in the physical world, tokenizing the claim does not fix the audit problem underneath.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Markets</div>
+    <h2>Financials Just Printed Their Best Weekly Close Ever While Tech Coughed Up Seven Percent</h2>
+
+    <p>The weekend take was that stocks were breaking. The Monday tape says the opposite. The US stock market has added roughly twelve trillion dollars in value in the last twelve months. The New York Composite, a proxy for the whole universe of NYSE-listed stocks, went out on Friday at its highest close in history. Advance-decline lines are at all-time highs, which means more stocks are participating in the uptrend than at any prior point in this run. Financials printed the highest weekly close ever on Friday and European financials matched them. On Friday, every single sector was green except technology.</p>
+
+    <p>What tech gave back is the story people are missing when they look at the front page. April and May printed the greatest two-month period in the history of the technology sector. The index moved from roughly one hundred and thirty-two to one hundred and ninety-one, close to a fifty-percent move. June went flat. July has taken about seven percent back. That sequence describes an overheated group cooling off, which is the healthiest possible thing for a rally that had gotten too concentrated in a handful of names.</p>
+
+    <p>The rotation into what is working showed up in unlikely places last week. When the railroads reported on Wednesday, four of the top five stocks on every relative-strength screen were railroad names. Industrials, financials, and the boring cyclicals are absorbing the leadership handoff. That is how bull markets survive when their most crowded group needs a rest. The problematic pattern would be technology rolling over to catch down to sectors that were already rolling over. That is not what is happening. Technology is rolling over to catch down to sectors that are printing new all-time highs.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Working</div>
+        <ul>
+          <li>Financials <span class="ch up">ATH weekly close</span></li>
+          <li>Railroads <span class="ch up">4 of top 5 RS names</span></li>
+          <li>Industrials <span class="ch up">leadership</span></li>
+          <li>NYSE Composite <span class="ch up">record high</span></li>
+          <li>Advance-decline line <span class="ch up">ATH</span></li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Cooling</div>
+        <ul>
+          <li>Technology <span class="ch down">&minus;7% MTD</span></li>
+          <li>Memory / DRAM <span class="ch down">$81 &rarr; $53</span></li>
+          <li>Semiconductors <span class="ch down">funding source</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p>The one place the pain is real is memory and semis. DRAM chip prices ran from eighty-one dollars to fifty-three in about a month. That is the funding source for the rotation into everything else. The gallows humor from the desk was the existence of a triple-leveraged SK Hynix ETF in London, with a currency-hedged US-dollar version available for anyone who wants to be down three times faster and in a second currency at the same time.</p>
+
+    <p>The DRAM crash met its perfect punctuation mark overnight in Shanghai. CXMT, the fourth-largest DRAM producer in the world behind SK Hynix, Samsung, and Micron, IPO'd on the Shanghai Star Market with a state-backed shareholder base and released only about six percent of its float. Retail was oversubscribed by two hundred and twelve times. The Star Market has no trading halts on IPOs for their first five days. CXMT ripped up to four hundred and fifty percent intraday from its IPO price, taking the market cap from an eighty-five-billion-dollar IPO valuation to a five-hundred-and-fifty-billion-dollar intraday print. For a hot second, a memory chipmaker was the biggest listed company on the entire Chinese mainland. Reading that against the DRAM price crash and the US memory selloff, the world is repricing memory in two opposite directions on the same tape.</p>
+
+    <p>The other headline making the rounds this morning is the Wall Street Journal report that Nvidia is guaranteeing financing for OpenAI to lease a data center that will then buy Nvidia chips. Nvidia is effectively acting as a bank for its own customers to buy its own product. The concern is not the individual deal but the accumulating shape of these announcements. The chip cycle keeps finding new ways to route capital back to itself.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Framework</div>
+    <h2>The Seasonality Book Says Sit Out August and September, Then Load Up in October</h2>
+
+    <p>The show ran a full seasonality segment because the four-year cycle is now at its most unfriendly point. Midterm election years historically produce the weakest six-month window in the entire cycle, concentrated in Q2 and Q3, before the pre-election year takes over as the strongest run. The rhyme the show's veterans use is buy in October, get yourself sober. The MACD-based seasonal indicator that the almanac tracks flashed a NASDAQ sell signal about a week ago, which is the group's formal cue to move to the sidelines for the summer.</p>
+
+    <p>The four-year-cycle math is the frame worth internalizing. If you catch the low of a midterm year and sell the high of the following pre-election year, the average return on the Dow going back to 1950 is roughly fifty percent. On the NASDAQ it is over sixty. That is a hindsight statistic, not a trade recommendation, but it makes the case that the setup window worth watching is exactly the one the calendar is walking into now. The desk called out that the last midterm-October low (2022) was the fat pitch that led into two years of new highs.</p>
+
+    <p>The rotation-driven bull tape from Chapter 2 and the seasonality-driven caution overlap without contradicting each other. A separate bull-market checklist framework has five of eight components green, down from a fuller reading a couple of weeks ago. The long-term breadth component (an advance-decline line built on net new fifty-two-week highs) flipped red. The primary trend components are all still green, though. The S&amp;P sits above key breakout levels, the two-hundred-day moving average has been rising for three hundred and eight consecutive trading days, and the momentum regime is still bullish while fading. The mirror-image bear-market checklist reads zero of six. Nothing in the bear framework is anywhere near flipping. The tape is a bull market showing wear at the edges without any of the components a reversal would trigger.</p>
+
+    <p>Put the frames together. The tape is intact and the concentration is spreading out. The calendar says the next two months are the softest window on the schedule. The buy-and-defend group (gold, staples, some bonds, a chunk of cash) is where the veterans are sitting and where the fatter pitch is expected to develop into October. A four-chapter article can end here without a resolution because the trade the framework points at is patience. October is the setup the desk is preparing for.</p>
+
+    <div class="note">
+      <div class="label">Sentiment note</div>
+      <p>AAII bulls just printed their fewest reading since September of last year. Bears spiked. In the same survey's special question, only five percent of individual investors have become more aggressive with their positioning. Sentiment usually matters most at extremes, and this reading is closer to fear than euphoria while the tape sits within a couple percent of new all-time highs. Historically that combination has resolved by mood catching up to price. Price catching down to mood is the rarer outcome.</p>
+    </div>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;What you're seeing is just rotation, which is the lifeblood of a bull market.&rdquo;</blockquote>
+      <div class="attrib">JC, on tech giving back after the greatest two-month run in its history <a class="ts" href="https://www.youtube.com/watch?v=3SicIwTdpH4&amp;t=885s" target="_blank">[14:45]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;There's a triple-leveraged SK Hynix ETF in London. And there's a currency-hedged version of that where you can actually buy it in US dollars. Triple leverage. Absolutely hilarious.&rdquo;</blockquote>
+      <div class="attrib">JC, on the DRAM cycle producing predictable financial products <a class="ts" href="https://www.youtube.com/watch?v=3SicIwTdpH4&amp;t=674s" target="_blank">[11:14]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;In bull markets I'm more interested in the bear market checklist. In bear markets I'm more interested in the bull market checklist.&rdquo;</blockquote>
+      <div class="attrib">Spencer, on the value of tracking what could break the tape rather than what is confirming it <a class="ts" href="https://www.youtube.com/watch?v=3SicIwTdpH4&amp;t=3413s" target="_blank">[56:53]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>&ldquo;It's when they're not scared that that's the problem.&rdquo;</blockquote>
+      <div class="attrib">JC, on AAII bulls at a ten-month low with the S&amp;P a couple percent from a high <a class="ts" href="https://www.youtube.com/watch?v=3SicIwTdpH4&amp;t=3649s" target="_blank">[60:49]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The rotation is doing its job and the tape is intact.</strong> Technology is down <span class="ch down">&minus;7%</span> for July after a two-month run that pushed the sector index close to <span class="ch up">+50%</span>. Financials closed at an all-time weekly high on Friday, the NYSE Composite went out at a record, and advance-decline lines are at all-time highs. Every sector except tech was green on Friday. This is what a bull market looks like when its most crowded group cools off and the rest of the board absorbs the leadership.</li>
+      <li><strong>Memory is being repriced in two directions on the same tape.</strong> DRAM chip prices fell from <span class="pr">$81</span> to <span class="pr">$53</span> in about a month and US semis are the funding source for the sector rotation. Meanwhile in Shanghai, CXMT, a state-backed Chinese DRAM maker, IPO'd overnight, ripped <span class="ch up">+450%</span> intraday from its offer, and briefly became the largest company on the mainland at a <span class="pr">$550B</span> intraday cap. Retail was <span class="pr">212x</span> oversubscribed. Only 6% of the float trades. Both prints belong to the same cycle turning.</li>
+      <li><strong>The seasonality frame is a case for patience.</strong> Midterm-year Q2 and Q3 is historically the softest six-month window in the four-year cycle. The MACD seasonal sell for the NASDAQ flashed last week. Historically, low-of-midterm to high-of-pre-election runs roughly <span class="ch up">+50%</span> on the Dow and <span class="ch up">+60%</span> on the NASDAQ. The veteran positioning is defensives, gold, staples, some bonds, and a chunk of cash, waiting for the October window to set up the pre-election-year leg.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
