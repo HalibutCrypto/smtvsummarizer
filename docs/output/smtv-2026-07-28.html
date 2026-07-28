@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dow Rips Five Hundred Points Through a Semiconductor Bear Market - SMTV July 28, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; The Morning Show &middot; July 28, 2026</div>
+    <h1>The Dow Rips Five Hundred Points Through a Semiconductor Bear Market</h1>
+    <p class="subtitle">Banks just cleared a nineteen-year ceiling and healthcare is quietly at all-time highs while the chip trade completes what looks like a real top.</p>
+    <div class="meta">
+      58 min &middot; <a href="https://www.youtube.com/watch?v=Bjqx6C71M3I" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The Dow is up five hundred points and the NASDAQ is going the other way. Semis are officially in a bear market and the S&amp;P did not blink. Something bigger is happening under the surface. Banks just broke out of a nineteen-year cage stretching back to the financial crisis. Healthcare and software are quietly at all-time highs and nobody is talking about them. The show reads today as year one of a broader market finally waking up outside the AI trade.</p>
+    <ul>
+      <li><span class="tk">$DJI</span> <span class="pr">52,900</span> <span class="ch up">+500pts</span> pushing 53,000; <span class="tk">$SPX</span> <span class="pr">7,456</span> <span class="ch flat">flat</span>; <span class="tk">$NDX</span> just under <span class="pr">28,000</span> <span class="ch down">&minus;0.75%</span>; VIX still pushing <span class="pr">19</span>.</li>
+      <li>Semis officially in a bear market with a roughly <span class="ch down">&minus;25%</span> drawdown from the June 5 top. <span class="tk">$SOXS</span>, the triple-leveraged short-semi ETF, up <span class="ch up">+11%</span> premarket. <span class="tk">$GLW</span> (Corning) gapped down <span class="ch down">&minus;16%</span> on earnings, folded into the same AI supply chain unwind.</li>
+      <li>S&amp;P bank index just cleared its 2007 GFC highs after nineteen years. <span class="tk">$XLF</span> already up <span class="ch up">+80%</span> from its base breakout. The show's framing is that banks now mirror technology's own nineteen-year reclaim of dot-com highs in 2019.</li>
+      <li>Software over semis is the stated rotation. <span class="tk">$CRM</span>, <span class="tk">$NOW</span>, <span class="tk">$MSFT</span>, <span class="tk">$ROP</span> bases building since Q1. "Short semis is the only thing to do with semis right now."</li>
+      <li>Healthcare broadly at all-time highs. <span class="tk">$JNJ</span>, <span class="tk">$MRK</span>, <span class="tk">$BMY</span> breaking out of multi-decade bases. <span class="tk">$UNH</span> up <span class="ch up">+300%</span> off its base. <span class="tk">$BBIO</span> consolidating above former highs. Biotech takeovers running about four days a week.</li>
+      <li>Crypto flat. <span class="tk">$BTC</span> <span class="pr">$63,450</span>, <span class="tk">$ETH</span> under <span class="pr">$1,900</span>, <span class="tk">$SOL</span> <span class="pr">$73.21</span> <span class="ch down">&minus;4%</span>. Total crypto cap <span class="pr">$2.15T</span>. Dollar ripping, yen at 1980s lows, metals down.</li>
+      <li>FOMC two-day meeting starts today. Fed futures priced at roughly <span class="pr">35%</span> odds of a July hike and <span class="pr">55%</span> for September. Powell's first meeting produced shorter statement, shorter presser.</li>
+      <li>IPO wreckage keeps compounding. SpaceX has now lost roughly <span class="pr">$700B</span> in market cap since listing. <span class="tk">$CBRS</span> (Cerebras) has never closed a single day above its IPO-day anchored VWAP.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Sits Out Another Session as the Dollar Rips and the Yen Prints Forty-Year Lows</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$63,450</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,899</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$73.21</div>
+        <div class="stat-change down">&minus;4%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.15T</div>
+        <div class="stat-change flat">unchanged</div>
+      </div>
+    </div>
+
+    <p>Crypto did nothing this morning, which is the same thing it has been doing for weeks. Bitcoin held around <span class="pr">$63,450</span>, Ethereum stayed flat just under <span class="pr">$1,900</span>, and Solana chipped off <span class="ch down">&minus;4%</span> to <span class="pr">$73.21</span>. Aggregate market cap sits at <span class="pr">$2.15T</span>. The one-word summary from the show was momentum, and its inverse, which is none, in either direction.</p>
+
+    <p>The macro backdrop today is actively unfriendly. The dollar is ripping. The Japanese yen just made its lowest print since the 1980s and speculators are running super net short positions into it. Gold is down <span class="ch down">&minus;1%</span> at <span class="pr">$4,032</span> and silver is down <span class="ch down">&minus;2%</span> just under <span class="pr">$58</span>. That is the classic strong-dollar signature. In this environment BTC usually chops sideways or bleeds slowly rather than rallies, which is exactly the tape it is printing right now. The risk-on melt-up in US financials is happening around crypto entirely.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Lead Story</div>
+    <h2>The AI Trade Is Coming Out and the Rest of the Board Is Absorbing It</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Dow 30</div>
+        <div class="stat-value">52,900</div>
+        <div class="stat-change up">+500 pts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">S&amp;P 500</div>
+        <div class="stat-value">7,456</div>
+        <div class="stat-change flat">+8 handles</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">NASDAQ 100</div>
+        <div class="stat-value">27,995</div>
+        <div class="stat-change down">&minus;0.75%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">SOXS · Short Semis</div>
+        <div class="stat-value">+11%</div>
+        <div class="stat-change up">premarket</div>
+      </div>
+    </div>
+
+    <p>This is the cleanest picture of the AI-trade unwind the show has drawn in weeks. The Dow is up five hundred points and pushing fifty-three thousand. Financials, healthcare, and software are all green. The S&amp;P sits basically flat at <span class="pr">7,456</span>. And the NASDAQ 100 is down about three-quarters of a percent, dragged again by semiconductors.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Winners</div>
+        <ul>
+          <li><span class="tk">$DJI</span> · <span class="ch up">+500pts</span> pushing <span class="pr">53,000</span></li>
+          <li><span class="tk">$XLF</span> · financials <span class="ch up">+80%</span> from base breakout</li>
+          <li><span class="tk">$JNJ</span> <span class="tk">$MRK</span> <span class="tk">$BMY</span> · healthcare at ATH</li>
+          <li><span class="tk">$CRM</span> <span class="tk">$NOW</span> <span class="tk">$MSFT</span> · software bases building since Q1</li>
+          <li><span class="tk">$SHW</span> · Sherwin-Williams (paint) <span class="ch up">+8%</span></li>
+          <li><span class="tk">$KO</span> · Coke earnings said the opposite of Pepsi</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Losers</div>
+        <ul>
+          <li><span class="tk">$GLW</span> · Corning <span class="ch down">&minus;16%</span> on AI supply chain earnings</li>
+          <li><span class="tk">$NDX</span> · semis dragging the tech-only index <span class="ch down">&minus;0.75%</span></li>
+          <li>SpaceX · lost roughly <span class="pr">$700B</span>, "an entire Tesla"</li>
+          <li><span class="tk">$CBRS</span> · Cerebras never closed above IPO VWAP</li>
+          <li><span class="tk">$PNR</span> · Pentair pool stock <span class="ch down">&minus;7%</span></li>
+          <li><span class="tk">$HXSCL</span> · SK Hynix raising <span class="pr">$26B</span>, printing new lows</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>The semi group is officially in a bear market. Down roughly twenty-five percent from the June 5 top that the show now marks as the day everything changed. <span class="tk">$SOXS</span>, the triple-leveraged short-semiconductor ETF, was up <span class="ch up">+11%</span> in premarket. Corning gapped down <span class="ch down">&minus;16%</span> on earnings, lumped into the same AI supply chain story that has data center names looking equally toppy. The IPO wreckage rounds out the picture. SpaceX has now shed roughly seven hundred billion in market cap since listing, and Cerebras has never closed a single day above its anchored VWAP from its IPO day, meaning every single holder since day one is underwater.</p>
+
+    <p>The show's read is that the S&amp;P and the NASDAQ can trade in opposite directions for a while now. The mechanical reason is that the NASDAQ 100 excludes financials by design, so as the money in banks, insurers, and payment names does the work of holding the broader indices up, the tech-only index has nothing to lean on when semis crack. The stated posture is short semiconductors, long software. Salesforce, ServiceNow, Microsoft, Roper. The bases have been building since Q1, and the show thinks software is embarking on a fresh trend of its own while chips finish topping.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Framework</div>
+    <h2>The Banks' Nineteen-Year Reclaim Looks a Lot Like Tech in 2019</h2>
+
+    <p>The framework the show built up all morning was a chart comparison. The S&amp;P bank index has just cleared its 2007 all-time highs, nineteen years after the great financial crisis. The reference cited on air was Louise Yamada, who has written for decades that the bigger the drawdown, the longer the time needed to repair. Nineteen years for banks fits the pattern exactly.</p>
+
+    <p>The setup the show wants the reader to sit with is the analog. Technology took roughly eighteen to nineteen years to fully clear its dot-com highs, and once it did in 2019 it went on to one of the largest secular runs in equity market history. Financials just did the same thing on the same clock. <span class="tk">$XLF</span> is already up eighty percent from the base breakout, similar to the run out of 2020 and the retest and rip out of the 2022 bear-market lows. The show's blunt question was whether financials have to run five times over the next seven years to complete the analog. A two-times run over the same window is far more modest and still fits the pattern.</p>
+
+    <p>Healthcare is the other quiet leader in the same mold. On a relative basis it is bouncing at exactly the same place it bounced twenty-five years ago. Johnson &amp; Johnson, Merck, and Bristol Myers are printing new all-time highs or in the process of clearing multi-decade bases. UnitedHealth is up three hundred percent off its base. BridgeBio is consolidating above former highs. Biotech takeovers are running about four days a week. The reason it is getting no airtime is because there is no AI narrative you can draw a line to. The show's take is that if it walks like a duck and talks like a duck, it is probably not a chicken. Banks and biotech are both in year one of runs that historically go for years.</p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"How's nineteen years? Here we are just now. This is brand new."</blockquote>
+      <div class="attrib">JC, on the S&amp;P bank index clearing its 2007 GFC top <a class="ts" href="https://www.youtube.com/watch?v=Bjqx6C71M3I&amp;t=372s" target="_blank">[6:12]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"If it walks like a duck and talks like a duck, it's probably not a chicken."</blockquote>
+      <div class="attrib">JC, on why the bank-index breakout rhymes with tech's 2019 dot-com reclaim <a class="ts" href="https://www.youtube.com/watch?v=Bjqx6C71M3I&amp;t=547s" target="_blank">[9:07]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Semiconductors literally up three hundred percent from last year's lows. And we're looking at the bear market in semiconductors."</blockquote>
+      <div class="attrib">Strazza, on scaling the semi drawdown against last year's move <a class="ts" href="https://www.youtube.com/watch?v=Bjqx6C71M3I&amp;t=1132s" target="_blank">[18:52]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"SpaceX has now lost an entire Tesla in market cap."</blockquote>
+      <div class="attrib">JC, on the IPO wreckage since SpaceX listed <a class="ts" href="https://www.youtube.com/watch?v=Bjqx6C71M3I&amp;t=777s" target="_blank">[12:57]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>The AI trade is coming out and the index math is confusing people.</strong> Semis are officially in a bear market, down roughly <span class="ch down">&minus;25%</span> from the June 5 top. The S&amp;P 500 is basically flat and the Dow is up <span class="ch up">+500pts</span> pushing <span class="pr">53,000</span>. The NASDAQ 100 is down <span class="ch down">&minus;0.75%</span> because financials are excluded from that index by design, and there is nothing left to offset semis when they crack. The show's posture is short semiconductors, long software.</li>
+      <li><strong>Banks just cleared their 2007 highs after nineteen years.</strong> The S&amp;P bank index printed a reclaim of its GFC top nineteen years after the fact. <span class="tk">$XLF</span> is already up <span class="ch up">+80%</span> from the base breakout. The parallel the show is drawing is technology's own nineteen-year reclaim of its dot-com highs in 2019, followed by one of the largest secular runs in equity history. If the analog holds, financials are in year one.</li>
+      <li><strong>Healthcare, biotech, and software are the quiet leadership carrying this tape.</strong> <span class="tk">$JNJ</span>, <span class="tk">$MRK</span>, and <span class="tk">$BMY</span> are printing new all-time highs or clearing multi-decade bases. <span class="tk">$UNH</span> is up <span class="ch up">+300%</span> off its base and <span class="tk">$BBIO</span> is consolidating above former highs. Biotech takeovers are running four days a week. Software's Q1 bases in <span class="tk">$CRM</span>, <span class="tk">$NOW</span>, and <span class="tk">$MSFT</span> are breaking out. None of it has an AI narrative attached, which is why nobody is talking about it.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
