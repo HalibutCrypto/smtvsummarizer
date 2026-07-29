@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Momentum Just Printed Its Worst Month on Record and the Fed Meets Into a Coin Flip - SMTV July 29, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; The Morning Show &middot; July 29, 2026</div>
+    <h1>Momentum Just Printed Its Worst Month on Record and the Fed Meets Into a Coin Flip</h1>
+    <p class="subtitle">The Goldman Sachs high-momentum basket has never had a rougher four weeks, and this is only the fourth genuinely uncertain FOMC decision since the financial crisis.</p>
+    <div class="meta">
+      67 min &middot; <a href="https://www.youtube.com/watch?v=ZMKF-fMNLMM" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">The Fed sits down at 2 pm this afternoon and nobody knows what they are going to do. That has only happened four times in one hundred and thirty-five meetings since the financial crisis. On the other side of the tape, the momentum trade just printed its worst month in history. Worse than COVID. Worse than the dotcom bust. The parabolic winners of the last year are cooling off exactly the way parabolic winners always cool off. The desk read is simple. If Powell comes out dovish, risk rips and the spiciest stuff on the tape gets bought.</p>
+    <ul>
+      <li>FOMC decision <span class="pr">2 pm ET</span>. Fed funds futures priced at roughly <span class="pr">35%</span> for a hike today and <span class="pr">95%</span> for a hike by September. Jim Bianco note: only 4 of 135 post-financial-crisis meetings have had the odds this stuck between 33 and 66 percent in the days leading in.</li>
+      <li>Goldman Sachs high-momentum basket on pace for its worst month in history. <span class="tk">$MTUM</span> <span class="ch down">&minus;15%</span> month-to-date. Worse than COVID, worse than the financial crisis, worse than the dotcom bust.</li>
+      <li>SanDisk <span class="ch down">&minus;55%</span> in 21 trading days after roughly an <span class="ch up">+8,000%</span> run over the prior year. <span class="tk">$SMH</span> broke below the VWAP from March lows; next real stop is the VWAP from April 2024 lows near <span class="pr">$390</span>, another 20-25% lower and still a higher low.</li>
+      <li>Big Tech earnings tonight: <span class="tk">$META</span> and <span class="tk">$MSFT</span>. <span class="tk">$AAPL</span> and <span class="tk">$AMZN</span> tomorrow. Roughly <span class="pr">$15T</span> of combined market cap on the tape this week.</li>
+      <li>Apple versus Microsoft relative ratio just broke out to its highest level since 1989. Trend turned in July-August 2024. Frugality is now the trade the market rewards.</li>
+      <li><span class="tk">$SNOW</span> reclaimed the VWAP from the June high and the VWAP from the April low in the same session. Up roughly <span class="ch up">+20%</span> in three days after knee-jerk selling its earnings. Strazza's tell for MSFT tonight.</li>
+      <li>SK Hynix reported revenue <span class="ch up">+500%</span> and still missed estimates. <span class="tk">$KLA</span> <span class="ch down">&minus;8.5%</span>. KOSPI down <span class="ch down">&minus;6%</span> overnight, EWY down roughly <span class="ch down">&minus;35%</span> off recent highs.</li>
+      <li>Crude oil <span class="ch up">+6%</span> this morning into the Fed. Heating oil closing July at all-time highs. Crack spreads at new highs, refiners printing cash.</li>
+      <li>Crypto flat. <span class="tk">$BTC</span> <span class="pr">$63,800</span>, <span class="tk">$ETH</span> just under <span class="pr">$1,900</span>, <span class="tk">$SOL</span> <span class="pr">$73</span>. Total cap <span class="pr">$2.16T</span>. Desk said out loud they will go buy <span class="tk">$MSTR</span> calls if Powell shows up dovish.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Sits On Its Hands Into Powell and the Only Cue Is the Reaction</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$63,800</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,895</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$73</div>
+        <div class="stat-change flat">flat</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Crypto Cap</div>
+        <div class="stat-value">$2.16T</div>
+        <div class="stat-change flat">unchanged</div>
+      </div>
+    </div>
+
+    <p>Crypto did nothing this morning, which is what nearly everything else on the tape did too. Bitcoin was up two-thirds of a percent around <span class="pr">$63,800</span>. Ethereum sat just under <span class="pr">$1,900</span>. Solana held <span class="pr">$73</span>. Aggregate market cap stayed at <span class="pr">$2.16T</span>. Even index futures were unchanged. The one thing moving was crude oil, up <span class="ch up">+6%</span>, and 10-year futures which bid up two-thirds of a percent as bonds nibbled at the idea of a dovish Fed.</p>
+
+    <p>What the desk kept saying was that today is a reaction trade rather than a positioning trade. If Powell holds and pushes the priced-in hike out into the future, the surprise is dovish, and the desk was explicit that when the print hits, the play is calls on the spiciest stuff still linked to Bitcoin. MicroStrategy was named out loud. The read on the crypto side is that the tape is boring until 2 pm and then it is not. If Powell moves the market lower on a hawkish tone, Bitcoin follows. If he holds and softens the September curve, MSTR carries the leverage and everything BTC-linked catches a bid with it.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Lead Story</div>
+    <h2>The Fed Sits Down at Two O'Clock and This Is Only the Fourth Genuinely Uncertain Meeting Since the Financial Crisis</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Hike Odds Today</div>
+        <div class="stat-value">35%</div>
+        <div class="stat-change flat">Fed funds futures</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Hike Odds by September</div>
+        <div class="stat-value">95%</div>
+        <div class="stat-change up">effectively locked</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Meetings Like This</div>
+        <div class="stat-value">4 / 135</div>
+        <div class="stat-change flat">since the GFC</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Last Comparable</div>
+        <div class="stat-value">Sep 2024</div>
+        <div class="stat-change flat">surprise 50bp cut</div>
+      </div>
+    </div>
+
+    <p>Jim Bianco's note this morning is the framework the desk latched onto. Since the financial crisis, the Fed has held 135 FOMC meetings, and only four of them have gone into decision day with hike or cut odds stuck between 33 percent and 66 percent in the preceding days. That is roughly 3 percent of the sample. The market almost always figures it out before Powell shows up. Fed fund futures typically compress to 80, 90, 99 percent in the days leading in. This week has done the opposite. Odds have widened rather than tightened. The last time this happened was September 2024, the surprise 50 basis point cut meeting. Before that, three others clustered around COVID and the 2019 hiking cycle.</p>
+
+    <p>What that means for today is that the market is genuinely on both sides of this trade. Fed funds futures are pricing about a 35 percent probability of a hike right now and something like 95 percent by September. So the market has already effectively baked in one hike over the next two months. What it cannot decide is whether that hike is today or seven weeks from now.</p>
+
+    <p>Strazza's read is that the risk is skewed dovish. If Powell holds and signals no imminent hike, the September curve unwinds, priced-in hike premium comes out of risk assets, and the market ramps. If he actually hikes today, home builders get rocked, banks give back their recent breakout, speculative growth takes a hit, biotech looks less pretty, and crypto potentially falls off a cliff. Either way, the desk expects at least two reversals between 2:00 and 2:45 pm ET while the tape processes the statement, the press conference, and whatever Powell says off script.</p>
+
+    <p>The Fed print is not the only event tonight. Meta and Microsoft report after the close, and Apple and Amazon go tomorrow evening. That is roughly fifteen trillion dollars of market capitalization delivering on the same 24 hours. Strazza's tell for the software reaction is ServiceNow, which knee-jerked lower on its own earnings last week and has since ripped roughly 20 percent in three days, reclaiming the VWAP from the June high and the VWAP from the April low in the same session. For the past six quarters, ServiceNow's post-earnings drift has told the desk which way to lean on Microsoft. Right now it says be constructive.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Framework</div>
+    <h2>Goldman's Momentum Basket Just Printed Its Worst Month in History and Apple's Frugality Is the Mirror Image</h2>
+
+    <p>The chart of the day is not a chart of the S&amp;P or the NASDAQ. It is Goldman Sachs's high-momentum basket, on pace for its single worst month in history. Worse than COVID. Worse than the financial crisis. Worse than the dotcom bust. The liquid retail proxy for that basket, <span class="tk">$MTUM</span>, is down about 15 percent in the past four weeks. Not a slow twelve-month grind like 2022. A four-week face-rip.</p>
+
+    <p>The show's canonical example of what that looks like at the single-stock level is SanDisk. This stock went from <span class="pr">$30</span> a share in April of last year to over <span class="pr">$2,300</span> a share by earlier this month. Roughly an <span class="ch up">+8,000%</span> rally in a little over a year. Yesterday alone it printed a <span class="ch down">&minus;14%</span> session, and its peers all posted double-digit losses in sympathy. Over the last 21 trading days SanDisk is down more than <span class="ch down">&minus;55%</span>. Strazza's frame for what is happening is that this is not the trend breaking. This is how a parabolic trend cools off. Things that go up fast also come down fast.</p>
+
+    <p>The map he laid out on <span class="tk">$SMH</span> makes the point in cleaner form. Semis have already broken below the VWAP from the March lows this year. The next real support the desk is watching is the VWAP from the April 2024 lows, which sits near <span class="pr">$390</span>, roughly 20-25% below current levels. SMH could fall another quarter from here and still carve out a higher low against last year's base. In other words, semiconductors as a group can complete this top, put in a 40-50 percent peak-to-trough drawdown from the June top, and the primary uptrend from last year's lows would remain fully intact. Zoom out on the chart and the trend is still there. The requirement is patience and a long enough time horizon that a 50 percent drawdown does not force you out.</p>
+
+    <p>SK Hynix reporting last night is the same story in one line. Revenue up 500 percent and it still missed. When a stock has been priced for perfection for six straight quarters, a 500 percent revenue number that undershoots by a nose is enough to send it lower and to knock the KOSPI down six percent with it. EWY is off roughly 35 percent from its recent highs. That is not a Korea story. That is the same momentum basket unwinding on a different exchange.</p>
+
+    <p>The mirror image of all this is Apple. Apple relative to Microsoft just broke out to its highest level since 1989. Apple versus the equal-weighted Magnificent 7 ETF is at fresh 52-week highs. Apple versus the NASDAQ 100 is clearing a multi-year base. That relative trend turned in July-August of last year. The mechanical explanation the desk gave is simple. For most of the past three years, the market rewarded the Mag 7 names that spent aggressively on AI capex. Meta, Google, Amazon all lit money on fire to build out data centers and got paid for it. That has now flipped. Free cash flow is turning negative for the ones that spend, and the market has stopped applauding. Apple, which spends far less on AI infrastructure and returns cash to shareholders instead, is the beneficiary. The regime shift and the momentum basket unwind are the same trade seen from two angles.</p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"If they're already baking in that we're definitely getting a hike, this is most likely to go in a dovish way."</blockquote>
+      <div class="attrib">Strazza, on why the 95% September odds set up an upside surprise today <a class="ts" href="https://www.youtube.com/watch?v=ZMKF-fMNLMM&amp;t=323s" target="_blank">[5:23]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"Things that go up fast also go down fast."</blockquote>
+      <div class="attrib">Strazza, on the SanDisk 55% drawdown after an 8,000% run <a class="ts" href="https://www.youtube.com/watch?v=ZMKF-fMNLMM&amp;t=611s" target="_blank">[10:11]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"The Goldman Sachs high-momentum basket. Worse than financial crisis, worse than dotcom bubble this month. Worst month in history."</blockquote>
+      <div class="attrib">Strazza, on the four-week momentum unwind <a class="ts" href="https://www.youtube.com/watch?v=ZMKF-fMNLMM&amp;t=1398s" target="_blank">[23:18]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"They've stopped rewarding the ones that are spending or overspending. Now they're rewarding the ones that have been more frugal."</blockquote>
+      <div class="attrib">Strazza, on the Mag 7 capex-versus-frugality regime shift that turned in July 2024 <a class="ts" href="https://www.youtube.com/watch?v=ZMKF-fMNLMM&amp;t=2927s" target="_blank">[48:47]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Fed uncertainty is the whole trade this afternoon.</strong> Fed funds futures are priced at roughly <span class="pr">35%</span> for a hike today and <span class="pr">95%</span> for a hike by September, and this is only the fourth post-financial-crisis meeting where odds have refused to compress in the days going in. If Powell holds and softens the September curve, priced-in hike premium unwinds and risk rips. If he hikes, home builders, banks, speculative growth, and crypto all take real damage. The desk trade if it goes dovish is <span class="tk">$MSTR</span> calls.</li>
+      <li><strong>Momentum just broke its worst month in history.</strong> Goldman Sachs's high-momentum basket is worse than COVID, worse than the financial crisis, worse than the dotcom bust. <span class="tk">$MTUM</span> is down <span class="ch down">&minus;15%</span> in four weeks. SanDisk is <span class="ch down">&minus;55%</span> in 21 trading days after roughly an <span class="ch up">+8,000%</span> run. <span class="tk">$SMH</span> could fall another 20-25% to the April 2024 VWAP near <span class="pr">$390</span> and still preserve last year's higher-low structure. Parabolic winners always cool off this way.</li>
+      <li><strong>Apple's outperformance is the momentum unwind seen from the other side.</strong> Apple versus Microsoft relative just broke out to its highest level since 1989, and Apple versus the equal-weighted Mag 7 is at fresh 52-week highs. The trend turned in July-August of last year. For three years the market rewarded aggressive AI capex; it has now stopped. Frugality is the trade Big Tech is being asked to run, and Apple is the ready-made expression of it into the earnings tape tonight and tomorrow.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
