@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Held the Capex Line and Meta Cratered Free Cash Flow Trying to Beat It - SMTV 2026-07-30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; The Morning Show &middot; July 30, 2026</div>
+    <h1>Microsoft Held the Capex Line and Meta Cratered Free Cash Flow Trying to Beat It</h1>
+    <p class="subtitle">The market rewarded the hyperscaler that said enough, while Poland, London, and Hong Kong quietly printed all-time highs behind a sideways S&amp;P.</p>
+    <div class="meta">
+      66 min &middot; <a href="https://www.youtube.com/watch?v=IJYF-ozApiQ" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">6 min read</span>
+    </div>
+    <p class="tldr-headline">Microsoft's stock ripped and Meta's dropped ten percent, and the reason was money. Microsoft told investors it was done raising its AI spending. Meta raised its plan by roughly another forty billion and blew up its free cash flow doing it. Wall Street knew who to reward. Underneath all of it, the S&amp;P has been chopping sideways for months, but Poland, London, and Hong Kong are all quietly at record highs.</p>
+    <ul>
+      <li><span class="tk">$MSFT</span> gapped up hard pre-market after holding capex guidance flat and telling analysts it stays free-cash-flow positive next year. Azure grew <span class="ch up">+43%</span> to a <span class="pr">$100B</span> annual run rate; Copilot now has 30 million paid seats.</li>
+      <li><span class="tk">$META</span> down roughly <span class="ch down">-10%</span> after raising capex guidance to about <span class="pr">$140B</span>, missing on EPS for the first time in about three years, and printing free cash flow down <span class="ch down">-91%</span> year over year.</li>
+      <li>Semis up, software down all morning. <span class="tk">$LRCX</span> <span class="ch up">+13%</span> on earnings, <span class="tk">$FTNT</span> <span class="ch up">+12%</span> pre-market after a big last quarter. Service Now and Salesforce down 3&ndash;4%.</li>
+      <li>30-year Treasury yield at the highest level since 2007 even though the Fed sat still yesterday. Rates keep rising into a Fed that isn't hiking.</li>
+      <li>NYSE advanced-decline line closed at an all-time high Tuesday. Seventy percent of S&amp;P names above the 200-day. Small-cap consumer discretionary at all-time highs while consumer sentiment is at record lows.</li>
+      <li>Poland, London, Sweden, and Hong Kong at new all-time highs. South Korea getting hit as money rotates into mainland China. Dollar flat, so these are equity flows rather than currency effects.</li>
+      <li>Crypto steady into the earnings tape. <span class="tk">$BTC</span> <span class="pr">$64,780</span> <span class="ch up">+1.4%</span>, <span class="tk">$ETH</span> <span class="pr">$1,918</span> <span class="ch up">+0.5%</span>, <span class="tk">$SOL</span> <span class="pr">$74</span> sideways. Total crypto market cap <span class="pr">$2.19T</span>.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Drifts Higher Into a Friendly Macro Backdrop It Isn't Trading Off Of</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$64,780</div>
+        <div class="stat-change up">+1.4% &middot; +$900</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,918</div>
+        <div class="stat-change up">+0.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$74</div>
+        <div class="stat-change flat">Sideways</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Mcap</div>
+        <div class="stat-value">$2.19T</div>
+        <div class="stat-change flat">Flat</div>
+      </div>
+    </div>
+
+    <p><span class="tk">$BTC</span> traded up nearly nine hundred points to <span class="pr">$64,780</span> into the US open. <span class="tk">$ETH</span> added ten to <span class="pr">$1,918</span>. <span class="tk">$SOL</span> just kept trending sideways at <span class="pr">$74</span> with no real move, and total crypto market cap sat at <span class="pr">$2.19T</span>, basically flat.</p>
+
+    <p>The macro backdrop was quietly friendly. Gold rose almost one percent to <span class="pr">$4,135</span>. Copper ripped <span class="ch up">+2.5%</span> to <span class="pr">$6.46</span>, a classic risk-on tell that also plays into the inflation story. The dollar sat flat. That combination normally helps Bitcoin, but the desk barely dwelled on crypto this morning because the entire story was inside earnings.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Lead Story</div>
+    <h2>Microsoft Said No to More Capex and Wall Street Voted for the Discipline</h2>
+
+    <p><span class="tk">$MSFT</span> gapped up sharply pre-market after telling investors it was done raising its AI capex plan. Management said explicitly that spending stays inside prior guidance, that the company remains free-cash-flow positive next year, and that Azure grew <span class="ch up">+43%</span> to a hundred-billion-dollar annual revenue run rate. Copilot now has 30 million paid users, which the desk noted is more than a lot of standalone AI companies can claim. Every part of that statement was pitched at one company in particular.</p>
+
+    <p>That company was Meta. <span class="tk">$META</span> did the opposite of everything Microsoft did. It raised capex guidance to roughly <span class="pr">$140B</span>, it missed on earnings per share for the first time in about three years, and its free cash flow fell <span class="ch down">-91%</span> year over year on top of last quarter's swing to outright negative. The stock dropped about ten percent pre-market. Fifteen years of steady free-cash-flow growth got undone in two quarters.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Rewarded for Discipline</div>
+        <ul>
+          <li><span class="tk">$MSFT</span> &middot; capex held, Azure +43%, FCF stays positive</li>
+          <li><span class="tk">$LRCX</span> &middot; <span class="ch up">+13%</span> on earnings</li>
+          <li><span class="tk">$FTNT</span> &middot; <span class="ch up">+12%</span> pre-market, third earnings pop in a row</li>
+          <li><span class="tk">$BMY</span> &middot; clean report, chart set up</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Punished for Overspending</div>
+        <ul>
+          <li><span class="tk">$META</span> &middot; capex raised to $140B, FCF <span class="ch down">-91%</span>, first EPS miss in 3 years</li>
+          <li><span class="tk">$ORCL</span> &middot; getting hit as the hyperscaler-supplier chain unwinds</li>
+          <li><span class="tk">$NOW</span> &middot; software down 3&ndash;4% on the day</li>
+          <li><span class="tk">$CRM</span> &middot; same tape, opposite direction from semis</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Strazza framed the whole session as a two-step domino. The market is punishing the overspenders, and it just started punishing the companies that supply the overspenders. Once the hyperscalers get punished hard enough in their stock prices, they have to listen. And when they cut capex, the semis lose the buyer that made the last two years of chip revenue possible. Today was semis up and software down in the same tape, which the desk read as the market rehearsing that sequence rather than reversing it.</p>
+
+    <p>The bigger read is that AI capex is no longer a free pass. For eighteen months the market rewarded every hyperscaler that raised its spending line, on the assumption that whoever built the biggest cluster won. Microsoft's call last night reframed it. Being free-cash-flow positive next year turned into a differentiator, and Meta's willingness to keep spending stopped being a growth story and started being a solvency question.</p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>Bitcoin's macro thesis has always leaned on real-asset scarcity into a debt-driven economy. If the market is starting to demand actual cash flow from tech in a period where rates are climbing on their own, that pushes even more capital toward assets whose entire pitch is "there is a fixed supply." Watch how BTC trades relative to Nasdaq in the next few weeks. The de-correlation people have waited two years for tends to show up in exactly this kind of quality-repricing tape.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; The World Outside the S&amp;P</div>
+    <h2>The Benchmark Is Sideways and Almost Nothing Else Is</h2>
+
+    <p>The S&amp;P 500 has traded sideways for two months, choppy and inconclusive. Underneath it, breadth has been doing something completely different. The advanced-decline line on the New York Stock Exchange, which counts how many stocks are going up versus down each day, closed at an all-time high on Tuesday. Seventy percent of S&amp;P names sit above their 200-day moving average. Seventy percent above their 50-day. Those are not the numbers of a market falling apart.</p>
+
+    <p>The point coming out of the desk today was that the NASDAQ's advanced-decline line has been trending lower since it was launched because the index carries too much junk. The NYSE composite is the read worth trusting, and it says leadership rotated but never left. Big banks like Morgan Stanley and Goldman Sachs, industrials like Caterpillar, defensives like Coca-Cola, all posted charts you would have guessed were semiconductor names if you covered up the ticker. Coke made new all-time highs in July.</p>
+
+    <p>Overseas the rotation is louder. Poland, London, and Sweden all printed new all-time highs today. Hong Kong ripped off last month's lows. South Korea got hit as money flowed the other way into mainland China. The dollar sat flat through all of it, which means these are equity flows rather than currency effects.</p>
+
+    <p>Consumer discretionary is the mirror image of the S&amp;P puzzle. The large-cap sector <span class="tk">$XLY</span> is the worst in America right now, dragged down almost entirely by Amazon and Tesla, the two names that dominate its weighting. Small-cap consumer discretionary is at all-time highs. Hotels and resorts at all-time highs. Cheesecake Factory ripping. Consumer sentiment sits at a record low. The gap between what people say about the economy and where they actually spend money has rarely been this wide.</p>
+
+    <p>The through-line, oddly, comes back to rates. The 30-year yield is at the highest level since 2007 despite the Fed sitting still yesterday, and it started rising the day the Fed began cutting rates back in 2024. That is not a Fed-controlled backdrop. It is a market-controlled one, and it is pushing capital into cyclicals, into international, into cash-generative small caps, and out of long-duration mega-cap growth. The tape today makes more sense once that is the frame.</p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"It's very simple what's going on here. They're punishing the overspenders. Look at a chart of Oracle. And then they're taking it another step and punishing the companies that supply the overspenders."</blockquote>
+      <div class="attrib">Strazza, on the Microsoft-Meta split and the semi-software divergence <a class="ts" href="https://www.youtube.com/watch?v=IJYF-ozApiQ&amp;t=1527s" target="_blank">[25:27]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"The flickering ticks and the movements on the chart represent humans making bad decisions."</blockquote>
+      <div class="attrib">On why technical analysis works even when everyone knows about it <a class="ts" href="https://www.youtube.com/watch?v=IJYF-ozApiQ&amp;t=2470s" target="_blank">[41:10]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"The NASDAQ 100 is becoming like the Bitcoin of the indexes with tons of volatility."</blockquote>
+      <div class="attrib">On why the S&amp;P and the NDX are both bad reads of "the market" right now <a class="ts" href="https://www.youtube.com/watch?v=IJYF-ozApiQ&amp;t=2662s" target="_blank">[44:22]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"When the going gets tough, the tough get eating, smoking, and drinking."</blockquote>
+      <div class="attrib">JC quoting Alan Shaw, on Philip Morris and Coke both hitting new highs <a class="ts" href="https://www.youtube.com/watch?v=IJYF-ozApiQ&amp;t=3245s" target="_blank">[54:05]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Discipline got paid, aggression got punished.</strong> <span class="tk">$MSFT</span> held its capex line and <span class="tk">$META</span> raised spending into a <span class="ch down">-91%</span> free-cash-flow drop. The hyperscaler that said enough was rewarded, and the market is now openly sorting the group by willingness to stop.</li>
+      <li><strong>Rates are the story nobody is telling.</strong> The 30-year yield is at its highest level since 2007 and it is still climbing even though the Federal Reserve sat still yesterday. Every other move today, big tech, small caps, international, is happening against that backdrop.</li>
+      <li><strong>The bull market is under the surface.</strong> The S&amp;P has chopped sideways for two months but the NYSE advanced-decline line closed at an all-time high this week. Small caps, banks, industrials, hotels, and international indices are all making new highs. A passive index buyer sees stagnation. Anyone scanning sees leadership.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
