@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dow Prints Its Highest Monthly Close in History and the Semis Refuse to Come Along - SMTV August 3, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f2;
+    --surface: #ffffff;
+    --surface-alt: #f3f1e8;
+    --border: #d8d4c4;
+    --text: #1a1a1a;
+    --text-body: #2c2c2c;
+    --text-muted: #6b6b66;
+    --accent: #d4530b;
+    --accent-soft: #f7e2cf;
+    --accent-2: #1a4d80;
+    --green: #0a7d3f;
+    --green-soft: #d8efde;
+    --red: #b8232b;
+    --red-soft: #f3d7d8;
+    --amber: #a87a0d;
+    --amber-soft: #f3e6c4;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 83, 11, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(26, 77, 128, 0.06), transparent 60%),
+      var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
+  .hero .source {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0 0 1rem;
+  }
+  .hero .subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hero .meta {
+    margin-top: 1.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .hero .meta a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-2);
+  }
+
+  /* Article container */
+  .article { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .tldr-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .tldr-headline {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+  .tldr ul { list-style: none; margin: 0; padding: 0; }
+  .tldr li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .tldr li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tldr .read-time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Chapters */
+  .chapter { margin: 4rem 0 2rem; }
+  .chapter-label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .chapter h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .chapter-sub {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0 0 1.5rem;
+  }
+
+  p { margin: 0 0 1.2rem; }
+
+  /* Inline tickers and prices */
+  .tk {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
+  }
+  .pr {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .ch {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .ch.up   { color: var(--green); }
+  .ch.down { color: var(--red); }
+  .ch.flat { color: var(--text-muted); }
+
+  /* Stat card grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .stat .stat-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+  .stat .stat-value {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+  .stat .stat-change {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stat .stat-change.up { color: var(--green); }
+  .stat .stat-change.down { color: var(--red); }
+  .stat .stat-change.flat { color: var(--text-muted); }
+
+  /* Pull quotes */
+  .pullquote {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .pullquote blockquote {
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .pullquote .attrib {
+    margin-top: 0.6rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Compare grid (winners vs losers) */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare > div {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+  }
+  .compare .winners { background: var(--green-soft); border-color: rgba(10, 125, 63, 0.3); }
+  .compare .losers  { background: var(--red-soft);   border-color: rgba(184, 35, 43, 0.3); }
+  .compare .head {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .compare .winners .head { color: var(--green); }
+  .compare .losers .head  { color: var(--red); }
+  .compare ul { margin: 0; padding: 0; list-style: none; }
+  .compare li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+
+  /* Timeline (sequential history) */
+  .timeline {
+    position: relative;
+    margin: 1.5rem 0 2rem;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--red));
+  }
+  .timeline-item { position: relative; padding: 0.5rem 0 1.25rem; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.65rem;
+    top: 0.85rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+  }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-item .year {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .timeline-item h4 {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 0.1rem 0 0.3rem;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .timeline-item p { margin: 0; font-size: 0.95rem; color: var(--text-body); }
+
+  /* Margin notes */
+  .note {
+    background: var(--surface);
+    border-radius: 12px;
+    border-top: 3px solid var(--amber);
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .note.crypto { border-top-color: var(--accent); }
+  .note.local  { border-top-color: var(--accent-2); }
+  .note .label {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.4rem;
+  }
+  .note.crypto .label { color: var(--accent); }
+  .note.local  .label { color: var(--accent-2); }
+  .note p { margin: 0; font-size: 0.97rem; }
+
+  /* Timestamp link */
+  .ts {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+    margin-left: 0.2rem;
+    vertical-align: baseline;
+  }
+  .ts:hover { background: var(--accent-soft); }
+
+  /* Bottom line dark card */
+  .bottom-line {
+    margin-top: 4rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+  .bottom-line h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+  }
+  .bottom-line ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    counter-reset: bl-counter;
+    list-style: none;
+  }
+  .bottom-line li {
+    counter-increment: bl-counter;
+    position: relative;
+    padding: 0.5rem 0;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #d8d6c8;
+  }
+  .bottom-line li::before {
+    content: counter(bl-counter, decimal-leading-zero);
+    color: var(--accent);
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-right: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .bottom-line li strong { color: #fff; font-weight: 600; }
+  .bottom-line .tk { color: #ffb070; }
+  .bottom-line .pr { color: #ffffff; }
+  .bottom-line .ch.up   { color: #4fbf7b; }
+  .bottom-line .ch.down { color: #e85563; }
+  .bottom-line .ch.flat { color: #d8d6c8; }
+
+  .quotes-block .pullquote { margin-bottom: 1rem; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .article { padding: 0 1.25rem 3rem; }
+    .compare { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .bottom-line { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="source">SMTV &middot; The Morning Show &middot; August 3, 2026</div>
+    <h1>The Dow Prints Its Highest Monthly Close in History and the Semis Refuse to Come Along</h1>
+    <p class="subtitle">Japan spent thirty-six billion propping up the yen, developed markets and China broke out on their monthly charts, and the desk warned that busted momentum can drift sideways for years.</p>
+    <div class="meta">
+      68 min &middot; <a href="https://www.youtube.com/watch?v=iySQgkagPMc" target="_blank" rel="noopener">Watch the source on YouTube</a>
+    </div>
+  </div>
+</header>
+
+<main class="article">
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <div>
+      <span class="tldr-pill">TL;DR</span>
+      <span class="read-time">5 min read</span>
+    </div>
+    <p class="tldr-headline">The Dow just booked the highest monthly close in its history. Almost nobody is celebrating because everyone is staring at the semis. That trade got smoked and does not want to bounce. Japan spent thirty-six billion dollars propping up the yen and blew out every trader betting the other way. Developed markets and China broke out on their monthly charts. Software is finally getting paid for good earnings. The story under the surface is that leadership rotated and never left.</p>
+    <ul>
+      <li>Dow closed July at <span class="pr">53,225</span> <span class="ch up">+1.12%</span>, the highest monthly close in the index's history. NYSE composite also at all-time highs.</li>
+      <li>S&amp;P <span class="pr">7,560</span> <span class="ch up">+0.5%</span>, NASDAQ barely moved at <span class="pr">28,450</span>, dragged by semis still working through their post-parabolic drawdown.</li>
+      <li>Japan spent an estimated <span class="pr">$36B</span> defending the yen in a coordinated intervention with the US Treasury. Net-short yen speculators at multi-year extremes got run over.</li>
+      <li>Developed markets, emerging markets, China (<span class="tk">$FXI</span>), and short-dollar assets from Poland to Mexico all broke out on their July monthly candles. Energy majors (<span class="tk">$CVX</span>, <span class="tk">$XOM</span>, <span class="tk">$PBR</span>) zoomed out look bullish even as crude took <span class="ch down">-6.5%</span> to <span class="pr">$79</span>.</li>
+      <li>Software wakes up. <span class="tk">$MSFT</span> <span class="ch up">+4%</span> today, <span class="tk">$NOW</span> drifting higher post-earnings, <span class="tk">$PLTR</span> reports tonight into a polarity zone. <span class="tk">$ZM</span> is trading as an AI proxy on its stake in Anthropic.</li>
+      <li>Tech sector was up <span class="ch up">+42%</span> in April and May combined, flat June, then <span class="ch down">-8%</span> in July with an <span class="ch down">-11%</span> intramonth low. Small-cap tech <span class="ch down">-14%</span> in July. <span class="tk">$ORCL</span> cut in half in two months.</li>
+      <li>Bull-market checklist reads six of eight; bear-market checklist blank. Two-thirds of S&amp;P names above their 200-day.</li>
+      <li>Crypto sat out the friendly setup. <span class="tk">$BTC</span> <span class="pr">$62,560</span> <span class="ch down">-1.5%</span>, <span class="tk">$ETH</span> <span class="pr">$1,840</span> <span class="ch down">-2.3%</span>, <span class="tk">$SOL</span> <span class="pr">$72.40</span> <span class="ch down">-1.5%</span>. Total mcap <span class="pr">$2.13T</span>.</li>
+      <li>Bristol Myers and AstraZeneca merger headline landed but the tape ignored it.</li>
+    </ul>
+  </section>
+
+  <!-- CHAPTERS -->
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 1 &middot; Crypto</div>
+    <h2>Crypto Sits Out a Backdrop That Should Be Working For It</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Bitcoin</div>
+        <div class="stat-value">$62,560</div>
+        <div class="stat-change down">-1.5% &middot; -$1,000</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ethereum</div>
+        <div class="stat-value">$1,840</div>
+        <div class="stat-change down">-2.3%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Solana</div>
+        <div class="stat-value">$72.40</div>
+        <div class="stat-change down">-1.5%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Mcap</div>
+        <div class="stat-value">$2.13T</div>
+        <div class="stat-change down">Weakest of the group</div>
+      </div>
+    </div>
+
+    <p><span class="tk">$BTC</span> gave back roughly a thousand points into the open at <span class="pr">$62,560</span>. <span class="tk">$ETH</span> traded down <span class="ch down">-2.3%</span> to <span class="pr">$1,840</span>. <span class="tk">$SOL</span> was the worst of the majors at <span class="pr">$72.40</span> <span class="ch down">-1.5%</span>, and total crypto market cap slipped to <span class="pr">$2.13T</span>.</p>
+
+    <p>The macro underneath these prices was actually friendly. The dollar index rolled back into an older range the desk has been watching. Japan and the US intervened in the yen over the weekend, which typically flushes dollar strength out of everything at once. Developed markets, China, and short-dollar assets from Poland to Mexico all broke out on their monthly candles. Gold and silver sat flat at <span class="pr">$4,100</span> and <span class="pr">$57.70</span>. That is the exact macro setup Bitcoin usually loves, and Bitcoin was red anyway.</p>
+
+    <p>CZ tweeted over the weekend that crypto might be entering a bear market. JC's response on air was that crypto is a two-trillion-dollar rounding error in the middle of a raging bull market for stocks and does not get its own asset-class bear cycle. The argument runs either way, but the read is the same. When the tape is friendly and Bitcoin is red, the story is a crypto-specific one rather than a macro-driven one, and the show did not spend much time trying to guess which piece was calling the shot.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 2 &middot; Lead Story</div>
+    <h2>A Record Dow Monthly Close With the World Breaking Out Around It</h2>
+
+    <p>The Dow closed July at <span class="pr">53,225</span>, up <span class="ch up">+1.12%</span> today and the highest monthly close in the index's history. The S&amp;P added forty-one handles to <span class="pr">7,560</span> and the NASDAQ barely budged at <span class="pr">28,450</span>, held back by the semiconductors that have been leaking for a month. The New York Stock Exchange composite, which weights the entire floor rather than one tech-heavy slice, also closed at all-time highs. On any traditional definition of a bull market, the tape is one.</p>
+
+    <p>The bigger monthly-chart story ran outside the S&amp;P. Developed-market equities broke out cleanly. Japan, Europe, and Australia all posted charts the desk called some of their best in years. Emerging markets looked the same, and China ripped in July on huge monthly candles after <span class="tk">$FXI</span> (the flagship China ETF, dominated by Alibaba, Tencent-adjacent H-shares, and mainland financials) bottomed in the first days of the month and went in a straight line higher. Some of that flow rotated out of South Korea, Taiwan, and Japan into mainland names.</p>
+
+    <p>Energy told a similar story on a longer time frame. Crude got smoked another <span class="ch down">-6.5%</span> to <span class="pr">$79</span> on the Monday-morning routine of weekend headlines, but the majors zoomed out look better every week. <span class="tk">$CVX</span>, <span class="tk">$XOM</span>, and the refiners have already broken out. The desk was buying tanker names and long-dated calls on <span class="tk">$PBR</span> (Petrobras, the Brazilian state oil major).</p>
+
+    <p>The trade that made all of it hang together was the yen. Japan spent an estimated <span class="pr">$36B</span> over the weekend defending its currency in a coordinated buy with the US Treasury, and speculators who were net-short yen at multi-year extremes got run over. That reversal is dragging the dollar down, and everything that trades inversely to a stronger dollar is starting to work at once. JC said flatly that he likes short-dollar trades right now.</p>
+
+    <p>Bristol Myers and AstraZeneca surprised the market with merger talk overnight. Astra shareholders do not like it, Bristol shareholders do, and the tape ignored the whole story because nothing about a healthcare deal changes what monthly charts on eighteen indices are saying.</p>
+
+    <div class="note crypto">
+      <div class="label">The crypto angle</div>
+      <p>Historically Bitcoin is the loudest short-dollar asset in the room. Every other short-dollar trade turned green this morning while <span class="tk">$BTC</span> traded red. Either the crypto tape catches up in the next few sessions as the broader dollar reversal grinds through, or the disconnect is a signal that positioning inside crypto is heavier than the macro read suggests. Watch that gap close, or refuse to close, before adding size.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter-label">Chapter 3 &middot; Framework</div>
+    <h2>Software Finally Gets Paid While the Semis Sit in the Rubble</h2>
+
+    <p>Inside the S&amp;P the split between software and semiconductors has become the loudest signal on the tape. Semis put together the greatest two-month run in the history of the sector across April and May, up roughly forty-two percent. June went flat. July closed down almost eight percent after touching down eleven percent intramonth. Small-cap tech, which had ripped in June, gave back almost fourteen percent last month.</p>
+
+    <p>Software went the other way. <span class="tk">$MSFT</span> was up another <span class="ch up">+4%</span> this morning after last week's earnings and has now been rewarded for reporting good numbers three cycles in a row. It is the largest common-stock position on the desk. <span class="tk">$NOW</span> (ServiceNow, the enterprise workflow platform that sets the tone for software earnings season) has drifted higher for weeks after its own report. <span class="tk">$PLTR</span> (Palantir, the government-and-enterprise AI data platform) prints tonight into a chart the desk called a big polarity zone, and the tape wants a good print to fire the whole group. Even <span class="tk">$ZM</span> is trading like a software-plus-AI proxy because of its equity stake in Anthropic that could be worth up to ten billion dollars in a company with a twenty-seven-billion-dollar market cap, which is the same setup shape that put a rocket under <span class="tk">$MSTR</span>.</p>
+
+    <div class="compare">
+      <div class="winners">
+        <div class="head">Software Getting Paid</div>
+        <ul>
+          <li><span class="tk">$MSFT</span> &middot; <span class="ch up">+4%</span> today, largest common position on the desk</li>
+          <li><span class="tk">$NOW</span> &middot; post-earnings drift higher for weeks</li>
+          <li><span class="tk">$PLTR</span> &middot; reports tonight into a polarity zone</li>
+          <li><span class="tk">$ZM</span> &middot; trading on the Anthropic stake, not the video business</li>
+        </ul>
+      </div>
+      <div class="losers">
+        <div class="head">Semis in the Rubble</div>
+        <ul>
+          <li>Tech sector &middot; <span class="ch down">-8%</span> July after <span class="ch up">+42%</span> in April-May</li>
+          <li>Small-cap tech &middot; <span class="ch down">-14%</span> July</li>
+          <li><span class="tk">$ORCL</span> &middot; cut in half in two months</li>
+          <li>Memory names &middot; parabolic to exhaustion, sifting rubble</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>The framework worth writing down came from the panel discussion around Leopold, the trader who blew up a nine-figure book last week trading options on 2x single-stock ETFs. Skip the leverage angle. The interesting piece is what happens after a parabolic move exhausts itself. Momentum stocks do not gently step back into the normal four-stage life cycle that technicians teach. They distort it. Once the top prints, they often drift sideways in what Strazza called zombie mode for years before they come back. <span class="tk">$PLUG</span> (Plug Power, a fuel-cell name that briefly ran during the dot-com era) went nowhere for roughly two decades before running again. <span class="tk">$OKLO</span> (the small modular reactor stock that was a momentum favorite earlier this year) is doing the same thing right now, drifting sideways after a big blow-off.</p>
+
+    <p>Practically that means the read is to treat <span class="tk">$SMH</span> (the VanEck Semiconductor ETF, dominated by <span class="tk">$NVDA</span>, <span class="tk">$TSM</span>, and <span class="tk">$AVGO</span>) as topped until it proves otherwise. Software is the group that is actually working. Being aggressive there is more useful right now than trying to bottom-tick chips.</p>
+  </section>
+
+  <section class="chapter quotes-block">
+    <div class="chapter-label">Chapter 4 &middot; Quotes</div>
+    <h2>Lines Worth Saving</h2>
+
+    <div class="pullquote">
+      <blockquote>"Just because Bitcoin decided to boycott the bull market doesn't mean it's not a bull market."</blockquote>
+      <div class="attrib">JC, on CZ's weekend "we might be in a bear market" tweet <a class="ts" href="https://www.youtube.com/watch?v=iySQgkagPMc&amp;t=716s" target="_blank">[11:56]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"There's a war going on beneath the surface between software and semiconductors and they couldn't be acting more differently."</blockquote>
+      <div class="attrib">Strazza, on the split that is making the NASDAQ readable as one number impossible <a class="ts" href="https://www.youtube.com/watch?v=iySQgkagPMc&amp;t=1320s" target="_blank">[22:00]</a></div>
+    </div>
+
+    <div class="pullquote">
+      <blockquote>"When you go parabolic into exhaustion mode, it takes a long time to repair that damage."</blockquote>
+      <div class="attrib">Strazza, on why busted momentum stocks can drift for years before they come back <a class="ts" href="https://www.youtube.com/watch?v=iySQgkagPMc&amp;t=3492s" target="_blank">[58:12]</a></div>
+    </div>
+  </section>
+
+  <!-- BOTTOM_LINE -->
+  <section class="bottom-line">
+    <h2>The Bottom Line</h2>
+    <ol>
+      <li><strong>Bull market by the tape's own definition.</strong> The Dow just printed the highest monthly close in its history, the NYSE composite closed at all-time highs, and the internal bull-market checklist reads six of eight with the bear-market side blank. If a bombed-out semi chart or a weekend tweet about a possible bear market is talking you into a defensive posture, the tape is not agreeing.</li>
+      <li><strong>Software is where the AI trade actually lives right now.</strong> <span class="tk">$MSFT</span> up another <span class="ch up">+4%</span> today into a fresh leg. <span class="tk">$NOW</span> already broke out post-earnings. <span class="tk">$PLTR</span> reports tonight into a polarity zone that could fire the whole group. Meanwhile semis look like a two-month blow-off working through the rubble, and the historical rhyme for busted momentum is years of sideways drift before the group comes back.</li>
+      <li><strong>Every short-dollar asset is working except Bitcoin.</strong> Yen up, developed markets breaking out, China ripping on monthly candles, energy majors zoomed out constructive, EM currencies coiling. That is the exact backdrop that usually pulls crypto with it. Today crypto stayed red across the board. Either the gap closes in the next few sessions as the dollar reversal grinds through, or the disconnect is telling you positioning inside crypto is heavier than the macro read suggests.</li>
+    </ol>
+  </section>
+
+</main>
+
+</body>
+</html>
